@@ -208,8 +208,9 @@ function TipHelper() {
     <div style={{ fontSize: 12, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>📊 Help me tip</div>
     <div style={{ fontSize: 10, color: C.dim, marginBottom: 10 }}>Numbers, drivers, and what The Kennel reckons.</div>
 
-    {/* Odds card */}
-    <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
+    {/* Odds card — only shown when NRL exposes them; TAB sometimes pulls odds in the
+        24h before kickoff or during settlement, so handle null/missing prices. */}
+    {ODDS && (ODDS.dogs != null || ODDS.opp != null) && <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
         <div style={{ fontSize: 11, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>💵 Head-to-head odds</div>
         <div style={{ fontSize: 9, color: C.dim, fontFamily: F }}>{ODDS.source}</div>
@@ -220,17 +221,17 @@ function TipHelper() {
             <MiniBadge src={MATCH.dogsLogo} fallback="🐶" />
             <div style={{ fontSize: 9, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Dogs</div>
           </div>
-          <div style={{ fontSize: 22, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>${ODDS.dogs.toFixed(2)}</div>
+          <div style={{ fontSize: 22, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>{ODDS.dogs != null ? `$${ODDS.dogs.toFixed(2)}` : "—"}</div>
         </div>
         <div style={{ flex: 1, padding: "10px 12px", borderRadius: 8, background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)", textAlign: "center" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginBottom: 2 }}>
             <MiniBadge src={MATCH.oppLogo} fallback="🏉" />
             <div style={{ fontSize: 9, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{MATCH.opponent}</div>
           </div>
-          <div style={{ fontSize: 22, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>${ODDS.opp.toFixed(2)}</div>
+          <div style={{ fontSize: 22, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>{ODDS.opp != null ? `$${ODDS.opp.toFixed(2)}` : "—"}</div>
         </div>
       </div>
-    </div>
+    </div>}
 
     {/* Drivers */}
     <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
