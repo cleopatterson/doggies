@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T01:06:54.795Z",
+  "generatedAt": "2026-05-05T01:18:38.501Z",
   "match": {
     "round": 10,
     "opponent": "Dolphins",
@@ -20,113 +20,113 @@
   "oddsDrivers": [
     {
       "icon": "📉",
-      "text": "We're 12th, they're 11th, and the bookies still have us at $2.56 — that tells you everything about how we're travelling."
+      "text": "Coming off a 28-12 hiding by the Cowboys at home — attack looked cooked again, just one Galvin try and a Curran consolation."
     },
     {
       "icon": "🏟️",
-      "text": "Suncorp on a Thursday night against a Wayne Bennett side. Not exactly a fixture you'd circle as a banker."
+      "text": "Suncorp on a Thursday night against a Dolphins side that's been scoring for fun. Not exactly a kind travel script."
+    },
+    {
+      "icon": "🤕",
+      "text": "King still not back, halves combo unsettled, and the bookies have clocked that we can't put points on anyone."
     },
     {
       "icon": "🎯",
-      "text": "Attack is broken. 12 points against the Cowboys, and the 'diabolical attack' thread has 122 replies for a reason."
+      "text": "Dolphins at $1.51 says it all — market reckons this Bulldogs attack can't keep up in a shootout."
     },
     {
-      "icon": "🔄",
-      "text": "Ciro's been huffing and puffing all week but no1bulldog reckons the only change will be King back on the bench. Same team, same problems."
-    },
-    {
-      "icon": "🥊",
-      "text": "Dolphins forwards will roll us if we keep missing 33 tackles a game like we did against the Cowboys."
+      "icon": "🔥",
+      "text": "Fan pages are brutal right now. Recruitment thread, AOB rumours, Gus getting blamed — squad walks in carrying all of it."
     }
   ],
   "kennelTipLean": {
     "side": "Opponent",
-    "confidence": "Lean — about 35/65",
-    "note": "There's a stubborn pocket backing the Dogs to bounce back but most of the Kennel has accepted the team's cooked until something actually changes."
+    "confidence": "Lean — about 30/70",
+    "note": "Even the diehards aren't selling this one. A few brave souls calling 50+ as a piss-take, but the mood is 'until I see points, I'm not tipping them'."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rnd 10 v Dolphins",
+      "thread": "GAMEDAY Rd 10 vs Dolphins",
       "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
-      "quote": "Ciro doesn't need to change the whole team — just get Salmon out of the starting side. Bare minimum.",
+      "quote": "After all Ciro's huff and puff I doubt there'll be any changes except injury — maybe King on the extended bench.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
     },
     {
-      "thread": "GAMEDAY Rnd 10 v Dolphins",
+      "thread": "GAMEDAY Rd 10 vs Dolphins",
       "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
-      "quote": "Dogs by 50+. You underestimate the talent of this side.",
+      "quote": "Don't need the whole team changed Ciro, just get Salmon out of the starting side. Bare minimum.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
     },
     {
-      "thread": "Referee and rule blaming won't fix Bulldogs attack",
+      "thread": "Referee and rule blaming won't fix attack",
       "threadSlug": "/forum/index.php?threads/referee-and-rule-blaming-won%E2%80%99t-fix-bulldogs-diabolical-attack.131680",
-      "quote": "Stop blaming refs. The attack is broken and it's been broken for weeks.",
+      "quote": "Until the attack actually fires for 80 minutes I'm not tipping these blokes against anyone.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/referee-and-rule-blaming-won%E2%80%99t-fix-bulldogs-diabolical-attack.131680/"
     }
   ],
   "debates": [
     {
       "id": "salmon-starting-13",
-      "icon": "🪑",
-      "question": "Does Salmon stay at lock or get dropped to bench?",
-      "kennel": "GAMEDAY thread is unanimous on one thing — get Salmon out of the run-on side.",
+      "icon": "🧱",
+      "question": "Does Salmon stay in the starting 13?",
+      "kennel": "GAMEDAY thread is begging Ciro to drop him out of the run-on side at minimum.",
       "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
       "options": [
         {
-          "label": "Starts at 13",
-          "emoji": "🟢"
+          "label": "Bench him",
+          "emoji": "🪑"
         },
         {
-          "label": "Bench him, Burton to lock",
-          "emoji": "🔄"
+          "label": "Keep starting",
+          "emoji": "🧱"
         },
         {
-          "label": "Out of 17 entirely",
+          "label": "Out of 17",
           "emoji": "❌"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
     },
     {
-      "id": "halves-combo",
-      "icon": "🧠",
-      "question": "Galvin & Burton in the halves, or shake it up?",
-      "kennel": "Hodkinson's calling for two five-eighths and the 'two halves' thread has 70 replies of fans agreeing the combo isn't clicking.",
+      "id": "two-five-eighths",
+      "icon": "🎯",
+      "question": "Hodko's call — do we go two five-eighths to fix the attack?",
+      "kennel": "Hodkinson floated it, the forum's split between 'finally' and 'that's not the problem'.",
       "threadSlug": "/forum/index.php?threads/%E2%80%98two-five-eighths%E2%80%99-trent-hodkinson-calls-for-the-bulldogs-to-make-a-change-in-the-halves-to-fix-their-attacking-woes.131649",
       "options": [
         {
-          "label": "Stick with Galvin/Burton",
-          "emoji": "🤝"
+          "label": "Burton + Galvin",
+          "emoji": "🎯"
         },
         {
-          "label": "SOS or Conti at 7",
+          "label": "Stick with SOS",
           "emoji": "🔁"
         },
         {
-          "label": "Burton back to centre",
-          "emoji": "↩️"
+          "label": "Conti at 7",
+          "emoji": "🆕"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/%E2%80%98two-five-eighths%E2%80%99-trent-hodkinson-calls-for-the-bulldogs-to-make-a-change-in-the-halves-to-fix-their-attacking-woes.131649/"
     },
     {
       "id": "hughes-role",
-      "icon": "❓",
-      "question": "What's Samuel Hughes actually doing in this side?",
-      "kennel": "53-reply thread literally titled 'What is the point of Samuel Hughes?' — fans want clarity.",
+      "icon": "🤔",
+      "question": "What is the actual role for Sam Hughes?",
+      "kennel": "Whole thread questioning the point of him in this side.",
       "threadSlug": "/forum/index.php?threads/what-is-the-point-of-samuel-hughes.131675",
       "options": [
         {
-          "label": "Keep developing him",
-          "emoji": "🌱"
+          "label": "Bench utility",
+          "emoji": "🪑"
         },
         {
-          "label": "Drop, promote Latu",
-          "emoji": "⬇️"
+          "label": "Starting middle",
+          "emoji": "🏉"
         },
         {
-          "label": "Move to a different position",
-          "emoji": "🔀"
+          "label": "Out of 17",
+          "emoji": "❌"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/what-is-the-point-of-samuel-hughes.131675/"
@@ -134,21 +134,21 @@
     {
       "id": "young-forwards",
       "icon": "💎",
-      "question": "Time to throw Hayes, Preston, Spinks and Latu in as starters?",
-      "kennel": "Kempsey Dog reckons mass change for 2027, but plenty want it now while expectations are already lowered.",
+      "question": "Time to give the young forwards a real run?",
+      "kennel": "Fresh Blood thread wants Hayes, Preston, Spinks, Latu starting now — not 2027.",
       "threadSlug": "/forum/index.php?threads/time-for-fresh-blood.131511",
       "options": [
         {
-          "label": "Yes, now",
-          "emoji": "🚀"
+          "label": "Throw 'em in",
+          "emoji": "💎"
         },
         {
-          "label": "Phase them in",
-          "emoji": "📈"
+          "label": "Drip feed",
+          "emoji": "💧"
         },
         {
-          "label": "Not yet, ride it out",
-          "emoji": "🛑"
+          "label": "Stick with vets",
+          "emoji": "👴"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/time-for-fresh-blood.131511/"
@@ -270,56 +270,78 @@
       }
     ],
     "gamedayUrl": null,
-    "headline": "12-28 at home to the Cowboys. We are who the ladder says we are.",
-    "vibe": "Galvin opened the scoring and then we went missing for an hour. Cowboys put four on us in the second half and the score flatters us. Sitting 12th and the attack hasn't worked since round 1 — there's no shortcut out of this one. Adam O'Brien rumours, Gus 'fingerprints', Ciraldo discussion threads all firing — the off-field noise is louder than anything happening on the paddock.",
+    "headline": "12-28 at home to the Cowboys. That's not a wake-up call, that's an alarm that's been going off for weeks.",
+    "vibe": "We scored first through Galvin then conceded four on the trot before halftime felt safe. Curran's try at 52' was the only sniff in the second half and the Cowboys put 14 more on us to put it to bed. 12 errors, 33 missed tackles, no second-half attack — same story, different week. Sitting 12th and now we travel to Suncorp on a short turnaround.",
     "talkingPoints": [
       {
-        "icon": "🎯",
-        "text": "12 points at home. The 'diabolical attack' thread is at 122 replies and nobody's defending the structure."
-      },
-      {
-        "icon": "💎",
-        "text": "Galvin scored, ran for a line break, and topped our fantasy points. The bloke is doing his job — the conversation around him needs to stop."
-      },
-      {
         "icon": "🐢",
-        "text": "Sua ran 183m which is great until you see Burns ran 225 and scored. We got out-worked by a Cowboys team missing personnel."
+        "text": "The attack is officially diabolical. One try in 80 minutes at home and the kicking game went missing again.",
+        "threadSlug": "/forum/index.php?threads/referee-and-rule-blaming-won%E2%80%99t-fix-bulldogs-diabolical-attack.131680",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/referee-and-rule-blaming-won%E2%80%99t-fix-bulldogs-diabolical-attack.131680/"
       },
       {
-        "icon": "🤕",
-        "text": "Preston made 46 tackles. He's cooking himself because the middle isn't doing enough."
+        "icon": "🎯",
+        "text": "Hodkinson openly calling for two five-eighths — and a chunk of the forum agrees the halves combo isn't working.",
+        "threadSlug": "/forum/index.php?threads/%E2%80%98two-five-eighths%E2%80%99-trent-hodkinson-calls-for-the-bulldogs-to-make-a-change-in-the-halves-to-fix-their-attacking-woes.131649",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/%E2%80%98two-five-eighths%E2%80%99-trent-hodkinson-calls-for-the-bulldogs-to-make-a-change-in-the-halves-to-fix-their-attacking-woes.131649/"
       },
       {
         "icon": "😤",
-        "text": "Sexton vs Galvin debate flared up again — chemdog pointing out we were leading the comp last year with Sexton at 7 and have regressed since."
+        "text": "Galvin's being scapegoated but plenty are pointing out the issues are way bigger than him — Sexton wasn't the answer either.",
+        "threadSlug": "/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/"
       },
       {
         "icon": "🔥",
-        "text": "Recruitment thread is a bonfire — $2.5m on three centres, 800k on a 6 playing 7, zero first-grade hookers on the roster."
+        "text": "Recruitment is taking a battering — $2.5m on three centres, no first-grade hooker, and Sua signing with the Bears.",
+        "threadSlug": "/forum/index.php?threads/recruitment.131679",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/"
+      },
+      {
+        "icon": "🤕",
+        "text": "Preston with 46 tackles and Sua leading run metres — the workhorses are showing up, the spine isn't.",
+        "threadSlug": null,
+        "url": null
+      },
+      {
+        "icon": "👀",
+        "text": "AOB rumours doing the rounds and Gus' fingerprints all over the mess according to Crawley.",
+        "threadSlug": "/forum/index.php?threads/gus%E2%80%99-fingerprints-all-over-bulldogs-debacle-crawls.131690",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/gus%E2%80%99-fingerprints-all-over-bulldogs-debacle-crawls.131690/"
       }
     ],
-    "kennelMood": "Resigned and ropeable",
-    "kennelSummary": "The Kennel has moved past anger into structural critique. It's no longer 'we played bad' — it's 'the roster is lopsided, the coach is under pressure, and Gus's fingerprints are everywhere.' Galvin's getting defended, Sexton's getting re-litigated, and the young forwards thread is gaining momentum because the current 17 isn't getting it done.",
+    "kennelMood": "Cooked and out of patience",
+    "kennelSummary": "The Kennel's not panicking, it's resigned. Recruitment, coaching, halves, Salmon's spot — every thread is a different version of 'this isn't good enough'. A few are still defending Galvin, but most have moved on to wanting wholesale change.",
     "kennelHotTakes": [
       {
-        "quote": "Galvin's a convenient scapegoat for much broader issues. Sexton was never a quality half — he's just a stick to beat the Galvin signing with.",
-        "author": "Nate DAWG"
+        "quote": "Galvin's a convenient scapegoat for much broader issues. Sexton was never quality either — that argument's a distraction.",
+        "author": "Nate DAWG",
+        "threadSlug": "/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/"
       },
       {
-        "quote": "We were leading the comp last year with Sexton at halfback. We've regressed significantly since signing Galvin — that's just a fact.",
-        "author": "chemdog"
+        "quote": "Watching the Roosters and their 1-13 is better than ours in every single position. The roster is a deadset joke.",
+        "author": "Marlinfeeder",
+        "threadSlug": "/forum/index.php?threads/recruitment.131679",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/"
       },
       {
-        "quote": "Watching the Roosters and their 1-13 is better than ours in every single position. The whole roster is a deadset joke.",
-        "author": "Marlinfeeder"
+        "quote": "Bring on 2027 — Hayes, Preston, Spinks, Latu all starting. Hayes at left edge offers way more value than Kikau right now.",
+        "author": "Kempsey Dog",
+        "threadSlug": "/forum/index.php?threads/time-for-fresh-blood.131511",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/time-for-fresh-blood.131511/"
       },
       {
-        "quote": "Spending $2.5m on three centres in Critta, Burton and Xerri, then 800k on a six to play seven. Recruitment has been a disaster.",
-        "author": "Freakzilla"
+        "quote": "Irony is we had better players at 7, 9 and on the wing and let them all walk — Mahoney, Sexton, JAC.",
+        "author": "_G-Dog_",
+        "threadSlug": "/forum/index.php?threads/time-for-fresh-blood.131511",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/time-for-fresh-blood.131511/"
       },
       {
-        "quote": "Bring on the young forwards in 2027 — Hayes, Preston, Spinks, Latu. Hayes at left edge offers way better value than Kikau right now.",
-        "author": "Kempsey Dog"
+        "quote": "Don't need the whole team changed Ciro. Just get Salmon out of the starting side. Bare minimum.",
+        "author": "assuomdahs",
+        "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
       }
     ]
   },

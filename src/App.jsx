@@ -360,7 +360,8 @@ function WashupTab() {
       <div style={{ fontSize: 11, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>💬 What we're talking about</div>
       {w.talkingPoints.map((t, i) => <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "7px 0", borderBottom: i < w.talkingPoints.length - 1 ? `1px solid rgba(255,255,255,0.04)` : "none" }}>
         <span style={{ fontSize: 16, flexShrink: 0 }}>{t.icon}</span>
-        <span style={{ fontSize: 12, color: C.w, lineHeight: 1.45 }}>{t.text}</span>
+        <span style={{ fontSize: 12, color: C.w, lineHeight: 1.45, flex: 1 }}>{t.text}</span>
+        {t.url && <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 10, color: C.purp, textDecoration: "none", flexShrink: 0, alignSelf: "center" }}>↗</a>}
       </div>)}
     </div>}
 
@@ -410,7 +411,10 @@ function WashupTab() {
       {w.kennelHotTakes?.length > 0 && <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
         {w.kennelHotTakes.map((t, i) => <div key={i} style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: "2px solid rgba(167,139,250,0.5)" }}>
           <div style={{ fontSize: 11, color: C.w, lineHeight: 1.4 }}>"{t.quote}"</div>
-          {t.author && <div style={{ fontSize: 9, color: C.dim, fontFamily: F, marginTop: 3 }}>— {t.author}</div>}
+          <div style={{ fontSize: 9, color: C.dim, fontFamily: F, marginTop: 3, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
+            <span>{t.author ? `— ${t.author}` : ""}</span>
+            {t.url && <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ color: C.purp, textDecoration: "none", fontWeight: 700 }}>view thread ↗</a>}
+          </div>
         </div>)}
       </div>}
       {w.gamedayUrl && <a href={w.gamedayUrl} target="_blank" rel="noopener noreferrer" style={{ display: "block", marginTop: 10, fontSize: 10, color: C.purp, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", textAlign: "center", textDecoration: "none" }}>read the gameday thread ↗</a>}

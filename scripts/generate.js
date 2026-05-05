@@ -357,12 +357,12 @@ Generate the round's content as JSON with this exact shape:
     "headline": "One emotional line capturing the vibe of the result",
     "vibe": "3-4 conversational sentences on the game and where it leaves the season",
     "talkingPoints": [
-      { "icon": "🔥|🐢|🤕|💎|😤|🎯 etc", "text": "1-2 sentences fans are actually discussing — sourced from the post-match Kennel posts" }
+      { "icon": "🔥|🐢|🤕|💎|😤|🎯 etc", "text": "1-2 sentences fans are actually discussing", "threadSlug": "exact slug from the digest if this point came from one specific thread, else null" }
     ],
     "kennelMood": "Single phrase: e.g. 'Cooked', 'Quietly relieved', 'Furious', 'Resigned'",
     "kennelSummary": "2-3 sentences capturing the post-match Kennel reaction. Reference specific players or themes that came up.",
     "kennelHotTakes": [
-      { "quote": "Paraphrased post (NOT invented) from the GAMEDAY thread or Opinion threads", "author": "username if useful" }
+      { "quote": "Paraphrased post (NOT invented) from the GAMEDAY thread or Opinion threads", "author": "username if useful", "threadSlug": "exact slug from the digest, or null" }
     ]
   }` : ""}
 }
@@ -431,6 +431,8 @@ async function main() {
   const resolveUrl = (slug) => (slug && slugToUrl.get(slug)) || null;
   for (const q of synth.kennelTipQuotes || []) q.url = resolveUrl(q.threadSlug);
   for (const d of synth.debates || []) d.url = resolveUrl(d.threadSlug);
+  for (const t of synth.washup?.talkingPoints || []) t.url = resolveUrl(t.threadSlug);
+  for (const h of synth.washup?.kennelHotTakes || []) h.url = resolveUrl(h.threadSlug);
 
   const data = {
     generatedAt: new Date().toISOString(),
