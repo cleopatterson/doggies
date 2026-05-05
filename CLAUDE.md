@@ -1,94 +1,133 @@
 # Dogs HQ — Claude project notes
 
 ## What this is
-Companion app for the Parkyard WhatsApp group (Tony, Benny, Jordy) — Bulldogs NRL fans. See [dogs-hq-brief_updated.md](dogs-hq-brief_updated.md) for the current product brief (the older `dogs-hq-brief.md` is superseded).
+Companion app for the **Parkyard** WhatsApp group (Tony, Benny, Jordy) — Bulldogs NRL fans. Pre-game tipping, coaching-decision debates, post-match washup. See [dogs-hq-brief_updated.md](dogs-hq-brief_updated.md) for the full product brief (the older `dogs-hq-brief.md` is superseded).
 
-## Repo
-GitHub: <https://github.com/cleopatterson/doggies>
+## Repo + live
+- GitHub: <https://github.com/cleopatterson/doggies>
+- Live: <https://doggies.up.railway.app/>
 
 ## Stack
-- Vite + React 18 SPA, mobile-optimised (max-width 480px)
-- Inline styles, no CSS framework. Barlow Condensed for headings, Inter for body.
-- localStorage for persistence (`src/storage.js` shim)
-- Deployed to Railway
+- **Vite + React 18** SPA, mobile-optimised (`max-width: 480px`)
+- Inline styles, no CSS framework. **Barlow Condensed** for headings, **Inter** for body. Bulldogs blue (`#005eb8`) accent.
+- **localStorage** for picks (via [src/storage.js](src/storage.js) shim, namespaced `dogs-hq:*`)
+- Hosted on **Railway**
 
 ## Local dev
-**Port: `5180`** — port `5173` is in use by another local project, do not use it. Vite is configured with `strictPort: true` in `vite.config.js` so it will fail rather than silently shift.
+**Port: `5180`** — port 5173 is in use by another local project. Vite is configured with `strictPort: true` so it'll fail loudly rather than silently shift.
 
 ```
-npm run dev      # http://localhost:5180
-npm run build    # → dist/
-npm run start    # serves dist on $PORT (Railway uses this)
+npm run dev       # http://localhost:5180
+npm run build     # → dist/
+npm run start     # serve dist on $PORT (Railway uses this)
+npm run generate  # refresh src/data.json from NRL + Kennel + Claude
 ```
 
-## Deployment
-Railway via [railway.json](railway.json). Build runs `npm ci && npm run build`, then `serve -s dist -l $PORT`.
+## Deployment (Railway)
+[railway.json](railway.json) — Nixpacks builder, `buildCommand: "npm run build"` (NOT `npm ci && npm run build` — Nixpacks already installs deps and the duplicate locks the cache). Start command: `serve -s dist -l $PORT`.
 
-## File map
-- `src/App.jsx` — all 4 tabs + hardcoded round data
-- `src/storage.js` — `loadData(key, fallback)` / `saveData(key, data)` over localStorage, namespaced `dogs-hq:*`
-- `index.html` — OG meta tags for WhatsApp link previews
-- `dogs-hq-v7.jsx` — original prototype (reference only, not imported)
+Required env vars in Railway:
+- `ANTHROPIC_API_KEY`
+- `NRL_TEAM_ID=500010`
+- `NRL_SEASON=2026`
+- Railway sets `PORT` automatically (typically 8080)
 
-## V1 scope — four tabs
-Stripped back from the v7 prototype. Anything not listed here was deliberately cut for V1.
+## Tabs (V1)
+Three tabs only. Anything not listed here was deliberately cut for V1.
 
-- **Pre-Game** — match header (with team logos), Tipping (5 options: `Dogs lose` + `Dogs by 1–6` / `7–12` / `13–18` / `19+`), and Tip Helper: NRL TAB odds, Claude-written drivers, Kennel sentiment + linked quotes. Picks locked, persisted under `tips-r{round}`.
-- **Coach** — 3-4 multi-choice **coaching decisions** sourced from Kennel tactical threads. Each cites and links to the originating thread. Locked once picked. Persisted under `debates-r{round}`. (Tab renamed from "Debates" — same component, name reflects the framing.)
-- **Washup** — last completed match. Score banner with team logos, Claude-written headline + vibe + talking points, real try scorers from NRL timeline, top performers (most tackles / run metres / linebreaks / fantasy points), key stats, and Kennel post-match reactions (mood + paraphrased hot takes + GAMEDAY thread link).
-- **Ladder** — running totals across rounds (Parkyard Cup). **Rendered inline at the top of the Coach tab**, above the voter pill and debate cards. Tipping accuracy + coach-decision accuracy + combined score, with an empty state until the first generated round resolves.
+- **Pre-Game** 🎯
+  - Match header with team logos + match info
+  - Compact tipping picker (5 options: `Lose` / `Win 1–6` / `7–12` / `13–18` / `19+`). Locked once cast.
+  - Tip Helper: TAB H2H odds (auto-hides if NRL drops them), Claude-written drivers explaining the line, Kennel sentiment + 3 paraphrased quotes, full hot-threads list with prefix tags.
+- **Coach** 🧠
+  - 🏆 **Parkyard Cup** standings render at the very top (running totals across rounds — empty state until first resolution lands).
+  - "Voting as X · switch" pill confirms identity.
+  - 3-4 multi-choice **coaching decisions** sourced from Kennel tactical threads. Each cites and links to the originating thread. Locked once picked.
+- **Washup** 💬
+  - Score banner with both team logos and result badge.
+  - Claude-written headline + vibe paragraph.
+  - Talking points (linked to source threads).
+  - Real **try scorers** from NRL match timeline (with minute markers).
+  - Top performers (tackles / run metres / linebreaks / fantasy points).
+  - Key match stats (completion, possession, errors, etc.).
+  - Kennel post-match block: mood label, summary, paraphrased hot takes (linked), gameday thread link.
+
+## Identity & voting integrity
+- Claimed once per device via `useIdentity` hook → stored as `dogs-hq:me` in localStorage. Modal prompt fires on first load only.
+- The "Voting as X" pill at the top of Pre-Game and Coach tabs surfaces identity prominently with a discreet `switch` link for shared phones.
+- Picks lock the moment they're cast — `if (my) return` blocks any further changes per debate/tip.
+
+## Refresh button
+Small `↻` icon top-right of the header. Tooltip shows `Updated Xm ago` from `data.generatedAt`. Tap reloads with a cache-bust query param so a fresh Railway deploy gets picked up cleanly.
+
+## External links
+All Kennel thread links route through `<ExtLink>` (top of [src/App.jsx](src/App.jsx)) which calls `window.open(url, '_blank', 'noopener,noreferrer')` on click. `target="_blank"` alone is unreliable in mobile webviews (notably WhatsApp's in-app browser).
 
 ## Cut from V1 (re-introduce only with explicit ask)
-Intel accordion, Player to Watch, Head to Head matchups, Trivia Corner, separate Kennel hot-threads card, fan-pages quote, Coach Mode team picker / side-by-side compare. Player headshots / NRL squad scraping.
+Intel accordion, Player to Watch, Head to Head matchups, Trivia Corner, separate Kennel hot-threads card on Pre-Game, fan-pages quote in Washup, Coach Mode team picker / side-by-side compare. Player headshots from NRL (URLs ARE in the match data — wire up when needed).
+
+---
 
 ## Data pipeline — `npm run generate`
+
 Real data is generated by [scripts/generate.js](scripts/generate.js) into [src/data.json](src/data.json), which `App.jsx` imports at build time.
 
 What it does:
 1. **NRL fixture** — `https://www.nrl.com/draw/data?competition=111&season={NRL_SEASON}` → next upcoming Bulldogs fixture (using `NRL_TEAM_ID=500010`). Pulls round, opponent, venue, kickoff ISO, ladder positions, **TAB head-to-head odds** (`homeTeam.odds` / `awayTeam.odds`), and **team logo CDN URLs** built from `theme.key` + `theme.logos["badge.svg"]` version stamp.
-2. **Kennel forum index** — `thekennel.net.au` Bulldogs Discussion (plain HTTP, 2s rate limit). Parses `<div class="structItem structItem--thread">` rows for prefix tag (GAMEDAY / Opinion / Official / News / Social Media), title, reply count, URL.
+2. **Kennel forum index** — thekennel.net.au Bulldogs Discussion (plain HTTP, 2s rate limit). Parses `<div class="structItem structItem--thread">` rows for prefix tag (`GAMEDAY` / `Opinion` / `Official` / `News` / `Social Media`), title, reply count, URL.
 3. **Hot Kennel threads** — GAMEDAY thread + top 4 by reply count. Fetches up to 12 posts each via `<article data-author>` blocks (strips quoted parents).
-4. **Previous match (washup source)** — walks back from the upcoming round; finds the most recent Bulldogs `FullTime` fixture. Fetches its match centre HTML and extracts the `q-data` JSON blob on `<div id="vue-match-centre">` (~140KB, HTML-encoded). Pulls score, attendance, weather, **try scorers from `timeline`** (resolved via `homeTeam.players` / `awayTeam.players` for names), top performers (tackles / run metres / line breaks / fantasy points), and key stat groups.
-5. **Kennel post-match** — searches forum index pages 1-2 for the previous round's GAMEDAY thread URL. Fetches its last 3 pages for post-match commentary. **Note:** by Tuesday of the next week the GAMEDAY thread has often dropped off the first 2 pages, so post-match takes lean on the hot threads from step 3 instead.
-6. **Claude synthesis** — sends fixture + previous match + Kennel digests to `claude-opus-4-7` with a strict-JSON prompt. Returns `oddsDrivers`, `kennelTipLean`, `kennelTipQuotes`, 3-4 `debates`, and a `washup` blob (headline, vibe, talkingPoints, kennelMood, kennelSummary, kennelHotTakes).
-7. Writes `src/data.json` with everything plus generation timestamp.
+4. **Previous match (washup source)** — walks back from upcoming round to find the most recent Bulldogs `FullTime` fixture. Fetches the match centre HTML and extracts the `q-data` JSON blob on `<div id="vue-match-centre">` (~140KB, HTML-encoded). Pulls score, attendance, weather, **try scorers** (resolved via `homeTeam.players` / `awayTeam.players` for names), top performers, and key stat groups.
+5. **Kennel post-match** — searches forum index pages 1-2 for the previous round's GAMEDAY thread URL and fetches the last 3 pages. By Tuesday of the next week the GAMEDAY thread has often dropped off the first 2 pages, so post-match takes lean on the hot threads from step 3 instead.
+6. **Claude synthesis** — sends fixture + previous match + Kennel digests to `claude-opus-4-7` with a strict-JSON prompt. Returns `oddsDrivers`, `kennelTipLean`, `kennelTipQuotes`, 3-4 `debates`, and a `washup` blob (headline, vibe, talkingPoints, kennelMood, kennelSummary, kennelHotTakes). Each `debate`, quote, talking point, and hot take includes a `threadSlug` that gets resolved to a full Kennel URL after Claude returns.
+7. Writes `src/data.json` with everything plus a generation timestamp.
 
-Run it whenever you want fresh data:
-```
-npm run generate
-```
+⚠️ The `.env` script uses `dotenv.config({ override: true })` because some shells (e.g. Claude Desktop) export an empty `ANTHROPIC_API_KEY`. Don't change it.
 
-`.env` requires:
-- `ANTHROPIC_API_KEY` — your Claude API key
-- `NRL_TEAM_ID=500010` (Bulldogs)
-- `NRL_SEASON=2026`
+## Auto-refresh — GitHub Actions
+[.github/workflows/refresh-data.yml](.github/workflows/refresh-data.yml) runs three times a week and commits `src/data.json` only when it actually changed. Railway auto-redeploys on push.
 
-⚠️ Some shells export an empty `ANTHROPIC_API_KEY` (e.g. Claude Desktop env). The script uses `dotenv.config({ override: true })` to bypass that — don't change it.
+| When (AEST) | Cron (UTC) | Why |
+|---|---|---|
+| Tue 7pm | `0 9 * * 2` | Teams named, fresh debates + odds |
+| Thu 4pm | `0 6 * * 4` | Last-minute news before kickoff |
+| Mon 7am | `0 21 * * 0` | Post-match washup |
 
-## Things the script can't get (keep hardcoded)
-- **Betting line / total points** — NRL fixture JSON only exposes head-to-head odds, not the spread or O/U. Removed from UI.
-- **Team lists (named 1-17)** — only published Tuesday afternoon, requires Puppeteer (nrl.com team list pages are JS-rendered). Out of scope for V1.
-- **Tip + coach grading data (the Ladder feed)** — `data.json` doesn't yet emit `tipBand` (which margin band the actual result fell into) or per-debate `verdicts` (which option Claude judges as the right call after the match). The Ladder tab has the UI scaffolding ready but the empty state stays until the next-round generate writes that data. Add to generate.js when you're ready: a separate Claude pass that takes last round's debates from a stored copy + the actual result and produces verdicts.
+Requires `ANTHROPIC_API_KEY` in **GitHub repo Settings → Secrets and variables → Actions**. `workflow_dispatch` is enabled so you can also trigger a refresh manually from the Actions tab.
 
-## Ladder design
-Two records per user:
-- **Tipping** — compare `tips-r{round}` localStorage value vs `data.washup.tipBand` (one of `loss / win_1_6 / win_7_12 / win_13_18 / win_19_plus`).
-- **Coach** — for each debate ID, compare `debates-r{round}[user][id]` vs `data.washup.debateVerdicts[id]`.
+## OG / WhatsApp link preview
+- [public/og-image.png](public/og-image.png) (1200×630) — Bulldogs-blue gradient, "DOGS HQ" wordmark, dog emoji, Tony·Benny·Jordy footer. Source SVG kept beside it.
+- [vite.config.js](vite.config.js) has an `injectOg()` plugin that reads `src/data.json` at build time and substitutes `{{ogTitle}}` / `{{ogDescription}}` / `{{siteUrl}}` placeholders in `index.html` so the WhatsApp preview always reflects the upcoming round (e.g. `🐶 Dogs HQ — Rd 10 v Dolphins`). `SITE_URL` env var overrides the default `https://doggies.up.railway.app`.
+- WhatsApp aggressively caches OG previews per-URL — append `?v=2` once after major image changes to force a refetch.
 
-`LadderTab` already does this calculation; it just sees an empty `resolutions` array until the pipeline emits the resolution data. When you add it, populate `data.washup.tipBand` and `data.washup.debateVerdicts: { [debateId]: "right call label" }` and the standings light up.
+---
+
+## Things the pipeline can't get (keep documenting these)
+- **Betting line / total points** — NRL fixture JSON only exposes H2H odds, not the spread or O/U. Removed from UI.
+- **Team lists (named 1-17)** — published Tuesday afternoon, requires Puppeteer (nrl.com team list pages are JS-rendered). Out of scope for V1.
+- **Tip + coach grading data (Ladder feed)** — `data.json` doesn't yet emit `tipBand` (which margin band the actual result fell into) or per-debate `verdicts` (which option Claude judges as the right call after the match). The Ladder UI already does the math; it just sees an empty `resolutions` array until the pipeline emits resolution data. When ready, populate `data.washup.tipBand` (one of `loss / win_1_6 / win_7_12 / win_13_18 / win_19_plus`) and `data.washup.debateVerdicts: { [debateId]: "right call label" }` and the standings light up.
+
+## File map
+- [src/App.jsx](src/App.jsx) — single-file UI for all three tabs + ladder + identity flow
+- [src/storage.js](src/storage.js) — `loadData(key, fallback)` / `saveData(key, data)` over localStorage
+- [src/data.json](src/data.json) — bundled at build time; produced by `npm run generate`
+- [scripts/generate.js](scripts/generate.js) — NRL + Kennel + Claude pipeline
+- [index.html](index.html) — OG meta tag template (placeholders filled by Vite plugin)
+- [vite.config.js](vite.config.js) — Vite config + `injectOg` plugin
+- [railway.json](railway.json) — Railway deploy config
+- [.github/workflows/refresh-data.yml](.github/workflows/refresh-data.yml) — auto-refresh cron
+- [public/og-image.png](public/og-image.png) — WhatsApp link preview image
+- `dogs-hq-v7.jsx` — original prototype (reference only, not imported)
 
 ## Conventions
-- Live round data: `src/data.json` (regenerated on demand). Hardcoded fallbacks (washup, tipping options) remain at the top of `App.jsx`.
 - Three users hardcoded: `Tony`, `Benny`, `Jordy`. Picks are keyed by user.
-- Storage keys are round-scoped (`tips-r8`, `debates-r8`) so each round resets cleanly. Washup reads `debates-r{round-1}` to surface last week's picks.
-- Kennel chatter is referenced inline on each debate (one italic line citing thread reply counts / sentiment), not as a separate panel.
+- Storage keys are round-scoped (`tips-r10`, `debates-r10`) so each round resets cleanly.
+- Live round data: `src/data.json`. Static UI options (the 5 tipping bands, the user list) remain at the top of `App.jsx`.
+- "Debate" and "coaching decision" are the same thing in V1. Each question is a concrete tactical call Ciraldo has to make, with 3 multiple-choice options. No vibe-only "are we ok with this?" takes.
+- Kennel chatter is referenced inline on each card (one italic line citing thread context), not as a separate panel.
+- Any external feed value used in the UI must be **null-safe** — TAB odds and Kennel data both intermittently drop fields. Already burned by `ODDS.dogs.toFixed(2)` crashing the whole tree when odds went null.
 
-## Debates = coaching decisions
-For V1, "Debates" and "coaching decisions" are the same thing. Each question is a concrete tactical call Ciraldo has to make, with 3 multiple-choice options. No vibe-only "are we ok with this?" takes — those were the old Debates tab and are out for V1.
-
-## What's not built yet (phase 2)
-- Kennel fan sentiment scraper (XenForo, plain HTTP)
-- NRL data scraper for team lists + headshots (Puppeteer)
-- Claude content generation pipeline (Tuesday intel + debates, Monday washup)
-- OpenClaw WhatsApp bot posting Thursday 6pm + Monday 8am
-- Backend persistence (currently client-side only)
+## Phase 2 — not built yet
+- **OpenClaw WhatsApp bot** auto-posting the link to Parkyard on Thursday 6pm + Monday 8am (per brief)
+- **Tip + coach grading pipeline** for the Ladder (described above)
+- **NRL team-list scraper** (Puppeteer) for named 1-17 + player headshots
+- **Backend persistence** for picks (currently client-side only — fine for three mates)
