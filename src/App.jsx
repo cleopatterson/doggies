@@ -57,15 +57,15 @@ function RefreshButton() {
     background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)",
     color: "rgba(255,255,255,0.75)", cursor: "pointer",
     display: "flex", alignItems: "center", justifyContent: "center",
-    fontSize: 14, lineHeight: 1, padding: 0,
+    fontSize: 16, lineHeight: 1, padding: 0,
   }}>
     <span style={{ display: "inline-block", animation: spinning ? "spin 0.8s linear infinite" : "none" }}>↻</span>
   </button>;
 }
 
 function Tab({ label, icon, active, onClick }) {
-  return <button onClick={onClick} style={{ flex: 1, padding: "10px 2px", background: "transparent", color: active ? C.acc : C.dim, border: "none", cursor: "pointer", fontSize: 10, fontWeight: active ? 700 : 500, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", borderBottom: active ? `2px solid ${C.acc}` : "2px solid transparent", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-    <span style={{ fontSize: 16 }}>{icon}</span>{label}
+  return <button onClick={onClick} style={{ flex: 1, padding: "10px 2px", background: "transparent", color: active ? C.acc : C.dim, border: "none", cursor: "pointer", fontSize: 13, fontWeight: active ? 700 : 500, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", borderBottom: active ? `2px solid ${C.acc}` : "2px solid transparent", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+    <span style={{ fontSize: 18 }}>{icon}</span>{label}
   </button>;
 }
 
@@ -83,12 +83,12 @@ function IdentityPrompt({ onClaim }) {
   return <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.8)", zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(6px)", padding: 16 }}>
     <div style={{ width: "100%", maxWidth: 380, background: C.card, borderRadius: 16, padding: 20, border: `1px solid ${C.border}`, textAlign: "center" }}>
       <div style={{ fontSize: 28, marginBottom: 6 }}>🐶</div>
-      <div style={{ fontSize: 18, fontWeight: 900, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>Who are you?</div>
-      <div style={{ fontSize: 11, color: C.dim, marginBottom: 16, lineHeight: 1.5 }}>Picks lock the moment you cast them — so we need to know whose vote it is. Set once per device.</div>
+      <div style={{ fontSize: 20, fontWeight: 900, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>Who are you?</div>
+      <div style={{ fontSize: 14, color: C.dim, marginBottom: 16, lineHeight: 1.5 }}>Picks lock the moment you cast them — so we need to know whose vote it is. Set once per device.</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {USERS.map(u => <button key={u} onClick={() => onClaim(u)} style={{
           padding: "12px 16px", borderRadius: 10, border: `1px solid ${C.border}`,
-          background: "rgba(59,157,255,0.06)", color: C.w, fontSize: 15, fontWeight: 700, fontFamily: F,
+          background: "rgba(59,157,255,0.06)", color: C.w, fontSize: 17, fontWeight: 700, fontFamily: F,
           cursor: "pointer", letterSpacing: "0.04em",
         }}>I'm {u}</button>)}
       </div>
@@ -103,22 +103,22 @@ function VoterPill({ me, onSwitch }) {
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 12px", borderRadius: 8, background: "rgba(16,185,129,0.06)", border: `1px solid rgba(16,185,129,0.2)`, marginBottom: 12 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         <span style={{ width: 8, height: 8, borderRadius: 4, background: C.grn, boxShadow: `0 0 6px ${C.grn}` }} />
-        <span style={{ fontSize: 11, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Voting as</span>
-        <span style={{ fontSize: 13, color: C.w, fontWeight: 800, fontFamily: F }}>{me}</span>
+        <span style={{ fontSize: 14, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Voting as</span>
+        <span style={{ fontSize: 15, color: C.w, fontWeight: 800, fontFamily: F }}>{me}</span>
       </div>
-      <button onClick={() => setShowSwitch(true)} style={{ background: "transparent", border: "none", color: C.dim, fontSize: 10, fontWeight: 700, fontFamily: F, cursor: "pointer", textTransform: "uppercase", letterSpacing: "0.05em" }}>switch</button>
+      <button onClick={() => setShowSwitch(true)} style={{ background: "transparent", border: "none", color: C.dim, fontSize: 13, fontWeight: 700, fontFamily: F, cursor: "pointer", textTransform: "uppercase", letterSpacing: "0.05em" }}>switch</button>
     </div>
 
     {showSwitch && <div onClick={() => setShowSwitch(false)} style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.7)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)", padding: 16 }}>
       <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 320, background: C.card, borderRadius: 14, padding: 18, border: `1px solid ${C.border}` }}>
-        <div style={{ fontSize: 13, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4, textAlign: "center" }}>Switch device owner?</div>
-        <div style={{ fontSize: 10, color: C.dim, lineHeight: 1.5, marginBottom: 14, textAlign: "center" }}>Only do this if {me}'s phone is being shared. Their existing votes won't be changed.</div>
+        <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4, textAlign: "center" }}>Switch device owner?</div>
+        <div style={{ fontSize: 13, color: C.dim, lineHeight: 1.5, marginBottom: 14, textAlign: "center" }}>Only do this if {me}'s phone is being shared. Their existing votes won't be changed.</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           {USERS.filter(u => u !== me).map(u => <button key={u} onClick={() => { onSwitch(u); setShowSwitch(false); }} style={{
             padding: "10px 14px", borderRadius: 8, border: `1px solid ${C.border}`,
-            background: "rgba(59,157,255,0.06)", color: C.w, fontSize: 13, fontWeight: 700, fontFamily: F, cursor: "pointer",
+            background: "rgba(59,157,255,0.06)", color: C.w, fontSize: 15, fontWeight: 700, fontFamily: F, cursor: "pointer",
           }}>Switch to {u}</button>)}
-          <button onClick={() => setShowSwitch(false)} style={{ padding: "8px", borderRadius: 8, border: "none", background: "transparent", color: C.dim, fontSize: 11, fontFamily: F, fontWeight: 700, cursor: "pointer", textTransform: "uppercase", marginTop: 4 }}>cancel</button>
+          <button onClick={() => setShowSwitch(false)} style={{ padding: "8px", borderRadius: 8, border: "none", background: "transparent", color: C.dim, fontSize: 14, fontFamily: F, fontWeight: 700, cursor: "pointer", textTransform: "uppercase", marginTop: 4 }}>cancel</button>
         </div>
       </div>
     </div>}
@@ -133,26 +133,26 @@ function TeamBadge({ src, fallback, name }) {
 
 function MiniBadge({ src, fallback }) {
   const [failed, setFailed] = useState(false);
-  if (failed || !src) return <span style={{ fontSize: 12 }}>{fallback}</span>;
+  if (failed || !src) return <span style={{ fontSize: 15 }}>{fallback}</span>;
   return <img src={src} alt="" onError={() => setFailed(true)} style={{ width: 16, height: 16, objectFit: "contain" }} />;
 }
 
 function MatchHeader() {
   return <div style={{ background: `linear-gradient(135deg, ${C.blue}, #002d6b)`, borderRadius: 14, padding: 18, textAlign: "center", marginBottom: 14, position: "relative", overflow: "hidden" }}>
     <div style={{ position: "absolute", top: -40, right: -40, width: 130, height: 130, borderRadius: "50%", background: "rgba(255,255,255,0.04)" }} />
-    <div style={{ fontSize: 10, color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: F, marginBottom: 6 }}>Round {MATCH.round} • {MATCH.kickoff}</div>
+    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: F, marginBottom: 6 }}>Round {MATCH.round} • {MATCH.kickoff}</div>
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 18 }}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
         <TeamBadge src={MATCH.dogsLogo} fallback="🐶" name="Bulldogs" />
-        <div style={{ fontSize: 13, fontWeight: 900, color: C.w, fontFamily: F, letterSpacing: "0.04em" }}>DOGS</div>
+        <div style={{ fontSize: 15, fontWeight: 900, color: C.w, fontFamily: F, letterSpacing: "0.04em" }}>DOGS</div>
       </div>
-      <div style={{ fontSize: 16, fontWeight: 900, color: "rgba(255,255,255,0.25)", fontFamily: F }}>{MATCH.dogsHome ? "v" : "@"}</div>
+      <div style={{ fontSize: 18, fontWeight: 900, color: "rgba(255,255,255,0.25)", fontFamily: F }}>{MATCH.dogsHome ? "v" : "@"}</div>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
         <TeamBadge src={MATCH.oppLogo} fallback="🏉" name={MATCH.opponent} />
-        <div style={{ fontSize: 13, fontWeight: 900, color: C.w, fontFamily: F, letterSpacing: "0.04em" }}>{MATCH.opponent.toUpperCase()}</div>
+        <div style={{ fontSize: 15, fontWeight: 900, color: C.w, fontFamily: F, letterSpacing: "0.04em" }}>{MATCH.opponent.toUpperCase()}</div>
       </div>
     </div>
-    <div style={{ fontSize: 10, color: "rgba(255,255,255,0.5)", marginTop: 8 }}>📍 {MATCH.venue}</div>
+    <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", marginTop: 8 }}>📍 {MATCH.venue}</div>
   </div>;
 }
 
@@ -173,8 +173,8 @@ function PreGameTab({ me, onSwitch }) {
     {/* Compact tip card — 5 horizontal pills */}
     <div style={{ background: C.card, borderRadius: 12, padding: 12, border: `1px solid ${C.border}`, marginBottom: 14 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <div style={{ fontSize: 12, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>🎯 Tip</div>
-        {my && <div style={{ fontSize: 9, color: C.grn, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>✓ Locked</div>}
+        <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>🎯 Tip</div>
+        {my && <div style={{ fontSize: 12, color: C.grn, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>✓ Locked</div>}
       </div>
       <div style={{ display: "flex", gap: 4 }}>
         {TIPS.map(opt => {
@@ -187,11 +187,11 @@ function PreGameTab({ me, onSwitch }) {
             color: isMe ? opt.color : my ? "rgba(255,255,255,0.3)" : C.w,
             display: "flex", flexDirection: "column", alignItems: "center", gap: 2, position: "relative",
           }}>
-            <span style={{ fontSize: 14 }}>{opt.emoji}</span>
-            <span style={{ fontSize: 10, fontWeight: 700, fontFamily: F }}>{opt.short}</span>
+            <span style={{ fontSize: 16 }}>{opt.emoji}</span>
+            <span style={{ fontSize: 13, fontWeight: 700, fontFamily: F }}>{opt.short}</span>
             {(isMe || others.length > 0) && <div style={{ position: "absolute", bottom: -7, left: 0, right: 0, display: "flex", gap: 2, justifyContent: "center" }}>
-              {isMe && <span style={{ fontSize: 8, fontWeight: 800, color: "#fff", background: opt.color, padding: "1px 4px", borderRadius: 3, fontFamily: F }}>{me[0]}</span>}
-              {others.map(u => <span key={u} style={{ fontSize: 8, fontWeight: 800, color: C.dim, background: C.card, border: `1px solid ${C.border}`, padding: "1px 4px", borderRadius: 3, fontFamily: F }}>{u[0]}</span>)}
+              {isMe && <span style={{ fontSize: 11, fontWeight: 800, color: "#fff", background: opt.color, padding: "1px 4px", borderRadius: 3, fontFamily: F }}>{me[0]}</span>}
+              {others.map(u => <span key={u} style={{ fontSize: 11, fontWeight: 800, color: C.dim, background: C.card, border: `1px solid ${C.border}`, padding: "1px 4px", borderRadius: 3, fontFamily: F }}>{u[0]}</span>)}
             </div>}
           </button>;
         })}
@@ -205,56 +205,56 @@ function PreGameTab({ me, onSwitch }) {
 // ── TIP HELPER ──
 function TipHelper() {
   return <>
-    <div style={{ fontSize: 12, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>📊 Help me tip</div>
-    <div style={{ fontSize: 10, color: C.dim, marginBottom: 10 }}>Numbers, drivers, and what The Kennel reckons.</div>
+    <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>📊 Help me tip</div>
+    <div style={{ fontSize: 13, color: C.dim, marginBottom: 10 }}>Numbers, drivers, and what The Kennel reckons.</div>
 
     {/* Odds card — only shown when NRL exposes them; TAB sometimes pulls odds in the
         24h before kickoff or during settlement, so handle null/missing prices. */}
     {ODDS && (ODDS.dogs != null || ODDS.opp != null) && <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-        <div style={{ fontSize: 11, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>💵 Head-to-head odds</div>
-        <div style={{ fontSize: 9, color: C.dim, fontFamily: F }}>{ODDS.source}</div>
+        <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>💵 Head-to-head odds</div>
+        <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>{ODDS.source}</div>
       </div>
       <div style={{ display: "flex", gap: 8 }}>
         <div style={{ flex: 1, padding: "10px 12px", borderRadius: 8, background: "rgba(0,94,184,0.12)", border: "1px solid rgba(0,94,184,0.3)", textAlign: "center" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginBottom: 2 }}>
             <MiniBadge src={MATCH.dogsLogo} fallback="🐶" />
-            <div style={{ fontSize: 9, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Dogs</div>
+            <div style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Dogs</div>
           </div>
-          <div style={{ fontSize: 22, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>{ODDS.dogs != null ? `$${ODDS.dogs.toFixed(2)}` : "—"}</div>
+          <div style={{ fontSize: 24, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>{ODDS.dogs != null ? `$${ODDS.dogs.toFixed(2)}` : "—"}</div>
         </div>
         <div style={{ flex: 1, padding: "10px 12px", borderRadius: 8, background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)", textAlign: "center" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginBottom: 2 }}>
             <MiniBadge src={MATCH.oppLogo} fallback="🏉" />
-            <div style={{ fontSize: 9, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{MATCH.opponent}</div>
+            <div style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{MATCH.opponent}</div>
           </div>
-          <div style={{ fontSize: 22, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>{ODDS.opp != null ? `$${ODDS.opp.toFixed(2)}` : "—"}</div>
+          <div style={{ fontSize: 24, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>{ODDS.opp != null ? `$${ODDS.opp.toFixed(2)}` : "—"}</div>
         </div>
       </div>
     </div>}
 
     {/* Drivers */}
     <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
-      <div style={{ fontSize: 11, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 8 }}>🔍 Driving the odds</div>
+      <div style={{ fontSize: 14, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 8 }}>🔍 Driving the odds</div>
       {ODDS_DRIVERS.map((d, i) => <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "7px 0", borderBottom: i < ODDS_DRIVERS.length - 1 ? `1px solid ${C.border}` : "none" }}>
-        <span style={{ fontSize: 14, flexShrink: 0 }}>{d.icon}</span>
-        <span style={{ fontSize: 12, color: C.w, lineHeight: 1.4 }}>{d.text}</span>
+        <span style={{ fontSize: 16, flexShrink: 0 }}>{d.icon}</span>
+        <span style={{ fontSize: 15, color: C.w, lineHeight: 1.4 }}>{d.text}</span>
       </div>)}
     </div>
 
     {/* Kennel chatter */}
     <div style={{ background: "linear-gradient(135deg, rgba(167,139,250,0.08), rgba(167,139,250,0.02))", borderRadius: 12, padding: 14, border: "1px solid rgba(167,139,250,0.25)", marginBottom: 10 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <div style={{ fontSize: 11, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>🏟️ The Kennel reckons</div>
-        <div style={{ fontSize: 9, color: C.dim, fontFamily: F, fontWeight: 700 }}>{KENNEL_TIP_LEAN.confidence}</div>
+        <div style={{ fontSize: 14, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>🏟️ The Kennel reckons</div>
+        <div style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700 }}>{KENNEL_TIP_LEAN.confidence}</div>
       </div>
-      <div style={{ fontSize: 11, color: C.w, lineHeight: 1.5, marginBottom: 10, fontStyle: "italic" }}>{KENNEL_TIP_LEAN.note}</div>
+      <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, marginBottom: 10, fontStyle: "italic" }}>{KENNEL_TIP_LEAN.note}</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
         {KENNEL_TIP_QUOTES.map((q, i) => <div key={i} style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: `2px solid rgba(167,139,250,0.5)` }}>
-          <div style={{ fontSize: 11, color: C.w, lineHeight: 1.4, marginBottom: 3 }}>"{q.quote}"</div>
+          <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4, marginBottom: 3 }}>"{q.quote}"</div>
           {q.url
-            ? <a href={q.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 9, color: C.purp, fontFamily: F, textDecoration: "none" }}>— {q.thread} ↗</a>
-            : <div style={{ fontSize: 9, color: C.dim, fontFamily: F }}>— {q.thread}</div>}
+            ? <a href={q.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: C.purp, fontFamily: F, textDecoration: "none" }}>— {q.thread} ↗</a>
+            : <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>— {q.thread}</div>}
         </div>)}
       </div>
     </div>
@@ -267,15 +267,15 @@ function KennelThreadList() {
   const threads = data.kennelThreads || [];
   if (!threads.length) return null;
   return <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}` }}>
-    <div style={{ fontSize: 11, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 8 }}>🔗 Read the threads</div>
+    <div style={{ fontSize: 14, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 8 }}>🔗 Read the threads</div>
     <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
       {threads.map((t, i) => <a key={i} href={t.url || "#"} target="_blank" rel="noopener noreferrer" style={{
         display: "flex", alignItems: "center", gap: 8, padding: "7px 10px", borderRadius: 8,
         background: "rgba(0,0,0,0.2)", border: `1px solid ${C.border}`, textDecoration: "none",
       }}>
         {t.prefix && <KennelPrefix prefix={t.prefix} />}
-        <span style={{ flex: 1, fontSize: 11, color: C.w, fontWeight: 600, lineHeight: 1.3 }}>{t.title}</span>
-        <span style={{ fontSize: 9, color: C.dim, fontFamily: F, fontWeight: 700, whiteSpace: "nowrap" }}>{t.replies}↗</span>
+        <span style={{ flex: 1, fontSize: 14, color: C.w, fontWeight: 600, lineHeight: 1.3 }}>{t.title}</span>
+        <span style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700, whiteSpace: "nowrap" }}>{t.replies}↗</span>
       </a>)}
     </div>
   </div>;
@@ -284,7 +284,7 @@ function KennelThreadList() {
 function KennelPrefix({ prefix }) {
   const map = { "GAMEDAY": ["#ef4444", "GAMEDAY"], "Opinion": ["#f59e0b", "OPINION"], "Official": ["#3b9dff", "OFFICIAL"], "News": ["#10b981", "NEWS"], "Social Media": ["#a78bfa", "SOCIAL"] };
   const [color, label] = map[prefix] || [C.dim, prefix?.toUpperCase()];
-  return <span style={{ fontSize: 8, fontWeight: 800, color, background: color + "20", padding: "2px 5px", borderRadius: 3, fontFamily: F, border: `1px solid ${color}40`, letterSpacing: "0.05em", flexShrink: 0 }}>{label}</span>;
+  return <span style={{ fontSize: 11, fontWeight: 800, color, background: color + "20", padding: "2px 5px", borderRadius: 3, fontFamily: F, border: `1px solid ${color}40`, letterSpacing: "0.05em", flexShrink: 0 }}>{label}</span>;
 }
 
 // ── DEBATES TAB (coaching decisions, multi-choice) ──
@@ -305,27 +305,27 @@ function DebatesTab({ me, onSwitch }) {
 
     <VoterPill me={me} onSwitch={onSwitch} />
 
-    <div style={{ fontSize: 13, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>
+    <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>
       🧠 You're the coach
     </div>
-    <div style={{ fontSize: 11, color: C.dim, marginBottom: 14, lineHeight: 1.4 }}>
+    <div style={{ fontSize: 14, color: C.dim, marginBottom: 14, lineHeight: 1.4 }}>
       Tactical calls Ciraldo has to make. The Kennel has opinions. What's yours?
     </div>
 
     {DEBATES.map(d => {
       const picked = up[d.id];
       return <div key={d.id} style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 10, border: `1px solid ${C.border}` }}>
-        <div style={{ fontSize: 22, marginBottom: 6 }}>{d.icon}</div>
-        <div style={{ fontSize: 14, fontWeight: 800, color: C.w, lineHeight: 1.3, marginBottom: 8 }}>{d.question}</div>
+        <div style={{ fontSize: 24, marginBottom: 6 }}>{d.icon}</div>
+        <div style={{ fontSize: 16, fontWeight: 800, color: C.w, lineHeight: 1.3, marginBottom: 8 }}>{d.question}</div>
         {d.url
           ? <a href={d.url} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10, textDecoration: "none" }}>
-              <span style={{ fontSize: 12, flexShrink: 0 }}>🏟️</span>
-              <span style={{ fontSize: 10, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic", flex: 1 }}>{d.kennel}</span>
-              <span style={{ fontSize: 10, color: "#c4b5fd", flexShrink: 0 }}>↗</span>
+              <span style={{ fontSize: 15, flexShrink: 0 }}>🏟️</span>
+              <span style={{ fontSize: 13, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic", flex: 1 }}>{d.kennel}</span>
+              <span style={{ fontSize: 13, color: "#c4b5fd", flexShrink: 0 }}>↗</span>
             </a>
           : <div style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10 }}>
-              <span style={{ fontSize: 12, flexShrink: 0 }}>🏟️</span>
-              <span style={{ fontSize: 10, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic" }}>{d.kennel}</span>
+              <span style={{ fontSize: 15, flexShrink: 0 }}>🏟️</span>
+              <span style={{ fontSize: 13, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic" }}>{d.kennel}</span>
             </div>}
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           {d.options.map(opt => {
@@ -336,13 +336,13 @@ function DebatesTab({ me, onSwitch }) {
               border: isMe ? `2px solid ${C.acc}` : `1px solid ${picked ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.1)"}`,
               background: isMe ? "rgba(59,157,255,0.12)" : "rgba(255,255,255,0.02)",
               color: isMe ? C.acc : picked ? "rgba(255,255,255,0.3)" : C.w,
-              fontSize: 13, fontWeight: 600, textAlign: "left",
+              fontSize: 15, fontWeight: 600, textAlign: "left",
               display: "flex", alignItems: "center", justifyContent: "space-between",
             }}>
               <span><span style={{ marginRight: 8 }}>{opt.emoji}</span>{opt.label}</span>
               <span style={{ display: "flex", gap: 4 }}>
-                {isMe && <span style={{ fontSize: 10, fontWeight: 700, color: C.acc, fontFamily: F }}>YOU</span>}
-                {others.map(u => <span key={u} style={{ fontSize: 10, fontWeight: 700, color: C.dim, fontFamily: F }}>{u}</span>)}
+                {isMe && <span style={{ fontSize: 13, fontWeight: 700, color: C.acc, fontFamily: F }}>YOU</span>}
+                {others.map(u => <span key={u} style={{ fontSize: 13, fontWeight: 700, color: C.dim, fontFamily: F }}>{u}</span>)}
               </span>
             </button>;
           })}
@@ -355,7 +355,7 @@ function DebatesTab({ me, onSwitch }) {
 // ── WASHUP TAB ──
 function WashupTab() {
   const w = WASHUP;
-  if (!w) return <div style={{ padding: 24, textAlign: "center", color: C.dim, fontSize: 12 }}>No washup yet — first match of the season hasn't been played.</div>;
+  if (!w) return <div style={{ padding: 24, textAlign: "center", color: C.dim, fontSize: 15 }}>No washup yet — first match of the season hasn't been played.</div>;
 
   const isWin = w.result === "WIN";
   const accent = isWin ? C.grn : (w.result === "DRAW" ? C.gold : C.red);
@@ -365,42 +365,42 @@ function WashupTab() {
   return <div style={{ padding: 14 }}>
     {/* Score banner with logos */}
     <div style={{ background: `${accent}14`, borderRadius: 14, padding: 18, border: `1px solid ${accent}40`, marginBottom: 14 }}>
-      <div style={{ fontSize: 10, color: C.dim, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.1em", textAlign: "center", marginBottom: 8 }}>Round {w.round} • Dogs {w.dogsHome ? "v" : "@"} {w.opponent}</div>
+      <div style={{ fontSize: 13, color: C.dim, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.1em", textAlign: "center", marginBottom: 8 }}>Round {w.round} • Dogs {w.dogsHome ? "v" : "@"} {w.opponent}</div>
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 14 }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
           <TeamBadge src={w.dogsLogo} fallback="🐶" name="Dogs" />
           <span style={{ fontSize: 32, fontWeight: 900, color: isWin ? accent : C.dim, fontFamily: F, lineHeight: 1 }}>{w.dogsScore}</span>
         </div>
-        <span style={{ fontSize: 14, color: C.dim, fontWeight: 700 }}>–</span>
+        <span style={{ fontSize: 16, color: C.dim, fontWeight: 700 }}>–</span>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
           <TeamBadge src={w.oppLogo} fallback="🏉" name={w.opponent} />
           <span style={{ fontSize: 32, fontWeight: 900, color: !isWin ? accent : C.dim, fontFamily: F, lineHeight: 1 }}>{w.oppScore}</span>
         </div>
       </div>
       <div style={{ textAlign: "center", marginTop: 10 }}>
-        <span style={{ display: "inline-block", padding: "3px 14px", borderRadius: 16, background: `${accent}28`, color: accent, fontWeight: 800, fontSize: 12, fontFamily: F, textTransform: "uppercase" }}>
+        <span style={{ display: "inline-block", padding: "3px 14px", borderRadius: 16, background: `${accent}28`, color: accent, fontWeight: 800, fontSize: 15, fontFamily: F, textTransform: "uppercase" }}>
           {w.result} by {Math.abs(w.margin)} {isWin ? "🐶" : "💀"}
         </span>
       </div>
     </div>
 
     {/* Headline + vibe */}
-    {w.headline && <div style={{ fontSize: 16, fontWeight: 800, color: C.w, marginBottom: 6, lineHeight: 1.3 }}>{w.headline}</div>}
-    {w.vibe && <div style={{ fontSize: 12, color: C.dim, lineHeight: 1.6, marginBottom: 16 }}>{w.vibe}</div>}
+    {w.headline && <div style={{ fontSize: 18, fontWeight: 800, color: C.w, marginBottom: 6, lineHeight: 1.3 }}>{w.headline}</div>}
+    {w.vibe && <div style={{ fontSize: 15, color: C.dim, lineHeight: 1.6, marginBottom: 16 }}>{w.vibe}</div>}
 
     {/* Talking points */}
     {w.talkingPoints?.length > 0 && <div style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 12, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 11, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>💬 What we're talking about</div>
+      <div style={{ fontSize: 14, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>💬 What we're talking about</div>
       {w.talkingPoints.map((t, i) => <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "7px 0", borderBottom: i < w.talkingPoints.length - 1 ? `1px solid rgba(255,255,255,0.04)` : "none" }}>
-        <span style={{ fontSize: 16, flexShrink: 0 }}>{t.icon}</span>
-        <span style={{ fontSize: 12, color: C.w, lineHeight: 1.45, flex: 1 }}>{t.text}</span>
-        {t.url && <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 10, color: C.purp, textDecoration: "none", flexShrink: 0, alignSelf: "center" }}>↗</a>}
+        <span style={{ fontSize: 18, flexShrink: 0 }}>{t.icon}</span>
+        <span style={{ fontSize: 15, color: C.w, lineHeight: 1.45, flex: 1 }}>{t.text}</span>
+        {t.url && <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: C.purp, textDecoration: "none", flexShrink: 0, alignSelf: "center" }}>↗</a>}
       </div>)}
     </div>}
 
     {/* Try scorers */}
     {(dogsTries.length > 0 || oppTries.length > 0) && <div style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 12, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 11, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>🏉 Try scorers</div>
+      <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>🏉 Try scorers</div>
       <div style={{ display: "flex", gap: 12 }}>
         <TryColumn label="Dogs" tries={dogsTries} accent={C.acc} />
         <TryColumn label={w.opponent} tries={oppTries} accent={C.red} />
@@ -409,17 +409,17 @@ function WashupTab() {
 
     {/* Top performers */}
     {w.topPerformers?.length > 0 && <div style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 12, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 11, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>⭐ Top performers</div>
+      <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>⭐ Top performers</div>
       {w.topPerformers.map((tp, i) => <div key={i} style={{ padding: "8px 0", borderBottom: i < w.topPerformers.length - 1 ? `1px solid ${C.border}` : "none" }}>
-        <div style={{ fontSize: 10, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>{tp.title}</div>
+        <div style={{ fontSize: 13, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>{tp.title}</div>
         <div style={{ display: "flex", gap: 10 }}>
           <div style={{ flex: 1, padding: "6px 10px", borderRadius: 6, background: "rgba(0,94,184,0.1)", border: "1px solid rgba(0,94,184,0.25)" }}>
-            <div style={{ fontSize: 11, color: C.w, fontWeight: 700 }}>{tp.dogs.name}</div>
-            <div style={{ fontSize: 14, color: C.acc, fontWeight: 900, fontFamily: F }}>{Math.round(tp.dogs.value)}</div>
+            <div style={{ fontSize: 14, color: C.w, fontWeight: 700 }}>{tp.dogs.name}</div>
+            <div style={{ fontSize: 16, color: C.acc, fontWeight: 900, fontFamily: F }}>{Math.round(tp.dogs.value)}</div>
           </div>
           <div style={{ flex: 1, padding: "6px 10px", borderRadius: 6, background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.2)" }}>
-            <div style={{ fontSize: 11, color: C.dim, fontWeight: 700 }}>{tp.opp.name}</div>
-            <div style={{ fontSize: 14, color: C.dim, fontWeight: 900, fontFamily: F }}>{Math.round(tp.opp.value)}</div>
+            <div style={{ fontSize: 14, color: C.dim, fontWeight: 700 }}>{tp.opp.name}</div>
+            <div style={{ fontSize: 16, color: C.dim, fontWeight: 900, fontFamily: F }}>{Math.round(tp.opp.value)}</div>
           </div>
         </div>
       </div>)}
@@ -427,7 +427,7 @@ function WashupTab() {
 
     {/* Key stats */}
     {w.keyStats?.length > 0 && <div style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 12, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 11, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>📊 Match stats</div>
+      <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>📊 Match stats</div>
       {w.keyStats.map((s, i) => <StatRow key={i} label={s.title} dogs={`${s.dogs}${s.unit}`} opp={`${s.opp}${s.unit}`} last={i === w.keyStats.length - 1} />)}
     </div>}
 
@@ -435,43 +435,43 @@ function WashupTab() {
     {(w.kennelMood || w.kennelSummary) && <div style={{ background: "linear-gradient(135deg, rgba(167,139,250,0.08), rgba(167,139,250,0.02))", borderRadius: 12, padding: 14, border: "1px solid rgba(167,139,250,0.25)" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          <span style={{ fontSize: 14 }}>🏟️</span>
-          <div style={{ fontSize: 11, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>Kennel post-match</div>
+          <span style={{ fontSize: 16 }}>🏟️</span>
+          <div style={{ fontSize: 14, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>Kennel post-match</div>
         </div>
-        {w.kennelMood && <div style={{ fontSize: 10, color: C.purp, fontFamily: F, fontWeight: 800, padding: "3px 8px", borderRadius: 12, background: "rgba(167,139,250,0.15)" }}>{w.kennelMood}</div>}
+        {w.kennelMood && <div style={{ fontSize: 13, color: C.purp, fontFamily: F, fontWeight: 800, padding: "3px 8px", borderRadius: 12, background: "rgba(167,139,250,0.15)" }}>{w.kennelMood}</div>}
       </div>
-      {w.kennelSummary && <div style={{ fontSize: 11, color: C.w, lineHeight: 1.5, marginBottom: 10, fontStyle: "italic" }}>{w.kennelSummary}</div>}
+      {w.kennelSummary && <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, marginBottom: 10, fontStyle: "italic" }}>{w.kennelSummary}</div>}
       {w.kennelHotTakes?.length > 0 && <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
         {w.kennelHotTakes.map((t, i) => <div key={i} style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: "2px solid rgba(167,139,250,0.5)" }}>
-          <div style={{ fontSize: 11, color: C.w, lineHeight: 1.4 }}>"{t.quote}"</div>
-          <div style={{ fontSize: 9, color: C.dim, fontFamily: F, marginTop: 3, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
+          <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4 }}>"{t.quote}"</div>
+          <div style={{ fontSize: 12, color: C.dim, fontFamily: F, marginTop: 3, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
             <span>{t.author ? `— ${t.author}` : ""}</span>
             {t.url && <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ color: C.purp, textDecoration: "none", fontWeight: 700 }}>view thread ↗</a>}
           </div>
         </div>)}
       </div>}
-      {w.gamedayUrl && <a href={w.gamedayUrl} target="_blank" rel="noopener noreferrer" style={{ display: "block", marginTop: 10, fontSize: 10, color: C.purp, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", textAlign: "center", textDecoration: "none" }}>read the gameday thread ↗</a>}
+      {w.gamedayUrl && <a href={w.gamedayUrl} target="_blank" rel="noopener noreferrer" style={{ display: "block", marginTop: 10, fontSize: 13, color: C.purp, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", textAlign: "center", textDecoration: "none" }}>read the gameday thread ↗</a>}
     </div>}
   </div>;
 }
 
 function TryColumn({ label, tries, accent }) {
   return <div style={{ flex: 1 }}>
-    <div style={{ fontSize: 10, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>{label}</div>
-    {tries.length === 0 && <div style={{ fontSize: 11, color: C.dim, fontStyle: "italic" }}>—</div>}
-    {tries.map((t, i) => <div key={i} style={{ fontSize: 11, color: C.w, padding: "3px 0", display: "flex", justifyContent: "space-between", gap: 6 }}>
+    <div style={{ fontSize: 13, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>{label}</div>
+    {tries.length === 0 && <div style={{ fontSize: 14, color: C.dim, fontStyle: "italic" }}>—</div>}
+    {tries.map((t, i) => <div key={i} style={{ fontSize: 14, color: C.w, padding: "3px 0", display: "flex", justifyContent: "space-between", gap: 6 }}>
       <span style={{ flex: 1, lineHeight: 1.3 }}>{t.name}</span>
-      <span style={{ color: accent, fontFamily: F, fontWeight: 700, fontSize: 10, flexShrink: 0 }}>{t.minute}'</span>
+      <span style={{ color: accent, fontFamily: F, fontWeight: 700, fontSize: 13, flexShrink: 0 }}>{t.minute}'</span>
     </div>)}
   </div>;
 }
 
 function StatRow({ label, dogs, opp, last }) {
   return <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: last ? "none" : `1px solid ${C.border}`, gap: 10 }}>
-    <div style={{ flex: 1, fontSize: 10, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{label}</div>
+    <div style={{ flex: 1, fontSize: 13, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{label}</div>
     <div style={{ display: "flex", gap: 14, fontFamily: F, fontWeight: 800 }}>
-      <span style={{ color: C.acc, fontSize: 13 }}>{dogs}</span>
-      <span style={{ color: C.dim, fontSize: 13 }}>{opp}</span>
+      <span style={{ color: C.acc, fontSize: 15 }}>{dogs}</span>
+      <span style={{ color: C.dim, fontSize: 15 }}>{opp}</span>
     </div>
   </div>;
 }
@@ -516,40 +516,40 @@ function LadderSection() {
   const liveTipCounts = USERS.map(u => ({ user: u, tipped: !!tipsByRound[MATCH.round]?.[u], coachCount: Object.keys(coachByRound[MATCH.round]?.[u] || {}).length }));
 
   return <>
-    <div style={{ fontSize: 13, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>
+    <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>
       🏆 Parkyard Cup
     </div>
-    <div style={{ fontSize: 11, color: C.dim, marginBottom: 12, lineHeight: 1.4 }}>
+    <div style={{ fontSize: 14, color: C.dim, marginBottom: 12, lineHeight: 1.4 }}>
       Running totals from tips + coach decisions. Updates after each match.
     </div>
 
     <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
-      <div style={{ fontSize: 11, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", marginBottom: 10 }}>Standings</div>
+      <div style={{ fontSize: 14, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", marginBottom: 10 }}>Standings</div>
       {resolutions.length === 0 ? (
         <div style={{ padding: "12px 8px", textAlign: "center" }}>
           <div style={{ fontSize: 28, marginBottom: 4 }}>🏁</div>
-          <div style={{ fontSize: 12, color: C.w, fontWeight: 700, marginBottom: 4 }}>Grading starts Round {MATCH.round}.</div>
-          <div style={{ fontSize: 10, color: C.dim, lineHeight: 1.5 }}>Lock your tip and coach picks before kickoff — wins show here after full-time.</div>
+          <div style={{ fontSize: 15, color: C.w, fontWeight: 700, marginBottom: 4 }}>Grading starts Round {MATCH.round}.</div>
+          <div style={{ fontSize: 13, color: C.dim, lineHeight: 1.5 }}>Lock your tip and coach picks before kickoff — wins show here after full-time.</div>
         </div>
       ) : (
         sorted.map((row, idx) => <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderBottom: idx < sorted.length - 1 ? `1px solid ${C.border}` : "none" }}>
-          <div style={{ fontSize: 18, fontWeight: 900, color: idx === 0 ? C.wGold : C.dim, fontFamily: F, minWidth: 24 }}>{idx + 1}</div>
-          <div style={{ flex: 1, fontSize: 13, color: C.w, fontWeight: 700, fontFamily: F }}>{row.user}</div>
+          <div style={{ fontSize: 20, fontWeight: 900, color: idx === 0 ? C.wGold : C.dim, fontFamily: F, minWidth: 24 }}>{idx + 1}</div>
+          <div style={{ flex: 1, fontSize: 15, color: C.w, fontWeight: 700, fontFamily: F }}>{row.user}</div>
           <div style={{ display: "flex", gap: 10 }}>
-            <div style={{ fontSize: 11, color: C.acc, fontFamily: F, fontWeight: 700 }}>🎯 {row.tipsCorrect}/{row.tips}</div>
-            <div style={{ fontSize: 11, color: C.purp, fontFamily: F, fontWeight: 700 }}>🧠 {row.coachCorrect}/{row.coach}</div>
+            <div style={{ fontSize: 14, color: C.acc, fontFamily: F, fontWeight: 700 }}>🎯 {row.tipsCorrect}/{row.tips}</div>
+            <div style={{ fontSize: 14, color: C.purp, fontFamily: F, fontWeight: 700 }}>🧠 {row.coachCorrect}/{row.coach}</div>
           </div>
-          <div style={{ fontSize: 16, fontWeight: 900, color: C.w, fontFamily: F, minWidth: 22, textAlign: "right" }}>{row.score}</div>
+          <div style={{ fontSize: 18, fontWeight: 900, color: C.w, fontFamily: F, minWidth: 22, textAlign: "right" }}>{row.score}</div>
         </div>)
       )}
     </div>
 
     <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 11, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 10 }}>Round {MATCH.round} — locked in</div>
+      <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 10 }}>Round {MATCH.round} — locked in</div>
       {liveTipCounts.map((row, i) => <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderBottom: i < liveTipCounts.length - 1 ? `1px solid ${C.border}` : "none" }}>
-        <div style={{ flex: 1, fontSize: 13, color: C.w, fontWeight: 700, fontFamily: F }}>{row.user}</div>
-        <div style={{ fontSize: 10, fontFamily: F, fontWeight: 700, color: row.tipped ? C.grn : C.dim, textTransform: "uppercase" }}>{row.tipped ? "✓ Tipped" : "— No tip"}</div>
-        <div style={{ fontSize: 10, fontFamily: F, fontWeight: 700, color: row.coachCount > 0 ? C.purp : C.dim, textTransform: "uppercase" }}>🧠 {row.coachCount}/{(data.debates || []).length}</div>
+        <div style={{ flex: 1, fontSize: 15, color: C.w, fontWeight: 700, fontFamily: F }}>{row.user}</div>
+        <div style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: row.tipped ? C.grn : C.dim, textTransform: "uppercase" }}>{row.tipped ? "✓ Tipped" : "— No tip"}</div>
+        <div style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: row.coachCount > 0 ? C.purp : C.dim, textTransform: "uppercase" }}>🧠 {row.coachCount}/{(data.debates || []).length}</div>
       </div>)}
     </div>
   </>;
@@ -565,8 +565,8 @@ export default function DogsHQ() {
   return <div style={{ maxWidth: 480, margin: "0 auto", minHeight: "100vh", background: C.dk, color: C.w, fontFamily: "'Inter', -apple-system, sans-serif" }}>
     <div style={{ background: `linear-gradient(180deg, ${C.blue}, ${C.dk})`, padding: "14px 14px 6px", textAlign: "center", position: "relative" }}>
       <RefreshButton />
-      <div style={{ fontSize: 22, fontWeight: 900, fontFamily: F, color: C.w, letterSpacing: "0.04em", textTransform: "uppercase" }}>🐶 Dogs HQ</div>
-      <div style={{ fontSize: 9, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: F }}>Tony · Benny · Jordy — Rd {MATCH.round} v {MATCH.opponent}</div>
+      <div style={{ fontSize: 24, fontWeight: 900, fontFamily: F, color: C.w, letterSpacing: "0.04em", textTransform: "uppercase" }}>🐶 Dogs HQ</div>
+      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: F }}>Tony · Benny · Jordy — Rd {MATCH.round} v {MATCH.opponent}</div>
     </div>
     <div style={{ display: "flex", background: "rgba(13,17,23,0.95)", borderBottom: `1px solid ${C.border}`, position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(10px)" }}>
       <Tab label="Pre-Game" icon="🎯" active={tab === "pregame"} onClick={() => setTab("pregame")} />
