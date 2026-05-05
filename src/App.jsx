@@ -282,7 +282,7 @@ function KennelThreadList() {
   return <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}` }}>
     <div style={{ fontSize: 14, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 8 }}>🔗 Read the threads</div>
     <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-      {threads.map((t, i) => <a key={i} href={t.url || "#"} target="_blank" rel="noopener noreferrer" style={{
+      {threads.map((t, i) => <ExtLink key={i} href={t.url} style={{
         display: "flex", alignItems: "center", gap: 8, padding: "7px 10px", borderRadius: 8,
         background: "rgba(0,0,0,0.2)", border: `1px solid ${C.border}`, textDecoration: "none",
       }}>
