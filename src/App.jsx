@@ -31,6 +31,38 @@ const DEBATES = data.debates;
 const WASHUP = data.washup;
 
 // ── COMPONENTS ──
+function relativeTime(iso) {
+  if (!iso) return null;
+  const ms = Date.now() - new Date(iso).getTime();
+  const mins = Math.round(ms / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.round(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.round(hrs / 24);
+  return `${days}d ago`;
+}
+
+function RefreshButton() {
+  const [spinning, setSpinning] = useState(false);
+  const updated = relativeTime(data.generatedAt);
+  const click = () => {
+    setSpinning(true);
+    // Cache-bust so we don't get a stale SPA shell from the browser cache.
+    window.location.href = window.location.pathname + "?_=" + Date.now();
+  };
+  return <button onClick={click} title={updated ? `Updated ${updated} — tap to refresh` : "Tap to refresh"} style={{
+    position: "absolute", top: 12, right: 12, zIndex: 5,
+    width: 30, height: 30, borderRadius: 15,
+    background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)",
+    color: "rgba(255,255,255,0.75)", cursor: "pointer",
+    display: "flex", alignItems: "center", justifyContent: "center",
+    fontSize: 14, lineHeight: 1, padding: 0,
+  }}>
+    <span style={{ display: "inline-block", animation: spinning ? "spin 0.8s linear infinite" : "none" }}>↻</span>
+  </button>;
+}
+
 function Tab({ label, icon, active, onClick }) {
   return <button onClick={onClick} style={{ flex: 1, padding: "10px 2px", background: "transparent", color: active ? C.acc : C.dim, border: "none", cursor: "pointer", fontSize: 10, fontWeight: active ? 700 : 500, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", borderBottom: active ? `2px solid ${C.acc}` : "2px solid transparent", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
     <span style={{ fontSize: 16 }}>{icon}</span>{label}
@@ -530,7 +562,8 @@ export default function DogsHQ() {
   if (!ready) return <div style={{ minHeight: "100vh", background: C.dk }} />;
 
   return <div style={{ maxWidth: 480, margin: "0 auto", minHeight: "100vh", background: C.dk, color: C.w, fontFamily: "'Inter', -apple-system, sans-serif" }}>
-    <div style={{ background: `linear-gradient(180deg, ${C.blue}, ${C.dk})`, padding: "14px 14px 6px", textAlign: "center" }}>
+    <div style={{ background: `linear-gradient(180deg, ${C.blue}, ${C.dk})`, padding: "14px 14px 6px", textAlign: "center", position: "relative" }}>
+      <RefreshButton />
       <div style={{ fontSize: 22, fontWeight: 900, fontFamily: F, color: C.w, letterSpacing: "0.04em", textTransform: "uppercase" }}>🐶 Dogs HQ</div>
       <div style={{ fontSize: 9, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: F }}>Tony · Benny · Jordy — Rd {MATCH.round} v {MATCH.opponent}</div>
     </div>
