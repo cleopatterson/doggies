@@ -1,0 +1,48 @@
+name: Refresh Dogs HQ data
+
+# Runs three times a week and commits the new src/data.json if anything changed.
+# Railway auto-redeploys on push, so the live app refreshes within ~1 min of each run.
+#
+# Times are AEST (UTC+10). When NSW goes onto AEDT (Oct-Apr) these will shift back
+# by 1 hour — fine in practice, the timing is approximate.
+on:
+  schedule:
+    - cron: '0 9 * * 2'    # Tue 7pm AEST — teams named, fresh debates + odds
+    - cron: '0 6 * * 4'    # Thu 4pm AEST — last-minute news before kickoff
+    - cron: '0 21 * * 0'   # Mon 7am AEST (Sun 21:00 UTC) — post-match washup
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Generate fresh data
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NRL_TEAM_ID: '500010'
+          NRL_SEASON: '2026'
+        run: npm run generate
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet src/data.json; then
+            echo "No changes to src/data.json — skipping commit."
+            exit 0
+          fi
+          git config user.name "Dogs HQ Bot"
+          git config user.email "bot@dogshq.local"
+          git add src/data.json
+          git commit -m "Refresh Dogs HQ data (auto, $(date -u +%Y-%m-%dT%H:%MZ))"
+          git push
