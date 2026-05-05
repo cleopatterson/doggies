@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#005eb8"/>
+      <stop offset="60%" stop-color="#002d6b"/>
+      <stop offset="100%" stop-color="#060a10"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.85" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#halo)"/>
+  <circle cx="950" cy="200" r="200" fill="rgba(255,255,255,0.05)"/>
+  <text x="950" y="290" font-size="240" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif">🐶</text>
+  <text x="80" y="240" font-family="'Barlow Condensed', 'Helvetica Neue Condensed', Impact, sans-serif" font-weight="900" font-size="160" fill="#ffffff" letter-spacing="6">DOGS HQ</text>
+  <text x="80" y="300" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="30" fill="rgba(255,255,255,0.85)">Tip · Coach · Washup</text>
+  <rect x="0" y="540" width="1200" height="90" fill="rgba(0,0,0,0.45)"/>
+  <text x="80" y="595" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="32" fill="rgba(255,255,255,0.9)" letter-spacing="3">TONY · BENNY · JORDY</text>
+  <text x="1120" y="595" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="28" fill="#fbbf24" text-anchor="end" letter-spacing="2">PARKYARD</text>
+  <rect x="0" y="0" width="1200" height="6" fill="#fbbf24"/>
+</svg>

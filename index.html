@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#005eb8" />
-    <title>Dogs HQ — Rd 8 v Broncos</title>
+    <title>{{ogTitle}}</title>
 
-    <!-- Open Graph (WhatsApp link preview) -->
+    <!-- Open Graph (WhatsApp link preview) — absolute URLs so previews work cleanly. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dogs HQ" />
-    <meta property="og:title" content="Dogs HQ — Rd 8 v Broncos" />
-    <meta property="og:description" content="Intel, debates and the washup. Tony · Benny · Jordy." />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="{{siteUrl}}" />
+    <meta property="og:title" content="{{ogTitle}}" />
+    <meta property="og:description" content="{{ogDescription}}" />
+    <meta property="og:image" content="{{siteUrl}}/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Dogs HQ — for the Parkyard boys" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ogTitle}}" />
+    <meta name="twitter:description" content="{{ogDescription}}" />
+    <meta name="twitter:image" content="{{siteUrl}}/og-image.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
