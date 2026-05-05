@@ -30,6 +30,19 @@ const DEBATES = data.debates;
 // ── WASHUP — generated weekly from previous match + Kennel post-match scrape ──
 const WASHUP = data.washup;
 
+// External link helper. target="_blank" is ignored by some mobile in-app browsers
+// (notably WhatsApp's webview), so we also explicitly window.open on click. This is
+// the most reliable way to force a new tab/window across desktop, Safari, and webviews.
+function ExtLink({ href, children, style, ...rest }) {
+  if (!href || href === "#") return <div style={style} {...rest}>{children}</div>;
+  const handle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.open(href, "_blank", "noopener,noreferrer");
+  };
+  return <a href={href} target="_blank" rel="noopener noreferrer" onClick={handle} style={style} {...rest}>{children}</a>;
+}
+
 // ── COMPONENTS ──
 function relativeTime(iso) {
   if (!iso) return null;
@@ -253,7 +266,7 @@ function TipHelper() {
         {KENNEL_TIP_QUOTES.map((q, i) => <div key={i} style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: `2px solid rgba(167,139,250,0.5)` }}>
           <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4, marginBottom: 3 }}>"{q.quote}"</div>
           {q.url
-            ? <a href={q.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: C.purp, fontFamily: F, textDecoration: "none" }}>— {q.thread} ↗</a>
+            ? <ExtLink href={q.url} style={{ fontSize: 12, color: C.purp, fontFamily: F, textDecoration: "none" }}>— {q.thread} ↗</ExtLink>
             : <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>— {q.thread}</div>}
         </div>)}
       </div>
@@ -276,7 +289,7 @@ function KennelThreadList() {
         {t.prefix && <KennelPrefix prefix={t.prefix} />}
         <span style={{ flex: 1, fontSize: 14, color: C.w, fontWeight: 600, lineHeight: 1.3 }}>{t.title}</span>
         <span style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700, whiteSpace: "nowrap" }}>{t.replies}↗</span>
-      </a>)}
+      </ExtLink>)}
     </div>
   </div>;
 }
@@ -318,11 +331,11 @@ function DebatesTab({ me, onSwitch }) {
         <div style={{ fontSize: 24, marginBottom: 6 }}>{d.icon}</div>
         <div style={{ fontSize: 16, fontWeight: 800, color: C.w, lineHeight: 1.3, marginBottom: 8 }}>{d.question}</div>
         {d.url
-          ? <a href={d.url} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10, textDecoration: "none" }}>
+          ? <ExtLink href={d.url} style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10, textDecoration: "none" }}>
               <span style={{ fontSize: 15, flexShrink: 0 }}>🏟️</span>
               <span style={{ fontSize: 13, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic", flex: 1 }}>{d.kennel}</span>
               <span style={{ fontSize: 13, color: "#c4b5fd", flexShrink: 0 }}>↗</span>
-            </a>
+            </ExtLink>
           : <div style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10 }}>
               <span style={{ fontSize: 15, flexShrink: 0 }}>🏟️</span>
               <span style={{ fontSize: 13, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic" }}>{d.kennel}</span>
@@ -394,7 +407,7 @@ function WashupTab() {
       {w.talkingPoints.map((t, i) => <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "7px 0", borderBottom: i < w.talkingPoints.length - 1 ? `1px solid rgba(255,255,255,0.04)` : "none" }}>
         <span style={{ fontSize: 18, flexShrink: 0 }}>{t.icon}</span>
         <span style={{ fontSize: 15, color: C.w, lineHeight: 1.45, flex: 1 }}>{t.text}</span>
-        {t.url && <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: C.purp, textDecoration: "none", flexShrink: 0, alignSelf: "center" }}>↗</a>}
+        {t.url && <ExtLink href={t.url} style={{ fontSize: 13, color: C.purp, textDecoration: "none", flexShrink: 0, alignSelf: "center" }}>↗</ExtLink>}
       </div>)}
     </div>}
 
@@ -446,11 +459,11 @@ function WashupTab() {
           <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4 }}>"{t.quote}"</div>
           <div style={{ fontSize: 12, color: C.dim, fontFamily: F, marginTop: 3, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
             <span>{t.author ? `— ${t.author}` : ""}</span>
-            {t.url && <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ color: C.purp, textDecoration: "none", fontWeight: 700 }}>view thread ↗</a>}
+            {t.url && <ExtLink href={t.url} style={{ color: C.purp, textDecoration: "none", fontWeight: 700 }}>view thread ↗</ExtLink>}
           </div>
         </div>)}
       </div>}
-      {w.gamedayUrl && <a href={w.gamedayUrl} target="_blank" rel="noopener noreferrer" style={{ display: "block", marginTop: 10, fontSize: 13, color: C.purp, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", textAlign: "center", textDecoration: "none" }}>read the gameday thread ↗</a>}
+      {w.gamedayUrl && <ExtLink href={w.gamedayUrl} style={{ display: "block", marginTop: 10, fontSize: 13, color: C.purp, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", textAlign: "center", textDecoration: "none" }}>read the gameday thread ↗</ExtLink>}
     </div>}
   </div>;
 }
