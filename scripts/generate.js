@@ -330,9 +330,6 @@ Generate the round's content as JSON with this exact shape:
 
 {
   "kickoffPretty": "Sat 26 Apr, 5:30pm",
-  "oddsDrivers": [
-    { "icon": "🏟️", "text": "..." }
-  ],
   "kennelTipLean": {
     "side": "Dogs" | "Opponent" | "Split",
     "confidence": "Strong | Lean | Split — about XX/YY",
@@ -345,20 +342,41 @@ Generate the round's content as JSON with this exact shape:
     {
       "id": "kebab-case-id",
       "icon": "🧠",
-      "question": "Concrete coaching call — not a vibe take",
+      "question": "Concrete coaching call — must be resolvable from the team list or from observable on-field events",
       "kennel": "1 line citing the thread that surfaced this debate",
       "threadSlug": "slug of the thread that inspired this debate, or null",
       "options": [
-        { "label": "Short label", "emoji": "🏉" }
+        { "label": "Short label naming a specific observable outcome", "emoji": "🏉" }
       ]
     }
-  ]${prevMatch ? `,
+  ],
+  "trivia": {
+    "question": "One Bulldogs trivia question — short, factual, tied to verifiable club history, players, records, or this season",
+    "options": [
+      { "label": "answer A", "emoji": "🏆" },
+      { "label": "answer B", "emoji": "🏆" },
+      { "label": "answer C", "emoji": "🏆" },
+      { "label": "answer D", "emoji": "🏆" }
+    ],
+    "correctIndex": 0,
+    "explainer": "1-2 sentence fact-check explaining the correct answer"
+  }${prevMatch ? `,
+  "recap": [
+    {
+      "question": "ONE question about an observable fact from last week's match — pull straight from the data above (try scorers, top performers, key stats)",
+      "options": [
+        { "label": "Just the name (or just the team) — NO STAT VALUE", "emoji": "🏉" },
+        { "label": "Just the name", "emoji": "🏉" },
+        { "label": "Just the name", "emoji": "🏉" },
+        { "label": "Just the name", "emoji": "🏉" }
+      ],
+      "correctIndex": 0,
+      "explainer": "1 short sentence with the actual stat as proof (this is where the number goes)"
+    }
+  ],
   "washup": {
     "headline": "One emotional line capturing the vibe of the result",
     "vibe": "3-4 conversational sentences on the game and where it leaves the season",
-    "talkingPoints": [
-      { "icon": "🔥|🐢|🤕|💎|😤|🎯 etc", "text": "1-2 sentences fans are actually discussing", "threadSlug": "exact slug from the digest if this point came from one specific thread, else null" }
-    ],
     "kennelMood": "Single phrase: e.g. 'Cooked', 'Quietly relieved', 'Furious', 'Resigned'",
     "kennelSummary": "2-3 sentences capturing the post-match Kennel reaction. Reference specific players or themes that came up.",
     "kennelHotTakes": [
@@ -368,12 +386,31 @@ Generate the round's content as JSON with this exact shape:
 }
 
 Rules:
-- Debates must be CONCRETE coaching decisions ("How do we use Crichton?", "Where does Burton start?") not vibe takes ("Are we ok with this?").
+- Debates must be coaching calls whose outcome is OBSERVABLE in the named team or the match itself, not vibes.
+  GOOD examples (verifiable from team list / on-field events):
+    - "Where does Burton start — 6, 7, or 13?" (team list)
+    - "Does Crichton stay at centre or shift to lock?" (team list)
+    - "Who handles goal-kicking with Burton off the field?" (match)
+    - "Do we run short-side off scrums or keep going wide?" (highlights)
+  BAD examples (skip these — unverifiable vibe takes):
+    - "Are we ok with this side?"  "How aggressive should the edge defence be?"  "Is Ciro the right man?"
+- Each option must be a specific, observable outcome (a position, a player name, a count, a play call) — not adjectives like "be braver".
 - Don't repeat the same question across debates.
-- Quotes should paraphrase real Kennel posts above — don't invent.
-- If odds favour the opponent strongly, drivers should explain WHY honestly. No homerism.
-- 4-5 oddsDrivers, 3 kennelTipQuotes, 3-4 debates with 3 options each.${prevMatch ? `
-- 5-6 talkingPoints, 4-5 kennelHotTakes (paraphrase real post bodies, don't invent).
+
+- KENNEL QUOTES (kennelTipQuotes pre-game + kennelHotTakes post-match) — make these the SPICY ones, not the measured analysis:
+  - HUNT FOR: roasts, gallows humour, doomer posts, wild conspiracy theories, hopium dreams, hyperbole ("by 100+", "would be the worst signing in club history"), unhinged certainty, posters going at each other, savage one-liners, anything that would make the WhatsApp group laugh out loud or wince.
+  - AVOID: balanced takes, "we'll see how they go", "tough game ahead", "fingers crossed lads", anything a TV commentator would say. Boring is the enemy.
+  - Preserve the original voice — keep lowercase if they used it, keep the abbreviations (lmao, wtf, smh), keep the dramatic punctuation, name-drop the username if it adds character. These are blokes shitposting on a Tuesday night, not a press conference.
+  - Still paraphrase (no fabrication) — but pick the loudest, funniest, most outrageous REAL posts in the digest. If a post called Burton at lock "career suicide" or someone reckons "we should bring back Hodkinson at 35", THAT'S the quote.
+  - Each entry's \`thread\` field should be the short title only — the user can tap through for the full context.
+- Exactly 1 kennelTipQuote (THE single spiciest one — not a list, just the best). Exactly 2 debates with 3 options each.
+- Trivia: one factual Bulldogs question with 4 options. Pick something verifiable from public club history or this season's stats — NEVER invent. Safe ground: premiership years, jersey numbers, club records, recent signings, ground capacities, opponent history. Set correctIndex (0-3) to match the right option. Keep explainer short and confident.${prevMatch ? `
+- Recap: exactly ONE question about LAST week's match. Source ONLY from the digest above (try scorers in order, top performers, key stats). The question must have an unambiguous factual answer pulled directly from the data — DO NOT invent.
+  - Option labels must be the NAME ONLY (or team name) — NEVER include the stat value (no "(183m)", no scores, no minute markers). The stat goes in the explainer, not the label, otherwise the answer is given away.
+  - The 4 options should be plausible same-team / same-stat distractors (e.g. for "most run metres for the Dogs", list 4 Dogs forwards/outside-backs who actually played) so it's a real test.
+  - Set correctIndex carefully: re-read the data before answering. Explainer cites the actual stat as proof.
+- Exactly 1 kennelHotTake — same spicy bar as kennelTipQuote above. Post-match is where the unhinged stuff peaks (3am gameday-thread meltdowns, calls for sackings, "I'm done with this club" drama, savage stat-based dunks). PICK THE BEST ONE. Skip the "we showed fight in patches" type posts.
+  - CRITICAL: the kennelHotTake MUST be a different post from the kennelTipQuote — different author, different angle, different topic. They appear on separate tabs and the user is reading both, so repetition kills it. If your tip quote was about Salmon, your hot take should be about something else (Floptoya, Ciraldo, recruitment, anything but Salmon again).
 - Washup tone: like a mate the morning after — honest, short, no clichés. If we got cooked, say it.` : ""}
 - For threadSlug: copy EXACTLY from the "slug=" field shown next to each thread above. Use null if a quote/debate spans multiple threads or none specifically.
 - Return ONLY the JSON object. No code fences.`;
@@ -431,7 +468,6 @@ async function main() {
   const resolveUrl = (slug) => (slug && slugToUrl.get(slug)) || null;
   for (const q of synth.kennelTipQuotes || []) q.url = resolveUrl(q.threadSlug);
   for (const d of synth.debates || []) d.url = resolveUrl(d.threadSlug);
-  for (const t of synth.washup?.talkingPoints || []) t.url = resolveUrl(t.threadSlug);
   for (const h of synth.washup?.kennelHotTakes || []) h.url = resolveUrl(h.threadSlug);
 
   const data = {
@@ -449,10 +485,11 @@ async function main() {
       oppLogo: fixture.oppLogo,
     },
     odds: fixture.odds,
-    oddsDrivers: synth.oddsDrivers,
     kennelTipLean: synth.kennelTipLean,
     kennelTipQuotes: synth.kennelTipQuotes,
     debates: synth.debates,
+    trivia: synth.trivia || null,
+    recap: prevMatch ? (synth.recap || []) : [],
     washup: prevMatch ? {
       round: prevMatch.round,
       opponent: prevMatch.opponent,
@@ -472,7 +509,6 @@ async function main() {
       // Claude-synthesised narrative
       headline: synth.washup?.headline,
       vibe: synth.washup?.vibe,
-      talkingPoints: synth.washup?.talkingPoints || [],
       kennelMood: synth.washup?.kennelMood,
       kennelSummary: synth.washup?.kennelSummary,
       kennelHotTakes: synth.washup?.kennelHotTakes || [],

@@ -18,14 +18,20 @@ const TIPS = [
   { id: "win_19_plus", short: "19+", label: "Dogs by 19+", emoji: "🐶👑", color: C.grn },
 ];
 
-// ── TIP HELPER — odds + drivers + Kennel chatter (all from data.json) ──
+// ── TIP HELPER — odds + Kennel chatter (drivers were dropped — felt like filler) ──
 const ODDS = data.odds;
-const ODDS_DRIVERS = data.oddsDrivers;
 const KENNEL_TIP_QUOTES = data.kennelTipQuotes;
 const KENNEL_TIP_LEAN = data.kennelTipLean;
 
 // ── HOT DEBATES — framed as coaching decisions, sourced from Kennel chatter ──
 const DEBATES = data.debates;
+
+// ── TRIVIA — one Bulldogs question per round, graded immediately on lock ──
+const TRIVIA = data.trivia;
+
+// ── RECAP — two questions about last week's match, sourced from real match data
+//    (try scorers, top performers, key stats). Self-graded on lock. ──
+const RECAPS = data.recap || [];
 
 // ── WASHUP — generated weekly from previous match + Kennel post-match scrape ──
 const WASHUP = data.washup;
@@ -76,9 +82,15 @@ function RefreshButton() {
   </button>;
 }
 
-function Tab({ label, icon, active, onClick }) {
-  return <button onClick={onClick} style={{ flex: 1, padding: "10px 2px", background: "transparent", color: active ? C.acc : C.dim, border: "none", cursor: "pointer", fontSize: 13, fontWeight: active ? 700 : 500, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", borderBottom: active ? `2px solid ${C.acc}` : "2px solid transparent", display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-    <span style={{ fontSize: 18 }}>{icon}</span>{label}
+function Tab({ label, subtitle, active, onClick }) {
+  return <button onClick={onClick} style={{
+    flex: 1, padding: "12px 8px 10px", background: active ? C.card : "transparent",
+    border: "none", borderBottom: active ? `3px solid ${C.acc}` : `3px solid transparent`,
+    borderRadius: active ? "8px 8px 0 0" : 0,
+    cursor: "pointer", textAlign: "center", transition: "background 0.15s",
+  }}>
+    <div style={{ fontSize: 15, fontWeight: 900, color: active ? C.w : C.dim, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.05em" }}>{label}</div>
+    {subtitle && <div style={{ fontSize: 11, color: active ? C.acc : C.dim, opacity: active ? 1 : 0.5, marginTop: 2, fontFamily: F }}>{subtitle}</div>}
   </button>;
 }
 
@@ -109,17 +121,16 @@ function IdentityPrompt({ onClaim }) {
   </div>;
 }
 
-// "Voting as Tony — switch" pill, shown above any tab with picks.
+// "Voting as X · switch" — compact strip rendered inside the app header,
+// visually connected to the LadderHeader strip above it (same dark band).
 function VoterPill({ me, onSwitch }) {
   const [showSwitch, setShowSwitch] = useState(false);
   return <>
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "8px 12px", borderRadius: 8, background: "rgba(16,185,129,0.06)", border: `1px solid rgba(16,185,129,0.2)`, marginBottom: 12 }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-        <span style={{ width: 8, height: 8, borderRadius: 4, background: C.grn, boxShadow: `0 0 6px ${C.grn}` }} />
-        <span style={{ fontSize: 14, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Voting as</span>
-        <span style={{ fontSize: 15, color: C.w, fontWeight: 800, fontFamily: F }}>{me}</span>
-      </div>
-      <button onClick={() => setShowSwitch(true)} style={{ background: "transparent", border: "none", color: C.dim, fontSize: 13, fontWeight: 700, fontFamily: F, cursor: "pointer", textTransform: "uppercase", letterSpacing: "0.05em" }}>switch</button>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "6px 14px", background: "rgba(16,185,129,0.08)", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+      <span style={{ width: 7, height: 7, borderRadius: 4, background: C.grn, boxShadow: `0 0 6px ${C.grn}` }} />
+      <span style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>Voting as</span>
+      <span style={{ fontSize: 13, color: C.w, fontWeight: 800, fontFamily: F }}>{me}</span>
+      <button onClick={() => setShowSwitch(true)} style={{ background: "transparent", border: "none", color: "rgba(255,255,255,0.45)", fontSize: 11, fontWeight: 700, fontFamily: F, cursor: "pointer", textTransform: "uppercase", letterSpacing: "0.06em", marginLeft: 4 }}>· switch</button>
     </div>
 
     {showSwitch && <div onClick={() => setShowSwitch(false)} style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.7)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)", padding: 16 }}>
@@ -136,6 +147,14 @@ function VoterPill({ me, onSwitch }) {
       </div>
     </div>}
   </>;
+}
+
+// Official Bulldogs badge in the app header. Falls back to the dog emoji if the
+// nrl.com SVG fails to load (e.g. CDN burp or theme key change).
+function HeaderLogo() {
+  const [failed, setFailed] = useState(false);
+  if (failed || !MATCH.dogsLogo) return <span style={{ fontSize: 28, lineHeight: 1 }}>🐶</span>;
+  return <img src={MATCH.dogsLogo} alt="Bulldogs" onError={() => setFailed(true)} style={{ width: 32, height: 32, objectFit: "contain", filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.4))" }} />;
 }
 
 function TeamBadge({ src, fallback, name }) {
@@ -169,61 +188,227 @@ function MatchHeader() {
   </div>;
 }
 
-// ── PRE-GAME TAB (header + compact tipping + tip helper) ──
-function PreGameTab({ me, onSwitch }) {
+// Tip — 5 margin-band pills with draft → confirm. Used on the This Week tab.
+function TipCard({ me }) {
   const [tips, setTips] = useState({});
+  const [draft, setDraft] = useState(null);
 
   useEffect(() => { loadData(`tips-r${MATCH.round}`, {}).then(setTips); }, []);
   useEffect(() => { if (Object.keys(tips).length) saveData(`tips-r${MATCH.round}`, tips); }, [tips]);
 
   const my = tips[me];
-  const pick = (id) => { if (my) return; setTips(p => ({ ...p, [me]: id })); };
+  const choose = (id) => { if (my) return; setDraft(id); };
+  const lockIn = () => {
+    if (my || !draft) return;
+    setTips(p => ({ ...p, [me]: draft }));
+    setDraft(null);
+  };
 
-  return <div style={{ padding: 14 }}>
-    <MatchHeader />
-    <VoterPill me={me} onSwitch={onSwitch} />
-
-    {/* Compact tip card — 5 horizontal pills */}
-    <div style={{ background: C.card, borderRadius: 12, padding: 12, border: `1px solid ${C.border}`, marginBottom: 14 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>🎯 Tip</div>
-        {my && <div style={{ fontSize: 12, color: C.grn, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>✓ Locked</div>}
-      </div>
-      <div style={{ display: "flex", gap: 4 }}>
-        {TIPS.map(opt => {
-          const isMe = my === opt.id;
-          const others = USERS.filter(u => u !== me && tips[u] === opt.id);
-          return <button key={opt.id} onClick={() => pick(opt.id)} style={{
-            flex: 1, padding: "8px 2px", borderRadius: 8, cursor: my ? "default" : "pointer",
-            border: isMe ? `2px solid ${opt.color}` : `1px solid ${my ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.1)"}`,
-            background: isMe ? opt.color + "20" : "rgba(255,255,255,0.02)",
-            color: isMe ? opt.color : my ? "rgba(255,255,255,0.3)" : C.w,
-            display: "flex", flexDirection: "column", alignItems: "center", gap: 2, position: "relative",
-          }}>
-            <span style={{ fontSize: 16 }}>{opt.emoji}</span>
-            <span style={{ fontSize: 13, fontWeight: 700, fontFamily: F }}>{opt.short}</span>
-            {(isMe || others.length > 0) && <div style={{ position: "absolute", bottom: -7, left: 0, right: 0, display: "flex", gap: 2, justifyContent: "center" }}>
-              {isMe && <span style={{ fontSize: 11, fontWeight: 800, color: "#fff", background: opt.color, padding: "1px 4px", borderRadius: 3, fontFamily: F }}>{me[0]}</span>}
-              {others.map(u => <span key={u} style={{ fontSize: 11, fontWeight: 800, color: C.dim, background: C.card, border: `1px solid ${C.border}`, padding: "1px 4px", borderRadius: 3, fontFamily: F }}>{u[0]}</span>)}
-            </div>}
-          </button>;
-        })}
-      </div>
+  return <div style={{ background: C.card, borderRadius: 12, padding: 12, border: `1px solid ${C.border}`, marginBottom: 10 }}>
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+      <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>🎯 Your tip</div>
+      {my && <div style={{ fontSize: 12, color: C.grn, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>✓ Locked</div>}
     </div>
-
-    <TipHelper />
+    <div style={{ display: "flex", gap: 4, marginBottom: draft ? 10 : 0 }}>
+      {TIPS.map(opt => {
+        const selected = (my || draft) === opt.id;
+        const isLocked = my === opt.id;
+        const others = USERS.filter(u => u !== me && tips[u] === opt.id);
+        return <button key={opt.id} onClick={() => choose(opt.id)} style={{
+          flex: 1, padding: "8px 2px", borderRadius: 8, cursor: my ? "default" : "pointer",
+          border: selected ? `2px solid ${opt.color}` : `1px solid ${my ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.1)"}`,
+          background: selected ? opt.color + (isLocked ? "20" : "10") : "rgba(255,255,255,0.02)",
+          color: selected ? opt.color : my ? "rgba(255,255,255,0.3)" : C.w,
+          display: "flex", flexDirection: "column", alignItems: "center", gap: 2, position: "relative",
+        }}>
+          <span style={{ fontSize: 16 }}>{opt.emoji}</span>
+          <span style={{ fontSize: 13, fontWeight: 700, fontFamily: F }}>{opt.short}</span>
+          {(isLocked || others.length > 0) && <div style={{ position: "absolute", bottom: -7, left: 0, right: 0, display: "flex", gap: 2, justifyContent: "center" }}>
+            {isLocked && <span style={{ fontSize: 11, fontWeight: 800, color: "#fff", background: opt.color, padding: "1px 4px", borderRadius: 3, fontFamily: F }}>{me[0]}</span>}
+            {others.map(u => <span key={u} style={{ fontSize: 11, fontWeight: 800, color: C.dim, background: C.card, border: `1px solid ${C.border}`, padding: "1px 4px", borderRadius: 3, fontFamily: F }}>{u[0]}</span>)}
+          </div>}
+        </button>;
+      })}
+    </div>
+    {draft && !my && <ConfirmBar
+      label={`Lock in “${TIPS.find(t => t.id === draft)?.label}”`}
+      hint="Tap another to change"
+      color={TIPS.find(t => t.id === draft)?.color || C.acc}
+      onConfirm={lockIn}
+    />}
   </div>;
 }
 
-// ── TIP HELPER ──
-function TipHelper() {
-  return <>
-    <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>📊 Help me tip</div>
-    <div style={{ fontSize: 13, color: C.dim, marginBottom: 10 }}>Numbers, drivers, and what The Kennel reckons.</div>
+// Collapsible content section — used for supporting content (odds, kennel chatter,
+// post-match reactions). Picks stay visible by default; only auxiliary stuff hides.
+function Accordion({ icon, title, subtitle, color = C.acc, defaultOpen = false, children }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return <div style={{ background: C.card, borderRadius: 12, marginBottom: 10, border: open ? `1px solid ${color}40` : `1px solid ${C.border}`, overflow: "hidden" }}>
+    <button onClick={() => setOpen(!open)} style={{ width: "100%", padding: "12px 14px", background: "transparent", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, color: C.w, textAlign: "left" }}>
+      <span style={{ fontSize: 18 }}>{icon}</span>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontSize: 14, fontWeight: 800, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", color: open ? color : C.w }}>{title}</div>
+        {subtitle && <div style={{ fontSize: 11, color: C.dim, marginTop: 1 }}>{subtitle}</div>}
+      </div>
+      <span style={{ fontSize: 16, color: open ? color : C.dim, transform: open ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>▸</span>
+    </button>
+    {open && <div style={{ padding: "0 14px 14px", borderTop: `1px solid ${C.border}` }}>{children}</div>}
+  </div>;
+}
 
-    {/* Odds card — only shown when NRL exposes them; TAB sometimes pulls odds in the
-        24h before kickoff or during settlement, so handle null/missing prices. */}
-    {ODDS && (ODDS.dogs != null || ODDS.opp != null) && <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
+// Compact "top 3 threads" list shared by both Kennel accordions. Pulls from the
+// hot-threads scrape; tap-through opens the original Kennel thread in a new tab.
+function KennelThreadsList() {
+  const threads = (data.kennelThreads || []).slice(0, 3);
+  if (!threads.length) return null;
+  const prefixColor = { GAMEDAY: C.red, Opinion: C.gold, Official: C.acc, News: C.grn, "Social Media": C.purp };
+  return <div style={{ marginTop: 12, marginBottom: 10 }}>
+    <div style={{ fontSize: 11, fontWeight: 800, color: C.dim, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>🔥 Hottest threads</div>
+    {threads.map((t, i) => {
+      const color = prefixColor[t.prefix] || C.dim;
+      return <ExtLink key={i} href={t.url} style={{
+        display: "flex", alignItems: "center", gap: 8, padding: "7px 10px", borderRadius: 8,
+        background: "rgba(0,0,0,0.25)", border: `1px solid ${C.border}`, marginBottom: 4, textDecoration: "none",
+      }}>
+        {t.prefix && <span style={{ fontSize: 10, fontWeight: 800, color, background: color + "20", padding: "2px 5px", borderRadius: 3, fontFamily: F, border: `1px solid ${color}40`, letterSpacing: "0.05em", flexShrink: 0 }}>{t.prefix.toUpperCase()}</span>}
+        <span style={{ flex: 1, fontSize: 13, color: C.w, fontWeight: 600, lineHeight: 1.3 }}>{t.title}</span>
+        <span style={{ fontSize: 11, color: C.dim, fontFamily: F, fontWeight: 700, whiteSpace: "nowrap" }}>{t.replies}↗</span>
+      </ExtLink>;
+    })}
+  </div>;
+}
+
+// Section header used to break tabs into named blocks.
+function SectionHeader({ title, subtitle }) {
+  return <div style={{ marginTop: 14, marginBottom: 8 }}>
+    <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>{title}</div>
+    {subtitle && <div style={{ fontSize: 13, color: C.dim, lineHeight: 1.4, marginTop: 2 }}>{subtitle}</div>}
+  </div>;
+}
+
+// Reusable confirm strip — used by tip, trivia, and each coaching decision so a stray
+// tap never locks anyone in. Draft → tap "Lock it in" → committed.
+function ConfirmBar({ label, hint, color, onConfirm }) {
+  return <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+    <button onClick={onConfirm} style={{
+      flex: 1, padding: "10px 14px", borderRadius: 8, border: "none", cursor: "pointer",
+      background: color, color: "#fff", fontSize: 14, fontWeight: 800, fontFamily: F,
+      textTransform: "uppercase", letterSpacing: "0.04em",
+    }}>✓ {label}</button>
+    {hint && <span style={{ fontSize: 11, color: C.dim, fontFamily: F, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em", flexShrink: 0 }}>{hint}</span>}
+  </div>;
+}
+
+// Generic self-graded multi-choice card — used by trivia (one per round) and recap
+// questions about last week (two per round). Persists picks under `picks-r{round}-{kind}`
+// and the boolean grade under `grade-r{round}-{kind}` so the Parkyard Cup can tally
+// without waiting for a post-match resolution feed.
+function QuizCard({ me, q, qIdx, kind, accentColor, headerLabel, headerIcon }) {
+  if (!q?.question) return null;
+  const picksKey = `${kind}-r${MATCH.round}`;
+  const gradeKey = `${kind}Grade-r${MATCH.round}`;
+  const [picks, setPicks] = useState({});
+  const [draft, setDraft] = useState(null);
+
+  useEffect(() => { loadData(picksKey, {}).then(setPicks); }, [picksKey]);
+  useEffect(() => { if (Object.keys(picks).length) saveData(picksKey, picks); }, [picks, picksKey]);
+
+  // Picks are stored either as `{ user: idx }` (single question, e.g. trivia) or
+  // `{ user: { qIdx: idx } }` (multi-question, e.g. recap). qIdx tells us which.
+  const my = qIdx == null ? picks[me] : picks[me]?.[qIdx];
+  const locked = my != null;
+  const choose = (i) => { if (locked) return; setDraft(i); };
+  const correct = q.correctIndex;
+  const lockIn = async () => {
+    if (locked || draft == null) return;
+    setPicks(p => qIdx == null
+      ? { ...p, [me]: draft }
+      : { ...p, [me]: { ...(p[me] || {}), [qIdx]: draft } });
+    const grade = await loadData(gradeKey, {});
+    const next = qIdx == null
+      ? { ...grade, [me]: draft === correct }
+      : { ...grade, [me]: { ...(grade[me] || {}), [qIdx]: draft === correct } };
+    saveData(gradeKey, next);
+    setDraft(null);
+  };
+
+  const isRight = locked && my === correct;
+  const otherPickFor = (i, u) => qIdx == null ? picks[u] === i : picks[u]?.[qIdx] === i;
+
+  return <div style={{ background: `linear-gradient(135deg, ${accentColor}14, ${accentColor}03)`, borderRadius: 12, padding: 14, border: `1px solid ${accentColor}40`, marginBottom: 10 }}>
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+      <div style={{ fontSize: 15, fontWeight: 800, color: accentColor, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>{headerIcon} {headerLabel}</div>
+      {locked && <div style={{ fontSize: 12, fontFamily: F, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.05em", color: isRight ? C.grn : C.red }}>
+        {isRight ? "✓ Correct" : "✗ Wrong"}
+      </div>}
+    </div>
+    <div style={{ fontSize: 15, color: C.w, lineHeight: 1.4, marginBottom: 10, fontWeight: 600 }}>{q.question}</div>
+    <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: locked || draft != null ? 10 : 0 }}>
+      {q.options.map((opt, i) => {
+        const selected = (locked ? my : draft) === i;
+        const showCorrect = locked && i === correct;
+        const showWrong = locked && selected && !isRight;
+        const others = USERS.filter(u => u !== me && otherPickFor(i, u));
+        const accent = showCorrect ? C.grn : showWrong ? C.red : selected ? accentColor : null;
+        return <button key={i} onClick={() => choose(i)} style={{
+          padding: "10px 14px", borderRadius: 10, cursor: locked ? "default" : "pointer", textAlign: "left",
+          border: accent ? `2px solid ${accent}` : `1px solid ${locked ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.1)"}`,
+          background: accent ? accent + "14" : "rgba(255,255,255,0.02)",
+          color: accent || (locked ? "rgba(255,255,255,0.3)" : C.w),
+          fontSize: 15, fontWeight: 600,
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+        }}>
+          <span><span style={{ marginRight: 8 }}>{opt.emoji}</span>{opt.label}</span>
+          <span style={{ display: "flex", gap: 6 }}>
+            {locked && selected && <span style={{ fontSize: 13, fontWeight: 700, fontFamily: F }}>YOU</span>}
+            {others.map(u => <span key={u} style={{ fontSize: 13, fontWeight: 700, color: C.dim, fontFamily: F }}>{u}</span>)}
+          </span>
+        </button>;
+      })}
+    </div>
+    {!locked && draft != null && <ConfirmBar
+      label="Lock in answer"
+      hint="Tap another to change"
+      color={accentColor}
+      onConfirm={lockIn}
+    />}
+    {locked && q.explainer && <div style={{ fontSize: 13, color: C.dim, lineHeight: 1.5, marginTop: 4, fontStyle: "italic" }}>{q.explainer}</div>}
+  </div>;
+}
+
+const TriviaCard = ({ me }) => <QuizCard me={me} q={TRIVIA} kind="trivia" accentColor={C.gold} headerLabel="Bulldogs trivia" headerIcon="🎓" />;
+
+// ── THIS WEEK TAB ──
+// All forward-looking picks (tip, coach decisions, trivia) plus the match context.
+// Supporting content (odds, Kennel chatter) lives inside accordions so it doesn't
+// crowd the picks. Recap (about last week) is on the Last Game tab.
+function ThisWeekTab({ me }) {
+  const [picks, setPicks] = useState({});
+  // One draft per debate id — separate from committed picks so a stray tap doesn't lock.
+  const [drafts, setDrafts] = useState({});
+
+  useEffect(() => { loadData(`debates-r${MATCH.round}`, {}).then(setPicks); }, []);
+  useEffect(() => { if (Object.keys(picks).length) saveData(`debates-r${MATCH.round}`, picks); }, [picks]);
+
+  const up = picks[me] || {};
+  const choose = (id, label) => {
+    if (up[id]) return;
+    setDrafts(d => ({ ...d, [id]: label }));
+  };
+  const lockIn = (id) => {
+    const d = drafts[id];
+    if (!d || up[id]) return;
+    setPicks(p => ({ ...p, [me]: { ...(p[me] || {}), [id]: d } }));
+    setDrafts(prev => { const n = { ...prev }; delete n[id]; return n; });
+  };
+
+  const hasOdds = ODDS && (ODDS.dogs != null || ODDS.opp != null);
+
+  return <div style={{ padding: 14 }}>
+    <MatchHeader />
+
+    {/* Odds visible directly under the match info — no accordion. */}
+    {hasOdds && <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
         <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>💵 Head-to-head odds</div>
         <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>{ODDS.source}</div>
@@ -246,87 +431,25 @@ function TipHelper() {
       </div>
     </div>}
 
-    {/* Drivers */}
-    <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
-      <div style={{ fontSize: 14, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 8 }}>🔍 Driving the odds</div>
-      {ODDS_DRIVERS.map((d, i) => <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "7px 0", borderBottom: i < ODDS_DRIVERS.length - 1 ? `1px solid ${C.border}` : "none" }}>
-        <span style={{ fontSize: 16, flexShrink: 0 }}>{d.icon}</span>
-        <span style={{ fontSize: 15, color: C.w, lineHeight: 1.4 }}>{d.text}</span>
-      </div>)}
-    </div>
+    {/* From The Kennel — top 3 threads + mood + 1 spicy quote. Closed by default. */}
+    <Accordion icon="🏟️" title="From The Kennel" subtitle={KENNEL_TIP_LEAN.confidence} color={C.purp}>
+      <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, fontStyle: "italic", marginTop: 10 }}>{KENNEL_TIP_LEAN.note}</div>
+      <KennelThreadsList />
+      {KENNEL_TIP_QUOTES?.[0] && <div style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: `2px solid rgba(167,139,250,0.5)` }}>
+        <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4, marginBottom: 3 }}>"{KENNEL_TIP_QUOTES[0].quote}"</div>
+        {KENNEL_TIP_QUOTES[0].url
+          ? <ExtLink href={KENNEL_TIP_QUOTES[0].url} style={{ fontSize: 12, color: C.purp, fontFamily: F, textDecoration: "none" }}>— {KENNEL_TIP_QUOTES[0].thread} ↗</ExtLink>
+          : <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>— {KENNEL_TIP_QUOTES[0].thread}</div>}
+      </div>}
+    </Accordion>
 
-    {/* Kennel chatter */}
-    <div style={{ background: "linear-gradient(135deg, rgba(167,139,250,0.08), rgba(167,139,250,0.02))", borderRadius: 12, padding: 14, border: "1px solid rgba(167,139,250,0.25)", marginBottom: 10 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <div style={{ fontSize: 14, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>🏟️ The Kennel reckons</div>
-        <div style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700 }}>{KENNEL_TIP_LEAN.confidence}</div>
-      </div>
-      <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, marginBottom: 10, fontStyle: "italic" }}>{KENNEL_TIP_LEAN.note}</div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-        {KENNEL_TIP_QUOTES.map((q, i) => <div key={i} style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: `2px solid rgba(167,139,250,0.5)` }}>
-          <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4, marginBottom: 3 }}>"{q.quote}"</div>
-          {q.url
-            ? <ExtLink href={q.url} style={{ fontSize: 12, color: C.purp, fontFamily: F, textDecoration: "none" }}>— {q.thread} ↗</ExtLink>
-            : <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>— {q.thread}</div>}
-        </div>)}
-      </div>
-    </div>
-
-    <KennelThreadList />
-  </>;
-}
-
-function KennelThreadList() {
-  const threads = data.kennelThreads || [];
-  if (!threads.length) return null;
-  return <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}` }}>
-    <div style={{ fontSize: 14, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 8 }}>🔗 Read the threads</div>
-    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-      {threads.map((t, i) => <ExtLink key={i} href={t.url} style={{
-        display: "flex", alignItems: "center", gap: 8, padding: "7px 10px", borderRadius: 8,
-        background: "rgba(0,0,0,0.2)", border: `1px solid ${C.border}`, textDecoration: "none",
-      }}>
-        {t.prefix && <KennelPrefix prefix={t.prefix} />}
-        <span style={{ flex: 1, fontSize: 14, color: C.w, fontWeight: 600, lineHeight: 1.3 }}>{t.title}</span>
-        <span style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700, whiteSpace: "nowrap" }}>{t.replies}↗</span>
-      </ExtLink>)}
-    </div>
-  </div>;
-}
-
-function KennelPrefix({ prefix }) {
-  const map = { "GAMEDAY": ["#ef4444", "GAMEDAY"], "Opinion": ["#f59e0b", "OPINION"], "Official": ["#3b9dff", "OFFICIAL"], "News": ["#10b981", "NEWS"], "Social Media": ["#a78bfa", "SOCIAL"] };
-  const [color, label] = map[prefix] || [C.dim, prefix?.toUpperCase()];
-  return <span style={{ fontSize: 11, fontWeight: 800, color, background: color + "20", padding: "2px 5px", borderRadius: 3, fontFamily: F, border: `1px solid ${color}40`, letterSpacing: "0.05em", flexShrink: 0 }}>{label}</span>;
-}
-
-// ── DEBATES TAB (coaching decisions, multi-choice) ──
-function DebatesTab({ me, onSwitch }) {
-  const [picks, setPicks] = useState({});
-
-  useEffect(() => { loadData(`debates-r${MATCH.round}`, {}).then(setPicks); }, []);
-  useEffect(() => { if (Object.keys(picks).length) saveData(`debates-r${MATCH.round}`, picks); }, [picks]);
-
-  const up = picks[me] || {};
-  const pick = (id, label) => {
-    if (up[id]) return;
-    setPicks(p => ({ ...p, [me]: { ...(p[me] || {}), [id]: label } }));
-  };
-
-  return <div style={{ padding: 14 }}>
-    <LadderSection />
-
-    <VoterPill me={me} onSwitch={onSwitch} />
-
-    <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>
-      🧠 You're the coach
-    </div>
-    <div style={{ fontSize: 14, color: C.dim, marginBottom: 14, lineHeight: 1.4 }}>
-      Tactical calls Ciraldo has to make. The Kennel has opinions. What's yours?
-    </div>
-
+    {/* Have your say — all This Week's picks (tip + coach decisions) inside one accordion, zipped */}
+    <Accordion icon="🗣️" title="Have your say" subtitle={`Tip + ${DEBATES.length} coaching call${DEBATES.length === 1 ? "" : "s"}`} color={C.acc}>
+    <div style={{ marginTop: 10 }}>
+    <TipCard me={me} />
     {DEBATES.map(d => {
       const picked = up[d.id];
+      const draft = drafts[d.id];
       return <div key={d.id} style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 10, border: `1px solid ${C.border}` }}>
         <div style={{ fontSize: 24, marginBottom: 6 }}>{d.icon}</div>
         <div style={{ fontSize: 16, fontWeight: 800, color: C.w, lineHeight: 1.3, marginBottom: 8 }}>{d.question}</div>
@@ -342,38 +465,46 @@ function DebatesTab({ me, onSwitch }) {
             </div>}
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           {d.options.map(opt => {
-            const isMe = picked === opt.label;
+            const isLocked = picked === opt.label;
+            const isDraft = !picked && draft === opt.label;
+            const selected = isLocked || isDraft;
             const others = USERS.filter(u => u !== me && picks[u]?.[d.id] === opt.label);
-            return <button key={opt.label} onClick={() => pick(d.id, opt.label)} style={{
+            return <button key={opt.label} onClick={() => choose(d.id, opt.label)} style={{
               padding: "10px 14px", borderRadius: 10, cursor: picked ? "default" : "pointer",
-              border: isMe ? `2px solid ${C.acc}` : `1px solid ${picked ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.1)"}`,
-              background: isMe ? "rgba(59,157,255,0.12)" : "rgba(255,255,255,0.02)",
-              color: isMe ? C.acc : picked ? "rgba(255,255,255,0.3)" : C.w,
+              border: selected ? `2px solid ${C.acc}` : `1px solid ${picked ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.1)"}`,
+              background: selected ? `rgba(59,157,255,0.${isLocked ? "12" : "06"})` : "rgba(255,255,255,0.02)",
+              color: selected ? C.acc : picked ? "rgba(255,255,255,0.3)" : C.w,
               fontSize: 15, fontWeight: 600, textAlign: "left",
               display: "flex", alignItems: "center", justifyContent: "space-between",
             }}>
               <span><span style={{ marginRight: 8 }}>{opt.emoji}</span>{opt.label}</span>
               <span style={{ display: "flex", gap: 4 }}>
-                {isMe && <span style={{ fontSize: 13, fontWeight: 700, color: C.acc, fontFamily: F }}>YOU</span>}
+                {isLocked && <span style={{ fontSize: 13, fontWeight: 700, color: C.acc, fontFamily: F }}>YOU</span>}
                 {others.map(u => <span key={u} style={{ fontSize: 13, fontWeight: 700, color: C.dim, fontFamily: F }}>{u}</span>)}
               </span>
             </button>;
           })}
         </div>
+        {!picked && draft && <div style={{ marginTop: 10 }}>
+          <ConfirmBar label="Lock in pick" hint="Tap another to change" color={C.acc} onConfirm={() => lockIn(d.id)} />
+        </div>}
       </div>;
     })}
+    </div>
+    </Accordion>
   </div>;
 }
 
-// ── WASHUP TAB ──
-function WashupTab() {
+// ── LAST GAME TAB ──
+// Score + headline + vibe stay visible. The recap pick (about last week) lives here
+// so questions are on the relevant tab. Kennel post-match reactions go in an accordion.
+function LastGameTab({ me }) {
   const w = WASHUP;
-  if (!w) return <div style={{ padding: 24, textAlign: "center", color: C.dim, fontSize: 15 }}>No washup yet — first match of the season hasn't been played.</div>;
+  if (!w) return <div style={{ padding: 24, textAlign: "center", color: C.dim, fontSize: 15 }}>No last game yet — first match of the season hasn't been played.</div>;
 
   const isWin = w.result === "WIN";
   const accent = isWin ? C.grn : (w.result === "DRAW" ? C.gold : C.red);
-  const dogsTries = w.tries?.filter(t => t.team === "Dogs") || [];
-  const oppTries = w.tries?.filter(t => t.team !== "Dogs") || [];
+  const hasRecap = RECAPS.length > 0;
 
   return <div style={{ padding: 14 }}>
     {/* Score banner with logos */}
@@ -401,111 +532,61 @@ function WashupTab() {
     {w.headline && <div style={{ fontSize: 18, fontWeight: 800, color: C.w, marginBottom: 6, lineHeight: 1.3 }}>{w.headline}</div>}
     {w.vibe && <div style={{ fontSize: 15, color: C.dim, lineHeight: 1.6, marginBottom: 16 }}>{w.vibe}</div>}
 
-    {/* Talking points */}
-    {w.talkingPoints?.length > 0 && <div style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 12, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 14, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>💬 What we're talking about</div>
-      {w.talkingPoints.map((t, i) => <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "7px 0", borderBottom: i < w.talkingPoints.length - 1 ? `1px solid rgba(255,255,255,0.04)` : "none" }}>
-        <span style={{ fontSize: 18, flexShrink: 0 }}>{t.icon}</span>
-        <span style={{ fontSize: 15, color: C.w, lineHeight: 1.45, flex: 1 }}>{t.text}</span>
-        {t.url && <ExtLink href={t.url} style={{ fontSize: 13, color: C.purp, textDecoration: "none", flexShrink: 0, alignSelf: "center" }}>↗</ExtLink>}
-      </div>)}
-    </div>}
-
-    {/* Try scorers */}
-    {(dogsTries.length > 0 || oppTries.length > 0) && <div style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 12, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>🏉 Try scorers</div>
-      <div style={{ display: "flex", gap: 12 }}>
-        <TryColumn label="Dogs" tries={dogsTries} accent={C.acc} />
-        <TryColumn label={w.opponent} tries={oppTries} accent={C.red} />
-      </div>
-    </div>}
-
-    {/* Top performers */}
-    {w.topPerformers?.length > 0 && <div style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 12, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>⭐ Top performers</div>
-      {w.topPerformers.map((tp, i) => <div key={i} style={{ padding: "8px 0", borderBottom: i < w.topPerformers.length - 1 ? `1px solid ${C.border}` : "none" }}>
-        <div style={{ fontSize: 13, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 4 }}>{tp.title}</div>
-        <div style={{ display: "flex", gap: 10 }}>
-          <div style={{ flex: 1, padding: "6px 10px", borderRadius: 6, background: "rgba(0,94,184,0.1)", border: "1px solid rgba(0,94,184,0.25)" }}>
-            <div style={{ fontSize: 14, color: C.w, fontWeight: 700 }}>{tp.dogs.name}</div>
-            <div style={{ fontSize: 16, color: C.acc, fontWeight: 900, fontFamily: F }}>{Math.round(tp.dogs.value)}</div>
-          </div>
-          <div style={{ flex: 1, padding: "6px 10px", borderRadius: 6, background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.2)" }}>
-            <div style={{ fontSize: 14, color: C.dim, fontWeight: 700 }}>{tp.opp.name}</div>
-            <div style={{ fontSize: 16, color: C.dim, fontWeight: 900, fontFamily: F }}>{Math.round(tp.opp.value)}</div>
-          </div>
+    {/* Kennel post-match — top 3 threads + mood summary + 1 spicy hot take */}
+    {(w.kennelMood || w.kennelSummary) && <Accordion icon="🏟️" title="From The Kennel" subtitle={w.kennelMood ? `Mood: ${w.kennelMood}` : "Post-match reactions"} color={C.purp}>
+      {w.kennelSummary && <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, marginTop: 10, fontStyle: "italic" }}>{w.kennelSummary}</div>}
+      <KennelThreadsList />
+      {w.kennelHotTakes?.[0] && <div style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: "2px solid rgba(167,139,250,0.5)" }}>
+        <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4 }}>"{w.kennelHotTakes[0].quote}"</div>
+        <div style={{ fontSize: 12, color: C.dim, fontFamily: F, marginTop: 3, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
+          <span>{w.kennelHotTakes[0].author ? `— ${w.kennelHotTakes[0].author}` : ""}</span>
+          {w.kennelHotTakes[0].url && <ExtLink href={w.kennelHotTakes[0].url} style={{ color: C.purp, textDecoration: "none", fontWeight: 700 }}>view thread ↗</ExtLink>}
         </div>
-      </div>)}
-    </div>}
-
-    {/* Key stats */}
-    {w.keyStats?.length > 0 && <div style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 12, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 8 }}>📊 Match stats</div>
-      {w.keyStats.map((s, i) => <StatRow key={i} label={s.title} dogs={`${s.dogs}${s.unit}`} opp={`${s.opp}${s.unit}`} last={i === w.keyStats.length - 1} />)}
-    </div>}
-
-    {/* Kennel reactions */}
-    {(w.kennelMood || w.kennelSummary) && <div style={{ background: "linear-gradient(135deg, rgba(167,139,250,0.08), rgba(167,139,250,0.02))", borderRadius: 12, padding: 14, border: "1px solid rgba(167,139,250,0.25)" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          <span style={{ fontSize: 16 }}>🏟️</span>
-          <div style={{ fontSize: 14, fontWeight: 800, color: C.purp, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>Kennel post-match</div>
-        </div>
-        {w.kennelMood && <div style={{ fontSize: 13, color: C.purp, fontFamily: F, fontWeight: 800, padding: "3px 8px", borderRadius: 12, background: "rgba(167,139,250,0.15)" }}>{w.kennelMood}</div>}
-      </div>
-      {w.kennelSummary && <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, marginBottom: 10, fontStyle: "italic" }}>{w.kennelSummary}</div>}
-      {w.kennelHotTakes?.length > 0 && <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-        {w.kennelHotTakes.map((t, i) => <div key={i} style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: "2px solid rgba(167,139,250,0.5)" }}>
-          <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4 }}>"{t.quote}"</div>
-          <div style={{ fontSize: 12, color: C.dim, fontFamily: F, marginTop: 3, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
-            <span>{t.author ? `— ${t.author}` : ""}</span>
-            {t.url && <ExtLink href={t.url} style={{ color: C.purp, textDecoration: "none", fontWeight: 700 }}>view thread ↗</ExtLink>}
-          </div>
-        </div>)}
       </div>}
       {w.gamedayUrl && <ExtLink href={w.gamedayUrl} style={{ display: "block", marginTop: 10, fontSize: 13, color: C.purp, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", textAlign: "center", textDecoration: "none" }}>read the gameday thread ↗</ExtLink>}
-    </div>}
+    </Accordion>}
+
+    {/* Have your say — recap + trivia inside one accordion, zipped by default. Trivia
+        moved here from This Week so the picks split is more even between the two tabs. */}
+    {(hasRecap || TRIVIA?.question) && <Accordion icon="🗣️" title="Have your say" subtitle={`${(hasRecap ? RECAPS.length : 0) + (TRIVIA?.question ? 1 : 0)} questions about the past`} color={C.acc}>
+      <div style={{ marginTop: 10 }}>
+        {RECAPS.map((q, i) => <QuizCard key={i} me={me} q={q} qIdx={i} kind="recap" accentColor={C.acc} headerLabel="Recap" headerIcon="📼" />)}
+        {TRIVIA?.question && <TriviaCard me={me} />}
+      </div>
+    </Accordion>}
   </div>;
 }
 
-function TryColumn({ label, tries, accent }) {
-  return <div style={{ flex: 1 }}>
-    <div style={{ fontSize: 13, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>{label}</div>
-    {tries.length === 0 && <div style={{ fontSize: 14, color: C.dim, fontStyle: "italic" }}>—</div>}
-    {tries.map((t, i) => <div key={i} style={{ fontSize: 14, color: C.w, padding: "3px 0", display: "flex", justifyContent: "space-between", gap: 6 }}>
-      <span style={{ flex: 1, lineHeight: 1.3 }}>{t.name}</span>
-      <span style={{ color: accent, fontFamily: F, fontWeight: 700, fontSize: 13, flexShrink: 0 }}>{t.minute}'</span>
-    </div>)}
-  </div>;
-}
-
-function StatRow({ label, dogs, opp, last }) {
-  return <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: last ? "none" : `1px solid ${C.border}`, gap: 10 }}>
-    <div style={{ flex: 1, fontSize: 13, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{label}</div>
-    <div style={{ display: "flex", gap: 14, fontFamily: F, fontWeight: 800 }}>
-      <span style={{ color: C.acc, fontSize: 15 }}>{dogs}</span>
-      <span style={{ color: C.dim, fontSize: 15 }}>{opp}</span>
-    </div>
-  </div>;
-}
-
-// ── LADDER (inline, rendered at the bottom of the Washup tab) ──
-// Running totals for tipping + coach-decision accuracy. Reads picks from localStorage
-// and resolutions from data.json (added each week by generate.js — empty for now).
-function LadderSection() {
+// ── LADDER (embedded in the app header, collapsed by default) ──
+// One-line strip with each user's running total + crown for leader. Tap to expand
+// into the per-pick breakdown. Tipping + coach grading still wait on the post-match
+// resolution feed (empty for now), but trivia + recap self-grade on lock.
+function LadderHeader() {
   const [tipsByRound, setTipsByRound] = useState({});
   const [coachByRound, setCoachByRound] = useState({});
+  const [triviaByRound, setTriviaByRound] = useState({});
+  const [triviaGradeByRound, setTriviaGradeByRound] = useState({});
+  const [recapByRound, setRecapByRound] = useState({});
+  const [recapGradeByRound, setRecapGradeByRound] = useState({});
 
   useEffect(() => {
     (async () => {
       const rounds = [WASHUP?.round, MATCH.round].filter(Boolean);
-      const t = {}, c = {};
+      const t = {}, c = {}, tr = {}, tg = {}, rc = {}, rg = {};
       for (const r of rounds) {
         t[r] = await loadData(`tips-r${r}`, {});
         c[r] = await loadData(`debates-r${r}`, {});
+        tr[r] = await loadData(`trivia-r${r}`, {});
+        tg[r] = await loadData(`triviaGrade-r${r}`, {});
+        rc[r] = await loadData(`recap-r${r}`, {});
+        rg[r] = await loadData(`recapGrade-r${r}`, {});
       }
       setTipsByRound(t);
       setCoachByRound(c);
+      setTriviaByRound(tr);
+      setTriviaGradeByRound(tg);
+      setRecapByRound(rc);
+      setRecapGradeByRound(rg);
     })();
   }, []);
 
@@ -514,7 +595,7 @@ function LadderSection() {
   const resolutions = []; // placeholder
 
   const totals = USERS.map(u => {
-    let tips = 0, tipsCorrect = 0, coach = 0, coachCorrect = 0;
+    let tips = 0, tipsCorrect = 0, coach = 0, coachCorrect = 0, trivia = 0, triviaCorrect = 0, recap = 0, recapCorrect = 0;
     for (const r of resolutions) {
       const myTip = tipsByRound[r.round]?.[u];
       if (myTip) { tips++; if (myTip === r.tipBand) tipsCorrect++; }
@@ -523,73 +604,99 @@ function LadderSection() {
         coach++; if (pick === r.debateVerdicts?.[id]) coachCorrect++;
       }
     }
-    return { user: u, tips, tipsCorrect, coach, coachCorrect, score: tipsCorrect + coachCorrect };
+    // Trivia + recap are graded immediately at lock time — independent of post-match resolutions.
+    for (const grade of Object.values(triviaGradeByRound)) {
+      if (grade?.[u] != null) { trivia++; if (grade[u]) triviaCorrect++; }
+    }
+    for (const grade of Object.values(recapGradeByRound)) {
+      for (const v of Object.values(grade?.[u] || {})) { recap++; if (v) recapCorrect++; }
+    }
+    return { user: u, tips, tipsCorrect, coach, coachCorrect, trivia, triviaCorrect, recap, recapCorrect, score: tipsCorrect + coachCorrect + triviaCorrect + recapCorrect };
   });
   const sorted = [...totals].sort((a, b) => b.score - a.score);
-  const liveTipCounts = USERS.map(u => ({ user: u, tipped: !!tipsByRound[MATCH.round]?.[u], coachCount: Object.keys(coachByRound[MATCH.round]?.[u] || {}).length }));
+  const anyScored = totals.some(t => t.trivia > 0 || t.recap > 0) || resolutions.length > 0;
 
-  return <>
-    <div style={{ fontSize: 15, fontWeight: 800, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>
-      🏆 Parkyard Cup
-    </div>
-    <div style={{ fontSize: 14, color: C.dim, marginBottom: 12, lineHeight: 1.4 }}>
-      Running totals from tips + coach decisions. Updates after each match.
-    </div>
+  const [open, setOpen] = useState(false);
 
-    <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
-      <div style={{ fontSize: 14, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", marginBottom: 10 }}>Standings</div>
-      {resolutions.length === 0 ? (
-        <div style={{ padding: "12px 8px", textAlign: "center" }}>
-          <div style={{ fontSize: 28, marginBottom: 4 }}>🏁</div>
-          <div style={{ fontSize: 15, color: C.w, fontWeight: 700, marginBottom: 4 }}>Grading starts Round {MATCH.round}.</div>
-          <div style={{ fontSize: 13, color: C.dim, lineHeight: 1.5 }}>Lock your tip and coach picks before kickoff — wins show here after full-time.</div>
+  return <div style={{ background: "rgba(0,0,0,0.18)", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    {/* Compact strip — always visible, tap to expand */}
+    <button onClick={() => setOpen(!open)} style={{
+      width: "100%", padding: "8px 14px", background: "transparent", border: "none", cursor: "pointer",
+      display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+    }}>
+      <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>🏆 Cup</span>
+      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        {sorted.map((row, i) => (
+          <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+            {i === 0 && row.score > 0 && <span style={{ fontSize: 12 }}>👑</span>}
+            <span style={{ fontSize: 12, fontWeight: 700, fontFamily: F, color: i === 0 && row.score > 0 ? C.wGold : "rgba(255,255,255,0.5)" }}>{row.user}</span>
+            <span style={{ fontSize: 14, fontWeight: 900, fontFamily: F, color: i === 0 && row.score > 0 ? C.wGold : "rgba(255,255,255,0.5)" }}>{row.score}</span>
+          </div>
+        ))}
+      </div>
+      <span style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginLeft: 4, transform: open ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>▸</span>
+    </button>
+
+    {/* Expanded view — full standings with the per-pick column breakdown */}
+    {open && <div style={{ padding: "4px 14px 12px", background: "rgba(0,0,0,0.15)" }}>
+      {!anyScored ? (
+        <div style={{ padding: "10px 8px", textAlign: "center" }}>
+          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.5 }}>
+            No points yet. Lock trivia or recap for instant points; tip + coach settle after full-time.
+          </div>
         </div>
       ) : (
-        sorted.map((row, idx) => <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderBottom: idx < sorted.length - 1 ? `1px solid ${C.border}` : "none" }}>
-          <div style={{ fontSize: 20, fontWeight: 900, color: idx === 0 ? C.wGold : C.dim, fontFamily: F, minWidth: 24 }}>{idx + 1}</div>
-          <div style={{ flex: 1, fontSize: 15, color: C.w, fontWeight: 700, fontFamily: F }}>{row.user}</div>
-          <div style={{ display: "flex", gap: 10 }}>
-            <div style={{ fontSize: 14, color: C.acc, fontFamily: F, fontWeight: 700 }}>🎯 {row.tipsCorrect}/{row.tips}</div>
-            <div style={{ fontSize: 14, color: C.purp, fontFamily: F, fontWeight: 700 }}>🧠 {row.coachCorrect}/{row.coach}</div>
+        sorted.map((row, idx) => <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 0", borderBottom: idx < sorted.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
+          <div style={{ fontSize: 16, fontWeight: 900, color: idx === 0 ? C.wGold : "rgba(255,255,255,0.4)", fontFamily: F, minWidth: 18 }}>{idx + 1}</div>
+          <div style={{ flex: 1, fontSize: 14, color: C.w, fontWeight: 700, fontFamily: F }}>{row.user}</div>
+          <div style={{ display: "flex", gap: 6, fontFamily: F, fontWeight: 700 }}>
+            <span style={{ fontSize: 12, color: C.acc }}>🎯 {row.tipsCorrect}/{row.tips}</span>
+            <span style={{ fontSize: 12, color: C.acc }}>📼 {row.recapCorrect}/{row.recap}</span>
+            <span style={{ fontSize: 12, color: C.gold }}>🎓 {row.triviaCorrect}/{row.trivia}</span>
+            <span style={{ fontSize: 12, color: C.purp }}>🧠 {row.coachCorrect}/{row.coach}</span>
           </div>
-          <div style={{ fontSize: 18, fontWeight: 900, color: C.w, fontFamily: F, minWidth: 22, textAlign: "right" }}>{row.score}</div>
+          <div style={{ fontSize: 16, fontWeight: 900, color: idx === 0 ? C.wGold : C.w, fontFamily: F, minWidth: 18, textAlign: "right" }}>{row.score}</div>
         </div>)
       )}
-    </div>
-
-    <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}` }}>
-      <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", marginBottom: 10 }}>Round {MATCH.round} — locked in</div>
-      {liveTipCounts.map((row, i) => <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderBottom: i < liveTipCounts.length - 1 ? `1px solid ${C.border}` : "none" }}>
-        <div style={{ flex: 1, fontSize: 15, color: C.w, fontWeight: 700, fontFamily: F }}>{row.user}</div>
-        <div style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: row.tipped ? C.grn : C.dim, textTransform: "uppercase" }}>{row.tipped ? "✓ Tipped" : "— No tip"}</div>
-        <div style={{ fontSize: 13, fontFamily: F, fontWeight: 700, color: row.coachCount > 0 ? C.purp : C.dim, textTransform: "uppercase" }}>🧠 {row.coachCount}/{(data.debates || []).length}</div>
-      </div>)}
-    </div>
-  </>;
+    </div>}
+  </div>;
 }
 
 // ── APP ──
 export default function DogsHQ() {
-  const [tab, setTab] = useState("pregame");
+  const [tab, setTab] = useState("this_week");
   const [me, claim, ready] = useIdentity();
 
   if (!ready) return <div style={{ minHeight: "100vh", background: C.dk }} />;
 
+  // Tab subtitles read straight from data so the bottom nav always reflects the round.
+  const thisWeekSub = `Rd ${MATCH.round} v ${MATCH.opponent}`;
+  const lastGameSub = WASHUP ? `${WASHUP.dogsScore}-${WASHUP.oppScore} v ${WASHUP.opponent}` : "—";
+
   return <div style={{ maxWidth: 480, margin: "0 auto", minHeight: "100vh", background: C.dk, color: C.w, fontFamily: "'Inter', -apple-system, sans-serif" }}>
-    <div style={{ background: `linear-gradient(180deg, ${C.blue}, ${C.dk})`, padding: "14px 14px 6px", textAlign: "center", position: "relative" }}>
+    {/* App header: title (with official Bulldogs badge) + ladder strip + voter line.
+        All three layers share the same dark band so they read as one unit. */}
+    <div style={{ background: `linear-gradient(180deg, ${C.blue}, ${C.blue}dd 50%, ${C.dk} 100%)`, position: "relative" }}>
       <RefreshButton />
-      <div style={{ fontSize: 24, fontWeight: 900, fontFamily: F, color: C.w, letterSpacing: "0.04em", textTransform: "uppercase" }}>🐶 Dogs HQ</div>
-      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: F }}>Tony · Benny · Jordy — Rd {MATCH.round} v {MATCH.opponent}</div>
+      <div style={{ padding: "14px 14px 4px", textAlign: "center" }}>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+          <HeaderLogo />
+          <div style={{ fontSize: 24, fontWeight: 900, fontFamily: F, color: C.w, letterSpacing: "0.04em", textTransform: "uppercase" }}>Dog Yard</div>
+        </div>
+      </div>
+      <LadderHeader />
+      {me && <VoterPill me={me} onSwitch={claim} />}
     </div>
-    <div style={{ display: "flex", background: "rgba(13,17,23,0.95)", borderBottom: `1px solid ${C.border}`, position: "sticky", top: 0, zIndex: 10, backdropFilter: "blur(10px)" }}>
-      <Tab label="Pre-Game" icon="🎯" active={tab === "pregame"} onClick={() => setTab("pregame")} />
-      <Tab label="Coach" icon="🧠" active={tab === "coach"} onClick={() => setTab("coach")} />
-      <Tab label="Washup" icon="💬" active={tab === "washup"} onClick={() => setTab("washup")} />
+
+    {/* Tab nav — sticky two-tab with subtitle showing the round/last result */}
+    <div style={{ display: "flex", background: C.dk, position: "sticky", top: 0, zIndex: 10, padding: "0 14px", borderBottom: `1px solid ${C.border}` }}>
+      <Tab label="This Week" subtitle={thisWeekSub} active={tab === "this_week"} onClick={() => setTab("this_week")} />
+      <Tab label="Last Game" subtitle={lastGameSub} active={tab === "last_game"} onClick={() => setTab("last_game")} />
     </div>
+
     {me && <div style={{ paddingBottom: 40 }}>
-      {tab === "pregame" && <PreGameTab me={me} onSwitch={claim} />}
-      {tab === "coach" && <DebatesTab me={me} onSwitch={claim} />}
-      {tab === "washup" && <WashupTab />}
+      {tab === "this_week" && <ThisWeekTab me={me} />}
+      {tab === "last_game" && <LastGameTab me={me} />}
     </div>}
 
     {!me && <IdentityPrompt onClaim={claim} />}

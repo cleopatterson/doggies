@@ -17,7 +17,7 @@ function injectOg() {
         opponent = data.match?.opponent;
       } catch { /* no data.json yet — use fallback below */ }
 
-      const title = round && opponent ? `🐶 Dogs HQ — Rd ${round} v ${opponent}` : "🐶 Dogs HQ — for the Parkyard boys";
+      const title = round && opponent ? `🐶 Dog Yard — Rd ${round} v ${opponent}` : "🐶 Dog Yard — for the Parkyard boys";
       const description = round && opponent
         ? `Round ${round} v ${opponent}. Tip the result, debate the coaching calls, read the washup. Tony · Benny · Jordy.`
         : "Tip the result, debate the coaching calls, read the washup. Tony · Benny · Jordy.";

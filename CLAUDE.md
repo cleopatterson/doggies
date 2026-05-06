@@ -1,7 +1,9 @@
-# Dogs HQ — Claude project notes
+# Dog Yard — Claude project notes
+
+(User-facing rename: app shows as "🐶 Dog Yard". Internal identifiers — package name, `dogs-hq:` localStorage prefix, repo name, Railway domain — were left as-is so existing picks survive and we don't bust deploy URLs.)
 
 ## What this is
-Companion app for the **Parkyard** WhatsApp group (Tony, Benny, Jordy) — Bulldogs NRL fans. Pre-game tipping, coaching-decision debates, post-match washup. See [dogs-hq-brief_updated.md](dogs-hq-brief_updated.md) for the full product brief (the older `dogs-hq-brief.md` is superseded).
+Companion app for the **Parkyard** WhatsApp group (Tony, Benny, Jordy) — Bulldogs NRL fans. Pre-game context, all picks consolidated on the Coach tab, post-match washup. See [dogs-hq-brief_updated.md](dogs-hq-brief_updated.md) for the full product brief (the older `dogs-hq-brief.md` is superseded).
 
 ## Repo + live
 - GitHub: <https://github.com/cleopatterson/doggies>
@@ -32,25 +34,37 @@ Required env vars in Railway:
 - `NRL_SEASON=2026`
 - Railway sets `PORT` automatically (typically 8080)
 
-## Tabs (V1)
-Three tabs only. Anything not listed here was deliberately cut for V1.
+## Architecture (V1)
+Two tabs, with the Parkyard Cup standings embedded into the app header (collapsible). Picks live on whichever tab they're about: forward-looking on **This Week**, retrospective on **Last Game**. The brief was inspired by `dogs-hq-v9.jsx` (architecture only — content/copy is our existing shape, not v9's mock data).
 
-- **Pre-Game** 🎯
-  - Match header with team logos + match info
-  - Compact tipping picker (5 options: `Lose` / `Win 1–6` / `7–12` / `13–18` / `19+`). Locked once cast.
-  - Tip Helper: TAB H2H odds (auto-hides if NRL drops them), Claude-written drivers explaining the line, Kennel sentiment + 3 paraphrased quotes, full hot-threads list with prefix tags.
-- **Coach** 🧠
-  - 🏆 **Parkyard Cup** standings render at the very top (running totals across rounds — empty state until first resolution lands).
-  - "Voting as X · switch" pill confirms identity.
-  - 3-4 multi-choice **coaching decisions** sourced from Kennel tactical threads. Each cites and links to the originating thread. Locked once picked.
-- **Washup** 💬
-  - Score banner with both team logos and result badge.
-  - Claude-written headline + vibe paragraph.
-  - Talking points (linked to source threads).
-  - Real **try scorers** from NRL match timeline (with minute markers).
-  - Top performers (tackles / run metres / linebreaks / fantasy points).
-  - Key match stats (completion, possession, errors, etc.).
-  - Kennel post-match block: mood label, summary, paraphrased hot takes (linked), gameday thread link.
+### Header
+Three layers in one dark band so they read as one unit:
+1. **Title** with the official Bulldogs SVG badge (`MATCH.dogsLogo` from nrl.com) next to "DOG YARD". `<HeaderLogo>` falls back to 🐶 if the CDN burps.
+2. **Collapsible ladder strip** (`<LadderHeader>`). Compact view shows each user's running total inline with 👑 on the leader; tap to expand into the per-pick column breakdown (🎯 tips, 📼 recap, 🎓 trivia, 🧠 coach + total). Trivia + recap self-grade on lock — they appear immediately. Tip + coach grading still wait on the post-match resolution feed.
+3. **Voter strip** (`<VoterPill>` — "● Voting as X · switch"). Lifted out of the tab body so identity context is always visible. Switch opens a modal.
+
+Refresh button stays top-right, cache-busts the SPA shell.
+
+### `<Accordion>` pattern
+Supporting content (odds, Kennel chatter, post-match reactions) lives inside accordions so it doesn't crowd the picks. Picks themselves stay visible.
+
+### Tabs
+
+- **This Week** 🎯 — subtitle `Rd N v Opp`. Order top-to-bottom:
+  - Match header (badges, kickoff, venue).
+  - **💵 Head-to-head odds** card — visible directly under match info (no accordion, since odds are key context for tipping).
+  - Accordion: **🏟️ From The Kennel** (mood one-liner + up to 4 paraphrased forum quotes). Closed by default.
+  - Accordion: **🗣️ Have your say** (closed by default) — wraps **all This Week's picks**: the tip card (5 margin bands) plus the 2 coaching decisions. Coach decisions are constrained to be **observably resolvable from the team list or on-field events** (e.g. "Where does Burton start — 6, 7, or 13?") and cite/link their originating Kennel thread.
+- **Last Game** 💬 — subtitle `dogsScore-oppScore v Opp`. Retrospective.
+  - Score banner with both team logos + result badge.
+  - Claude-written headline + vibe paragraph (the match summary).
+  - Accordion: **🏟️ From The Kennel** (post-match mood + summary + paraphrased hot takes with thread links + gameday thread link). Closed by default.
+  - Accordion: **🗣️ Have your say** (closed by default) — wraps the recap question(s) about last week's match **plus the weekly Bulldogs trivia**. Trivia lives here (rather than This Week) so the picks split is more even between the two tabs. Both self-grade on lock via `<QuizCard>`. Recap option labels are name-only — the stat value lives in the explainer so the answer isn't given away.
+  - The detailed match data (try scorers, top performers, key stats) is **not displayed** — it's the source data for the recap question. Generator still pulls and stores it under `data.washup.tries` / `topPerformers` / `keyStats` so the recap prompt has facts to draw from.
+
+### Pick mechanics
+- **Two-step lock everywhere**: first tap drafts, "Lock it in" commits. The shared `<ConfirmBar>` component owns the visual. Stops accidental locks.
+- **`<QuizCard>`** is generic and reused for trivia + recap. Storage keyed by `kind` (`trivia-r{N}` / `recap-r{N}`) plus matching `*Grade-r{N}` boolean records.
 
 ## Identity & voting integrity
 - Claimed once per device via `useIdentity` hook → stored as `dogs-hq:me` in localStorage. Modal prompt fires on first load only.
@@ -78,7 +92,7 @@ What it does:
 3. **Hot Kennel threads** — GAMEDAY thread + top 4 by reply count. Fetches up to 12 posts each via `<article data-author>` blocks (strips quoted parents).
 4. **Previous match (washup source)** — walks back from upcoming round to find the most recent Bulldogs `FullTime` fixture. Fetches the match centre HTML and extracts the `q-data` JSON blob on `<div id="vue-match-centre">` (~140KB, HTML-encoded). Pulls score, attendance, weather, **try scorers** (resolved via `homeTeam.players` / `awayTeam.players` for names), top performers, and key stat groups.
 5. **Kennel post-match** — searches forum index pages 1-2 for the previous round's GAMEDAY thread URL and fetches the last 3 pages. By Tuesday of the next week the GAMEDAY thread has often dropped off the first 2 pages, so post-match takes lean on the hot threads from step 3 instead.
-6. **Claude synthesis** — sends fixture + previous match + Kennel digests to `claude-opus-4-7` with a strict-JSON prompt. Returns `oddsDrivers`, `kennelTipLean`, `kennelTipQuotes`, 3-4 `debates`, and a `washup` blob (headline, vibe, talkingPoints, kennelMood, kennelSummary, kennelHotTakes). Each `debate`, quote, talking point, and hot take includes a `threadSlug` that gets resolved to a full Kennel URL after Claude returns.
+6. **Claude synthesis** — sends fixture + previous match + Kennel digests to `claude-opus-4-7` with a strict-JSON prompt. Returns `kennelTipLean`, 4 `kennelTipQuotes`, exactly 2 `debates` constrained to observably-resolvable coaching calls, a weekly `trivia` block (question + 4 options + `correctIndex` + explainer), exactly 1 `recap` question sourced **directly from the prevMatch digest** (try scorers, top performers, key stats — strict instructions to never invent and to keep the stat value out of the option labels), and a `washup` blob (headline, vibe, kennelMood, kennelSummary, kennelHotTakes). Each `debate`, quote, and hot take includes a `threadSlug` that gets resolved to a full Kennel URL after Claude returns. The `oddsDrivers` block was removed — felt like AI filler.
 7. Writes `src/data.json` with everything plus a generation timestamp.
 
 ⚠️ The `.env` script uses `dotenv.config({ override: true })` because some shells (e.g. Claude Desktop) export an empty `ANTHROPIC_API_KEY`. Don't change it.
