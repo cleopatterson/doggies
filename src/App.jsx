@@ -121,17 +121,19 @@ function IdentityPrompt({ onClaim }) {
   </div>;
 }
 
-// "Voting as X · switch" — compact strip rendered inside the app header,
-// visually connected to the LadderHeader strip above it (same dark band).
+// "Voting as X · switch" — inline indicator + button. Renders inside the LadderHeader
+// strip (right-aligned) so identity context lives on the same line as the Cup standings.
 function VoterPill({ me, onSwitch }) {
   const [showSwitch, setShowSwitch] = useState(false);
   return <>
-    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, padding: "6px 14px", background: "rgba(16,185,129,0.08)", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-      <span style={{ width: 7, height: 7, borderRadius: 4, background: C.grn, boxShadow: `0 0 6px ${C.grn}` }} />
-      <span style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>Voting as</span>
-      <span style={{ fontSize: 13, color: C.w, fontWeight: 800, fontFamily: F }}>{me}</span>
-      <button onClick={() => setShowSwitch(true)} style={{ background: "transparent", border: "none", color: "rgba(255,255,255,0.45)", fontSize: 11, fontWeight: 700, fontFamily: F, cursor: "pointer", textTransform: "uppercase", letterSpacing: "0.06em", marginLeft: 4 }}>· switch</button>
-    </div>
+    <button onClick={(e) => { e.stopPropagation(); setShowSwitch(true); }} style={{
+      display: "flex", alignItems: "center", gap: 5, background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.3)",
+      borderRadius: 12, padding: "3px 8px", cursor: "pointer",
+    }}>
+      <span style={{ width: 6, height: 6, borderRadius: 3, background: C.grn, boxShadow: `0 0 4px ${C.grn}` }} />
+      <span style={{ fontSize: 11, color: C.w, fontWeight: 800, fontFamily: F }}>{me}</span>
+      <span style={{ fontSize: 9, color: "rgba(255,255,255,0.5)", fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>switch</span>
+    </button>
 
     {showSwitch && <div onClick={() => setShowSwitch(false)} style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.7)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)", padding: 16 }}>
       <div onClick={(e) => e.stopPropagation()} style={{ width: "100%", maxWidth: 320, background: C.card, borderRadius: 14, padding: 18, border: `1px solid ${C.border}` }}>
@@ -170,6 +172,8 @@ function MiniBadge({ src, fallback }) {
 }
 
 function MatchHeader() {
+  const dogsOdds = ODDS?.dogs != null ? `$${ODDS.dogs.toFixed(2)}` : null;
+  const oppOdds = ODDS?.opp != null ? `$${ODDS.opp.toFixed(2)}` : null;
   return <div style={{ background: `linear-gradient(135deg, ${C.blue}, #002d6b)`, borderRadius: 14, padding: 18, textAlign: "center", marginBottom: 14, position: "relative", overflow: "hidden" }}>
     <div style={{ position: "absolute", top: -40, right: -40, width: 130, height: 130, borderRadius: "50%", background: "rgba(255,255,255,0.04)" }} />
     <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: F, marginBottom: 6 }}>Round {MATCH.round} • {MATCH.kickoff}</div>
@@ -177,11 +181,13 @@ function MatchHeader() {
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
         <TeamBadge src={MATCH.dogsLogo} fallback="🐶" name="Bulldogs" />
         <div style={{ fontSize: 15, fontWeight: 900, color: C.w, fontFamily: F, letterSpacing: "0.04em" }}>DOGS</div>
+        {dogsOdds && <div style={{ fontSize: 13, fontWeight: 800, color: C.wGold, fontFamily: F }}>{dogsOdds}</div>}
       </div>
       <div style={{ fontSize: 18, fontWeight: 900, color: "rgba(255,255,255,0.25)", fontFamily: F }}>{MATCH.dogsHome ? "v" : "@"}</div>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
         <TeamBadge src={MATCH.oppLogo} fallback="🏉" name={MATCH.opponent} />
         <div style={{ fontSize: 15, fontWeight: 900, color: C.w, fontFamily: F, letterSpacing: "0.04em" }}>{MATCH.opponent.toUpperCase()}</div>
+        {oppOdds && <div style={{ fontSize: 13, fontWeight: 800, color: C.wGold, fontFamily: F }}>{oppOdds}</div>}
       </div>
     </div>
     <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", marginTop: 8 }}>📍 {MATCH.venue}</div>
@@ -256,10 +262,10 @@ function Accordion({ icon, title, subtitle, color = C.acc, defaultOpen = false, 
   </div>;
 }
 
-// Compact "top 3 threads" list shared by both Kennel accordions. Pulls from the
-// hot-threads scrape; tap-through opens the original Kennel thread in a new tab.
-function KennelThreadsList() {
-  const threads = (data.kennelThreads || []).slice(0, 3);
+// "Hottest threads" list — Claude classifies threads per-tab so This Week shows
+// upcoming-match chatter and Last Game shows fallout from the previous round.
+// Each entry has a 1-2 sentence summary of what's actually being argued.
+function KennelThreadsList({ threads = [] }) {
   if (!threads.length) return null;
   const prefixColor = { GAMEDAY: C.red, Opinion: C.gold, Official: C.acc, News: C.grn, "Social Media": C.purp };
   return <div style={{ marginTop: 12, marginBottom: 10 }}>
@@ -267,12 +273,15 @@ function KennelThreadsList() {
     {threads.map((t, i) => {
       const color = prefixColor[t.prefix] || C.dim;
       return <ExtLink key={i} href={t.url} style={{
-        display: "flex", alignItems: "center", gap: 8, padding: "7px 10px", borderRadius: 8,
-        background: "rgba(0,0,0,0.25)", border: `1px solid ${C.border}`, marginBottom: 4, textDecoration: "none",
+        display: "block", padding: "8px 10px", borderRadius: 8,
+        background: "rgba(0,0,0,0.25)", border: `1px solid ${C.border}`, marginBottom: 5, textDecoration: "none",
       }}>
-        {t.prefix && <span style={{ fontSize: 10, fontWeight: 800, color, background: color + "20", padding: "2px 5px", borderRadius: 3, fontFamily: F, border: `1px solid ${color}40`, letterSpacing: "0.05em", flexShrink: 0 }}>{t.prefix.toUpperCase()}</span>}
-        <span style={{ flex: 1, fontSize: 13, color: C.w, fontWeight: 600, lineHeight: 1.3 }}>{t.title}</span>
-        <span style={{ fontSize: 11, color: C.dim, fontFamily: F, fontWeight: 700, whiteSpace: "nowrap" }}>{t.replies}↗</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: t.summary ? 4 : 0 }}>
+          {t.prefix && <span style={{ fontSize: 10, fontWeight: 800, color, background: color + "20", padding: "2px 5px", borderRadius: 3, fontFamily: F, border: `1px solid ${color}40`, letterSpacing: "0.05em", flexShrink: 0 }}>{t.prefix.toUpperCase()}</span>}
+          <span style={{ flex: 1, fontSize: 13, color: C.w, fontWeight: 700, lineHeight: 1.3 }}>{t.title}</span>
+          <span style={{ fontSize: 11, color: C.dim, fontFamily: F, fontWeight: 700, whiteSpace: "nowrap" }}>{t.replies}↗</span>
+        </div>
+        {t.summary && <div style={{ fontSize: 12, color: "rgba(255,255,255,0.65)", lineHeight: 1.4 }}>{t.summary}</div>}
       </ExtLink>;
     })}
   </div>;
@@ -402,49 +411,11 @@ function ThisWeekTab({ me }) {
     setDrafts(prev => { const n = { ...prev }; delete n[id]; return n; });
   };
 
-  const hasOdds = ODDS && (ODDS.dogs != null || ODDS.opp != null);
-
   return <div style={{ padding: 14 }}>
     <MatchHeader />
 
-    {/* Odds visible directly under the match info — no accordion. */}
-    {hasOdds && <div style={{ background: C.card, borderRadius: 12, padding: 14, border: `1px solid ${C.border}`, marginBottom: 10 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-        <div style={{ fontSize: 14, fontWeight: 800, color: C.acc, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em" }}>💵 Head-to-head odds</div>
-        <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>{ODDS.source}</div>
-      </div>
-      <div style={{ display: "flex", gap: 8 }}>
-        <div style={{ flex: 1, padding: "10px 12px", borderRadius: 8, background: "rgba(0,94,184,0.12)", border: "1px solid rgba(0,94,184,0.3)", textAlign: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginBottom: 2 }}>
-            <MiniBadge src={MATCH.dogsLogo} fallback="🐶" />
-            <div style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Dogs</div>
-          </div>
-          <div style={{ fontSize: 24, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>{ODDS.dogs != null ? `$${ODDS.dogs.toFixed(2)}` : "—"}</div>
-        </div>
-        <div style={{ flex: 1, padding: "10px 12px", borderRadius: 8, background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.25)", textAlign: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginBottom: 2 }}>
-            <MiniBadge src={MATCH.oppLogo} fallback="🏉" />
-            <div style={{ fontSize: 12, color: C.dim, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{MATCH.opponent}</div>
-          </div>
-          <div style={{ fontSize: 24, fontWeight: 900, color: C.w, fontFamily: F, lineHeight: 1.1 }}>{ODDS.opp != null ? `$${ODDS.opp.toFixed(2)}` : "—"}</div>
-        </div>
-      </div>
-    </div>}
-
-    {/* From The Kennel — top 3 threads + mood + 1 spicy quote. Closed by default. */}
-    <Accordion icon="🏟️" title="From The Kennel" subtitle={KENNEL_TIP_LEAN.confidence} color={C.purp}>
-      <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, fontStyle: "italic", marginTop: 10 }}>{KENNEL_TIP_LEAN.note}</div>
-      <KennelThreadsList />
-      {KENNEL_TIP_QUOTES?.[0] && <div style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: `2px solid rgba(167,139,250,0.5)` }}>
-        <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4, marginBottom: 3 }}>"{KENNEL_TIP_QUOTES[0].quote}"</div>
-        {KENNEL_TIP_QUOTES[0].url
-          ? <ExtLink href={KENNEL_TIP_QUOTES[0].url} style={{ fontSize: 12, color: C.purp, fontFamily: F, textDecoration: "none" }}>— {KENNEL_TIP_QUOTES[0].thread} ↗</ExtLink>
-          : <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>— {KENNEL_TIP_QUOTES[0].thread}</div>}
-      </div>}
-    </Accordion>
-
-    {/* Have your say — all This Week's picks (tip + coach decisions) inside one accordion, zipped */}
-    <Accordion icon="🗣️" title="Have your say" subtitle={`Tip + ${DEBATES.length} coaching call${DEBATES.length === 1 ? "" : "s"}`} color={C.acc}>
+    {/* Have your say — picks live above the Kennel reading material. Zipped by default. */}
+    <Accordion icon="🏆" title="Have your say" subtitle={`Tip + ${DEBATES.length} coaching call${DEBATES.length === 1 ? "" : "s"}`} color={C.wGold}>
     <div style={{ marginTop: 10 }}>
     <TipCard me={me} />
     {DEBATES.map(d => {
@@ -492,6 +463,18 @@ function ThisWeekTab({ me }) {
     })}
     </div>
     </Accordion>
+
+    {/* From The Kennel — top 3 upcoming-match threads + mood + 1 spicy quote. Open by default. */}
+    <Accordion icon="🏟️" title="From The Kennel" subtitle={KENNEL_TIP_LEAN.confidence} color={C.purp} defaultOpen={true}>
+      <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, fontStyle: "italic", marginTop: 10 }}>{KENNEL_TIP_LEAN.note}</div>
+      <KennelThreadsList threads={data.kennelThreadsThisWeek || []} />
+      {KENNEL_TIP_QUOTES?.[0] && <div style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: `2px solid rgba(167,139,250,0.5)` }}>
+        <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4, marginBottom: 3 }}>"{KENNEL_TIP_QUOTES[0].quote}"</div>
+        {KENNEL_TIP_QUOTES[0].url
+          ? <ExtLink href={KENNEL_TIP_QUOTES[0].url} style={{ fontSize: 12, color: C.purp, fontFamily: F, textDecoration: "none" }}>— {KENNEL_TIP_QUOTES[0].thread} ↗</ExtLink>
+          : <div style={{ fontSize: 12, color: C.dim, fontFamily: F }}>— {KENNEL_TIP_QUOTES[0].thread}</div>}
+      </div>}
+    </Accordion>
   </div>;
 }
 
@@ -532,10 +515,18 @@ function LastGameTab({ me }) {
     {w.headline && <div style={{ fontSize: 18, fontWeight: 800, color: C.w, marginBottom: 6, lineHeight: 1.3 }}>{w.headline}</div>}
     {w.vibe && <div style={{ fontSize: 15, color: C.dim, lineHeight: 1.6, marginBottom: 16 }}>{w.vibe}</div>}
 
-    {/* Kennel post-match — top 3 threads + mood summary + 1 spicy hot take */}
-    {(w.kennelMood || w.kennelSummary) && <Accordion icon="🏟️" title="From The Kennel" subtitle={w.kennelMood ? `Mood: ${w.kennelMood}` : "Post-match reactions"} color={C.purp}>
+    {/* Have your say — picks above the Kennel reading material. Zipped by default. */}
+    {(hasRecap || TRIVIA?.question) && <Accordion icon="🏆" title="Have your say" subtitle={`${(hasRecap ? RECAPS.length : 0) + (TRIVIA?.question ? 1 : 0)} questions about the past`} color={C.wGold}>
+      <div style={{ marginTop: 10 }}>
+        {RECAPS.map((q, i) => <QuizCard key={i} me={me} q={q} qIdx={i} kind="recap" accentColor={C.acc} headerLabel="Recap" headerIcon="📼" />)}
+        {TRIVIA?.question && <TriviaCard me={me} />}
+      </div>
+    </Accordion>}
+
+    {/* Kennel post-match — open by default. Top 3 threads + mood summary + 1 hot take. */}
+    {(w.kennelMood || w.kennelSummary) && <Accordion icon="🏟️" title="From The Kennel" subtitle={w.kennelMood ? `Mood: ${w.kennelMood}` : "Post-match reactions"} color={C.purp} defaultOpen={true}>
       {w.kennelSummary && <div style={{ fontSize: 14, color: C.w, lineHeight: 1.5, marginTop: 10, fontStyle: "italic" }}>{w.kennelSummary}</div>}
-      <KennelThreadsList />
+      <KennelThreadsList threads={data.kennelThreadsLastGame || []} />
       {w.kennelHotTakes?.[0] && <div style={{ padding: "8px 10px", borderRadius: 8, background: "rgba(0,0,0,0.25)", borderLeft: "2px solid rgba(167,139,250,0.5)" }}>
         <div style={{ fontSize: 14, color: C.w, lineHeight: 1.4 }}>"{w.kennelHotTakes[0].quote}"</div>
         <div style={{ fontSize: 12, color: C.dim, fontFamily: F, marginTop: 3, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
@@ -545,15 +536,6 @@ function LastGameTab({ me }) {
       </div>}
       {w.gamedayUrl && <ExtLink href={w.gamedayUrl} style={{ display: "block", marginTop: 10, fontSize: 13, color: C.purp, fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", textAlign: "center", textDecoration: "none" }}>read the gameday thread ↗</ExtLink>}
     </Accordion>}
-
-    {/* Have your say — recap + trivia inside one accordion, zipped by default. Trivia
-        moved here from This Week so the picks split is more even between the two tabs. */}
-    {(hasRecap || TRIVIA?.question) && <Accordion icon="🗣️" title="Have your say" subtitle={`${(hasRecap ? RECAPS.length : 0) + (TRIVIA?.question ? 1 : 0)} questions about the past`} color={C.acc}>
-      <div style={{ marginTop: 10 }}>
-        {RECAPS.map((q, i) => <QuizCard key={i} me={me} q={q} qIdx={i} kind="recap" accentColor={C.acc} headerLabel="Recap" headerIcon="📼" />)}
-        {TRIVIA?.question && <TriviaCard me={me} />}
-      </div>
-    </Accordion>}
   </div>;
 }
 
@@ -561,7 +543,7 @@ function LastGameTab({ me }) {
 // One-line strip with each user's running total + crown for leader. Tap to expand
 // into the per-pick breakdown. Tipping + coach grading still wait on the post-match
 // resolution feed (empty for now), but trivia + recap self-grade on lock.
-function LadderHeader() {
+function LadderHeader({ me, onSwitch }) {
   const [tipsByRound, setTipsByRound] = useState({});
   const [coachByRound, setCoachByRound] = useState({});
   const [triviaByRound, setTriviaByRound] = useState({});
@@ -619,23 +601,27 @@ function LadderHeader() {
   const [open, setOpen] = useState(false);
 
   return <div style={{ background: "rgba(0,0,0,0.18)", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-    {/* Compact strip — always visible, tap to expand */}
-    <button onClick={() => setOpen(!open)} style={{
-      width: "100%", padding: "8px 14px", background: "transparent", border: "none", cursor: "pointer",
-      display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
-    }}>
-      <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>🏆 Cup</span>
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        {sorted.map((row, i) => (
-          <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-            {i === 0 && row.score > 0 && <span style={{ fontSize: 12 }}>👑</span>}
-            <span style={{ fontSize: 12, fontWeight: 700, fontFamily: F, color: i === 0 && row.score > 0 ? C.wGold : "rgba(255,255,255,0.5)" }}>{row.user}</span>
-            <span style={{ fontSize: 14, fontWeight: 900, fontFamily: F, color: i === 0 && row.score > 0 ? C.wGold : "rgba(255,255,255,0.5)" }}>{row.score}</span>
-          </div>
-        ))}
-      </div>
-      <span style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginLeft: 4, transform: open ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>▸</span>
-    </button>
+    {/* Single ribbon: Cup scores on the left (taps to expand standings), voter pill
+        pinned right so identity context lives on the same line as the Cup. */}
+    <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px" }}>
+      <button onClick={() => setOpen(!open)} style={{
+        flex: 1, background: "transparent", border: "none", cursor: "pointer",
+        display: "flex", alignItems: "center", gap: 8, padding: 0, color: "inherit", textAlign: "left",
+      }}>
+        <span style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>🏆</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, flex: 1 }}>
+          {sorted.map((row, i) => (
+            <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 3 }}>
+              {i === 0 && row.score > 0 && <span style={{ fontSize: 11 }}>👑</span>}
+              <span style={{ fontSize: 11, fontWeight: 700, fontFamily: F, color: i === 0 && row.score > 0 ? C.wGold : "rgba(255,255,255,0.5)" }}>{row.user}</span>
+              <span style={{ fontSize: 13, fontWeight: 900, fontFamily: F, color: i === 0 && row.score > 0 ? C.wGold : "rgba(255,255,255,0.5)" }}>{row.score}</span>
+            </div>
+          ))}
+        </div>
+        <span style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", transform: open ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>▸</span>
+      </button>
+      {me && <VoterPill me={me} onSwitch={onSwitch} />}
+    </div>
 
     {/* Expanded view — full standings with the per-pick column breakdown */}
     {open && <div style={{ padding: "4px 14px 12px", background: "rgba(0,0,0,0.15)" }}>
@@ -684,8 +670,7 @@ export default function DogsHQ() {
           <div style={{ fontSize: 24, fontWeight: 900, fontFamily: F, color: C.w, letterSpacing: "0.04em", textTransform: "uppercase" }}>Dog Yard</div>
         </div>
       </div>
-      <LadderHeader />
-      {me && <VoterPill me={me} onSwitch={claim} />}
+      <LadderHeader me={me} onSwitch={claim} />
     </div>
 
     {/* Tab nav — sticky two-tab with subtitle showing the round/last result */}

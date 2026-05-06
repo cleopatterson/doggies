@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T10:45:35.610Z",
+  "generatedAt": "2026-05-06T04:44:03.312Z",
   "match": {
     "round": 10,
     "opponent": "Dolphins",
@@ -13,145 +13,115 @@
     "oppLogo": "https://www.nrl.com/.theme/dolphins/badge.svg?bust=202603300722"
   },
   "odds": {
-    "dogs": null,
-    "opp": null,
+    "dogs": 2.59,
+    "opp": 1.5,
     "source": "TAB / nrl.com"
   },
-  "oddsDrivers": [
-    {
-      "icon": "📉",
-      "text": "Coming off a 28-12 home loss to the Cowboys where we scored 12 points. Twelve. The attack is genuinely broken right now."
-    },
-    {
-      "icon": "🏟️",
-      "text": "Suncorp on a Thursday night against a Dolphins side desperate to climb out of their own slump — not the trip you want when your spine isn't clicking."
-    },
-    {
-      "icon": "🎯",
-      "text": "Galvin's been the lightning rod but Nate DAWG's right — he's a scapegoat for much bigger issues. The structure around him is the problem."
-    },
-    {
-      "icon": "🛡️",
-      "text": "33 missed tackles last week. Until that gets fixed, doesn't matter who's wearing the 6 or 7."
-    },
-    {
-      "icon": "💎",
-      "text": "If there's a flicker, it's Preston (46 tackles, Origin whispers) and Sua running for 183m. Forwards still showing up even when the team isn't."
-    }
-  ],
   "kennelTipLean": {
     "side": "Opponent",
-    "confidence": "Lean — about 35/65",
-    "note": "Mood is grim. A few diehards calling 'Dogs by 50' as a bit, but most are bracing for another flogging unless Ciro actually changes something."
+    "confidence": "Lean — about 30/70",
+    "note": "Nobody's confident. The board's split between doomers picking 30+ and a few delusionals reckoning we win by 100. Bookies have us as $2.59 outsiders and the vibe matches."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 10",
+      "thread": "GAMEDAY Rd 10 vs Dolphins",
       "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
-      "quote": "Ciro I don't need the whole team to change — just get Salmon out of the starting lineup, bare minimum.",
+      "quote": "Ciro I don't need the whole team to change just get Salmon out of the starting line up please bare minimum",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
-    },
-    {
-      "thread": "GAMEDAY Rd 10",
-      "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
-      "quote": "After all Ciro's huff and puff I doubt there'll be any changes except for injury.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
-    },
-    {
-      "thread": "Early whispers",
-      "threadSlug": "/forum/index.php?threads/early-whispers.131687",
-      "quote": "Burton at lock would be so bad lmao — sounds like Chinese whispers to me.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/early-whispers.131687/"
     }
   ],
   "debates": [
     {
-      "id": "salmon-starting-spot",
-      "icon": "🪑",
-      "question": "Does Salmon stay in the starting 13?",
-      "kennel": "GAMEDAY thread is full of 'get Salmon out of the starting lineup, bare minimum' energy.",
+      "id": "salmon-starting-13",
+      "icon": "🐟",
+      "question": "Does Salmon start at lock or get bumped to the bench?",
+      "kennel": "GAMEDAY thread is one long plea to get Salmon out of the run-on side.",
       "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
       "options": [
         {
-          "label": "Drop to bench",
+          "label": "Starts at 13",
+          "emoji": "🐟"
+        },
+        {
+          "label": "Bench",
           "emoji": "🪑"
         },
         {
-          "label": "Out of 17 entirely",
+          "label": "Out of 17",
           "emoji": "❌"
-        },
-        {
-          "label": "Keep starting",
-          "emoji": "✅"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
     },
     {
-      "id": "burton-position",
-      "icon": "🔄",
-      "question": "Where does Burton actually play?",
-      "kennel": "Early whispers thread floating Burton to lock with SOS or Conti in the halves — most reckon it's nonsense.",
+      "id": "halves-partner-galvin",
+      "icon": "🎯",
+      "question": "Who wears 7 next to Galvin?",
+      "kennel": "Early Whispers and GAMEDAY are split between SOS and Conti — and someone's floated Burton shifting to lock to free up the spot.",
       "threadSlug": "/forum/index.php?threads/early-whispers.131687",
       "options": [
         {
-          "label": "Five-eighth, leave him",
-          "emoji": "6️⃣"
+          "label": "SOS",
+          "emoji": "🅰️"
         },
         {
-          "label": "Shift to lock",
-          "emoji": "1️⃣3️⃣"
+          "label": "Conti",
+          "emoji": "🅱️"
         },
         {
-          "label": "Centre experiment",
-          "emoji": "↔️"
+          "label": "Burton stays at 7",
+          "emoji": "⭕"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/early-whispers.131687/"
-    },
+    }
+  ],
+  "trivia": {
+    "question": "How many premierships have the Bulldogs won?",
+    "options": [
+      {
+        "label": "6",
+        "emoji": "🏆"
+      },
+      {
+        "label": "7",
+        "emoji": "🏆"
+      },
+      {
+        "label": "8",
+        "emoji": "🏆"
+      },
+      {
+        "label": "9",
+        "emoji": "🏆"
+      }
+    ],
+    "correctIndex": 2,
+    "explainer": "Canterbury have won 8 first-grade titles — 1938, 1942, 1980, 1984, 1985, 1988, 1995 and 2004."
+  },
+  "recap": [
     {
-      "id": "halves-pairing",
-      "icon": "🧠",
-      "question": "Who partners Galvin in the halves?",
-      "kennel": "Sexton-vs-Galvin thread is wild — some still arguing we were better with Sexton, others saying Galvin's the only thing keeping us in games.",
-      "threadSlug": "/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683",
+      "question": "Who racked up the most run metres for the Dogs against the Cowboys?",
       "options": [
         {
-          "label": "Burton stays at 6",
-          "emoji": "🤝"
+          "label": "Jacob Preston",
+          "emoji": "🏉"
         },
         {
-          "label": "SOS gets a go",
-          "emoji": "🆕"
+          "label": "Jonathan Sua",
+          "emoji": "🏉"
         },
         {
-          "label": "Conti the bolter",
-          "emoji": "⚡"
+          "label": "Max King",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Kurt Mann",
+          "emoji": "🏉"
         }
       ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/"
-    },
-    {
-      "id": "blood-the-kids",
-      "icon": "🐶",
-      "question": "Time to blood the young forwards?",
-      "kennel": "Fresh Blood thread reckons Hayes, Preston, Spinks and Latu should all be starters — even this year.",
-      "threadSlug": "/forum/index.php?threads/time-for-fresh-blood.131511",
-      "options": [
-        {
-          "label": "Throw them in now",
-          "emoji": "🚀"
-        },
-        {
-          "label": "Phase them in",
-          "emoji": "📈"
-        },
-        {
-          "label": "Stick with vets",
-          "emoji": "🧓"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/time-for-fresh-blood.131511/"
+      "correctIndex": 1,
+      "explainer": "Sua led the Dogs with 183 run metres — and the next week he signed with Perth. Make of that what you will."
     }
   ],
   "washup": {
@@ -270,111 +240,56 @@
       }
     ],
     "gamedayUrl": null,
-    "headline": "12 points at home. That's where we're at.",
-    "vibe": "Cowboys came to Accor and bullied us. Galvin scored early, we hung in for a bit, then the wheels came off and the back half was just damage control. Twelfth on the ladder, attack looks rudderless, and now we fly to Suncorp on a short turnaround. Not great, Bob.",
-    "talkingPoints": [
-      {
-        "icon": "🔥",
-        "text": "Galvin scored AND topped the fantasy count with 66 — but he's still the one cop​ping it on socials. Make it make sense.",
-        "threadSlug": "/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/"
-      },
-      {
-        "icon": "🛡️",
-        "text": "33 missed tackles. Cowboys ran for 225m through Burns alone. The defensive system is leaking everywhere.",
-        "threadSlug": null,
-        "url": null
-      },
-      {
-        "icon": "💎",
-        "text": "Preston put on 46 tackles and the Origin whispers are getting louder. One genuine bright spot in a dark night.",
-        "threadSlug": "/forum/index.php?threads/jacob-preston-on-the-verge-of-origin-debut.131695",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/jacob-preston-on-the-verge-of-origin-debut.131695/"
-      },
-      {
-        "icon": "😤",
-        "text": "Salmon in the starting 13 has become the lightning rod issue — fans want him benched or dropped before Thursday.",
-        "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
-      },
-      {
-        "icon": "🐢",
-        "text": "We were leading the comp last year with Sexton at 7. The 'we've regressed since signing Galvin' takes are everywhere now, fair or not.",
-        "threadSlug": "/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/"
-      },
-      {
-        "icon": "🎯",
-        "text": "Crawls reckons Gus's fingerprints are all over the debacle. The off-field noise is getting as loud as the on-field problems.",
-        "threadSlug": "/forum/index.php?threads/gus%E2%80%99-fingerprints-all-over-bulldogs-debacle-crawls.131690",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/gus%E2%80%99-fingerprints-all-over-bulldogs-debacle-crawls.131690/"
-      }
-    ],
-    "kennelMood": "Cooked and cranky",
-    "kennelSummary": "The Kennel's done with patience. It's not just the loss — it's that nobody trusts Ciro to actually change anything between now and Thursday. The Galvin-vs-Sexton wars have flared up again, the kids-need-a-go threads are back, and Salmon has become the symbol of everything wrong with selection.",
+    "headline": "Cooked at Accor and the bloke carrying us is off to Perth.",
+    "vibe": "12-28 at home to the Cowboys and we conceded four tries in the last half hour. Galvin scored, Curran scored, then it was just Drinkwater and Burns running through us. Sitting 12th, Ciro's getting torched on the boards, and our top metre-eater just signed a 4-year deal with the Bears. Lovely.",
+    "kennelMood": "Furious",
+    "kennelSummary": "The sack-Ciro thread cracked 949 replies and AlzzBulldog is leading a one-man crusade about Galvin getting shifted to centre while up 6. Gus is wearing it too — 'no 9, no 1, no speed' — and the Sua exit has lit a fire under the recruitment thread. Nobody's defending anything right now.",
     "kennelHotTakes": [
       {
-        "quote": "Galvin's a convenient scapegoat for much broader issues. Sexton was never a quality half — people just use him to argue against the Galvin signing.",
-        "author": "Nate DAWG",
-        "threadSlug": "/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/"
-      },
-      {
-        "quote": "We were leading the comp last year with Sexton at halfback. We've regressed significantly since signing Galvin — that's just facts.",
-        "author": "chemdog",
-        "threadSlug": "/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/"
-      },
-      {
-        "quote": "After all Ciro's huff and puff there'll be zero changes except maybe King for injury. Same team, same result.",
-        "author": "no1bulldog",
-        "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
-      },
-      {
-        "quote": "2027 I want mass change. Hayes, Preston, Spinks, Latu — all starters. Hayes at left edge would offer way better value than Kikau right now.",
-        "author": "Kempsey Dog",
-        "threadSlug": "/forum/index.php?threads/time-for-fresh-blood.131511",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/time-for-fresh-blood.131511/"
-      },
-      {
-        "quote": "Irony is we had better players at 7, 9 and on the wing and we let them all walk. Mahoney, Sexton, JAC.",
-        "author": "_G-Dog_",
-        "threadSlug": "/forum/index.php?threads/time-for-fresh-blood.131511",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/time-for-fresh-blood.131511/"
+        "quote": "5 years as GM and we enter a so-called premiership window with no 9, no 1 and no speed at all. All we have is Preston.",
+        "author": "liljohny",
+        "threadSlug": "/forum/index.php?threads/ciraldo-should-be-sacked-tonight.131498",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldo-should-be-sacked-tonight.131498/"
       }
     ]
   },
-  "kennelThreads": [
+  "kennelThreadsThisWeek": [
     {
       "prefix": "GAMEDAY",
       "title": "Rnd 10 Vs Dolphins Thurs 7:50pm @ Suncorp",
-      "replies": 336,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
-    },
-    {
-      "prefix": null,
-      "title": "Bulldogs Videos and Pics thread",
-      "replies": 597,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-videos-and-pics-thread.118406/"
+      "replies": 418,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/",
+      "summary": "Everyone's pleading with Ciro to drop Salmon from the starting 13 and arguing about whether SOS or Conti should partner Galvin. One bloke reckons Dogs by 100+, the rest are just hoping for any change."
     },
     {
       "prefix": "Official",
       "title": "Early whispers",
       "replies": 189,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/early-whispers.131687/"
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/early-whispers.131687/",
+      "summary": "Issa87 dropped a 'whisper' that Burton is shifting to lock with Crichton to fullback and Tracey to the wing. The thread immediately decided that's Chinese whispers and Burton at lock would be a disaster."
+    }
+  ],
+  "kennelThreadsLastGame": [
+    {
+      "prefix": "Opinion",
+      "title": "Ciraldo should be sacked tonight",
+      "replies": 949,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldo-should-be-sacked-tonight.131498/",
+      "summary": "AlzzBulldog is going scorched earth — accusing Ciro of sabotage for shifting Galvin to centre while up by 6 with Xerri on the bench. Quickly turned into a Gus pile-on too, 5 years and no hooker, no fullback, no speed."
     },
     {
       "prefix": null,
-      "title": "The Talk of Sexton is better than Galvin is over after this",
-      "replies": 189,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/"
+      "title": "Sua to Perth 4 yr deal",
+      "replies": 199,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/sua-to-perth-4-yr-deal.131628/",
+      "summary": "Sua confirmed gone to the Bears on a 4-year deal after carrying us for 183m against the Cowboys. Everyone's spewing — 'he outplayed all our backs' and the club apparently sat on their hands while Floptoya keeps his spot."
     },
     {
-      "prefix": "Opinion",
-      "title": "Time for Fresh Blood",
-      "replies": 188,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/time-for-fresh-blood.131511/"
+      "prefix": null,
+      "title": "Recruitment",
+      "replies": 192,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/",
+      "summary": "Freakzilla doing the cap maths — $2.5m on three centres, 800k on a six playing seven. Watching the Roosters and concluding their 1-13 beats ours in every single position."
     }
   ],
   "kennelMeta": {

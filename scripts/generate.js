@@ -256,6 +256,36 @@ async function fetchThreadPosts(threadPath, maxPosts = 12) {
   return out;
 }
 
+// Rolling videos/pics/memes megathreads are noise — high reply count but no actual
+// signal at a high level. Skip them so the "hottest threads" selection has substance.
+const KENNEL_THREAD_SKIP = /\b(videos?|pics?|gifs?|memes?|images?)\b/i;
+
+// Enrich Claude's per-tab thread classification ([{threadSlug, summary}]) with the
+// title / prefix / replies / full URL pulled from the scraper output, so the UI has
+// everything it needs in one array per tab.
+function enrichThreads(claudeList, hotThreads) {
+  const bySlug = new Map();
+  for (const t of hotThreads) {
+    if (!t.url) continue;
+    const slug = t.url.replace(/^.*\/threads\//, "").replace(/\/$/, "");
+    bySlug.set(slug, t);
+  }
+  return claudeList
+    .map(c => {
+      const t = bySlug.get(c.threadSlug);
+      if (!t) return null;
+      return {
+        prefix: t.prefix,
+        title: t.title,
+        replies: t.replies,
+        url: `https://www.thekennel.net.au${t.url}`,
+        summary: c.summary || null,
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 3);
+}
+
 async function gatherKennel() {
   console.error("→ Kennel: fetching forum index");
   const all = await fetchKennelIndex();
@@ -263,7 +293,7 @@ async function gatherKennel() {
 
   const gameday = all.find(t => t.prefix === "GAMEDAY") || null;
   const others = all
-    .filter(t => t.prefix !== "GAMEDAY" && t.replies >= 3 && t.url)
+    .filter(t => t.prefix !== "GAMEDAY" && t.replies >= 3 && t.url && !KENNEL_THREAD_SKIP.test(t.title))
     .sort((a, b) => b.replies - a.replies)
     .slice(0, 4);
 
@@ -338,6 +368,14 @@ Generate the round's content as JSON with this exact shape:
   "kennelTipQuotes": [
     { "thread": "Short title (e.g. 'GAMEDAY Rd 10' or 'Sexton vs Galvin')", "threadSlug": "exact slug from the digest above, or null if not from a single thread", "quote": "..." }
   ],
+  "kennelThreads": {
+    "thisWeek": [
+      { "threadSlug": "exact slug from the digest above", "summary": "1-2 sentences on what's actually being argued in this thread — the angle, who's getting roasted" }
+    ],
+    "lastGame": [
+      { "threadSlug": "exact slug from the digest above", "summary": "1-2 sentences on what's actually being argued in this thread" }
+    ]
+  },
   "debates": [
     {
       "id": "kebab-case-id",
@@ -404,6 +442,13 @@ Rules:
   - Still paraphrase (no fabrication) — but pick the loudest, funniest, most outrageous REAL posts in the digest. If a post called Burton at lock "career suicide" or someone reckons "we should bring back Hodkinson at 35", THAT'S the quote.
   - Each entry's \`thread\` field should be the short title only — the user can tap through for the full context.
 - Exactly 1 kennelTipQuote (THE single spiciest one — not a list, just the best). Exactly 2 debates with 3 options each.
+- kennelThreads: classify each hot thread in the digest into the tab it best belongs to and emit summaries.
+  - thisWeek: threads about the UPCOMING match — GAMEDAY for the round about to be played, team selection rumours, opinion threads about what the Dogs need to do this week, news about ins/outs.
+  - lastGame: threads about the PREVIOUS match — fallout, post-match opinion, sack threads triggered by the loss, talking points from the result.
+  - Pick up to 3 threads per tab. Make them DIFFERENT lists where possible — don't put the same thread in both. If a thread is genuinely cross-cutting (e.g. a sack-the-coach thread that's about both last week's loss and this week's team), put it in the tab where it has the strongest signal.
+  - General season threads (recruitment, contracts, "Time for fresh blood") can go in either tab — pick the one where they're most relevant given current context.
+  - Each summary: 1-2 sentences capturing what's actually being argued (the angle, the main argument, who's getting roasted). NOT generic "fans discuss X" — be specific. Skip videos/pics/memes threads (already filtered upstream but as a safety net).
+  - Use the EXACT slug from the digest (the "thread_slug:" line on each thread).
 - Trivia: one factual Bulldogs question with 4 options. Pick something verifiable from public club history or this season's stats — NEVER invent. Safe ground: premiership years, jersey numbers, club records, recent signings, ground capacities, opponent history. Set correctIndex (0-3) to match the right option. Keep explainer short and confident.${prevMatch ? `
 - Recap: exactly ONE question about LAST week's match. Source ONLY from the digest above (try scorers in order, top performers, key stats). The question must have an unambiguous factual answer pulled directly from the data — DO NOT invent.
   - Option labels must be the NAME ONLY (or team name) — NEVER include the stat value (no "(183m)", no scores, no minute markers). The stat goes in the explainer, not the label, otherwise the answer is given away.
@@ -513,12 +558,11 @@ async function main() {
       kennelSummary: synth.washup?.kennelSummary,
       kennelHotTakes: synth.washup?.kennelHotTakes || [],
     } : null,
-    kennelThreads: kennel.hotThreads.map(t => ({
-      prefix: t.prefix,
-      title: t.title,
-      replies: t.replies,
-      url: t.url ? `https://www.thekennel.net.au${t.url}` : null,
-    })),
+    // Per-tab thread lists with Claude-written summaries. The old flat `kennelThreads`
+    // array was the same on both tabs; this splits it so This Week shows threads about
+    // the upcoming match and Last Game shows fallout from the previous one.
+    kennelThreadsThisWeek: enrichThreads(synth.kennelThreads?.thisWeek || [], kennel.hotThreads),
+    kennelThreadsLastGame: enrichThreads(synth.kennelThreads?.lastGame || [], kennel.hotThreads),
     kennelMeta: {
       threadsConsidered: kennel.allTitles.length,
       hotThreadsScraped: kennel.hotThreads.length,
