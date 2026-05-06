@@ -56,6 +56,35 @@ async function fetchFixture() {
   };
 }
 
+// Fetch the named 1-22 for the upcoming match. NRL drops team lists Tuesday ~4pm AEST.
+// Before then, the q-data on the match centre page has empty `players` arrays — we
+// return null so the pipeline knows debates can't yet be authored. Once team lists
+// drop, the same blob carries `{firstName, lastName, position, number, isOnField}`
+// per player, no Puppeteer required (same source we use for past-match try scorers).
+async function fetchUpcomingTeamList(matchCentreUrl) {
+  if (!matchCentreUrl) return null;
+  const res = await fetch(`https://www.nrl.com${matchCentreUrl}`, { headers: { "User-Agent": UA } });
+  if (!res.ok) return null;
+  const html = await res.text();
+  const blobMatch = html.match(/q-data="(\{&quot;callToAction&quot;.*?\})"/);
+  if (!blobMatch) return null;
+  let blob;
+  try {
+    const decoded = blobMatch[1].replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&#39;/g, "'");
+    blob = JSON.parse(decoded).match;
+  } catch { return null; }
+  const dogsHome = blob.homeTeam.teamId === TEAM_ID;
+  const dogs = dogsHome ? blob.homeTeam : blob.awayTeam;
+  const opp = dogsHome ? blob.awayTeam : blob.homeTeam;
+  if (!dogs.players?.length || !opp.players?.length) return null;
+  const shape = (p) => ({ number: p.number, position: p.position, name: `${p.firstName} ${p.lastName}`.trim() });
+  return {
+    dogs: dogs.players.map(shape),
+    opp: opp.players.map(shape),
+    oppName: opp.nickName,
+  };
+}
+
 // Build the CDN URL for a team's primary badge SVG.
 // Pattern: https://www.nrl.com/.theme/<key>/badge.svg?bust=<version>
 function badgeUrl(team) {
@@ -311,7 +340,7 @@ async function gatherKennel() {
 }
 
 // ── 3. CLAUDE SYNTHESIS ──
-async function synthesise({ fixture, kennel, prevMatch, prevKennel }) {
+async function synthesise({ fixture, kennel, prevMatch, prevKennel, teamList }) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY missing in .env");
   const client = new Anthropic({ apiKey });
@@ -341,6 +370,17 @@ ${prevKennel?.posts?.length ? prevKennel.posts.slice(0, 20).map(p => `  [${p.aut
 
 ` : "";
 
+  const teamListBlock = teamList ? `# OFFICIAL TEAM LISTS (just dropped — these are the named squads)
+## Bulldogs (named 1-22)
+${teamList.dogs.map(p => `  #${String(p.number).padStart(2," ")}  ${p.position.padEnd(20)} ${p.name}`).join("\n")}
+
+## ${teamList.oppName} (named 1-22)
+${teamList.opp.map(p => `  #${String(p.number).padStart(2," ")}  ${p.position.padEnd(20)} ${p.name}`).join("\n")}
+
+Note: jersey numbers 1-13 are the run-on side, 14-17 are the bench, 18+ are reserves NOT in the matchday 17.
+
+` : "";
+
   const user = `# This week's match (from nrl.com)
 Round ${fixture.round} — Bulldogs ${fixture.dogsHome ? "v" : "@"} ${fixture.opponent}
 Venue: ${fixture.venue}, ${fixture.venueCity}
@@ -348,7 +388,7 @@ Kickoff: ${fixture.kickoffISO}
 Ladder: Bulldogs ${fixture.dogsPos}, ${fixture.opponent} ${fixture.oppPos}
 Odds: Dogs $${fixture.odds.dogs}, ${fixture.opponent} $${fixture.odds.opp}
 
-# Top 20 thread titles on The Kennel right now
+${teamListBlock}# Top 20 thread titles on The Kennel right now
 ${titleList}
 
 # Hot thread excerpts (real posts)
@@ -424,15 +464,32 @@ Generate the round's content as JSON with this exact shape:
 }
 
 Rules:
-- Debates must be coaching calls whose outcome is OBSERVABLE in the named team or the match itself, not vibes.
-  GOOD examples (verifiable from team list / on-field events):
-    - "Where does Burton start — 6, 7, or 13?" (team list)
-    - "Does Crichton stay at centre or shift to lock?" (team list)
-    - "Who handles goal-kicking with Burton off the field?" (match)
-    - "Do we run short-side off scrums or keep going wide?" (highlights)
+- TEAM LIST (when present, above): use it as ground truth. Anchor positional debates to actual named jerseys ("Burton's named at 6 — does he stay or shift to 13 mid-game?", "Salmon's at 13 — does he hold his spot for the full 80?"). Bench questions ("first interchange") must only list players who are actually in the named 14-17 — don't list anyone with a jersey number above 17 (those are reserves, not matchday). If the team list block is missing entirely, fall back to non-squad-dependent questions (kicking, tactical patterns, in-game responses) and don't fabricate bench candidates.
+
+- Debates must be coaching calls whose outcome is OBSERVABLE in the named team or the match itself, not vibes. Mix it up — DON'T make both questions about team selection.
+  GOOD examples by bucket (aim to pull from at least 2 different buckets across the 2 debates):
+    SELECTION (team list): "Where does Burton start — 6, 7, or 13?", "Does Salmon hold his lock spot or get bumped to bench?"
+    BENCH ROTATION: "Does Crichton play the full 80 or get a 50th-minute breather?", "Who's the first prop swap — King for Stimson or Sironen for Mahoney?"
+    KICKING / GAME MGMT: "Who handles goal-kicking when Burton's off?", "Do we kick for territory on tackle 5 or chance the offload?"
+    TACTICAL PATTERN: "Do we attack the Dolphins' right edge or run middle pods all night?", "Crichton's involvement — does he get 12+ touches or under 8?"
+    IN-GAME RESPONSE: "If it's tight at 60, do we shift Galvin to dummy half or trust the bench halfback?", "First scrum penalty — kick for goal or run the set?"
   BAD examples (skip these — unverifiable vibe takes):
     - "Are we ok with this side?"  "How aggressive should the edge defence be?"  "Is Ciro the right man?"
-- Each option must be a specific, observable outcome (a position, a player name, a count, a play call) — not adjectives like "be braver".
+
+- QUESTION FRAMING — read every question back to yourself before committing:
+  - Don't assume jersey numbers in the question stem. "Who wears 7 next to Galvin?" hides the assumption that Galvin's at 6 and is wrong if he isn't. Prefer position-neutral framing: "Who partners Galvin in the halves?" or "Does Burton stay in the halves or shift to lock?"
+  - The question must make sense WITHOUT the reader knowing the current squad. If you can't read the question and parse what's being asked without prior knowledge of who's at what number, rewrite it.
+  - Each option must be a self-contained outcome that holds true regardless of the other options. NEVER write "X stays at 7" or "same as last week" — the answer should describe the named squad/decision in absolute terms (e.g. "Burton 7, Conti 6" not "Burton stays").
+
+- DISTINCT DECISIONS — the 2 debates must test DIFFERENT calls, not two angles of the same call. They MUST come from different buckets above:
+  - BAD: Q1 "Where does Burton line up?" + Q2 "Who wears 7 next to Galvin?" — same SELECTION decision sliced two ways.
+  - BAD: Q1 "Does Salmon start?" + Q2 "Where does Crichton play?" — both SELECTION, even though different players.
+  - GOOD: Q1 SELECTION (e.g. Salmon's spot) + Q2 KICKING (e.g. who kicks for goal) — two genuinely different coaching decisions.
+  - GOOD: Q1 BENCH ROTATION (when does X come off) + Q2 TACTICAL PATTERN (do we target left edge) — two completely different domains.
+  - At least one of the 2 debates MUST be from a non-SELECTION bucket. Don't make both about the team list.
+
+- MUTUALLY EXCLUSIVE OPTIONS — exactly one option should be true on game day. If two options could both be technically correct (or none could be), the framing is broken.
+
 - Don't repeat the same question across debates.
 
 - KENNEL QUOTES (kennelTipQuotes pre-game + kennelHotTakes post-match) — make these the SPICY ones, not the measured analysis:
@@ -484,6 +541,12 @@ async function main() {
   const fixture = await fetchFixture();
   console.error(`  ${fixture.roundTitle}: Bulldogs ${fixture.dogsHome ? "v" : "@"} ${fixture.opponent} ($${fixture.odds.dogs} / $${fixture.odds.opp})`);
 
+  // Team lists drop Tuesday ~4pm AEST. Before then this returns null and the pipeline
+  // emits no debates (UI shows a "team lists pending" state on the Coach picks).
+  console.error("→ NRL: fetching team list");
+  const teamList = await fetchUpcomingTeamList(fixture.matchCentreUrl);
+  console.error(teamList ? `  Bulldogs ${teamList.dogs.length} named, ${teamList.oppName} ${teamList.opp.length} named` : "  team list not yet available — debates will be skipped");
+
   const kennel = await gatherKennel();
 
   console.error("→ NRL: fetching previous match (washup)");
@@ -501,7 +564,10 @@ async function main() {
     console.error(`  ${prevKennel.gamedayUrl ? `${prevKennel.posts.length} post-match posts` : "no GAMEDAY thread found"}`);
   }
 
-  const synth = await synthesise({ fixture, kennel, prevMatch, prevKennel });
+  const synth = await synthesise({ fixture, kennel, prevMatch, prevKennel, teamList });
+  // Gate: only ship debates when team list is available. The UI keys off this — empty
+  // array → "Coach picks unlock when team lists drop Tuesday afternoon."
+  if (!teamList) synth.debates = [];
 
   // Resolve thread slugs Claude returned back to full Kennel URLs.
   const slugToUrl = new Map();

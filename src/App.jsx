@@ -414,10 +414,17 @@ function ThisWeekTab({ me }) {
   return <div style={{ padding: 14 }}>
     <MatchHeader />
 
-    {/* Have your say — picks live above the Kennel reading material. Zipped by default. */}
-    <Accordion icon="🏆" title="Have your say" subtitle={`Tip + ${DEBATES.length} coaching call${DEBATES.length === 1 ? "" : "s"}`} color={C.wGold}>
+    {/* Have your say — picks live above the Kennel reading material. Zipped by default.
+        Coaching debates only generate once team lists drop (Tue ~4pm AEST); until then
+        the tip stands alone and we show a "pending" message. */}
+    <Accordion icon="🏆" title="Have your say" subtitle={DEBATES.length ? `Tip + ${DEBATES.length} coaching call${DEBATES.length === 1 ? "" : "s"}` : "Tip only — coaching picks pending"} color={C.wGold}>
     <div style={{ marginTop: 10 }}>
     <TipCard me={me} />
+    {DEBATES.length === 0 && <div style={{ padding: "14px 12px", borderRadius: 10, border: `1px dashed ${C.border}`, background: "rgba(255,255,255,0.02)", textAlign: "center", marginBottom: 10 }}>
+      <div style={{ fontSize: 22, marginBottom: 4 }}>📋</div>
+      <div style={{ fontSize: 14, fontWeight: 700, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>Coaching picks unlock Tuesday</div>
+      <div style={{ fontSize: 13, color: C.dim, lineHeight: 1.5 }}>NRL drops team lists Tuesday afternoon. The coach decisions get authored from the actual named 17 — refresh once you see the Dogs squad on nrl.com.</div>
+    </div>}
     {DEBATES.map(d => {
       const picked = up[d.id];
       const draft = drafts[d.id];
