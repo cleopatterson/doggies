@@ -12,7 +12,7 @@ Companion app for the **Parkyard** WhatsApp group (Tony, Benny, Jordy) — Bulld
 ## Stack
 - **Vite + React 18** SPA, mobile-optimised (`max-width: 480px`)
 - Inline styles, no CSS framework. **Barlow Condensed** for headings, **Inter** for body. Bulldogs blue (`#005eb8`) accent.
-- **localStorage** for picks (via [src/storage.js](src/storage.js) shim, namespaced `dogs-hq:*`)
+- **Server-synced picks** via tiny Express app ([server.js](server.js)) backed by a JSON file on a Railway Volume. [src/storage.js](src/storage.js) writes through to `/api/state/:key` with localStorage as a read-through cache + offline fallback. Identity (the `me` key) stays per-device.
 - Hosted on **Railway**
 
 ## Local dev
@@ -26,13 +26,26 @@ npm run generate  # refresh src/data.json from NRL + Kennel + Claude
 ```
 
 ## Deployment (Railway)
-[railway.json](railway.json) — Nixpacks builder, `buildCommand: "npm run build"` (NOT `npm ci && npm run build` — Nixpacks already installs deps and the duplicate locks the cache). Start command: `serve -s dist -l $PORT`.
+[railway.json](railway.json) — Nixpacks builder, `buildCommand: "npm run build"` (NOT `npm ci && npm run build` — Nixpacks already installs deps and the duplicate locks the cache). Start command: `npm run start` → `node server.js`.
+
+The Railway service runs a tiny Express app ([server.js](server.js)) that:
+- Serves the built SPA from `dist/`
+- Exposes `GET/POST /api/state/:key` so picks sync across the three mates' devices
+- Persists state to `${DATA_DIR}/state.json` (default `./data`, but Railway must mount a Volume there — see below)
 
 Required env vars in Railway:
 - `ANTHROPIC_API_KEY`
 - `NRL_TEAM_ID=500010`
 - `NRL_SEASON=2026`
 - Railway sets `PORT` automatically (typically 8080)
+- `DATA_DIR=/app/data` (or wherever the volume is mounted)
+
+**⚠ Railway Volume required** — without it, the JSON state file lives only inside the container and gets wiped every redeploy (which the auto-refresh GitHub Action triggers Tue/Thu/Mon). To make picks survive week-to-week:
+1. Railway dashboard → service → Volumes → New Volume
+2. Mount path: `/app/data` (matches the default `DATA_DIR`)
+3. Redeploy. Picks now persist across deploys/restarts.
+
+If the volume is missing, the server still starts and the API still works — but state evaporates every refresh. Logs print a warning at boot when the data dir isn't writable.
 
 ## Architecture (V1)
 Two tabs, with the Parkyard Cup standings embedded into the app header (collapsible). Picks live on whichever tab they're about: forward-looking on **This Week**, retrospective on **Last Game**. The brief was inspired by `dogs-hq-v9.jsx` (architecture only — content/copy is our existing shape, not v9's mock data).
@@ -122,7 +135,8 @@ Requires `ANTHROPIC_API_KEY` in **GitHub repo Settings → Secrets and variables
 
 ## File map
 - [src/App.jsx](src/App.jsx) — single-file UI for all three tabs + ladder + identity flow
-- [src/storage.js](src/storage.js) — `loadData(key, fallback)` / `saveData(key, data)` over localStorage
+- [server.js](server.js) — Express app: serves `dist/` + `/api/state/:key` GET/POST backed by `${DATA_DIR}/state.json`
+- [src/storage.js](src/storage.js) — `loadData(key, fallback)` / `saveData(key, data)` — server API with localStorage cache fallback; `me` key stays local
 - [src/data.json](src/data.json) — bundled at build time; produced by `npm run generate`
 - [scripts/generate.js](scripts/generate.js) — NRL + Kennel + Claude pipeline
 - [index.html](index.html) — OG meta tag template (placeholders filled by Vite plugin)
@@ -143,5 +157,4 @@ Requires `ANTHROPIC_API_KEY` in **GitHub repo Settings → Secrets and variables
 ## Phase 2 — not built yet
 - **OpenClaw WhatsApp bot** auto-posting the link to Parkyard on Thursday 6pm + Monday 8am (per brief)
 - **Tip + coach grading pipeline** for the Ladder (described above)
-- **NRL team-list scraper** (Puppeteer) for named 1-17 + player headshots
-- **Backend persistence** for picks (currently client-side only — fine for three mates)
+- **Player headshots** from the NRL match-centre data (URLs are already in the q-data blob; not yet wired into the UI)

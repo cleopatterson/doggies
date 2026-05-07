@@ -32,5 +32,13 @@ function injectOg() {
 
 export default defineConfig({
   plugins: [react(), injectOg()],
-  server: { host: true, port: 5180, strictPort: true },
+  server: {
+    host: true,
+    port: 5180,
+    strictPort: true,
+    // Local dev: if you run `node server.js` in another terminal (port 4173),
+    // the SPA's /api calls will reach it. If the server isn't running, storage
+    // gracefully falls back to localStorage so the dev experience doesn't break.
+    proxy: { "/api": "http://localhost:4173" },
+  },
 });
