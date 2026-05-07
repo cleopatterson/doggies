@@ -66,9 +66,14 @@ function RefreshButton() {
   const [spinning, setSpinning] = useState(false);
   const updated = relativeTime(data.generatedAt);
   const click = () => {
+    if (spinning) return;
     setSpinning(true);
-    // Cache-bust so we don't get a stale SPA shell from the browser cache.
-    window.location.href = window.location.pathname + "?_=" + Date.now();
+    // Hold the spinner for ~500ms so the click feels acknowledged before the
+    // reload kills the animation. Then cache-bust so the SPA shell + bundled
+    // data.json get re-fetched fresh.
+    setTimeout(() => {
+      window.location.href = window.location.pathname + "?_=" + Date.now();
+    }, 500);
   };
   return <button onClick={click} title={updated ? `Updated ${updated} — tap to refresh` : "Tap to refresh"} style={{
     position: "absolute", top: 12, right: 12, zIndex: 5,
@@ -630,27 +635,60 @@ function LadderHeader({ me, onSwitch }) {
       {me && <VoterPill me={me} onSwitch={onSwitch} />}
     </div>
 
-    {/* Expanded view — full standings with the per-pick column breakdown */}
-    {open && <div style={{ padding: "4px 14px 12px", background: "rgba(0,0,0,0.15)" }}>
+    {/* Expanded view — NRL-ladder-style standings table. The accordion is closed
+        by default so we can be generous with vertical space and let it breathe. */}
+    {open && <div style={{ padding: "8px 12px 14px", background: "rgba(0,0,0,0.22)" }}>
+      <div style={{ fontSize: 11, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.12em", textAlign: "center", marginBottom: 8, marginTop: 2 }}>
+        🏆 Parkyard Cup · 2026 Season
+      </div>
       {!anyScored ? (
-        <div style={{ padding: "10px 8px", textAlign: "center" }}>
-          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.5 }}>
-            No points yet. Lock trivia or recap for instant points; tip + coach settle after full-time.
-          </div>
+        <div style={{ padding: "16px 12px", textAlign: "center", borderRadius: 10, background: "rgba(255,255,255,0.03)", border: "1px dashed rgba(255,255,255,0.1)" }}>
+          <div style={{ fontSize: 22, marginBottom: 4 }}>🏁</div>
+          <div style={{ fontSize: 14, color: C.w, fontWeight: 700, fontFamily: F, marginBottom: 4 }}>Off and racing.</div>
+          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", lineHeight: 1.5 }}>Lock trivia or recap for instant points. Tip + coach settle after full-time.</div>
         </div>
-      ) : (
-        sorted.map((row, idx) => <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 8, padding: "7px 0", borderBottom: idx < sorted.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
-          <div style={{ fontSize: 16, fontWeight: 900, color: idx === 0 ? C.wGold : "rgba(255,255,255,0.4)", fontFamily: F, minWidth: 18 }}>{idx + 1}</div>
-          <div style={{ flex: 1, fontSize: 14, color: C.w, fontWeight: 700, fontFamily: F }}>{row.user}</div>
-          <div style={{ display: "flex", gap: 6, fontFamily: F, fontWeight: 700 }}>
-            <span style={{ fontSize: 12, color: C.acc }}>🎯 {row.tipsCorrect}/{row.tips}</span>
-            <span style={{ fontSize: 12, color: C.acc }}>📼 {row.recapCorrect}/{row.recap}</span>
-            <span style={{ fontSize: 12, color: C.gold }}>🎓 {row.triviaCorrect}/{row.trivia}</span>
-            <span style={{ fontSize: 12, color: C.purp }}>🧠 {row.coachCorrect}/{row.coach}</span>
-          </div>
-          <div style={{ fontSize: 16, fontWeight: 900, color: idx === 0 ? C.wGold : C.w, fontFamily: F, minWidth: 18, textAlign: "right" }}>{row.score}</div>
-        </div>)
-      )}
+      ) : <>
+        {/* Column headers — matches the NRL ladder feel: POS / USER / per-pick / PTS */}
+        <div style={{
+          display: "grid", gridTemplateColumns: "22px 1fr 30px 30px 30px 30px 38px",
+          gap: 8, alignItems: "center", padding: "6px 8px",
+          fontSize: 10, fontWeight: 800, color: "rgba(255,255,255,0.45)",
+          fontFamily: F, textTransform: "uppercase", letterSpacing: "0.08em",
+          borderBottom: "1px solid rgba(255,255,255,0.1)",
+        }}>
+          <span></span>
+          <span>User</span>
+          <span style={{ textAlign: "center" }}>🎯</span>
+          <span style={{ textAlign: "center" }}>📼</span>
+          <span style={{ textAlign: "center" }}>🎓</span>
+          <span style={{ textAlign: "center" }}>🧠</span>
+          <span style={{ textAlign: "right" }}>Pts</span>
+        </div>
+        {sorted.map((row, idx) => {
+          const isLeader = idx === 0 && row.score > 0;
+          return <div key={row.user} style={{
+            display: "grid", gridTemplateColumns: "22px 1fr 30px 30px 30px 30px 38px",
+            gap: 8, alignItems: "center", padding: "10px 8px",
+            background: isLeader
+              ? `linear-gradient(90deg, rgba(251,191,36,0.18), rgba(251,191,36,0.04) 80%)`
+              : idx % 2 === 0 ? "rgba(255,255,255,0.02)" : "transparent",
+            borderRadius: 6,
+            borderLeft: isLeader ? `3px solid ${C.wGold}` : "3px solid transparent",
+            marginTop: 2,
+          }}>
+            <span style={{ fontSize: 18, fontWeight: 900, color: isLeader ? C.wGold : "rgba(255,255,255,0.45)", fontFamily: F }}>{idx + 1}</span>
+            <span style={{ fontSize: 16, fontWeight: 800, color: C.w, fontFamily: F, display: "flex", alignItems: "center", gap: 6 }}>
+              {row.user}
+              {isLeader && <span style={{ fontSize: 14 }} title="Leader">👑</span>}
+            </span>
+            <span style={{ textAlign: "center", fontSize: 15, fontWeight: 800, color: row.tipsCorrect > 0 ? C.acc : "rgba(255,255,255,0.25)", fontFamily: F }}>{row.tipsCorrect}</span>
+            <span style={{ textAlign: "center", fontSize: 15, fontWeight: 800, color: row.recapCorrect > 0 ? C.acc : "rgba(255,255,255,0.25)", fontFamily: F }}>{row.recapCorrect}</span>
+            <span style={{ textAlign: "center", fontSize: 15, fontWeight: 800, color: row.triviaCorrect > 0 ? C.gold : "rgba(255,255,255,0.25)", fontFamily: F }}>{row.triviaCorrect}</span>
+            <span style={{ textAlign: "center", fontSize: 15, fontWeight: 800, color: row.coachCorrect > 0 ? C.purp : "rgba(255,255,255,0.25)", fontFamily: F }}>{row.coachCorrect}</span>
+            <span style={{ textAlign: "right", fontSize: 22, fontWeight: 900, color: isLeader ? C.wGold : C.w, fontFamily: F, lineHeight: 1 }}>{row.score}</span>
+          </div>;
+        })}
+      </>}
     </div>}
   </div>;
 }
