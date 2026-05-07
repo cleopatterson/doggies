@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T05:19:15.380Z",
+  "generatedAt": "2026-05-07T08:12:08.007Z",
   "match": {
     "round": 10,
     "opponent": "Dolphins",
@@ -13,18 +13,18 @@
     "oppLogo": "https://www.nrl.com/.theme/dolphins/badge.svg?bust=202603300722"
   },
   "odds": {
-    "dogs": 2.59,
-    "opp": 1.5,
+    "dogs": null,
+    "opp": null,
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
     "side": "Opponent",
     "confidence": "Lean — about 30/70",
-    "note": "The Kennel's in full doom mode after the Cowboys debacle. A few delusional optimists tipping Dogs by 100+ but most reckon the Dolphins roll us at Suncorp."
+    "note": "Most of the Kennel reckons we're cooked, but there's a stubborn pocket calling 50+ and 100+ point wins like it's therapy."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 10 v Dolphins",
+      "thread": "GAMEDAY Rd 10 vs Dolphins",
       "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
       "quote": "you underestimate the talent of the dogs, dogs 100 plus",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
@@ -32,55 +32,55 @@
   ],
   "debates": [
     {
-      "id": "salmon-lock-spot",
-      "icon": "🎣",
-      "question": "Salmon's named at 13 again — does he survive the full 80?",
-      "kennel": "The gameday thread is unanimous: 'just get salmon out of the starting line up please bare minimum'.",
+      "id": "salmon-starting-lock",
+      "icon": "🔁",
+      "question": "Salmon's named at 13 — does he start the game at lock?",
+      "kennel": "GAMEDAY thread is begging Ciro to bench him: 'bare minimum, get Salmon out of the starting line up'.",
       "threadSlug": "/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692",
       "options": [
         {
-          "label": "Plays the full 80 at lock",
-          "emoji": "🎣"
+          "label": "Yes, Salmon starts at 13",
+          "emoji": "🟢"
         },
         {
-          "label": "Hooked before halftime",
-          "emoji": "🪝"
+          "label": "No, Burton shifts to lock and Salmon goes bench",
+          "emoji": "🔄"
         },
         {
-          "label": "Starts but bench cameo only in second half",
-          "emoji": "🪑"
+          "label": "No, late change — Salmon out of the 17",
+          "emoji": "❌"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/"
     },
     {
-      "id": "first-try-source",
-      "icon": "🏉",
-      "question": "Where does the Dogs' first try come from?",
-      "kennel": "Galvin scored our opener last week and the forum reckons he's the only attacking spark we've got.",
-      "threadSlug": null,
+      "id": "first-attacking-edge",
+      "icon": "🎯",
+      "question": "Which edge do the Dogs target most in the first 20 minutes?",
+      "kennel": "Recruitment thread reckons we've got no go-forward and Critta will do a nudie run by year end — so where do we even attack?",
+      "threadSlug": "/forum/index.php?threads/recruitment.131679",
       "options": [
         {
-          "label": "Galvin involvement (try or last pass)",
-          "emoji": "⚡"
+          "label": "Left edge — Crichton and Tuala",
+          "emoji": "⬅️"
         },
         {
-          "label": "Right edge — Crichton or Xerri finish",
+          "label": "Right edge — Xerri and Sua",
           "emoji": "➡️"
         },
         {
-          "label": "Forward crash ball under the sticks",
-          "emoji": "💪"
+          "label": "Through the middle — Galvin/Burton kicking game",
+          "emoji": "🎯"
         }
       ],
-      "url": null
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/"
     }
   ],
   "trivia": {
-    "question": "What year did the Bulldogs win their most recent NRL premiership?",
+    "question": "When did the Bulldogs last win an NRL premiership?",
     "options": [
       {
-        "label": "1995",
+        "label": "2002",
         "emoji": "🏆"
       },
       {
@@ -92,12 +92,12 @@
         "emoji": "🏆"
       },
       {
-        "label": "2016",
+        "label": "2014",
         "emoji": "🏆"
       }
     ],
     "correctIndex": 1,
-    "explainer": "The Dogs beat the Roosters 16-13 in the 2004 Grand Final — still the last time we tasted it."
+    "explainer": "Steve Folkes' Dogs beat the Roosters 16-13 in the 2004 GF — and yes, that's now over two decades ago."
   },
   "recap": [
     {
@@ -116,12 +116,12 @@
           "emoji": "🏉"
         },
         {
-          "label": "Leo Thompson",
+          "label": "Bronson Xerri",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Sua led the Dogs with 183 run metres — and he's just signed with the Bears for four years."
+      "explainer": "Sua led the Dogs with 183m — and now he's signed with the Bears, because of course he has."
     }
   ],
   "washup": {
@@ -240,13 +240,13 @@
       }
     ],
     "gamedayUrl": null,
-    "headline": "Cooked by the Cowboys and the fanbase has had enough.",
-    "vibe": "12-28 at home and we leaked four tries in the last 28 minutes. Galvin scored the opener and was the only one with a pulse. The Kennel's gone full nuclear — sack threads, recruitment threads, and Sua signing with Perth on the way out the door. Off to Suncorp now to face a Dolphins side that should have us by double digits.",
-    "kennelMood": "Furious",
-    "kennelSummary": "The fanbase is done — Ciraldo sack threads have ballooned past 900 replies, Gus is copping it for the roster, and losing Sua to the Bears poured petrol on the fire. The general feeling is the whole roster is lopsided, we've got no hooker, no fullback, and three centres on rep money.",
+    "headline": "12-28 and the wheels are properly off.",
+    "vibe": "Galvin opened the scoring and we led early, then completely fell apart — 28 unanswered with the Cowboys piling on three in the last 15. Sit 12th, just lost Sua to Perth, and the fan pages are openly calling for Ciro AND Gus. This isn't a slump anymore, it's a season.",
+    "kennelMood": "Cooked",
+    "kennelSummary": "The Ciraldo sack thread cracked 964 replies — moving Galvin to centre while up 6 has been pinpointed as the moment the season died. Gus is catching strays too, with five years of GM misses now under the microscope. Recruitment thread is comparing us position-by-position to the Roosters and finding zero matches.",
     "kennelHotTakes": [
       {
-        "quote": "Five years as GM and we enter a so-called premiership window with no 9, no 1 and no speed at all. There should be absolute guns coming through by now — all we have is Preston.",
+        "quote": "Five years as GM, we enter a so-called premiership window with no 9, no 1, no speed at all — all we have is Preston.",
         "author": "liljohny",
         "threadSlug": "/forum/index.php?threads/ciraldo-should-be-sacked-tonight.131498",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldo-should-be-sacked-tonight.131498/"
@@ -257,39 +257,39 @@
     {
       "prefix": "GAMEDAY",
       "title": "Rnd 10 Vs Dolphins Thurs 7:50pm @ Suncorp",
-      "replies": 427,
+      "replies": 802,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/",
-      "summary": "Gameday thread is half team-tinkering (everyone's begging for Salmon out of the starting 13) and half wild-eyed Crittaraisemykids tipping the Dogs by 100. No1bulldog reckons Ciro won't change a thing despite all the noise."
+      "summary": "Lineup tipping has gone full fantasy mode — everyone's posting their dream 17 and the consensus is just 'get Salmon out of the starting side, please Ciro, anything'."
     },
     {
       "prefix": "Official",
       "title": "Early whispers",
       "replies": 189,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/early-whispers.131687/",
-      "summary": "Issa87 dropped a wild rumour about Burton shifting to lock, Crichton to fullback, Tracey to wing and Chan Kum Tong debuting. Everyone else is calling Chinese whispers and saying Burton at lock would be career suicide."
+      "summary": "Issa87 dropped a wild rumour about Burton shifting to lock, Crichton to fullback and Tracey to wing. The thread instantly turned on him — 'Chinese whispers' and 'whispering to yourself' were the kinder responses."
     }
   ],
   "kennelThreadsLastGame": [
     {
       "prefix": "Opinion",
       "title": "Ciraldo should be sacked tonight",
-      "replies": 949,
+      "replies": 964,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldo-should-be-sacked-tonight.131498/",
-      "summary": "AlzzBulldog losing it over Ciro shifting Galvin to centre while up 6, calling it sabotage. Liljohny's pivoted to having a crack at Gus too — five years in and still no 9, no 1, no speed."
-    },
-    {
-      "prefix": null,
-      "title": "Sua to Perth 4 yr deal",
-      "replies": 200,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/sua-to-perth-4-yr-deal.131628/",
-      "summary": "Sua confirmed to the Bears and the thread is fuming — the kid outplayed half our backs and we let him walk while keeping 'Floptoya'. Frank Charles blaming Ciro's rotating bench for chasing him out."
+      "summary": "AlzzBulldog leading the charge — moving Galvin to centre while up 6 has people frothing. 964 replies of 'sack him', with Gus also catching shrapnel for five years of recruitment misses."
     },
     {
       "prefix": null,
       "title": "Recruitment",
-      "replies": 192,
+      "replies": 241,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/",
-      "summary": "Roster construction getting roasted — $2.5m on three centres, 800k for a 6 playing 7, and zero NRL hookers. Marlinfeeder reckons the Roosters' 1-13 beats ours in every single position."
+      "summary": "Brutal autopsy of the roster — $2.5m on three centres, no recognised hooker, and the Roosters' 1-13 getting held up as the benchmark we're nowhere near."
+    },
+    {
+      "prefix": null,
+      "title": "Sua to Perth 4 yr deal",
+      "replies": 204,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/sua-to-perth-4-yr-deal.131628/",
+      "summary": "Sua gone to the Bears on 4 years and the Kennel is filthy — 'outplayed all our backs and they don't see any value', while we apparently keep 'Floptoya' instead."
     }
   ],
   "kennelMeta": {
