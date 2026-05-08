@@ -23,15 +23,35 @@ const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36";
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
 // ── 1. NRL FIXTURE ──
+// The /draw/data endpoint only returns the *currently selected* round (the one
+// the NRL site is showing). Between when the Dogs' fixture goes FullTime and
+// when the selected round rolls forward, the default response contains zero
+// Bulldogs Upcoming matches. We walk subsequent rounds explicitly until we find
+// the next Bulldogs fixture (capped to handle bye weeks).
 async function fetchFixture() {
-  const url = `https://www.nrl.com/draw/data?competition=111&season=${SEASON}`;
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`NRL draw fetch ${res.status}`);
-  const data = await res.json();
-  const game = data.fixtures.find(f =>
+  const fetchRound = async (roundParam) => {
+    const url = `https://www.nrl.com/draw/data?competition=111&season=${SEASON}${roundParam ? `&round=${roundParam}` : ""}`;
+    const res = await fetch(url, { headers: { "User-Agent": UA } });
+    if (!res.ok) throw new Error(`NRL draw fetch ${res.status} (round=${roundParam || "default"})`);
+    return res.json();
+  };
+  const findDogsUpcoming = (data) => data.fixtures.find(f =>
     [f.homeTeam.teamId, f.awayTeam.teamId].includes(TEAM_ID) && f.matchState === "Upcoming"
   );
-  if (!game) throw new Error(`No upcoming Bulldogs game in season ${SEASON} draw response`);
+
+  let data = await fetchRound(null);
+  let game = findDogsUpcoming(data);
+  if (!game) {
+    // Walk forward up to 4 rounds (covers a bye + transition lag).
+    const startRound = data.selectedRoundId || 0;
+    for (let r = startRound + 1; r <= startRound + 4 && !game; r++) {
+      console.log(`→ NRL: no Upcoming Bulldogs match in round ${startRound}, trying round ${r}`);
+      await sleep(800);
+      data = await fetchRound(r);
+      game = findDogsUpcoming(data);
+    }
+  }
+  if (!game) throw new Error(`No upcoming Bulldogs game found in next 4 rounds of season ${SEASON}`);
   const dogsHome = game.homeTeam.teamId === TEAM_ID;
   const dogs = dogsHome ? game.homeTeam : game.awayTeam;
   const opp = dogsHome ? game.awayTeam : game.homeTeam;
