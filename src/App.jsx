@@ -62,20 +62,73 @@ function relativeTime(iso) {
   return `${days}d ago`;
 }
 
-function RefreshButton() {
-  const [spinning, setSpinning] = useState(false);
+// Refresh button. Two behaviours depending on identity:
+//   - Tony: triggers the server-side pipeline regen (`npm run generate && build`),
+//     polls /api/regenerate/status every 2s, hard-reloads when done. Takes ~60-90s.
+//   - Everyone else: cache-busted reload of the current bundle. Useful when a
+//     cron-driven deploy has landed and they want the new data now.
+function RefreshButton({ me }) {
+  const [phase, setPhase] = useState("idle"); // idle | regen | reload
   const updated = relativeTime(data.generatedAt);
-  const click = () => {
-    if (spinning) return;
-    setSpinning(true);
-    // Hold the spinner for ~500ms so the click feels acknowledged before the
-    // reload kills the animation. Then cache-bust so the SPA shell + bundled
-    // data.json get re-fetched fresh.
-    setTimeout(() => {
-      window.location.href = window.location.pathname + "?_=" + Date.now();
-    }, 500);
+  const isAdmin = me === "Tony";
+
+  const reloadFresh = () => {
+    window.location.href = window.location.pathname + "?_=" + Date.now();
   };
-  return <button onClick={click} title={updated ? `Updated ${updated} — tap to refresh` : "Tap to refresh"} style={{
+
+  const click = async () => {
+    if (phase !== "idle") return;
+    if (!isAdmin) {
+      setPhase("reload");
+      setTimeout(reloadFresh, 500);
+      return;
+    }
+    setPhase("regen");
+    try {
+      const r = await fetch("/api/regenerate", {
+        method: "POST",
+        headers: { "x-dogs-user": me },
+      });
+      if (!r.ok) throw new Error(`regen failed: ${r.status}`);
+    } catch (e) {
+      console.error(e);
+      alert("Refresh failed to start — check the server logs.");
+      setPhase("idle");
+      return;
+    }
+    // Poll until the job clears `running`. Cap the wait so a stuck job
+    // doesn't spin forever — server logs are the diagnostic source if so.
+    const start = Date.now();
+    const tick = async () => {
+      try {
+        const r = await fetch("/api/regenerate/status");
+        const s = await r.json();
+        if (!s.running) {
+          if (s.error) {
+            alert(`Refresh failed: ${s.error}. Check Railway logs.`);
+            setPhase("idle");
+            return;
+          }
+          reloadFresh();
+          return;
+        }
+      } catch (e) { /* network blip — keep polling */ }
+      if (Date.now() - start > 180000) { // 3min cap
+        alert("Refresh is taking longer than expected. Try again in a minute.");
+        setPhase("idle");
+        return;
+      }
+      setTimeout(tick, 2000);
+    };
+    setTimeout(tick, 2000);
+  };
+
+  const spinning = phase !== "idle";
+  const title = phase === "regen"
+    ? "Refreshing data — about a minute…"
+    : (updated ? `Updated ${updated} — tap to refresh${isAdmin ? " (re-runs pipeline)" : ""}` : "Tap to refresh");
+
+  return <button onClick={click} title={title} style={{
     position: "absolute", top: 12, right: 12, zIndex: 5,
     width: 30, height: 30, borderRadius: 15,
     background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)",
@@ -698,6 +751,14 @@ export default function DogsHQ() {
   const [tab, setTab] = useState("this_week");
   const [me, claim, ready] = useIdentity();
 
+  // Fire-and-forget auto-regen check on first mount. Server decides if a
+  // refresh window has passed (post-match, team-list day) and kicks off the
+  // pipeline silently. This visitor keeps their current view; next page load
+  // gets fresh content. Manual button (Tony) is the in-session escape hatch.
+  useEffect(() => {
+    fetch("/api/check-stale").catch(() => {});
+  }, []);
+
   if (!ready) return <div style={{ minHeight: "100vh", background: C.dk }} />;
 
   // Tab subtitles read straight from data so the bottom nav always reflects the round.
@@ -708,7 +769,7 @@ export default function DogsHQ() {
     {/* App header: title (with official Bulldogs badge) + ladder strip + voter line.
         All three layers share the same dark band so they read as one unit. */}
     <div style={{ background: `linear-gradient(180deg, ${C.blue}, ${C.blue}dd 50%, ${C.dk} 100%)`, position: "relative" }}>
-      <RefreshButton />
+      <RefreshButton me={me} />
       <div style={{ padding: "14px 14px 4px", textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
           <HeaderLogo />
