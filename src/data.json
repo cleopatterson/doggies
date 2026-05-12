@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10T21:53:50.924Z",
+  "generatedAt": "2026-05-12T11:21:50.996Z",
   "match": {
     "round": 11,
     "opponent": "Sharks",
@@ -10,7 +10,7 @@
     "dogsPos": "13th",
     "oppPos": "10th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/sharks/badge.svg?bust=202603300722"
+    "oppLogo": "https://www.nrl.com/.theme/sharks/badge.svg?bust=202605110452"
   },
   "odds": {
     "dogs": null,
@@ -19,23 +19,68 @@
   },
   "kennelTipLean": {
     "side": "Opponent",
-    "confidence": "Strong — about 15/85",
-    "note": "The Kennel is in full meltdown mode after the Dolphins shellacking. Nobody's tipping the Dogs — they're tipping how many tries Nikora scores."
+    "confidence": "Lean — about 25/75",
+    "note": "The Kennel's cooked. No one's tipping this team after the Dolphins shellacking — most blokes are just hoping we keep it under 30."
   },
   "kennelTipQuotes": [
     {
-      "thread": "THE TRUTH Why We Are DOG SHIT",
-      "threadSlug": "/forum/index.php?threads/the-truth-why-we-are-dog-shit.131718",
-      "quote": "Another 5 year rebuild coming... if Gus doesn't have the balls to rip into Baz at the end of the year he's just as cooked as the coach is",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/the-truth-why-we-are-dog-shit.131718/"
+      "thread": "GAMEDAY Rd 11 vs Sharks",
+      "threadSlug": "/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731",
+      "quote": "Stopped reading after Connor Tracey.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "tracey-fullback-call",
+      "icon": "🧠",
+      "question": "Tracey's named at 1 — does he last the full 80 or get yanked early?",
+      "kennel": "The Tracey?Time to go thread is 198 replies of pure venom after Friday.",
+      "threadSlug": "/forum/index.php?threads/tracey-time-to-go.131702",
+      "options": [
+        {
+          "label": "Plays the full 80 at fullback",
+          "emoji": "⏱️"
+        },
+        {
+          "label": "Shifted off fullback mid-game (Crichton or Burton goes back)",
+          "emoji": "🔄"
+        },
+        {
+          "label": "Hooked completely before fulltime",
+          "emoji": "🪓"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey-time-to-go.131702/"
+    },
+    {
+      "id": "first-try-source",
+      "icon": "🧠",
+      "question": "Where does the Dogs' first try come from?",
+      "kennel": "After 75% completion last week the bar is on the floor — even scoring first feels optimistic.",
+      "threadSlug": "/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731",
+      "options": [
+        {
+          "label": "Burton or Galvin set play / kick",
+          "emoji": "🦶"
+        },
+        {
+          "label": "Forward crash off a Hayward dart",
+          "emoji": "💥"
+        },
+        {
+          "label": "Outside back off a broken-field scramble",
+          "emoji": "🏃"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/"
+    }
+  ],
   "trivia": {
     "question": "What year did the Bulldogs win their most recent NRL premiership?",
     "options": [
       {
-        "label": "1995",
+        "label": "2002",
         "emoji": "🏆"
       },
       {
@@ -52,31 +97,31 @@
       }
     ],
     "correctIndex": 1,
-    "explainer": "Steve Folkes' Dogs beat the Roosters 16-13 in the 2004 grand final — the club's last premiership. Feels like a lifetime ago right now."
+    "explainer": "Canterbury beat the Roosters 16-13 in the 2004 Grand Final — still the club's last title."
   },
   "recap": [
     {
-      "question": "Who scored the Bulldogs' opening try against the Dolphins?",
+      "question": "Who racked up the most tackles for the Dogs against the Dolphins?",
       "options": [
         {
+          "label": "Jacob Preston",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Sitili Tupouniua",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Bailey Hayward",
+          "emoji": "🏉"
+        },
+        {
           "label": "Jaeman Salmon",
-          "emoji": "🐟"
-        },
-        {
-          "label": "Stephen Crichton",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Enari Tuala",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Matt Burton",
           "emoji": "🏉"
         }
       ],
-      "correctIndex": 0,
-      "explainer": "Salmon crossed in the 8th minute for the Dogs' first — one of only two tries they managed all night."
+      "correctIndex": 1,
+      "explainer": "Sitili put on 42 tackles — only bloke really earning his coin while the rest of the side coughed up 40 missed tackles."
     }
   ],
   "washup": {
@@ -88,7 +133,7 @@
     "result": "LOSS",
     "margin": -32,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/dolphins/badge.svg?bust=202603300722",
+    "oppLogo": "https://www.nrl.com/.theme/dolphins/badge.svg?bust=202605110452",
     "attendance": 16143,
     "weather": "Fine",
     "tries": [
@@ -210,14 +255,14 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/",
-    "headline": "12-44 at Suncorp. We got absolutely cooked.",
-    "vibe": "Forty missed tackles, ten errors, and Isaako put 4 line breaks through us like we weren't there. Tracey was invisible at the back, the middle got smoked, and the only Dog who turned up was Tupouniua with 42 tackles trying to plug a leaking dam. Sitting 13th after ten rounds and now we get the Sharks at Suncorp again. It's bleak.",
-    "kennelMood": "Cooked",
-    "kennelSummary": "The Kennel is at full DEFCON 1. Tracey's getting buried, Salmon at 13 is being treated as a personal insult, and the Gus/Ciro/Barrett discourse has consumed every thread. Nate DAWG called the 4-hour-15-minute window to meltdown before kickoff and was bang on.",
+    "headline": "12-44 at Suncorp and the wheels aren't just off — they're rolling down Caxton Street.",
+    "vibe": "Got cooked by the Dolphins. 40 missed tackles, 10 errors, 75% completion — it's just bad footy. Salmon got one early, Critta got one back, then Isaako put on a four-pointer hat-trick and the bench just unloaded. Sitting 13th after 10 rounds with Gus, Ciro and half the squad on the chopping block in the forums.",
+    "kennelMood": "Furious",
+    "kennelSummary": "The Kennel went into full meltdown — Tracey's getting buried, Salmon at 13 is the running joke, and there's a Ciraldo-sack thread that spawned during the second half. Nate DAWG literally predicted the meltdown timing to the minute.",
     "kennelHotTakes": [
       {
-        "quote": "That's the most pathetic fullback performance I've ever seen from a Bulldogs fullback. Send him to the Super League — swap him for Jai Field, we need speed.",
-        "author": "Imposter404 / Kempsey Dog",
+        "quote": "That is the most pathetic fullback performance I have seen from a Bulldogs fullback.",
+        "author": "Imposter404",
         "threadSlug": "/forum/index.php?threads/tracey-time-to-go.131702",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey-time-to-go.131702/"
       }
@@ -225,20 +270,34 @@
   },
   "kennelThreadsThisWeek": [
     {
-      "prefix": null,
-      "title": "Tracey?Time to go",
-      "replies": 180,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey-time-to-go.131702/",
-      "summary": "Imposter404 calling it 'the most pathetic fullback performance' he's seen in blue and white. Loud calls to shift Crichton to fullback and bury Tracey in reserve grade."
+      "prefix": "GAMEDAY",
+      "title": "Round 11 vs Sharks Friday 6pm Suncorp (Magic Round)",
+      "replies": 644,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/",
+      "summary": "Gameday thread's already a mess — Mr Shhh tapped out at Tracey's name, half the thread reckons Xerri needs to mark Talakai, the other half is bagging the AI team graphic."
+    },
+    {
+      "prefix": "Opinion",
+      "title": "Mitch Woods",
+      "replies": 187,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/mitch-woods.131632/",
+      "summary": "187 replies of 'play him now' vs 'he's not even fit'. Some reckon Conti's the better Reggies call anyway. Classic Kennel halves chaos."
     }
   ],
   "kennelThreadsLastGame": [
     {
       "prefix": null,
+      "title": "Tracey?Time to go",
+      "replies": 198,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey-time-to-go.131702/",
+      "summary": "Tracey's getting absolutely flayed — 'most pathetic fullback performance' according to one bloke, with calls to swap him for Bevan French. Kempsey Dog wants him on a plane to Super League."
+    },
+    {
+      "prefix": null,
       "title": "Is Gus actually the real problem?",
-      "replies": 342,
+      "replies": 384,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/is-gus-actually-the-real-problem.123218/",
-      "summary": "342 replies of Gus discourse. Glenn L reckons what Gus does in the next few days defines his legacy. silva's blaming Barrett for being 'too nice' to the players."
+      "summary": "Gus on trial now too. Glenn L's calling himself Nostradamus, silva reckons Barrett's too soft, and BulldogsNation's threatening that if Baz survives the season Gus is gone too."
     }
   ],
   "kennelMeta": {
