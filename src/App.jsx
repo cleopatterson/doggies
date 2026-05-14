@@ -179,18 +179,20 @@ function IdentityPrompt({ onClaim }) {
   </div>;
 }
 
-// "Voting as X · switch" — inline indicator + button. Renders inside the LadderHeader
-// strip (right-aligned) so identity context lives on the same line as the Cup standings.
-function VoterPill({ me, onSwitch }) {
+// "Voting as X — change" — slim text-link footer at the bottom of the expanded
+// ladder panel. Identity is set once per device on first load, so this is a rarely-used
+// escape hatch for when someone picks the wrong name on setup. Tap opens a confirmation
+// modal before swapping device owner.
+function SwitchIdentityLink({ me, onSwitch }) {
   const [showSwitch, setShowSwitch] = useState(false);
   return <>
     <button onClick={(e) => { e.stopPropagation(); setShowSwitch(true); }} style={{
-      display: "flex", alignItems: "center", gap: 5, background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.3)",
-      borderRadius: 12, padding: "3px 8px", cursor: "pointer",
+      width: "100%", marginTop: 10, padding: "8px 10px", background: "transparent",
+      border: "1px dashed rgba(255,255,255,0.12)", borderRadius: 8, cursor: "pointer",
+      fontSize: 11, color: "rgba(255,255,255,0.5)", fontFamily: F, fontWeight: 700,
+      textTransform: "uppercase", letterSpacing: "0.06em",
     }}>
-      <span style={{ width: 6, height: 6, borderRadius: 3, background: C.grn, boxShadow: `0 0 4px ${C.grn}` }} />
-      <span style={{ fontSize: 11, color: C.w, fontWeight: 800, fontFamily: F }}>{me}</span>
-      <span style={{ fontSize: 9, color: "rgba(255,255,255,0.5)", fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>switch</span>
+      You're voting as <span style={{ color: C.w }}>{me}</span> · change
     </button>
 
     {showSwitch && <div onClick={() => setShowSwitch(false)} style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.7)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)", padding: 16 }}>
@@ -445,11 +447,10 @@ function QuizCard({ me, q, qIdx, kind, accentColor, headerLabel, headerIcon }) {
 
 const TriviaCard = ({ me }) => <QuizCard me={me} q={TRIVIA} kind="trivia" accentColor={C.gold} headerLabel="Bulldogs trivia" headerIcon="🎓" />;
 
-// ── THIS WEEK TAB ──
-// All forward-looking picks (tip, coach decisions, trivia) plus the match context.
-// Supporting content (odds, Kennel chatter) lives inside accordions so it doesn't
-// crowd the picks. Recap (about last week) is on the Last Game tab.
-function ThisWeekTab({ me }) {
+// Coach-decision cards (2 per round, sourced from Kennel chatter + the named 17).
+// Lives inside the consolidated HaveYourSayPanel so it sits with the tip + trivia +
+// recap picks. Pre-Tuesday (no team list yet) we show a "picks pending" placeholder.
+function DebatesList({ me }) {
   const [picks, setPicks] = useState({});
   // One draft per debate id — separate from committed picks so a stray tap doesn't lock.
   const [drafts, setDrafts] = useState({});
@@ -469,65 +470,129 @@ function ThisWeekTab({ me }) {
     setDrafts(prev => { const n = { ...prev }; delete n[id]; return n; });
   };
 
-  return <div style={{ padding: 14 }}>
-    <MatchHeader />
-
-    {/* Have your say — picks live above the Kennel reading material. Zipped by default.
-        Coaching debates only generate once team lists drop (Tue ~4pm AEST); until then
-        the tip stands alone and we show a "pending" message. */}
-    <Accordion icon="🏆" title="Have your say" subtitle={DEBATES.length ? `Tip + ${DEBATES.length} coaching call${DEBATES.length === 1 ? "" : "s"}` : "Tip only — coaching picks pending"} color={C.wGold}>
-    <div style={{ marginTop: 10 }}>
-    <TipCard me={me} />
-    {DEBATES.length === 0 && <div style={{ padding: "14px 12px", borderRadius: 10, border: `1px dashed ${C.border}`, background: "rgba(255,255,255,0.02)", textAlign: "center", marginBottom: 10 }}>
+  if (DEBATES.length === 0) {
+    return <div style={{ padding: "14px 12px", borderRadius: 10, border: `1px dashed ${C.border}`, background: "rgba(255,255,255,0.02)", textAlign: "center", marginBottom: 10 }}>
       <div style={{ fontSize: 22, marginBottom: 4 }}>📋</div>
       <div style={{ fontSize: 14, fontWeight: 700, color: C.w, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 4 }}>Coaching picks unlock Tuesday</div>
       <div style={{ fontSize: 13, color: C.dim, lineHeight: 1.5 }}>NRL drops team lists Tuesday afternoon. The coach decisions get authored from the actual named 17 — refresh once you see the Dogs squad on nrl.com.</div>
-    </div>}
-    {DEBATES.map(d => {
-      const picked = up[d.id];
-      const draft = drafts[d.id];
-      return <div key={d.id} style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 10, border: `1px solid ${C.border}` }}>
-        <div style={{ fontSize: 24, marginBottom: 6 }}>{d.icon}</div>
-        <div style={{ fontSize: 16, fontWeight: 800, color: C.w, lineHeight: 1.3, marginBottom: 8 }}>{d.question}</div>
-        {d.url
-          ? <ExtLink href={d.url} style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10, textDecoration: "none" }}>
-              <span style={{ fontSize: 15, flexShrink: 0 }}>🏟️</span>
-              <span style={{ fontSize: 13, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic", flex: 1 }}>{d.kennel}</span>
-              <span style={{ fontSize: 13, color: "#c4b5fd", flexShrink: 0 }}>↗</span>
-            </ExtLink>
-          : <div style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10 }}>
-              <span style={{ fontSize: 15, flexShrink: 0 }}>🏟️</span>
-              <span style={{ fontSize: 13, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic" }}>{d.kennel}</span>
-            </div>}
-        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-          {d.options.map(opt => {
-            const isLocked = picked === opt.label;
-            const isDraft = !picked && draft === opt.label;
-            const selected = isLocked || isDraft;
-            const others = USERS.filter(u => u !== me && picks[u]?.[d.id] === opt.label);
-            return <button key={opt.label} onClick={() => choose(d.id, opt.label)} style={{
-              padding: "10px 14px", borderRadius: 10, cursor: picked ? "default" : "pointer",
-              border: selected ? `2px solid ${C.acc}` : `1px solid ${picked ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.1)"}`,
-              background: selected ? `rgba(59,157,255,0.${isLocked ? "12" : "06"})` : "rgba(255,255,255,0.02)",
-              color: selected ? C.acc : picked ? "rgba(255,255,255,0.3)" : C.w,
-              fontSize: 15, fontWeight: 600, textAlign: "left",
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-            }}>
-              <span><span style={{ marginRight: 8 }}>{opt.emoji}</span>{opt.label}</span>
-              <span style={{ display: "flex", gap: 4 }}>
-                {isLocked && <span style={{ fontSize: 13, fontWeight: 700, color: C.acc, fontFamily: F }}>YOU</span>}
-                {others.map(u => <span key={u} style={{ fontSize: 13, fontWeight: 700, color: C.dim, fontFamily: F }}>{u}</span>)}
-              </span>
-            </button>;
-          })}
+    </div>;
+  }
+
+  return <>{DEBATES.map(d => {
+    const picked = up[d.id];
+    const draft = drafts[d.id];
+    return <div key={d.id} style={{ background: C.card, borderRadius: 12, padding: 14, marginBottom: 10, border: `1px solid ${C.border}` }}>
+      <div style={{ fontSize: 24, marginBottom: 6 }}>{d.icon}</div>
+      <div style={{ fontSize: 16, fontWeight: 800, color: C.w, lineHeight: 1.3, marginBottom: 8 }}>{d.question}</div>
+      {d.url
+        ? <ExtLink href={d.url} style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10, textDecoration: "none" }}>
+            <span style={{ fontSize: 15, flexShrink: 0 }}>🏟️</span>
+            <span style={{ fontSize: 13, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic", flex: 1 }}>{d.kennel}</span>
+            <span style={{ fontSize: 13, color: "#c4b5fd", flexShrink: 0 }}>↗</span>
+          </ExtLink>
+        : <div style={{ display: "flex", alignItems: "flex-start", gap: 6, padding: "8px 10px", borderRadius: 8, background: "rgba(167,139,250,0.06)", border: `1px solid rgba(167,139,250,0.2)`, marginBottom: 10 }}>
+            <span style={{ fontSize: 15, flexShrink: 0 }}>🏟️</span>
+            <span style={{ fontSize: 13, color: "#c4b5fd", lineHeight: 1.4, fontStyle: "italic" }}>{d.kennel}</span>
+          </div>}
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        {d.options.map(opt => {
+          const isLocked = picked === opt.label;
+          const isDraft = !picked && draft === opt.label;
+          const selected = isLocked || isDraft;
+          const others = USERS.filter(u => u !== me && picks[u]?.[d.id] === opt.label);
+          return <button key={opt.label} onClick={() => choose(d.id, opt.label)} style={{
+            padding: "10px 14px", borderRadius: 10, cursor: picked ? "default" : "pointer",
+            border: selected ? `2px solid ${C.acc}` : `1px solid ${picked ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.1)"}`,
+            background: selected ? `rgba(59,157,255,0.${isLocked ? "12" : "06"})` : "rgba(255,255,255,0.02)",
+            color: selected ? C.acc : picked ? "rgba(255,255,255,0.3)" : C.w,
+            fontSize: 15, fontWeight: 600, textAlign: "left",
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+          }}>
+            <span><span style={{ marginRight: 8 }}>{opt.emoji}</span>{opt.label}</span>
+            <span style={{ display: "flex", gap: 4 }}>
+              {isLocked && <span style={{ fontSize: 13, fontWeight: 700, color: C.acc, fontFamily: F }}>YOU</span>}
+              {others.map(u => <span key={u} style={{ fontSize: 13, fontWeight: 700, color: C.dim, fontFamily: F }}>{u}</span>)}
+            </span>
+          </button>;
+        })}
+      </div>
+      {!picked && draft && <div style={{ marginTop: 10 }}>
+        <ConfirmBar label="Lock in pick" hint="Tap another to change" color={C.acc} onConfirm={() => lockIn(d.id)} />
+      </div>}
+    </div>;
+  })}</>;
+}
+
+// Reads the current user's progress across all 4 pick types (tip, coach debates,
+// recap, trivia) and exposes a live count. Re-fetches on the `picks-changed` event
+// dispatched by storage.saveData, so the panel subtitle stays in sync as picks lock.
+function usePicksCount(me) {
+  const total = 1 + DEBATES.length + RECAPS.length + (TRIVIA?.question ? 1 : 0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!me) { setCount(0); return; }
+    let cancelled = false;
+    const refresh = async () => {
+      const [tips, debates, recap, trivia] = await Promise.all([
+        loadData(`tips-r${MATCH.round}`, {}),
+        loadData(`debates-r${MATCH.round}`, {}),
+        loadData(`recap-r${MATCH.round}`, {}),
+        loadData(`trivia-r${MATCH.round}`, {}),
+      ]);
+      if (cancelled) return;
+      const n = (tips[me] ? 1 : 0)
+        + Object.keys(debates[me] || {}).length
+        + Object.keys(recap[me] || {}).length
+        + (trivia[me] != null ? 1 : 0);
+      setCount(n);
+    };
+    refresh();
+    window.addEventListener("dogs-hq:picks-changed", refresh);
+    return () => { cancelled = true; window.removeEventListener("dogs-hq:picks-changed", refresh); };
+  }, [me]);
+
+  return { count, total };
+}
+
+// Consolidated picks panel — single collapsible strip that sits between the header
+// band and the tab nav. Bundles tip + coach debates + recap + trivia into one place
+// so picks aren't hidden behind two tabs.
+function HaveYourSayPanel({ me }) {
+  const [open, setOpen] = useState(false);
+  const { count, total } = usePicksCount(me);
+  const done = total > 0 && count >= total;
+
+  return <div style={{ background: "rgba(0,0,0,0.28)", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+    <button onClick={() => setOpen(!open)} style={{
+      width: "100%", padding: "12px 14px", background: "transparent", border: "none", cursor: "pointer",
+      display: "flex", alignItems: "center", gap: 10, color: C.w, textAlign: "left",
+    }}>
+      <span style={{ fontSize: 20 }}>🗣️</span>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontSize: 15, fontWeight: 800, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.06em", color: open ? C.wGold : C.w }}>Have your say</div>
+        <div style={{ fontSize: 11, color: done ? C.grn : "rgba(255,255,255,0.55)", fontFamily: F, fontWeight: 700, marginTop: 2, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+          {done ? "All in ✓" : `${count}/${total} picked`}
         </div>
-        {!picked && draft && <div style={{ marginTop: 10 }}>
-          <ConfirmBar label="Lock in pick" hint="Tap another to change" color={C.acc} onConfirm={() => lockIn(d.id)} />
-        </div>}
-      </div>;
-    })}
-    </div>
-    </Accordion>
+      </div>
+      <span style={{ fontSize: 16, color: open ? C.wGold : "rgba(255,255,255,0.5)", transform: open ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>▸</span>
+    </button>
+    {open && <div style={{ padding: "12px 14px 14px", background: C.dk, borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+      <TipCard me={me} />
+      <DebatesList me={me} />
+      {RECAPS.map((q, i) => <QuizCard key={i} me={me} q={q} qIdx={i} kind="recap" accentColor={C.acc} headerLabel="Recap" headerIcon="📼" />)}
+      {TRIVIA?.question && <TriviaCard me={me} />}
+    </div>}
+  </div>;
+}
+
+// ── THIS WEEK TAB ──
+// Forward-looking match context. Picks (tip + coach decisions) have moved up to the
+// consolidated HaveYourSayPanel above the tab nav — this tab now just shows the
+// match card and Kennel chatter for the upcoming game.
+function ThisWeekTab() {
+  return <div style={{ padding: 14 }}>
+    <MatchHeader />
 
     {/* From The Kennel — top 3 upcoming-match threads + mood + 1 spicy quote. Open by default. */}
     <Accordion icon="🏟️" title="From The Kennel" subtitle={KENNEL_TIP_LEAN.confidence} color={C.purp} defaultOpen={true}>
@@ -544,15 +609,15 @@ function ThisWeekTab({ me }) {
 }
 
 // ── LAST GAME TAB ──
-// Score + headline + vibe stay visible. The recap pick (about last week) lives here
-// so questions are on the relevant tab. Kennel post-match reactions go in an accordion.
-function LastGameTab({ me }) {
+// Retrospective match context. Recap + trivia picks have moved up to the
+// consolidated HaveYourSayPanel above the tab nav — this tab now just shows the
+// score banner, headline/vibe, and post-match Kennel reactions.
+function LastGameTab() {
   const w = WASHUP;
   if (!w) return <div style={{ padding: 24, textAlign: "center", color: C.dim, fontSize: 15 }}>No last game yet — first match of the season hasn't been played.</div>;
 
   const isWin = w.result === "WIN";
   const accent = isWin ? C.grn : (w.result === "DRAW" ? C.gold : C.red);
-  const hasRecap = RECAPS.length > 0;
 
   return <div style={{ padding: 14 }}>
     {/* Score banner with logos */}
@@ -579,14 +644,6 @@ function LastGameTab({ me }) {
     {/* Headline + vibe */}
     {w.headline && <div style={{ fontSize: 18, fontWeight: 800, color: C.w, marginBottom: 6, lineHeight: 1.3 }}>{w.headline}</div>}
     {w.vibe && <div style={{ fontSize: 15, color: C.dim, lineHeight: 1.6, marginBottom: 16 }}>{w.vibe}</div>}
-
-    {/* Have your say — picks above the Kennel reading material. Zipped by default. */}
-    {(hasRecap || TRIVIA?.question) && <Accordion icon="🏆" title="Have your say" subtitle={`${(hasRecap ? RECAPS.length : 0) + (TRIVIA?.question ? 1 : 0)} questions about the past`} color={C.wGold}>
-      <div style={{ marginTop: 10 }}>
-        {RECAPS.map((q, i) => <QuizCard key={i} me={me} q={q} qIdx={i} kind="recap" accentColor={C.acc} headerLabel="Recap" headerIcon="📼" />)}
-        {TRIVIA?.question && <TriviaCard me={me} />}
-      </div>
-    </Accordion>}
 
     {/* Kennel post-match — open by default. Top 3 threads + mood summary + 1 hot take. */}
     {(w.kennelMood || w.kennelSummary) && <Accordion icon="🏟️" title="From The Kennel" subtitle={w.kennelMood ? `Mood: ${w.kennelMood}` : "Post-match reactions"} color={C.purp} defaultOpen={true}>
@@ -664,33 +721,25 @@ function LadderHeader({ me, onSwitch }) {
   const anyScored = totals.some(t => t.trivia > 0 || t.recap > 0) || resolutions.length > 0;
 
   const [open, setOpen] = useState(false);
+  const leader = sorted[0]?.score > 0 ? sorted[0] : null;
 
-  return <div style={{ background: "rgba(0,0,0,0.18)", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-    {/* Single ribbon: Cup scores on the left (taps to expand standings), voter pill
-        pinned right so identity context lives on the same line as the Cup. */}
-    <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px" }}>
-      <button onClick={() => setOpen(!open)} style={{
-        flex: 1, background: "transparent", border: "none", cursor: "pointer",
-        display: "flex", alignItems: "center", gap: 8, padding: 0, color: "inherit", textAlign: "left",
-      }}>
-        <span style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", fontFamily: F, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em" }}>🏆</span>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, flex: 1 }}>
-          {sorted.map((row, i) => (
-            <div key={row.user} style={{ display: "flex", alignItems: "center", gap: 3 }}>
-              {i === 0 && row.score > 0 && <span style={{ fontSize: 11 }}>👑</span>}
-              <span style={{ fontSize: 11, fontWeight: 700, fontFamily: F, color: i === 0 && row.score > 0 ? C.wGold : "rgba(255,255,255,0.5)" }}>{row.user}</span>
-              <span style={{ fontSize: 13, fontWeight: 900, fontFamily: F, color: i === 0 && row.score > 0 ? C.wGold : "rgba(255,255,255,0.5)" }}>{row.score}</span>
-            </div>
-          ))}
-        </div>
-        <span style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", transform: open ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>▸</span>
-      </button>
-      {me && <VoterPill me={me} onSwitch={onSwitch} />}
-    </div>
+  return <>
+    {/* Trophy toggle — small circular button at top-left of the header band, mirroring
+        the refresh button on the right. Replaces the old full-width strip; the standings
+        only render inline below when expanded. Gold ring when the current user is leading. */}
+    <button onClick={() => setOpen(!open)} title="Parkyard Cup standings" style={{
+      position: "absolute", top: 12, left: 12, zIndex: 5,
+      width: 30, height: 30, borderRadius: 15,
+      background: open ? "rgba(251,191,36,0.18)" : "rgba(255,255,255,0.08)",
+      border: `1px solid ${open ? "rgba(251,191,36,0.45)" : "rgba(255,255,255,0.12)"}`,
+      cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+      fontSize: 16, lineHeight: 1, padding: 0,
+    }}>
+      <span>🏆</span>
+      {leader?.user === me && <span style={{ position: "absolute", top: -3, right: -3, fontSize: 11 }}>👑</span>}
+    </button>
 
-    {/* Expanded view — NRL-ladder-style standings table. The accordion is closed
-        by default so we can be generous with vertical space and let it breathe. */}
-    {open && <div style={{ padding: "8px 12px 14px", background: "rgba(0,0,0,0.22)" }}>
+    {open && <div style={{ padding: "8px 12px 14px", background: "rgba(0,0,0,0.22)", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div style={{ fontSize: 11, fontWeight: 800, color: C.wGold, fontFamily: F, textTransform: "uppercase", letterSpacing: "0.12em", textAlign: "center", marginBottom: 8, marginTop: 2 }}>
         🏆 Parkyard Cup · 2026 Season
       </div>
@@ -742,8 +791,9 @@ function LadderHeader({ me, onSwitch }) {
           </div>;
         })}
       </>}
+      {me && <SwitchIdentityLink me={me} onSwitch={onSwitch} />}
     </div>}
-  </div>;
+  </>;
 }
 
 // ── APP ──
@@ -777,6 +827,7 @@ export default function DogsHQ() {
         </div>
       </div>
       <LadderHeader me={me} onSwitch={claim} />
+      {me && <HaveYourSayPanel me={me} />}
     </div>
 
     {/* Tab nav — sticky two-tab with subtitle showing the round/last result */}
@@ -786,8 +837,8 @@ export default function DogsHQ() {
     </div>
 
     {me && <div style={{ paddingBottom: 40 }}>
-      {tab === "this_week" && <ThisWeekTab me={me} />}
-      {tab === "last_game" && <LastGameTab me={me} />}
+      {tab === "this_week" && <ThisWeekTab />}
+      {tab === "last_game" && <LastGameTab />}
     </div>}
 
     {!me && <IdentityPrompt onClaim={claim} />}

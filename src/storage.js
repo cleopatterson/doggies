@@ -94,4 +94,10 @@ export async function saveData(key, data) {
     /* failed to sync — value is still in localStorage; user can retry by
        interacting again later. For 3 mates this is fine; we don't queue. */
   }
+  // Picks live in several places (tip, coach debates, recap, trivia) and the
+  // consolidated "Have your say" panel needs to refresh its X/Y count when any
+  // of them changes. Broadcast on save so subscribers can re-read.
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("dogs-hq:picks-changed", { detail: { key } }));
+  }
 }
