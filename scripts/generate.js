@@ -7,7 +7,7 @@
 
 import dotenv from "dotenv";
 dotenv.config({ override: true });
-import { writeFile, mkdir } from "node:fs/promises";
+import { writeFile, readFile, mkdir } from "node:fs/promises";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import Anthropic from "@anthropic-ai/sdk";
@@ -360,7 +360,7 @@ async function gatherKennel() {
 }
 
 // ── 3. CLAUDE SYNTHESIS ──
-async function synthesise({ fixture, kennel, prevMatch, prevKennel, teamList }) {
+async function synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia }) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY missing in .env");
   const client = new Anthropic({ apiKey });
@@ -526,7 +526,8 @@ Rules:
   - General season threads (recruitment, contracts, "Time for fresh blood") can go in either tab — pick the one where they're most relevant given current context.
   - Each summary: 1-2 sentences capturing what's actually being argued (the angle, the main argument, who's getting roasted). NOT generic "fans discuss X" — be specific. Skip videos/pics/memes threads (already filtered upstream but as a safety net).
   - Use the EXACT slug from the digest (the "thread_slug:" line on each thread).
-- Trivia: one factual Bulldogs question with 4 options. Pick something verifiable from public club history or this season's stats — NEVER invent. Safe ground: premiership years, jersey numbers, club records, recent signings, ground capacities, opponent history. Set correctIndex (0-3) to match the right option. Keep explainer short and confident.${prevMatch ? `
+- Trivia: one factual Bulldogs question with 4 options. Pick something verifiable from public club history or this season's stats — NEVER invent. Safe ground: premiership years, jersey numbers, club records, recent signings, ground capacities, opponent history. Set correctIndex (0-3) to match the right option. Keep explainer short and confident.${priorTrivia ? `
+  - DON'T REPEAT LAST WEEK'S TRIVIA. Last round's question was: "${priorTrivia}". Pick a genuinely different topic this week — different decade, different player, different stat category. If your candidate question is just a reworded version of last week's, scrap it and pick something else.` : ""}${prevMatch ? `
 - Recap: exactly ONE question about LAST week's match. Source ONLY from the digest above (try scorers in order, top performers, key stats). The question must have an unambiguous factual answer pulled directly from the data — DO NOT invent.
   - Option labels must be the NAME ONLY (or team name) — NEVER include the stat value (no "(183m)", no scores, no minute markers). The stat goes in the explainer, not the label, otherwise the answer is given away.
   - The 4 options should be plausible same-team / same-stat distractors (e.g. for "most run metres for the Dogs", list 4 Dogs forwards/outside-backs who actually played) so it's a real test.
@@ -584,7 +585,18 @@ async function main() {
     console.error(`  ${prevKennel.gamedayUrl ? `${prevKennel.posts.length} post-match posts` : "no GAMEDAY thread found"}`);
   }
 
-  const synth = await synthesise({ fixture, kennel, prevMatch, prevKennel, teamList });
+  // Read prior trivia so Claude can avoid asking the same question two weeks running.
+  // (The generator otherwise has no memory of prior rounds and keeps reaching for "what
+  // year did we last win the premiership" because the prompt lists premiership years as
+  // safe ground.) Soft-fails if data.json doesn't exist yet or is unparseable.
+  let priorTrivia = null;
+  try {
+    const existing = JSON.parse(await readFile(OUT, "utf8"));
+    priorTrivia = existing?.trivia?.question || null;
+    if (priorTrivia) console.error(`  prior trivia: "${priorTrivia.slice(0, 80)}${priorTrivia.length > 80 ? "…" : ""}"`);
+  } catch { /* no prior file — first run */ }
+
+  const synth = await synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia });
   // Gate: only ship debates when team list is available. The UI keys off this — empty
   // array → "Coach picks unlock when team lists drop Tuesday afternoon."
   if (!teamList) synth.debates = [];
