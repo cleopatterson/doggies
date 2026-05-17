@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-14T08:25:57.490Z",
+  "generatedAt": "2026-05-17T22:00:01.593Z",
   "match": {
-    "round": 11,
-    "opponent": "Sharks",
-    "venue": "Suncorp Stadium",
-    "kickoffISO": "2026-05-15T08:00:00Z",
-    "kickoff": "Fri 15 May, 6:00pm",
-    "dogsHome": false,
-    "dogsPos": "13th",
-    "oppPos": "10th",
+    "round": 12,
+    "opponent": "Storm",
+    "venue": "Accor Stadium",
+    "kickoffISO": "2026-05-22T10:00:00Z",
+    "kickoff": "Fri 22 May, 8:00pm",
+    "dogsHome": true,
+    "dogsPos": "14th",
+    "oppPos": "13th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/sharks/badge.svg?bust=202605110452"
+    "oppLogo": "https://www.nrl.com/.theme/storm/badge.svg?bust=202605110452"
   },
   "odds": {
     "dogs": null,
@@ -19,172 +19,122 @@
   },
   "kennelTipLean": {
     "side": "Opponent",
-    "confidence": "Lean — about 25/75",
-    "note": "Nobody's tipping us. The team drop killed whatever optimism was left — half the thread stopped reading at 'Connor Tracey'."
+    "confidence": "Strong — about 15/85",
+    "note": "Nobody's tipping the Dogs right now. Coming off 38-16 and the forum's in full meltdown mode — Storm at home is a write-off before kickoff."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 11 vs Sharks",
-      "threadSlug": "/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731",
-      "quote": "Stopped reading after Connor Tracey. — Mr Shhh",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/"
+      "thread": "When is our next win?",
+      "threadSlug": "/forum/index.php?threads/when-is-our-next-win.131723",
+      "quote": "We're going to play the Sharks back into form — and now we get Storm next. Lmao good luck lads.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/when-is-our-next-win.131723/"
     }
   ],
-  "debates": [
-    {
-      "id": "salmon-lock-spot",
-      "icon": "🔒",
-      "question": "Salmon's named at 13 again after the Dolphins disaster — does he last the full 80?",
-      "kennel": "Half the gameday thread wants him in Reggies next to Tracey.",
-      "threadSlug": "/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731",
-      "options": [
-        {
-          "label": "Plays the full 80",
-          "emoji": "🦾"
-        },
-        {
-          "label": "Gets hooked before halftime",
-          "emoji": "🪝"
-        },
-        {
-          "label": "Benched in second half, doesn't return",
-          "emoji": "🪑"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/"
-    },
-    {
-      "id": "kick-for-goal-first-penalty",
-      "icon": "🥅",
-      "question": "First kickable penalty in Sharks' half — what's the call?",
-      "kennel": "Doggies 04 begged Ciro to rip up the attacking gameplan — does that mean taking the 2 or running the set?",
-      "threadSlug": "/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731",
-      "options": [
-        {
-          "label": "Burton slots the 2",
-          "emoji": "🎯"
-        },
-        {
-          "label": "Tap and run the set",
-          "emoji": "👟"
-        },
-        {
-          "label": "Kick for the corner",
-          "emoji": "🚩"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/"
-    }
-  ],
+  "debates": [],
   "trivia": {
-    "question": "Which Bulldogs prop won the Dally M Prop of the Year in 2004, the same year the club won the premiership?",
+    "question": "Which year did the Bulldogs last beat Melbourne Storm in a finals match?",
     "options": [
       {
-        "label": "Mark O'Meley",
+        "label": "2012",
         "emoji": "🏆"
       },
       {
-        "label": "Willie Mason",
+        "label": "2014",
         "emoji": "🏆"
       },
       {
-        "label": "Roy Asotasi",
+        "label": "2016",
         "emoji": "🏆"
       },
       {
-        "label": "Adam Perry",
+        "label": "Never",
         "emoji": "🏆"
       }
     ],
     "correctIndex": 1,
-    "explainer": "Willie Mason took out Prop of the Year in 2004, capping a huge season that ended with the Dogs lifting the trophy after beating the Roosters."
+    "explainer": "2014 prelim final at ANZ — Dogs won 18-12 to book a grand final spot. Storm have had our number in finals every other time."
   },
   "recap": [
     {
-      "question": "Who racked up the most run metres for the Dogs against the Dolphins?",
+      "question": "Who racked up the most run metres for the Dogs against the Sharks?",
       "options": [
         {
           "label": "Enari Tuala",
           "emoji": "🏉"
         },
         {
-          "label": "Leo Thompson",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Sitili Tupouniua",
+          "label": "Jacob Preston",
           "emoji": "🏉"
         },
         {
           "label": "Stephen Crichton",
           "emoji": "🏉"
+        },
+        {
+          "label": "Sitili Tupouniua",
+          "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Tuala led the Dogs with 156 run metres — though Isaako alone ran for 261 the other way, which tells you everything."
+      "explainer": "Tuala led the Dogs with 216 run metres and also bagged 2 line breaks — one of the only bright spots in a 38-16 hiding."
     }
   ],
   "washup": {
-    "round": 10,
-    "opponent": "Dolphins",
+    "round": 11,
+    "opponent": "Sharks",
     "dogsHome": false,
-    "dogsScore": 12,
-    "oppScore": 44,
+    "dogsScore": 16,
+    "oppScore": 38,
     "result": "LOSS",
-    "margin": -32,
+    "margin": -22,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/dolphins/badge.svg?bust=202605110452",
-    "attendance": 16143,
+    "oppLogo": "https://www.nrl.com/.theme/sharks/badge.svg?bust=202605110452",
+    "attendance": 45236,
     "weather": "Fine",
     "tries": [
       {
-        "name": "Jaeman Salmon",
-        "team": "Dogs",
-        "minute": 8
+        "name": "Braydon Trindall",
+        "team": "Sharks",
+        "minute": 3
       },
       {
-        "name": "Jamayne Isaako",
-        "team": "Dolphins",
-        "minute": 20
+        "name": "Ronaldo Mulitalo",
+        "team": "Sharks",
+        "minute": 9
+      },
+      {
+        "name": "William Kennedy",
+        "team": "Sharks",
+        "minute": 16
+      },
+      {
+        "name": "Hohepa Puru",
+        "team": "Sharks",
+        "minute": 23
+      },
+      {
+        "name": "Jacob Preston",
+        "team": "Dogs",
+        "minute": 29
+      },
+      {
+        "name": "Nicholas Hynes",
+        "team": "Sharks",
+        "minute": 32
       },
       {
         "name": "Stephen Crichton",
         "team": "Dogs",
-        "minute": 25
+        "minute": 59
       },
       {
-        "name": "Selwyn Cobbo",
-        "team": "Dolphins",
-        "minute": 31
+        "name": "Ronaldo Mulitalo",
+        "team": "Sharks",
+        "minute": 71
       },
       {
-        "name": "Jamayne Isaako",
-        "team": "Dolphins",
-        "minute": 37
-      },
-      {
-        "name": "Jamayne Isaako",
-        "team": "Dolphins",
-        "minute": 44
-      },
-      {
-        "name": "Jeremy Marshall-King",
-        "team": "Dolphins",
-        "minute": 56
-      },
-      {
-        "name": "Jack Bostock",
-        "team": "Dolphins",
-        "minute": 60
-      },
-      {
-        "name": "Kodi Nikorima",
-        "team": "Dolphins",
-        "minute": 65
-      },
-      {
-        "name": "Selwyn Cobbo",
-        "team": "Dolphins",
+        "name": "Bronson Xerri",
+        "team": "Dogs",
         "minute": 77
       }
     ],
@@ -193,111 +143,96 @@
         "title": "Most Tackles",
         "dogs": {
           "name": "Sitili Tupouniua",
-          "value": 42
+          "value": 47
         },
         "opp": {
-          "name": "Max Plath",
-          "value": 35
+          "name": "Briton Nikora",
+          "value": 39
         }
       },
       {
         "title": "Most Run Metres",
         "dogs": {
           "name": "Enari Tuala",
-          "value": 156
+          "value": 216
         },
         "opp": {
-          "name": "Jamayne Isaako",
-          "value": 261
+          "name": "Ronaldo Mulitalo",
+          "value": 187
         }
       },
       {
         "title": "Most Line Breaks",
         "dogs": {
-          "name": "Stephen Crichton",
-          "value": 1
+          "name": "Enari Tuala",
+          "value": 2
         },
         "opp": {
-          "name": "Jamayne Isaako",
-          "value": 4
+          "name": "William Kennedy",
+          "value": 1
         }
       },
       {
         "title": "Most Fantasy Points",
         "dogs": {
-          "name": "Leo Thompson",
-          "value": 55
+          "name": "Jacob Preston",
+          "value": 62
         },
         "opp": {
-          "name": "Jamayne Isaako",
-          "value": 104
+          "name": "Nicholas Hynes",
+          "value": 70
         }
       }
     ],
     "keyStats": [
       {
         "title": "Completion Rate",
-        "dogs": 75,
-        "opp": 88,
+        "dogs": 76,
+        "opp": 86,
         "unit": ""
       },
       {
         "title": "Missed Tackles",
-        "dogs": 40,
-        "opp": 18,
+        "dogs": 16,
+        "opp": 35,
         "unit": ""
       },
       {
         "title": "Errors",
-        "dogs": 10,
-        "opp": 5,
+        "dogs": 12,
+        "opp": 13,
         "unit": ""
       }
     ],
-    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/rnd-10-vs-dolphins-thurs-7-50pm-suncorp.131692/",
-    "headline": "44-12. At Suncorp. On a Friday night. Jesus.",
-    "vibe": "Got absolutely cooked by the Dolphins and it wasn't even close after half time. Isaako carved us up for 261 metres and 4 line breaks while we missed 40 tackles — read that again, 40. The completion rate was 75% to their 88%, which is basically the whole story. Sitting 13th and the wheels feel properly off.",
+    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/",
+    "headline": "38-16. Played them back into form, just like we said we would.",
+    "vibe": "Sharks were on the ropes coming in and we put them back on the couch. Four tries conceded in the first 32 minutes — game over before half-time. Tuala and Preston had a go, the rest of the side looked like they'd never met. Now Storm at home next Friday. Cool.",
     "kennelMood": "Cooked",
-    "kennelSummary": "The Kennel is in full meltdown mode. Tracey's getting buried, Salmon's getting buried, Hayward's getting buried, and a sizeable chunk just want Ciro and Gus gone by next week. Nate DAWG called the meltdown 4 hours before kickoff and was bang on.",
+    "kennelSummary": "The Ciraldo job future thread is at 362 replies and climbing. Salmon, Tracey and Hayward are getting hung out to dry, and there's a real split between 'wait till King and Mann are back' and 'blow the whole thing up'. Galvin's getting defended for once — the Sexton-in-Perth kick-off has reset that whole debate.",
     "kennelHotTakes": [
       {
-        "quote": "That's the most pathetic fullback performance I've ever seen from a Bulldogs fullback. Send him to Super League, swap him for Jai Field or Bevan French — we need speed.",
-        "author": "Imposter404 / Kempsey Dog",
-        "threadSlug": "/forum/index.php?threads/tracey-time-to-go.131702",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey-time-to-go.131702/"
+        "quote": "Cameron Ciraldo is the new Dean Pay — expected to perform miracles with a sub-standard roster. Same movie, different decade.",
+        "author": "speedy2460",
+        "threadSlug": "/forum/index.php?threads/ciraldos-job-future.131740",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldos-job-future.131740/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [
-    {
-      "prefix": "GAMEDAY",
-      "title": "Round 11 vs Sharks Friday 6pm Suncorp (Magic Round)",
-      "replies": 809,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/",
-      "summary": "The gameday thread's already 800+ deep and most of it is bagging the team list. DogsOfWar reckons Xerri has to mark Talakai or we're cooked."
-    },
-    {
-      "prefix": "Opinion",
-      "title": "Mitch Woods",
-      "replies": 204,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/mitch-woods.131632/",
-      "summary": "204 replies of 'just play him' vs 'he hasn't earned it'. Dogmonster's watched him in Reggies and says don't get excited."
-    }
-  ],
+  "kennelThreadsThisWeek": [],
   "kennelThreadsLastGame": [
     {
       "prefix": null,
-      "title": "Tracey?Time to go",
-      "replies": 198,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey-time-to-go.131702/",
-      "summary": "After the Dolphins shellacking the Tracey-out brigade is back in full voice. Multiple posters want Crichton at fullback, one bloke wants to swap him for Bevan French."
+      "title": "CIRALDOS JOB FUTURE",
+      "replies": 362,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldos-job-future.131740/",
+      "summary": "362 replies and counting. Johnnny2233's defending CC with finals appearances, Crittaraisemykids is blaming Gus's short temper, and Dingo's pivoted to the assistants. Brutal."
     },
     {
       "prefix": null,
-      "title": "Is Gus actually the real problem?",
-      "replies": 393,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/is-gus-actually-the-real-problem.123218/",
-      "summary": "393 replies of fans turning on Gould. Silva reckons Barrett's too soft and crumbles when it gets tough, others say Gus has to act on the coach this week or he's done too."
+      "title": "The Talk of Sexton is better than Galvin is over after this",
+      "replies": 235,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/",
+      "summary": "Sexton's bizarre kick-off in Perth has the Galvin haters in retreat. Nate DAWG's argument that Sexton was just a stick to beat Galvin with is gaining traction post-Sharks."
     }
   ],
   "kennelMeta": {
