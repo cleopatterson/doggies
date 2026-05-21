@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T12:09:16.135Z",
+  "generatedAt": "2026-05-21T08:56:31.354Z",
   "match": {
     "round": 12,
     "opponent": "Storm",
@@ -20,13 +20,13 @@
   "kennelTipLean": {
     "side": "Opponent",
     "confidence": "Lean — about 30/70",
-    "note": "The forum's bracing for a hiding. Couple of brave 'turning point' calls but most reckon Storm could hang 50 on us the way we're playing."
+    "note": "Most of the Kennel reckon we're cooked, but there's a stubborn minority calling it the turning point because 'surely it can't get worse'."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 12 Dogs v Storm",
       "threadSlug": "/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783",
-      "quote": "Either this is the turning point of our season or we cop a 50 point drubbing. No in between. — Moedogg",
+      "quote": "Either this is the turning point of our season or we cop a 50-point drubbing. No in-between. — Moedogg",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/"
     }
   ],
@@ -34,74 +34,74 @@
     {
       "id": "salmon-lock-spot",
       "icon": "🧠",
-      "question": "Salmon's named at 13 — does he last the full 80 there?",
-      "kennel": "The 'Tracey, Salmon and Hayward MUST be dropped' thread reckons he's stifling everything in the middle.",
-      "threadSlug": "/forum/index.php?threads/tracey-salmon-and-hayward-must-be-dropped.131762",
+      "question": "Salmon's named at 13 — does he hold the lock spot for the full 80?",
+      "kennel": "The 'why we've regressed' thread has half the Kennel screaming that Salmon at 13 is killing our attack.",
+      "threadSlug": "/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761",
       "options": [
         {
-          "label": "Yes, plays out the full 80 at lock",
-          "emoji": "🧱"
+          "label": "Plays the full 80 at lock",
+          "emoji": "🔒"
         },
         {
-          "label": "Gets hooked for Mann or Hayes mid-game",
+          "label": "Gets hooked early, Mann finishes at 13",
+          "emoji": "🪝"
+        },
+        {
+          "label": "Shifts into the middle, Preston rolls back to lock",
           "emoji": "🔄"
-        },
-        {
-          "label": "Shifted to the edge, Preston or Tupouniua moves in",
-          "emoji": "↔️"
         }
       ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey-salmon-and-hayward-must-be-dropped.131762/"
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
     },
     {
-      "id": "first-forward-off",
-      "icon": "🪑",
-      "question": "Who's the first middle forward off the bench?",
-      "kennel": "Bench rotation's been a mess and the gameday thread wants Mann and Hayes used earlier.",
-      "threadSlug": "/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783",
+      "id": "first-prop-off",
+      "icon": "🔁",
+      "question": "First middle off the bench — who gets the early call against Utoikamanu and King?",
+      "kennel": "Forum's been screaming 'shit middles' all week — bench rotation is going to matter the second the Storm pack rolls forward.",
+      "threadSlug": "/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761",
       "options": [
         {
-          "label": "Harry Hayes",
-          "emoji": "💪"
-        },
-        {
-          "label": "Jack Underhill",
+          "label": "Harry Hayes first prop on",
           "emoji": "🐂"
         },
         {
-          "label": "Kurt Mann",
-          "emoji": "🎯"
+          "label": "Jack Underhill gets the early call",
+          "emoji": "💪"
+        },
+        {
+          "label": "Alekolasimi Jones thrown in first",
+          "emoji": "🆕"
         }
       ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/"
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
     }
   ],
   "trivia": {
-    "question": "Who holds the Bulldogs' record for most first-grade games for the club?",
+    "question": "Which year did the Bulldogs win their most recent NRL premiership?",
     "options": [
       {
-        "label": "Hazem El Masri",
+        "label": "1995",
         "emoji": "🏆"
       },
       {
-        "label": "Steve Mortimer",
+        "label": "2004",
         "emoji": "🏆"
       },
       {
-        "label": "Andrew Ryan",
+        "label": "2012",
         "emoji": "🏆"
       },
       {
-        "label": "Terry Lamb",
+        "label": "2014",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 3,
-    "explainer": "Terry Lamb played 349 games for Canterbury between 1984 and 1996 — still the all-time club record."
+    "correctIndex": 1,
+    "explainer": "Canterbury beat the Roosters 16-13 in the 2004 Grand Final — Andrew Ryan's mob and still the club's last title."
   },
   "recap": [
     {
-      "question": "Who racked up the most run metres for the Dogs against the Sharks?",
+      "question": "Who racked up the most run metres for the Dogs in the Round 11 hiding by the Sharks?",
       "options": [
         {
           "label": "Enari Tuala",
@@ -121,7 +121,7 @@
         }
       ],
       "correctIndex": 0,
-      "explainer": "Tuala led the Dogs with 216 run metres and also bagged 2 line breaks — one of the few bright spots in a 38-16 loss."
+      "explainer": "Tuala led the Dogs with 216 run metres and chimed in with 2 line breaks — one of the only positives from a 38-16 loss."
     }
   ],
   "washup": {
@@ -250,13 +250,13 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/",
-    "headline": "Cooked at Suncorp and the season's hanging by a thread.",
-    "vibe": "38-16 to the Sharks and it wasn't even that close — 35 missed tackles tells you everything. Tuala was electric on the edge, Preston worked his arse off, but the spine couldn't string two sets together. We're 14th, the Storm are 13th, and Friday is genuinely the most important game of the year already.",
+    "headline": "38-16 at Suncorp and the wheels are properly off.",
+    "vibe": "Conceded four tries in the opening half hour and the game was cooked before the meat tray was raffled. Missed 35 tackles, Sharks barely had to break a sweat after the 30-minute mark. Sits us 14th heading into a must-win against the Storm, which sounds like a sentence written by someone who hates us.",
     "kennelMood": "Cooked",
-    "kennelSummary": "The Kennel's gone past angry into resigned. Salmon, Hayward and Tracey are getting absolutely roasted, Ciraldo's job thread cracked 500 replies, and there's a growing camp blaming Gus for chopping and changing the roster every five minutes.",
+    "kennelSummary": "It's full meltdown mode — Ciraldo's job thread cracked 500 replies, the 'why have we regressed' thread is basically group therapy, and the recurring villains are Hayward's passing, Salmon at 13 and Tracey at fullback. A handful of voices begging for calm until the full-strength side is back, but they're getting drowned out.",
     "kennelHotTakes": [
       {
-        "quote": "Shit coach, shit spine, shit backs, shit front row, shit lock. Other than that, we're sweet.",
+        "quote": "Shit coach, shit spine, shit backs, shit front row, shit lock. Other than that we're flying.",
         "author": "SARGE",
         "threadSlug": "/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
@@ -267,32 +267,25 @@
     {
       "prefix": "GAMEDAY",
       "title": "Round 12 Dogs vs Storm Friday 8pm",
-      "replies": 313,
+      "replies": 491,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/",
-      "summary": "Gameday thread is split between Bulldog John calling Dogs by 10 as the turning point and Moedogg openly preparing for a 50-point pasting. Plenty of chat about who should get dropped before kickoff."
+      "summary": "Gameday thread's already 491 posts deep — half the room is calling it the season-defining game, the other half is bracing for a 50-burger. Plenty of side-eye at the named 17."
     }
   ],
   "kennelThreadsLastGame": [
     {
       "prefix": null,
-      "title": "What are your theories on why we have regressed so much this year?",
-      "replies": 229,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/",
-      "summary": "Big post-mortem thread. Dogmonster's list of grievances (losing Reed, Sexton, Addo-Carr, Jason Taylor) is getting traction, with BulldogsNation blaming the spine for breaking down every overlap."
-    },
-    {
-      "prefix": null,
       "title": "CIRALDOS JOB FUTURE",
-      "replies": 499,
+      "replies": 505,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldos-job-future.131740/",
-      "summary": "500 replies of pure heat. Pro-CC camp led by Johnnny2233 pointing to two finals series, while others reckon Gus's short fuse means the coach is one bad loss from gone."
+      "summary": "505 replies and counting. Johnnny2233 going to bat for CC saying he just needs a proper 7, others firing back that two finals series doesn't buy you immunity from a 38-16 hiding."
     },
     {
       "prefix": null,
-      "title": "The Talk of Sexton is better than Galvin is over after this",
-      "replies": 235,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/the-talk-of-sexton-is-better-than-galvin-is-over-after-this.131683/",
-      "summary": "Sparked by Sexton's botched kickoff for Perth. Chemdog's still arguing we were top of the ladder with Sexton and have regressed since signing Galvin, the rest of the thread piles on him."
+      "title": "What are your theories on why we have regressed so much this year?",
+      "replies": 262,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/",
+      "summary": "Big group therapy session — getting rid of Reed, Sexton, JT and Foxx all getting blamed, plus heavy fire at Hayward's left-to-right pass and Salmon stifling the attack at 13."
     }
   ],
   "kennelMeta": {
