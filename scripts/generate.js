@@ -359,8 +359,22 @@ async function gatherKennel() {
   return { hotThreads: enriched, allTitles: all.slice(0, 20) };
 }
 
+// ── TIPPING BAND ──
+// Mirrors the TIPS array in src/App.jsx exactly — these IDs are what users save
+// against, so the band string here is what gets compared at grading time. Keep
+// the two lists in sync if you ever add/remove a band.
+function computeTipBand(dogsScore, oppScore) {
+  if (dogsScore == null || oppScore == null) return null;
+  const margin = dogsScore - oppScore;
+  if (margin <= 0) return "loss";
+  if (margin <= 6) return "win_1_6";
+  if (margin <= 12) return "win_7_12";
+  if (margin <= 18) return "win_13_18";
+  return "win_19_plus";
+}
+
 // ── 3. CLAUDE SYNTHESIS ──
-async function synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia }) {
+async function synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia, prevDebatesForJudging }) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY missing in .env");
   const client = new Anthropic({ apiKey });
@@ -390,6 +404,19 @@ ${prevKennel?.posts?.length ? prevKennel.posts.slice(0, 20).map(p => `  [${p.aut
 
 ` : "";
 
+  // When the previous round had debates that the three mates locked picks against,
+  // ask Claude to verdict each one based on the actual match outcome. The snapshot
+  // arrives keyed by debate id so we can map verdicts back to picks for grading.
+  const debatesToJudgeBlock = (prevDebatesForJudging?.length && prevMatch) ? `# Last week's debates — questions posed BEFORE round ${prevMatch.round} which is now complete
+For each debate below, decide which option turned out to be CORRECT based on the actual match data above (try scorers, top performers, key stats, post-match Kennel posts). Return the EXACT option label string from the list. If the data doesn't observably resolve the debate, return null for that id.
+
+${prevDebatesForJudging.map(d => `id: ${d.id}
+question: ${d.question}
+options:
+${(d.options || []).map((o, i) => `  ${i + 1}) ${o.label}`).join("\n")}`).join("\n\n")}
+
+` : "";
+
   const teamListBlock = teamList ? `# OFFICIAL TEAM LISTS (just dropped — these are the named squads)
 ## Bulldogs (named 1-22)
 ${teamList.dogs.map(p => `  #${String(p.number).padStart(2," ")}  ${p.position.padEnd(20)} ${p.name}`).join("\n")}
@@ -408,7 +435,7 @@ Kickoff: ${fixture.kickoffISO}
 Ladder: Bulldogs ${fixture.dogsPos}, ${fixture.opponent} ${fixture.oppPos}
 Odds: Dogs $${fixture.odds.dogs}, ${fixture.opponent} $${fixture.odds.opp}
 
-${teamListBlock}# Top 20 thread titles on The Kennel right now
+${teamListBlock}${debatesToJudgeBlock}# Top 20 thread titles on The Kennel right now
 ${titleList}
 
 # Hot thread excerpts (real posts)
@@ -480,6 +507,10 @@ Generate the round's content as JSON with this exact shape:
     "kennelHotTakes": [
       { "quote": "Paraphrased post (NOT invented) from the GAMEDAY thread or Opinion threads", "author": "username if useful", "threadSlug": "exact slug from the digest, or null" }
     ]
+  }` : ""}${(prevDebatesForJudging?.length && prevMatch) ? `,
+  "prevDebateVerdicts": {
+    "debate-id-1": "EXACT option label from the list, or null if unresolvable",
+    "debate-id-2": "EXACT option label from the list, or null"
   }` : ""}
 }
 
@@ -509,6 +540,21 @@ Rules:
   - At least one of the 2 debates MUST be from a non-SELECTION bucket. Don't make both about the team list.
 
 - MUTUALLY EXCLUSIVE OPTIONS — exactly one option should be true on game day. If two options could both be technically correct (or none could be), the framing is broken.
+
+- VERIFIABLE FROM THE NRL FEED — after the match, we grade these against the NRL match-centre data (try scorers with names + minutes, interchange events with players + minutes, top performers, key stats, and the named 1-17 team list). Before committing to a question, mentally play out the match and check: "When the final whistle blows, can I point at a specific row in that feed that proves which option won?" If no — scrap it.
+  GRADABLE because the answer lives in the feed:
+    - "Does Tracey play the full 80 at fullback?" → no interchange event for Tracey = full 80 ✓
+    - "Who scores the Dogs' first try?" → first Try event with team=Dogs in the timeline ✓
+    - "Which Dogs forward tops run metres?" → topPerformers["Most Run Metres"].dogs.name ✓
+    - "Does Salmon start at 13?" → named team list (jersey 13) ✓
+  NOT GRADABLE — the feed has no data point for these:
+    - "Which edge do the Dogs target most in the first 20 minutes?" — no per-edge possession breakdown in the feed.
+    - "Who handles goal-kicking when Burton's off?" — kicker per goal-attempt isn't broken out cleanly.
+    - "Does Burton stay in the halves or shift to lock mid-game?" — positional shifts aren't in the timeline (only interchanges are).
+    - Anything requiring "first 20 minutes" / "in the first half only" splits — the feed gives per-event minutes but not pre-aggregated halves of stats.
+  If a question seems forced into being gradable by adding a specific player or minute marker, but the player named would have to be on the field at that moment, double-check the named 17 — if you're betting on a player to do something and they're a reserve (18+), the option is dead on arrival.
+
+- OPTIONS MUST EXHAUST THE FEED'S POSSIBLE ANSWERS — for try-scorer / interchange / stat-leader questions, the actual answer must be one of your options. Don't list 3 plausible-sounding outcomes and miss the real one. For "who scores the first try" type questions, options should be CATEGORIES wide enough that one of them is guaranteed to cover the actual scorer (e.g. "a forward" / "an outside back" / "a half"), not specific players who might not even score.
 
 - Don't repeat the same question across debates.
 
@@ -585,18 +631,47 @@ async function main() {
     console.error(`  ${prevKennel.gamedayUrl ? `${prevKennel.posts.length} post-match posts` : "no GAMEDAY thread found"}`);
   }
 
-  // Read prior trivia so Claude can avoid asking the same question two weeks running.
-  // (The generator otherwise has no memory of prior rounds and keeps reaching for "what
-  // year did we last win the premiership" because the prompt lists premiership years as
-  // safe ground.) Soft-fails if data.json doesn't exist yet or is unparseable.
+  // Read the prior data.json to carry forward state the generator needs across runs:
+  //   1. priorTrivia — so Claude doesn't repeat last week's question.
+  //   2. priorSnapshots[round] — the debate questions for each previously generated round.
+  //      Captured here BEFORE we overwrite, so the next run can grade them.
+  //   3. priorResolutions[round] — tipBand + debateVerdicts already locked in for past
+  //      rounds. We preserve these and add the new prevMatch round's entry on top.
   let priorTrivia = null;
+  let priorMatchRound = null;
+  let priorDebates = [];
+  let priorSnapshots = {};
+  let priorResolutions = {};
   try {
     const existing = JSON.parse(await readFile(OUT, "utf8"));
     priorTrivia = existing?.trivia?.question || null;
+    priorMatchRound = existing?.match?.round || null;
+    priorDebates = existing?.debates || [];
+    priorSnapshots = existing?.debateSnapshots || {};
+    priorResolutions = existing?.resolutions || {};
     if (priorTrivia) console.error(`  prior trivia: "${priorTrivia.slice(0, 80)}${priorTrivia.length > 80 ? "…" : ""}"`);
   } catch { /* no prior file — first run */ }
 
-  const synth = await synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia });
+  // Snapshot the round whose debates are currently in the live data.json. We do this
+  // EVERY run so the snapshot is always one step ahead of grading — by the time that
+  // round's washup rolls around, the snapshot's already there to be judged. Only
+  // overwrite if the prior file actually had debates for that round (gated runs emit
+  // an empty array pre-team-list, which we don't want clobbering a real snapshot).
+  const debateSnapshots = { ...priorSnapshots };
+  if (priorMatchRound && priorDebates.length) {
+    debateSnapshots[priorMatchRound] = priorDebates;
+  }
+
+  // If this run's prevMatch is a round we have a snapshot for, hand the debate
+  // questions + options to Claude alongside the match data so it can verdict each one.
+  const prevDebatesForJudging = (prevMatch && debateSnapshots[prevMatch.round]) || null;
+  if (prevDebatesForJudging?.length) {
+    console.error(`→ Claude will verdict ${prevDebatesForJudging.length} debate(s) from round ${prevMatch.round}`);
+  } else if (prevMatch) {
+    console.error(`  no debate snapshot for round ${prevMatch.round} — coach picks for that round can't be auto-graded`);
+  }
+
+  const synth = await synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia, prevDebatesForJudging });
   // Gate: only ship debates when team list is available. The UI keys off this — empty
   // array → "Coach picks unlock when team lists drop Tuesday afternoon."
   if (!teamList) synth.debates = [];
@@ -665,6 +740,31 @@ async function main() {
       threadsConsidered: kennel.allTitles.length,
       hotThreadsScraped: kennel.hotThreads.length,
     },
+    // Per-round debate snapshots, kept across generations so any round we previously
+    // posed coach picks for can be auto-graded once it's played. UI doesn't read this.
+    debateSnapshots,
+    // Per-round resolution feed the Parkyard Cup tallies against. Accumulates over
+    // the season — every prevMatch we see adds (or overwrites) its own entry.
+    resolutions: (() => {
+      const merged = { ...priorResolutions };
+      if (prevMatch) {
+        const verdicts = synth.prevDebateVerdicts || {};
+        // Strip nulls so the UI's `pick === verdict` comparison never accidentally
+        // matches an unanswered pick against a null verdict.
+        const cleanVerdicts = Object.fromEntries(
+          Object.entries(verdicts).filter(([, v]) => typeof v === "string" && v.length > 0)
+        );
+        merged[prevMatch.round] = {
+          tipBand: computeTipBand(prevMatch.dogsScore, prevMatch.oppScore),
+          dogsScore: prevMatch.dogsScore,
+          oppScore: prevMatch.oppScore,
+          opponent: prevMatch.opponent,
+          dogsHome: prevMatch.dogsHome,
+          debateVerdicts: cleanVerdicts,
+        };
+      }
+      return merged;
+    })(),
   };
 
   await mkdir(dirname(OUT), { recursive: true });

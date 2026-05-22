@@ -291,5 +291,70 @@
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
+  },
+  "debateSnapshots": {
+    "10": [
+      {
+        "id": "salmon-starting-lock",
+        "question": "Salmon's named at 13 — does he start the game at lock?",
+        "options": [
+          { "label": "Yes, Salmon starts at 13", "emoji": "🟢" },
+          { "label": "No, Burton shifts to lock and Salmon goes bench", "emoji": "🔄" },
+          { "label": "No, late change — Salmon out of the 17", "emoji": "❌" }
+        ]
+      },
+      {
+        "id": "first-attacking-edge",
+        "question": "Which edge do the Dogs target most in the first 20 minutes?",
+        "options": [
+          { "label": "Left edge — Crichton and Tuala", "emoji": "⬅️" },
+          { "label": "Right edge — Xerri and Sua", "emoji": "➡️" },
+          { "label": "Through the middle — Galvin/Burton kicking game", "emoji": "🎯" }
+        ]
+      }
+    ],
+    "11": [
+      {
+        "id": "tracey-fullback-call",
+        "question": "Tracey's named at 1 — does he last the full 80 or get yanked early?",
+        "options": [
+          { "label": "Plays the full 80 at fullback", "emoji": "⏱️" },
+          { "label": "Shifted off fullback mid-game (Crichton or Burton goes back)", "emoji": "🔄" },
+          { "label": "Hooked completely before fulltime", "emoji": "🪓" }
+        ]
+      },
+      {
+        "id": "first-try-source",
+        "question": "Where does the Dogs' first try come from?",
+        "options": [
+          { "label": "Burton or Galvin set play / kick", "emoji": "🦶" },
+          { "label": "Forward crash off a Hayward dart", "emoji": "💥" },
+          { "label": "Outside back off a broken-field scramble", "emoji": "🏃" }
+        ]
+      }
+    ]
+  },
+  "resolutions": {
+    "10": {
+      "tipBand": "loss",
+      "dogsScore": 12,
+      "oppScore": 44,
+      "opponent": "Dolphins",
+      "dogsHome": false,
+      "debateVerdicts": {
+        "salmon-starting-lock": "Yes, Salmon starts at 13",
+        "first-attacking-edge": "Left edge — Crichton and Tuala"
+      }
+    },
+    "11": {
+      "tipBand": "loss",
+      "dogsScore": 16,
+      "oppScore": 38,
+      "opponent": "Sharks",
+      "dogsHome": false,
+      "debateVerdicts": {
+        "tracey-fullback-call": "Plays the full 80 at fullback"
+      }
+    }
   }
 }

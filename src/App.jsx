@@ -673,9 +673,25 @@ function LadderHeader({ me, onSwitch }) {
   const [recapByRound, setRecapByRound] = useState({});
   const [recapGradeByRound, setRecapGradeByRound] = useState({});
 
+  // data.resolutions accumulates per-round tipBand + debateVerdicts across the
+  // season — generate.js merges in a fresh entry every time it sees a new
+  // prevMatch. Shape: { [round]: { tipBand, debateVerdicts: { [id]: label } } }.
+  const resolutionsByRound = data.resolutions || {};
+  const resolutions = Object.entries(resolutionsByRound).map(([round, r]) => ({
+    round: Number(round),
+    tipBand: r.tipBand,
+    debateVerdicts: r.debateVerdicts || {},
+  }));
+
   useEffect(() => {
     (async () => {
-      const rounds = [WASHUP?.round, MATCH.round].filter(Boolean);
+      // Load every round we might have picks for: anything resolved + the upcoming match
+      // + the washup round (which may not be in resolutions yet on a freshly-played weekend).
+      const rounds = [...new Set([
+        WASHUP?.round,
+        MATCH.round,
+        ...Object.keys(resolutionsByRound).map(Number),
+      ].filter(Boolean))];
       const t = {}, c = {}, tr = {}, tg = {}, rc = {}, rg = {};
       for (const r of rounds) {
         t[r] = await loadData(`tips-r${r}`, {});
@@ -693,10 +709,6 @@ function LadderHeader({ me, onSwitch }) {
       setRecapGradeByRound(rg);
     })();
   }, []);
-
-  // data.washup.tipBand + data.washup.debateVerdicts will be added by generate.js
-  // once a round has been graded. Empty until then.
-  const resolutions = []; // placeholder
 
   const totals = USERS.map(u => {
     let tips = 0, tipsCorrect = 0, coach = 0, coachCorrect = 0, trivia = 0, triviaCorrect = 0, recap = 0, recapCorrect = 0;

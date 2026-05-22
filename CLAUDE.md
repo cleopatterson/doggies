@@ -135,7 +135,25 @@ Requires `ANTHROPIC_API_KEY` in **GitHub repo Settings → Secrets and variables
 ## Things the pipeline can't get (keep documenting these)
 - **Betting line / total points** — NRL fixture JSON only exposes H2H odds, not the spread or O/U. Removed from UI.
 - **Team lists (named 1-17)** — published Tuesday afternoon, requires Puppeteer (nrl.com team list pages are JS-rendered). Out of scope for V1.
-- **Tip + coach grading data (Ladder feed)** — `data.json` doesn't yet emit `tipBand` (which margin band the actual result fell into) or per-debate `verdicts` (which option Claude judges as the right call after the match). The Ladder UI already does the math; it just sees an empty `resolutions` array until the pipeline emits resolution data. When ready, populate `data.washup.tipBand` (one of `loss / win_1_6 / win_7_12 / win_13_18 / win_19_plus`) and `data.washup.debateVerdicts: { [debateId]: "right call label" }` and the standings light up.
+
+## Ladder grading — how tips + coach picks score
+`data.resolutions` accumulates a per-round entry the second the generator sees a finished match. Shape:
+```jsonc
+"resolutions": {
+  "10": {
+    "tipBand": "loss",            // one of loss / win_1_6 / win_7_12 / win_13_18 / win_19_plus — computed from the score
+    "dogsScore": 12, "oppScore": 44, "opponent": "Dolphins", "dogsHome": false,
+    "debateVerdicts": {           // keyed by debate id — value is the EXACT option label that turned out correct
+      "salmon-starting-lock": "Yes, Salmon starts at 13"
+    }
+  }
+}
+```
+`LadderHeader` ([src/App.jsx](src/App.jsx)) iterates every round in this blob and tallies tips (pick === tipBand) + coach (pick === verdict) per user. Trivia + recap still self-grade on lock — they don't go through `resolutions`.
+
+**How the generator produces verdicts:** each `generate.js` run snapshots the *current* `debates` array into `data.debateSnapshots[match.round]` BEFORE overwriting it with the new round's debates. Next time around, when that round is the prevMatch, the snapshot gets fed back to Claude alongside the actual try scorers / top performers / Kennel post-match digest, and Claude returns `prevDebateVerdicts: { [id]: "correct option label" }` which lands in `resolutions[round].debateVerdicts`. Snapshots are kept in `data.json` (not the UI bundle's hot path — the React side never reads them).
+
+**Manual override:** if Claude verdicts wrongly or there's no snapshot for an older round, edit `data.resolutions[round].debateVerdicts` directly. The Ladder reads whatever's there; no rebuild needed beyond the next deploy.
 
 ## File map
 - [src/App.jsx](src/App.jsx) — single-file UI: consolidated `<HaveYourSayPanel>` + the two context tabs + `<LadderHeader>` (trophy corner button + standings) + identity flow
@@ -160,5 +178,4 @@ Requires `ANTHROPIC_API_KEY` in **GitHub repo Settings → Secrets and variables
 
 ## Phase 2 — not built yet
 - **OpenClaw WhatsApp bot** auto-posting the link to Parkyard on Thursday 6pm + Monday 8am (per brief)
-- **Tip + coach grading pipeline** for the Ladder (described above)
 - **Player headshots** from the NRL match-centre data (URLs are already in the q-data blob; not yet wired into the UI)
