@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-21T08:56:31.354Z",
+  "generatedAt": "2026-05-24T21:59:50.674Z",
   "match": {
-    "round": 12,
-    "opponent": "Storm",
-    "venue": "Accor Stadium",
-    "kickoffISO": "2026-05-22T10:00:00Z",
-    "kickoff": "Fri 22 May, 8:00pm",
-    "dogsHome": true,
-    "dogsPos": "14th",
-    "oppPos": "13th",
+    "round": 13,
+    "opponent": "Wests Tigers",
+    "venue": "CommBank Stadium",
+    "kickoffISO": "2026-05-30T07:30:00Z",
+    "kickoff": "Sat 30 May, 5:30pm",
+    "dogsHome": false,
+    "dogsPos": "13th",
+    "oppPos": "10th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/storm/badge.svg?bust=202605110452"
+    "oppLogo": "https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202605110452"
   },
   "odds": {
     "dogs": null,
@@ -18,167 +18,117 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Opponent",
-    "confidence": "Lean — about 30/70",
-    "note": "Most of the Kennel reckon we're cooked, but there's a stubborn minority calling it the turning point because 'surely it can't get worse'."
+    "side": "Dogs",
+    "confidence": "Lean — about 65/35",
+    "note": "Coming off the Storm scalp the mood's lifted but no one's getting cocky — Tigers are dangerous and the Kennel still reckons Ciro will find a way to make it interesting."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 12 Dogs v Storm",
+      "thread": "GAMEDAY Rd 12 vs Storm",
       "threadSlug": "/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783",
-      "quote": "Either this is the turning point of our season or we cop a 50-point drubbing. No in-between. — Moedogg",
+      "quote": "This game has to be the turning point of our season. Big game for a lot of reasons. Bulldogs by 10.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/"
     }
   ],
-  "debates": [
-    {
-      "id": "salmon-lock-spot",
-      "icon": "🧠",
-      "question": "Salmon's named at 13 — does he hold the lock spot for the full 80?",
-      "kennel": "The 'why we've regressed' thread has half the Kennel screaming that Salmon at 13 is killing our attack.",
-      "threadSlug": "/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761",
-      "options": [
-        {
-          "label": "Plays the full 80 at lock",
-          "emoji": "🔒"
-        },
-        {
-          "label": "Gets hooked early, Mann finishes at 13",
-          "emoji": "🪝"
-        },
-        {
-          "label": "Shifts into the middle, Preston rolls back to lock",
-          "emoji": "🔄"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
-    },
-    {
-      "id": "first-prop-off",
-      "icon": "🔁",
-      "question": "First middle off the bench — who gets the early call against Utoikamanu and King?",
-      "kennel": "Forum's been screaming 'shit middles' all week — bench rotation is going to matter the second the Storm pack rolls forward.",
-      "threadSlug": "/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761",
-      "options": [
-        {
-          "label": "Harry Hayes first prop on",
-          "emoji": "🐂"
-        },
-        {
-          "label": "Jack Underhill gets the early call",
-          "emoji": "💪"
-        },
-        {
-          "label": "Alekolasimi Jones thrown in first",
-          "emoji": "🆕"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
-    }
-  ],
+  "debates": [],
   "trivia": {
-    "question": "Which year did the Bulldogs win their most recent NRL premiership?",
+    "question": "Who holds the Bulldogs club record for most first-grade games?",
     "options": [
       {
-        "label": "1995",
+        "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "2004",
+        "label": "Steve Mortimer",
         "emoji": "🏆"
       },
       {
-        "label": "2012",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "2014",
+        "label": "Terry Lamb",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 1,
-    "explainer": "Canterbury beat the Roosters 16-13 in the 2004 Grand Final — Andrew Ryan's mob and still the club's last title."
+    "correctIndex": 3,
+    "explainer": "Terry Lamb played 349 first-grade games for Canterbury between 1984 and 1996, still the club record."
   },
   "recap": [
     {
-      "question": "Who racked up the most run metres for the Dogs in the Round 11 hiding by the Sharks?",
+      "question": "Who racked up the most run metres for the Dogs against the Storm?",
       "options": [
+        {
+          "label": "Jacob Kiraz",
+          "emoji": "🏉"
+        },
         {
           "label": "Enari Tuala",
           "emoji": "🏉"
         },
         {
+          "label": "Jethro Rinakama",
+          "emoji": "🏉"
+        },
+        {
           "label": "Sitili Tupouniua",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Jacob Preston",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Max King",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Tuala led the Dogs with 216 run metres and chimed in with 2 line breaks — one of the only positives from a 38-16 loss."
+      "explainer": "Kiraz went monster mode with 297 run metres — more than anyone on the field."
     }
   ],
   "washup": {
-    "round": 11,
-    "opponent": "Sharks",
-    "dogsHome": false,
-    "dogsScore": 16,
-    "oppScore": 38,
-    "result": "LOSS",
-    "margin": -22,
+    "round": 12,
+    "opponent": "Storm",
+    "dogsHome": true,
+    "dogsScore": 30,
+    "oppScore": 20,
+    "result": "WIN",
+    "margin": 10,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/sharks/badge.svg?bust=202605110452",
-    "attendance": 45236,
-    "weather": "Fine",
+    "oppLogo": "https://www.nrl.com/.theme/storm/badge.svg?bust=202605110452",
+    "attendance": 14372,
+    "weather": "Rain",
     "tries": [
       {
-        "name": "Braydon Trindall",
-        "team": "Sharks",
+        "name": "Moses Leo",
+        "team": "Storm",
         "minute": 3
       },
       {
-        "name": "Ronaldo Mulitalo",
-        "team": "Sharks",
-        "minute": 9
+        "name": "Moses Leo",
+        "team": "Storm",
+        "minute": 12
       },
       {
-        "name": "William Kennedy",
-        "team": "Sharks",
-        "minute": 16
+        "name": "Enari Tuala",
+        "team": "Dogs",
+        "minute": 18
       },
       {
-        "name": "Hohepa Puru",
-        "team": "Sharks",
+        "name": "Josh King",
+        "team": "Storm",
         "minute": 23
       },
       {
-        "name": "Jacob Preston",
+        "name": "Sitili Tupouniua",
         "team": "Dogs",
-        "minute": 29
+        "minute": 42
       },
       {
-        "name": "Nicholas Hynes",
-        "team": "Sharks",
-        "minute": 32
-      },
-      {
-        "name": "Stephen Crichton",
+        "name": "Jethro Rinakama",
         "team": "Dogs",
-        "minute": 59
+        "minute": 55
       },
       {
-        "name": "Ronaldo Mulitalo",
-        "team": "Sharks",
-        "minute": 71
+        "name": "Jethro Rinakama",
+        "team": "Dogs",
+        "minute": 72
       },
       {
-        "name": "Bronson Xerri",
+        "name": "Jacob Kiraz",
         "team": "Dogs",
         "minute": 77
       }
@@ -187,23 +137,23 @@
       {
         "title": "Most Tackles",
         "dogs": {
-          "name": "Sitili Tupouniua",
-          "value": 47
+          "name": "Leo Thompson",
+          "value": 51
         },
         "opp": {
-          "name": "Briton Nikora",
-          "value": 39
+          "name": "Ativalu Lisati",
+          "value": 44
         }
       },
       {
         "title": "Most Run Metres",
         "dogs": {
-          "name": "Enari Tuala",
-          "value": 216
+          "name": "Jacob Kiraz",
+          "value": 297
         },
         "opp": {
-          "name": "Ronaldo Mulitalo",
-          "value": 187
+          "name": "Moses Leo",
+          "value": 237
         }
       },
       {
@@ -213,79 +163,64 @@
           "value": 2
         },
         "opp": {
-          "name": "William Kennedy",
-          "value": 1
+          "name": "Moses Leo",
+          "value": 2
         }
       },
       {
         "title": "Most Fantasy Points",
         "dogs": {
-          "name": "Jacob Preston",
-          "value": 62
+          "name": "Jacob Kiraz",
+          "value": 83
         },
         "opp": {
-          "name": "Nicholas Hynes",
-          "value": 70
+          "name": "Moses Leo",
+          "value": 67
         }
       }
     ],
     "keyStats": [
       {
         "title": "Completion Rate",
-        "dogs": 76,
-        "opp": 86,
+        "dogs": 81,
+        "opp": 71,
         "unit": ""
       },
       {
         "title": "Missed Tackles",
-        "dogs": 16,
-        "opp": 35,
+        "dogs": 36,
+        "opp": 52,
         "unit": ""
       },
       {
         "title": "Errors",
-        "dogs": 12,
-        "opp": 13,
+        "dogs": 9,
+        "opp": 11,
         "unit": ""
       }
     ],
-    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-11-vs-sharks-friday-6pm-suncorp-magic-round.131731/",
-    "headline": "38-16 at Suncorp and the wheels are properly off.",
-    "vibe": "Conceded four tries in the opening half hour and the game was cooked before the meat tray was raffled. Missed 35 tackles, Sharks barely had to break a sweat after the 30-minute mark. Sits us 14th heading into a must-win against the Storm, which sounds like a sentence written by someone who hates us.",
-    "kennelMood": "Cooked",
-    "kennelSummary": "It's full meltdown mode — Ciraldo's job thread cracked 500 replies, the 'why have we regressed' thread is basically group therapy, and the recurring villains are Hayward's passing, Salmon at 13 and Tracey at fullback. A handful of voices begging for calm until the full-strength side is back, but they're getting drowned out.",
+    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/",
+    "headline": "Storm scalped — finally a Friday night that didn't end with the tequila out.",
+    "vibe": "30-20 over Melbourne with Kiraz running for 297, Rinakama bagging a double and Tuala looking like he belongs in the centres. We completed at 81% and forced 52 missed tackles out of the Storm. Doesn't fix the season but it's the first time in months we've looked like we mean it. Tigers next at CommBank — let's not be Bulldogs about it.",
+    "kennelMood": "Quietly buzzing",
+    "kennelSummary": "Reardon's debut got an appreciation thread, Kiraz has a fanclub campaigning for the No.1, and Rinakama is officially cult-status after the double. The Gus presser still has people fuming about 'excuses and deflection' though — one win doesn't undo a year of frustration.",
     "kennelHotTakes": [
       {
-        "quote": "Shit coach, shit spine, shit backs, shit front row, shit lock. Other than that we're flying.",
-        "author": "SARGE",
-        "threadSlug": "/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
+        "quote": "Gus really threw Ciraldo under the bus with the Reed stuff. Shows how out of touch the coaching staff are.",
+        "author": "Reecek89",
+        "threadSlug": "/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [
-    {
-      "prefix": "GAMEDAY",
-      "title": "Round 12 Dogs vs Storm Friday 8pm",
-      "replies": 491,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/",
-      "summary": "Gameday thread's already 491 posts deep — half the room is calling it the season-defining game, the other half is bracing for a 50-burger. Plenty of side-eye at the named 17."
-    }
-  ],
+  "kennelThreadsThisWeek": [],
   "kennelThreadsLastGame": [
     {
       "prefix": null,
-      "title": "CIRALDOS JOB FUTURE",
-      "replies": 505,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldos-job-future.131740/",
-      "summary": "505 replies and counting. Johnnny2233 going to bat for CC saying he just needs a proper 7, others firing back that two finals series doesn't buy you immunity from a 38-16 hiding."
-    },
-    {
-      "prefix": null,
-      "title": "What are your theories on why we have regressed so much this year?",
-      "replies": 262,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/",
-      "summary": "Big group therapy session — getting rid of Reed, Sexton, JT and Foxx all getting blamed, plus heavy fire at Hayward's left-to-right pass and Salmon stifling the attack at 13."
+      "title": "Phil Gould speaks - current state of the Bulldogs",
+      "replies": 266,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789/",
+      "summary": "Gus's hour-long PR sit-down getting torched. Mitch Connor calling it 'excuses and deflection', Reecek89 says he threw Ciro under the bus over the Reed stuff."
     }
   ],
   "kennelMeta": {
@@ -298,18 +233,36 @@
         "id": "salmon-starting-lock",
         "question": "Salmon's named at 13 — does he start the game at lock?",
         "options": [
-          { "label": "Yes, Salmon starts at 13", "emoji": "🟢" },
-          { "label": "No, Burton shifts to lock and Salmon goes bench", "emoji": "🔄" },
-          { "label": "No, late change — Salmon out of the 17", "emoji": "❌" }
+          {
+            "label": "Yes, Salmon starts at 13",
+            "emoji": "🟢"
+          },
+          {
+            "label": "No, Burton shifts to lock and Salmon goes bench",
+            "emoji": "🔄"
+          },
+          {
+            "label": "No, late change — Salmon out of the 17",
+            "emoji": "❌"
+          }
         ]
       },
       {
         "id": "first-attacking-edge",
         "question": "Which edge do the Dogs target most in the first 20 minutes?",
         "options": [
-          { "label": "Left edge — Crichton and Tuala", "emoji": "⬅️" },
-          { "label": "Right edge — Xerri and Sua", "emoji": "➡️" },
-          { "label": "Through the middle — Galvin/Burton kicking game", "emoji": "🎯" }
+          {
+            "label": "Left edge — Crichton and Tuala",
+            "emoji": "⬅️"
+          },
+          {
+            "label": "Right edge — Xerri and Sua",
+            "emoji": "➡️"
+          },
+          {
+            "label": "Through the middle — Galvin/Burton kicking game",
+            "emoji": "🎯"
+          }
         ]
       }
     ],
@@ -318,19 +271,83 @@
         "id": "tracey-fullback-call",
         "question": "Tracey's named at 1 — does he last the full 80 or get yanked early?",
         "options": [
-          { "label": "Plays the full 80 at fullback", "emoji": "⏱️" },
-          { "label": "Shifted off fullback mid-game (Crichton or Burton goes back)", "emoji": "🔄" },
-          { "label": "Hooked completely before fulltime", "emoji": "🪓" }
+          {
+            "label": "Plays the full 80 at fullback",
+            "emoji": "⏱️"
+          },
+          {
+            "label": "Shifted off fullback mid-game (Crichton or Burton goes back)",
+            "emoji": "🔄"
+          },
+          {
+            "label": "Hooked completely before fulltime",
+            "emoji": "🪓"
+          }
         ]
       },
       {
         "id": "first-try-source",
         "question": "Where does the Dogs' first try come from?",
         "options": [
-          { "label": "Burton or Galvin set play / kick", "emoji": "🦶" },
-          { "label": "Forward crash off a Hayward dart", "emoji": "💥" },
-          { "label": "Outside back off a broken-field scramble", "emoji": "🏃" }
+          {
+            "label": "Burton or Galvin set play / kick",
+            "emoji": "🦶"
+          },
+          {
+            "label": "Forward crash off a Hayward dart",
+            "emoji": "💥"
+          },
+          {
+            "label": "Outside back off a broken-field scramble",
+            "emoji": "🏃"
+          }
         ]
+      }
+    ],
+    "12": [
+      {
+        "id": "salmon-lock-spot",
+        "icon": "🧠",
+        "question": "Salmon's named at 13 — does he hold the lock spot for the full 80?",
+        "kennel": "The 'why we've regressed' thread has half the Kennel screaming that Salmon at 13 is killing our attack.",
+        "threadSlug": "/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761",
+        "options": [
+          {
+            "label": "Plays the full 80 at lock",
+            "emoji": "🔒"
+          },
+          {
+            "label": "Gets hooked early, Mann finishes at 13",
+            "emoji": "🪝"
+          },
+          {
+            "label": "Shifts into the middle, Preston rolls back to lock",
+            "emoji": "🔄"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
+      },
+      {
+        "id": "first-prop-off",
+        "icon": "🔁",
+        "question": "First middle off the bench — who gets the early call against Utoikamanu and King?",
+        "kennel": "Forum's been screaming 'shit middles' all week — bench rotation is going to matter the second the Storm pack rolls forward.",
+        "threadSlug": "/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761",
+        "options": [
+          {
+            "label": "Harry Hayes first prop on",
+            "emoji": "🐂"
+          },
+          {
+            "label": "Jack Underhill gets the early call",
+            "emoji": "💪"
+          },
+          {
+            "label": "Alekolasimi Jones thrown in first",
+            "emoji": "🆕"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
       }
     ]
   },
@@ -355,6 +372,14 @@
       "debateVerdicts": {
         "tracey-fullback-call": "Plays the full 80 at fullback"
       }
+    },
+    "12": {
+      "tipBand": "win_7_12",
+      "dogsScore": 30,
+      "oppScore": 20,
+      "opponent": "Storm",
+      "dogsHome": true,
+      "debateVerdicts": {}
     }
   }
 }
