@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T21:59:50.674Z",
+  "generatedAt": "2026-05-28T09:42:42.668Z",
   "match": {
     "round": 13,
     "opponent": "Wests Tigers",
@@ -19,51 +19,96 @@
   },
   "kennelTipLean": {
     "side": "Dogs",
-    "confidence": "Lean — about 65/35",
-    "note": "Coming off the Storm scalp the mood's lifted but no one's getting cocky — Tigers are dangerous and the Kennel still reckons Ciro will find a way to make it interesting."
+    "confidence": "Strong — about 80/20",
+    "note": "Coming off the Storm win the kennel reckons we thunderfuck the Tigers. Anything less than a comfortable win and the pitchforks come back out."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 12 vs Storm",
-      "threadSlug": "/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783",
-      "quote": "This game has to be the turning point of our season. Big game for a lot of reasons. Bulldogs by 10.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/"
+      "thread": "GAMEDAY Rd 13 v Tigers",
+      "threadSlug": "/forum/index.php?threads/round-13-canterbury-bankstown-bulldogs-vs-west-tigers-saturday-30th-may-5-30pm-commbank-stadium-sydney.131822",
+      "quote": "we are going to thunderfuck them",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-13-canterbury-bankstown-bulldogs-vs-west-tigers-saturday-30th-may-5-30pm-commbank-stadium-sydney.131822/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "burton-stays-at-six",
+      "icon": "🎯",
+      "question": "Burton's named at 6 after his Storm masterclass — does he see out the full 80 there, or does Ciro shift him to lock late?",
+      "kennel": "Magic Burton thread is unanimous he's our best 5/8 and only option there",
+      "threadSlug": "/forum/index.php?threads/burton.131802",
+      "options": [
+        {
+          "label": "Plays the full 80 at five-eighth",
+          "emoji": "🎯"
+        },
+        {
+          "label": "Shifts to lock in the second half",
+          "emoji": "🔄"
+        },
+        {
+          "label": "Gets benched late with the game won",
+          "emoji": "🪑"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
+    },
+    {
+      "id": "dogs-first-try-scorer-type",
+      "icon": "🏉",
+      "question": "Who opens the scoring for the Dogs?",
+      "kennel": "Rinakama thread is fizzing after his double v Storm, but Burton's the form player",
+      "threadSlug": "/forum/index.php?threads/jethro-rinakama.131154",
+      "options": [
+        {
+          "label": "An outside back (winger/centre/fullback)",
+          "emoji": "💨"
+        },
+        {
+          "label": "A forward",
+          "emoji": "💪"
+        },
+        {
+          "label": "A half or hooker (Burton/Galvin/Mann)",
+          "emoji": "🧠"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/jethro-rinakama.131154/"
+    }
+  ],
   "trivia": {
-    "question": "Who holds the Bulldogs club record for most first-grade games?",
+    "question": "Which Bulldogs legend captained the club to back-to-back premierships in 1984 and 1985?",
     "options": [
-      {
-        "label": "Hazem El Masri",
-        "emoji": "🏆"
-      },
       {
         "label": "Steve Mortimer",
         "emoji": "🏆"
       },
       {
-        "label": "Andrew Ryan",
+        "label": "Terry Lamb",
         "emoji": "🏆"
       },
       {
-        "label": "Terry Lamb",
+        "label": "Steve Folkes",
+        "emoji": "🏆"
+      },
+      {
+        "label": "Peter Moore",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 3,
-    "explainer": "Terry Lamb played 349 first-grade games for Canterbury between 1984 and 1996, still the club record."
+    "correctIndex": 0,
+    "explainer": "Turvey skippered the Berries to the 1984 and 1985 titles, including the iconic '85 win where he dropped to his knees on the SCG."
   },
   "recap": [
     {
-      "question": "Who racked up the most run metres for the Dogs against the Storm?",
+      "question": "Who racked up the most run metres for the Dogs in the Storm win?",
       "options": [
         {
           "label": "Jacob Kiraz",
           "emoji": "🏉"
         },
         {
-          "label": "Enari Tuala",
+          "label": "Leo Thompson",
           "emoji": "🏉"
         },
         {
@@ -71,12 +116,12 @@
           "emoji": "🏉"
         },
         {
-          "label": "Sitili Tupouniua",
+          "label": "Matt Burton",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Kiraz went monster mode with 297 run metres — more than anyone on the field."
+      "explainer": "Kiraz busted out 297 run metres — also topped fantasy points with 83 and capped it with a try at the 77th."
     }
   ],
   "washup": {
@@ -200,27 +245,42 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/",
-    "headline": "Storm scalped — finally a Friday night that didn't end with the tequila out.",
-    "vibe": "30-20 over Melbourne with Kiraz running for 297, Rinakama bagging a double and Tuala looking like he belongs in the centres. We completed at 81% and forced 52 missed tackles out of the Storm. Doesn't fix the season but it's the first time in months we've looked like we mean it. Tigers next at CommBank — let's not be Bulldogs about it.",
-    "kennelMood": "Quietly buzzing",
-    "kennelSummary": "Reardon's debut got an appreciation thread, Kiraz has a fanclub campaigning for the No.1, and Rinakama is officially cult-status after the double. The Gus presser still has people fuming about 'excuses and deflection' though — one win doesn't undo a year of frustration.",
+    "headline": "30-20 over the Storm and the kennel didn't even know how to react.",
+    "vibe": "Beat Melbourne. In the rain. With Burton turning back into Burton and Kiraz running for nearly 300m. Tuala, Tupou, two for Rinakama and a late one for Kiraz — and somehow Leo Thompson made 51 tackles and didn't fall over. Still 13th but you can almost see a pulse.",
+    "kennelMood": "Quietly buzzing (and waiting to be let down)",
+    "kennelSummary": "Burton thread is wall-to-wall love-bombing — 'best player at the club, only option at 6.' Kiraz appreciation thread firing after the 297m monster game, and Rinakama thread can't believe we've actually got a finisher. Counter-current: Gus doing his Phil Gould speaks special pissed everyone off and the Ciraldo thread is still 500+ replies of civil war.",
     "kennelHotTakes": [
       {
-        "quote": "Gus really threw Ciraldo under the bus with the Reed stuff. Shows how out of touch the coaching staff are.",
-        "author": "Reecek89",
+        "quote": "An hour of excuses and deflection — and Gus cut Jimmy off every time it went off-script in his own PR stunt.",
+        "author": "Mitch Connor",
         "threadSlug": "/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [],
+  "kennelThreadsThisWeek": [
+    {
+      "prefix": "GAMEDAY",
+      "title": "Round 13 Canterbury Bankstown Bulldogs Vs West Tigers - Saturday 30th May 5:30pm - CommBank Stadium, Sydney",
+      "replies": 297,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-13-canterbury-bankstown-bulldogs-vs-west-tigers-saturday-30th-may-5-30pm-commbank-stadium-sydney.131822/",
+      "summary": "GAMEDAY thread already 297 deep — Critta calling for a thunderfucking, Edgelord traumatised by his missus making their kid a half-half jersey, and BRADDO posting his preferred 17 like Ciro's reading."
+    }
+  ],
   "kennelThreadsLastGame": [
     {
       "prefix": null,
       "title": "Phil Gould speaks - current state of the Bulldogs",
-      "replies": 266,
+      "replies": 303,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789/",
-      "summary": "Gus's hour-long PR sit-down getting torched. Mitch Connor calling it 'excuses and deflection', Reecek89 says he threw Ciro under the bus over the Reed stuff."
+      "summary": "Gus doing a sit-down with Jimmy Graham and the kennel is NOT having it. Mitch Connor reckons it was an hour of excuses, Reecek89 says Gus threw Ciro under the bus over the Reed situation."
+    },
+    {
+      "prefix": null,
+      "title": "CIRALDOS JOB FUTURE",
+      "replies": 538,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldos-job-future.131740/",
+      "summary": "538 replies of civil war. Johnnny defending Ciro on the back of two finals series, Critta blaming Gus for the player turnover, everyone else just wants a proper 7 (which we have, but ok)."
     }
   ],
   "kennelMeta": {
