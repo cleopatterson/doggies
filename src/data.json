@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-28T09:42:42.668Z",
+  "generatedAt": "2026-05-31T22:04:28.821Z",
   "match": {
-    "round": 13,
-    "opponent": "Wests Tigers",
-    "venue": "CommBank Stadium",
-    "kickoffISO": "2026-05-30T07:30:00Z",
-    "kickoff": "Sat 30 May, 5:30pm",
-    "dogsHome": false,
-    "dogsPos": "13th",
-    "oppPos": "10th",
+    "round": 14,
+    "opponent": "Eels",
+    "venue": "Accor Stadium",
+    "kickoffISO": "2026-06-08T06:05:00Z",
+    "kickoff": "Mon 8 Jun, 4:05pm",
+    "dogsHome": true,
+    "dogsPos": "14th",
+    "oppPos": "15th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202605110452"
+    "oppLogo": "https://www.nrl.com/.theme/eels/badge.svg?bust=202605110452"
   },
   "odds": {
     "dogs": null,
@@ -18,90 +18,45 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Dogs",
-    "confidence": "Strong — about 80/20",
-    "note": "Coming off the Storm win the kennel reckons we thunderfuck the Tigers. Anything less than a comfortable win and the pitchforks come back out."
+    "side": "Split",
+    "confidence": "Split — about 50/50",
+    "note": "Two 14th-vs-15th basket cases having a swing at each other. The Kennel's flat — half reckon Burton drags us home, the other half are already onto 2027."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 13 v Tigers",
-      "threadSlug": "/forum/index.php?threads/round-13-canterbury-bankstown-bulldogs-vs-west-tigers-saturday-30th-may-5-30pm-commbank-stadium-sydney.131822",
-      "quote": "we are going to thunderfuck them",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-13-canterbury-bankstown-bulldogs-vs-west-tigers-saturday-30th-may-5-30pm-commbank-stadium-sydney.131822/"
+      "thread": "Season over",
+      "threadSlug": "/forum/index.php?threads/season-over.131839",
+      "quote": "This year is cooked, I'm going back to women's beach volleyball",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/season-over.131839/"
     }
   ],
-  "debates": [
-    {
-      "id": "burton-stays-at-six",
-      "icon": "🎯",
-      "question": "Burton's named at 6 after his Storm masterclass — does he see out the full 80 there, or does Ciro shift him to lock late?",
-      "kennel": "Magic Burton thread is unanimous he's our best 5/8 and only option there",
-      "threadSlug": "/forum/index.php?threads/burton.131802",
-      "options": [
-        {
-          "label": "Plays the full 80 at five-eighth",
-          "emoji": "🎯"
-        },
-        {
-          "label": "Shifts to lock in the second half",
-          "emoji": "🔄"
-        },
-        {
-          "label": "Gets benched late with the game won",
-          "emoji": "🪑"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
-    },
-    {
-      "id": "dogs-first-try-scorer-type",
-      "icon": "🏉",
-      "question": "Who opens the scoring for the Dogs?",
-      "kennel": "Rinakama thread is fizzing after his double v Storm, but Burton's the form player",
-      "threadSlug": "/forum/index.php?threads/jethro-rinakama.131154",
-      "options": [
-        {
-          "label": "An outside back (winger/centre/fullback)",
-          "emoji": "💨"
-        },
-        {
-          "label": "A forward",
-          "emoji": "💪"
-        },
-        {
-          "label": "A half or hooker (Burton/Galvin/Mann)",
-          "emoji": "🧠"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/jethro-rinakama.131154/"
-    }
-  ],
+  "debates": [],
   "trivia": {
-    "question": "Which Bulldogs legend captained the club to back-to-back premierships in 1984 and 1985?",
+    "question": "Which Bulldogs winger scored 4 tries in the 1995 Grand Final win over Manly?",
     "options": [
       {
-        "label": "Steve Mortimer",
+        "label": "Daryl Halligan",
         "emoji": "🏆"
       },
       {
-        "label": "Terry Lamb",
+        "label": "Rod Silva",
         "emoji": "🏆"
       },
       {
-        "label": "Steve Folkes",
+        "label": "Jarrod McCracken",
         "emoji": "🏆"
       },
       {
-        "label": "Peter Moore",
+        "label": "Jason Smith",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 0,
-    "explainer": "Turvey skippered the Berries to the 1984 and 1985 titles, including the iconic '85 win where he dropped to his knees on the SCG."
+    "correctIndex": 1,
+    "explainer": "Rod Silva crossed four times in the 17-4 win — still one of the great individual Grand Final performances in club history."
   },
   "recap": [
     {
-      "question": "Who racked up the most run metres for the Dogs in the Storm win?",
+      "question": "Who led the Dogs for run metres against the Tigers?",
       "options": [
         {
           "label": "Jacob Kiraz",
@@ -112,70 +67,65 @@
           "emoji": "🏉"
         },
         {
-          "label": "Jethro Rinakama",
+          "label": "Enari Tuala",
           "emoji": "🏉"
         },
         {
-          "label": "Matt Burton",
+          "label": "Lachlan Galvin",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Kiraz busted out 297 run metres — also topped fantasy points with 83 and capped it with a try at the 77th."
+      "explainer": "Kiraz racked up 287 run metres and topped fantasy points (85) — basically the only bloke who turned up."
     }
   ],
   "washup": {
-    "round": 12,
-    "opponent": "Storm",
-    "dogsHome": true,
-    "dogsScore": 30,
-    "oppScore": 20,
-    "result": "WIN",
-    "margin": 10,
+    "round": 13,
+    "opponent": "Wests Tigers",
+    "dogsHome": false,
+    "dogsScore": 16,
+    "oppScore": 22,
+    "result": "LOSS",
+    "margin": -6,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/storm/badge.svg?bust=202605110452",
-    "attendance": 14372,
-    "weather": "Rain",
+    "oppLogo": "https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202605110452",
+    "attendance": 17505,
+    "weather": "Fine",
     "tries": [
       {
-        "name": "Moses Leo",
-        "team": "Storm",
-        "minute": 3
+        "name": "Jeral Skelton",
+        "team": "Wests Tigers",
+        "minute": 9
       },
       {
-        "name": "Moses Leo",
-        "team": "Storm",
-        "minute": 12
+        "name": "Faaletino Tavana",
+        "team": "Wests Tigers",
+        "minute": 16
       },
       {
-        "name": "Enari Tuala",
-        "team": "Dogs",
-        "minute": 18
-      },
-      {
-        "name": "Josh King",
-        "team": "Storm",
-        "minute": 23
-      },
-      {
-        "name": "Sitili Tupouniua",
-        "team": "Dogs",
-        "minute": 42
-      },
-      {
-        "name": "Jethro Rinakama",
-        "team": "Dogs",
-        "minute": 55
-      },
-      {
-        "name": "Jethro Rinakama",
-        "team": "Dogs",
-        "minute": 72
+        "name": "Jahream Bula",
+        "team": "Wests Tigers",
+        "minute": 28
       },
       {
         "name": "Jacob Kiraz",
         "team": "Dogs",
-        "minute": 77
+        "minute": 36
+      },
+      {
+        "name": "Enari Tuala",
+        "team": "Dogs",
+        "minute": 47
+      },
+      {
+        "name": "Jeral Skelton",
+        "team": "Wests Tigers",
+        "minute": 55
+      },
+      {
+        "name": "Lachlan Galvin",
+        "team": "Dogs",
+        "minute": 68
       }
     ],
     "topPerformers": [
@@ -183,22 +133,22 @@
         "title": "Most Tackles",
         "dogs": {
           "name": "Leo Thompson",
-          "value": 51
+          "value": 41
         },
         "opp": {
-          "name": "Ativalu Lisati",
-          "value": 44
+          "name": "Alex Twal",
+          "value": 55
         }
       },
       {
         "title": "Most Run Metres",
         "dogs": {
           "name": "Jacob Kiraz",
-          "value": 297
+          "value": 287
         },
         "opp": {
-          "name": "Moses Leo",
-          "value": 237
+          "name": "Jeral Skelton",
+          "value": 227
         }
       },
       {
@@ -208,79 +158,64 @@
           "value": 2
         },
         "opp": {
-          "name": "Moses Leo",
-          "value": 2
+          "name": "Jahream Bula",
+          "value": 1
         }
       },
       {
         "title": "Most Fantasy Points",
         "dogs": {
           "name": "Jacob Kiraz",
-          "value": 83
+          "value": 85
         },
         "opp": {
-          "name": "Moses Leo",
-          "value": 67
+          "name": "Terrell May",
+          "value": 86
         }
       }
     ],
     "keyStats": [
       {
         "title": "Completion Rate",
-        "dogs": 81,
-        "opp": 71,
+        "dogs": 84,
+        "opp": 89,
         "unit": ""
       },
       {
         "title": "Missed Tackles",
-        "dogs": 36,
-        "opp": 52,
+        "dogs": 39,
+        "opp": 56,
         "unit": ""
       },
       {
         "title": "Errors",
-        "dogs": 9,
-        "opp": 11,
+        "dogs": 8,
+        "opp": 8,
         "unit": ""
       }
     ],
-    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-12-dogs-vs-storm-friday-8pm.131783/",
-    "headline": "30-20 over the Storm and the kennel didn't even know how to react.",
-    "vibe": "Beat Melbourne. In the rain. With Burton turning back into Burton and Kiraz running for nearly 300m. Tuala, Tupou, two for Rinakama and a late one for Kiraz — and somehow Leo Thompson made 51 tackles and didn't fall over. Still 13th but you can almost see a pulse.",
-    "kennelMood": "Quietly buzzing (and waiting to be let down)",
-    "kennelSummary": "Burton thread is wall-to-wall love-bombing — 'best player at the club, only option at 6.' Kiraz appreciation thread firing after the 297m monster game, and Rinakama thread can't believe we've actually got a finisher. Counter-current: Gus doing his Phil Gould speaks special pissed everyone off and the Ciraldo thread is still 500+ replies of civil war.",
+    "gamedayUrl": null,
+    "headline": "Eighth loss and the fan pages are eating themselves.",
+    "vibe": "We let the Tigers — the TIGERS — bank three tries in the first half hour and spent the rest of the game chasing it. Kiraz was sensational, Tuala had a couple of line breaks, Galvin got over late. None of it mattered because the defence missed 39 tackles and we couldn't kill momentum when it counted. 14th on the ladder, Gus doing damage-control pressers, season's been over for a month — we're just playing out the string now.",
+    "kennelMood": "Cooked",
+    "kennelSummary": "Sack threads everywhere — Ciraldo, the assistant, Gus, the recruitment team, take your pick. The Galvin v Critta civil war ramped up another notch, and the 'worst halves combo in 100 years' thread tells you everything about the mood. Even the Burton hype thread had people qualifying it with 'imagine if he had a proper 7'.",
     "kennelHotTakes": [
       {
-        "quote": "An hour of excuses and deflection — and Gus cut Jimmy off every time it went off-script in his own PR stunt.",
-        "author": "Mitch Connor",
-        "threadSlug": "/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789/"
+        "quote": "Another 5 year rebuild coming — 25 years without a grand final and we're still arguing about halves",
+        "author": "_G-Dog_",
+        "threadSlug": "/forum/index.php?threads/the-best-teenage-footballer-ive-ever-seen.131704",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/the-best-teenage-footballer-ive-ever-seen.131704/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [
-    {
-      "prefix": "GAMEDAY",
-      "title": "Round 13 Canterbury Bankstown Bulldogs Vs West Tigers - Saturday 30th May 5:30pm - CommBank Stadium, Sydney",
-      "replies": 297,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-13-canterbury-bankstown-bulldogs-vs-west-tigers-saturday-30th-may-5-30pm-commbank-stadium-sydney.131822/",
-      "summary": "GAMEDAY thread already 297 deep — Critta calling for a thunderfucking, Edgelord traumatised by his missus making their kid a half-half jersey, and BRADDO posting his preferred 17 like Ciro's reading."
-    }
-  ],
+  "kennelThreadsThisWeek": [],
   "kennelThreadsLastGame": [
     {
       "prefix": null,
-      "title": "Phil Gould speaks - current state of the Bulldogs",
-      "replies": 303,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/phil-gould-speaks-current-state-of-the-bulldogs.131789/",
-      "summary": "Gus doing a sit-down with Jimmy Graham and the kennel is NOT having it. Mitch Connor reckons it was an hour of excuses, Reecek89 says Gus threw Ciro under the bus over the Reed situation."
-    },
-    {
-      "prefix": null,
       "title": "CIRALDOS JOB FUTURE",
-      "replies": 538,
+      "replies": 577,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldos-job-future.131740/",
-      "summary": "538 replies of civil war. Johnnny defending Ciro on the back of two finals series, Critta blaming Gus for the player turnover, everyone else just wants a proper 7 (which we have, but ok)."
+      "summary": "577 replies and counting. Johnnny2233 mounting the defence (two finals series, Critta connection) while half the forum's already drafted the press release."
     }
   ],
   "kennelMeta": {
@@ -409,6 +344,52 @@
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/what-are-your-theories-on-why-we-have-regressed-so-much-this-year.131761/"
       }
+    ],
+    "13": [
+      {
+        "id": "burton-stays-at-six",
+        "icon": "🎯",
+        "question": "Burton's named at 6 after his Storm masterclass — does he see out the full 80 there, or does Ciro shift him to lock late?",
+        "kennel": "Magic Burton thread is unanimous he's our best 5/8 and only option there",
+        "threadSlug": "/forum/index.php?threads/burton.131802",
+        "options": [
+          {
+            "label": "Plays the full 80 at five-eighth",
+            "emoji": "🎯"
+          },
+          {
+            "label": "Shifts to lock in the second half",
+            "emoji": "🔄"
+          },
+          {
+            "label": "Gets benched late with the game won",
+            "emoji": "🪑"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
+      },
+      {
+        "id": "dogs-first-try-scorer-type",
+        "icon": "🏉",
+        "question": "Who opens the scoring for the Dogs?",
+        "kennel": "Rinakama thread is fizzing after his double v Storm, but Burton's the form player",
+        "threadSlug": "/forum/index.php?threads/jethro-rinakama.131154",
+        "options": [
+          {
+            "label": "An outside back (winger/centre/fullback)",
+            "emoji": "💨"
+          },
+          {
+            "label": "A forward",
+            "emoji": "💪"
+          },
+          {
+            "label": "A half or hooker (Burton/Galvin/Mann)",
+            "emoji": "🧠"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/jethro-rinakama.131154/"
+      }
     ]
   },
   "resolutions": {
@@ -440,6 +421,16 @@
       "opponent": "Storm",
       "dogsHome": true,
       "debateVerdicts": {}
+    },
+    "13": {
+      "tipBand": "loss",
+      "dogsScore": 16,
+      "oppScore": 22,
+      "opponent": "Wests Tigers",
+      "dogsHome": false,
+      "debateVerdicts": {
+        "dogs-first-try-scorer-type": "An outside back (winger/centre/fullback)"
+      }
     }
   }
 }
