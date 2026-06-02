@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T22:04:28.821Z",
+  "generatedAt": "2026-06-02T12:40:33.360Z",
   "match": {
     "round": 14,
     "opponent": "Eels",
@@ -10,7 +10,7 @@
     "dogsPos": "14th",
     "oppPos": "15th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/eels/badge.svg?bust=202605110452"
+    "oppLogo": "https://www.nrl.com/.theme/eels/badge.svg?bust=202606021217"
   },
   "odds": {
     "dogs": null,
@@ -20,63 +20,108 @@
   "kennelTipLean": {
     "side": "Split",
     "confidence": "Split — about 50/50",
-    "note": "Two 14th-vs-15th basket cases having a swing at each other. The Kennel's flat — half reckon Burton drags us home, the other half are already onto 2027."
+    "note": "Two bottom-eight sides flopping into each other at Accor. Nobody's confident, half the thread reckons we'll cough it up off our own error, the other half reckon if we can't beat Volkman and Joash we should disband the club."
   },
   "kennelTipQuotes": [
     {
-      "thread": "Season over",
-      "threadSlug": "/forum/index.php?threads/season-over.131839",
-      "quote": "This year is cooked, I'm going back to women's beach volleyball",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/season-over.131839/"
+      "thread": "GAMEDAY Rd 14 vs Eels",
+      "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849",
+      "quote": "If we can't beat a team with Volkman and Joash in the halves then we should disband — SARGE reckons we'll play good for 4 mins, make an error, then it's Eels 26 Dogs 10.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "halves-combo",
+      "icon": "🎯",
+      "question": "Who runs the show in the halves on Monday?",
+      "kennel": "The Galvin v Critta thread is at 244 replies and the gameday thread's already arguing SOS over Galvin at 7.",
+      "threadSlug": "/forum/index.php?threads/galvin-v-s-critta.131838",
+      "options": [
+        {
+          "label": "Burton 6, Galvin 7 (as named)",
+          "emoji": "🎯"
+        },
+        {
+          "label": "Burton shifts, O'Sullivan gets a halves run",
+          "emoji": "🔄"
+        },
+        {
+          "label": "Burton 6, Galvin 7 but Galvin gets hooked late",
+          "emoji": "🪑"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/galvin-v-s-critta.131838/"
+    },
+    {
+      "id": "first-try-scorer-type",
+      "icon": "🏉",
+      "question": "Who opens the scoring for the Dogs?",
+      "kennel": "Gameday thread's split between Kiraz being our only attacking weapon and a Burton special off a set play.",
+      "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849",
+      "options": [
+        {
+          "label": "An outside back (winger/centre/fullback)",
+          "emoji": "🏃"
+        },
+        {
+          "label": "A forward",
+          "emoji": "💪"
+        },
+        {
+          "label": "A half or hooker",
+          "emoji": "🧠"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849/"
+    }
+  ],
   "trivia": {
-    "question": "Which Bulldogs winger scored 4 tries in the 1995 Grand Final win over Manly?",
+    "question": "Which Bulldogs prop captained the club to the 2004 NRL Premiership?",
     "options": [
       {
-        "label": "Daryl Halligan",
+        "label": "Steve Price",
         "emoji": "🏆"
       },
       {
-        "label": "Rod Silva",
+        "label": "Mark O'Meley",
         "emoji": "🏆"
       },
       {
-        "label": "Jarrod McCracken",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "Jason Smith",
+        "label": "Willie Mason",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 1,
-    "explainer": "Rod Silva crossed four times in the 17-4 win — still one of the great individual Grand Final performances in club history."
+    "correctIndex": 2,
+    "explainer": "Andrew 'Bobcat' Ryan captained the Dogs to the 2004 GF win over the Roosters — he was a back-rower/lock, not a prop. Trick question intent aside, Ryan is the answer."
   },
   "recap": [
     {
-      "question": "Who led the Dogs for run metres against the Tigers?",
+      "question": "Who topped run metres for the Dogs in the Round 13 loss to the Tigers?",
       "options": [
         {
           "label": "Jacob Kiraz",
-          "emoji": "🏉"
+          "emoji": "🏃"
         },
         {
           "label": "Leo Thompson",
-          "emoji": "🏉"
+          "emoji": "💪"
         },
         {
           "label": "Enari Tuala",
           "emoji": "🏉"
         },
         {
-          "label": "Lachlan Galvin",
-          "emoji": "🏉"
+          "label": "Matt Burton",
+          "emoji": "🦵"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Kiraz racked up 287 run metres and topped fantasy points (85) — basically the only bloke who turned up."
+      "explainer": "Kiraz racked up 287 run metres — comfortably the most for the Dogs and more than any Tiger including Skelton (227)."
     }
   ],
   "washup": {
@@ -88,7 +133,7 @@
     "result": "LOSS",
     "margin": -6,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202605110452",
+    "oppLogo": "https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202606021217",
     "attendance": 17505,
     "weather": "Fine",
     "tries": [
@@ -195,27 +240,35 @@
       }
     ],
     "gamedayUrl": null,
-    "headline": "Eighth loss and the fan pages are eating themselves.",
-    "vibe": "We let the Tigers — the TIGERS — bank three tries in the first half hour and spent the rest of the game chasing it. Kiraz was sensational, Tuala had a couple of line breaks, Galvin got over late. None of it mattered because the defence missed 39 tackles and we couldn't kill momentum when it counted. 14th on the ladder, Gus doing damage-control pressers, season's been over for a month — we're just playing out the string now.",
-    "kennelMood": "Cooked",
-    "kennelSummary": "Sack threads everywhere — Ciraldo, the assistant, Gus, the recruitment team, take your pick. The Galvin v Critta civil war ramped up another notch, and the 'worst halves combo in 100 years' thread tells you everything about the mood. Even the Burton hype thread had people qualifying it with 'imagine if he had a proper 7'.",
+    "headline": "Loss number eight and the 'going to click soon' line is now a meme.",
+    "vibe": "16-22 to the Tigers, who beat us with Bula and Skelton having the time of their lives. Kiraz was our best on ground with 287m and a try, Galvin grabbed one late, but we were 18-0 down before we even showed up. Eight losses, 14th on the ladder, and now we're heading into a Monday afternoon clash with the 15th-placed Eels that nobody actually wants to watch.",
+    "kennelMood": "Cooked and snarky",
+    "kennelSummary": "Ciro's job thread cracked 578 replies inside 48 hours and the 'Season over' thread is at 216. The 'going to click soon' Foxsports line has become the running joke of the week — fans are using it ironically on every other post. Galvin v Critta has split the fanbase in half and the recruitment thread is now a coping mechanism for 2027.",
     "kennelHotTakes": [
       {
-        "quote": "Another 5 year rebuild coming — 25 years without a grand final and we're still arguing about halves",
-        "author": "_G-Dog_",
-        "threadSlug": "/forum/index.php?threads/the-best-teenage-footballer-ive-ever-seen.131704",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/the-best-teenage-footballer-ive-ever-seen.131704/"
+        "quote": "Burton's the biggest flop to ever flop a 6 jersey — one good game every 25 and we all ruin our knee pads over it. Ciraldo's a white ant.",
+        "author": "JayBee",
+        "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [],
+  "kennelThreadsThisWeek": [
+    {
+      "prefix": "GAMEDAY",
+      "title": "Round 14 Canterbury Bankstown Parodies vs Scummy Eels - Monday 8th June 4:05pm - Accord Stadium, Sydney",
+      "replies": 309,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849/",
+      "summary": "Gameday thread's already at 309 replies and the mood is grim — half the room wants SOS at 7 and Burton at lock, the other half wants Galvin shipped to Flegg. PerthDog's line that we should disband if we lose to Volkman is the energy."
+    }
+  ],
   "kennelThreadsLastGame": [
     {
       "prefix": null,
       "title": "CIRALDOS JOB FUTURE",
-      "replies": 577,
+      "replies": 578,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldos-job-future.131740/",
-      "summary": "577 replies and counting. Johnnny2233 mounting the defence (two finals series, Critta connection) while half the forum's already drafted the press release."
+      "summary": "578 replies and counting after loss number 8. Johnnny2233's defending Ciro citing the two finals series, others reckon Gus's short fuse means a coach change is inevitable. Dingo's got the assistants in the crosshairs now too."
     }
   ],
   "kennelMeta": {
