@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-06-07T22:09:22.966Z",
+  "generatedAt": "2026-06-09T11:59:18.002Z",
   "match": {
-    "round": 14,
-    "opponent": "Eels",
+    "round": 16,
+    "opponent": "Sea Eagles",
     "venue": "Accor Stadium",
-    "kickoffISO": "2026-06-08T06:05:00Z",
-    "kickoff": "Mon 8 Jun, 4:05pm",
+    "kickoffISO": "2026-06-20T09:35:00Z",
+    "kickoff": "Sat 20 Jun, 7:35pm",
     "dogsHome": true,
-    "dogsPos": "15th",
-    "oppPos": "16th",
+    "dogsPos": "13th",
+    "oppPos": "4th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/eels/badge.svg?bust=202606021440"
+    "oppLogo": "https://www.nrl.com/.theme/sea-eagles/badge.svg?bust=202510300111"
   },
   "odds": {
     "dogs": null,
@@ -18,192 +18,132 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Split",
-    "confidence": "Split — about 50/50",
-    "note": "Two 15th-vs-16th bottom feeders and the Kennel can't decide if we win ugly or find a new way to choke. Half the boys reckon easy, the other half are bracing for a one-error meltdown."
+    "side": "Opponent",
+    "confidence": "Lean — about 35/65",
+    "note": "Most of the Kennel has us cooked without Critta — Manly at 4th feels like a bridge too far. A few hopeful posts but the doomers are louder."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 14 v Eels",
+      "thread": "GAMEDAY Rd 14",
       "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849",
-      "quote": "PerthDog: if we can't beat a team with Volkman and Joash in the halves then we should disband",
+      "quote": "Galvin can get stuffed. Until he learns what a TEAM is he can go play by himself in flegg or NSW cup — JayBee going nuclear before kickoff",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/"
     }
   ],
-  "debates": [
-    {
-      "id": "galvin-burton-halves-survive",
-      "icon": "🎯",
-      "question": "Galvin and Burton are named as the halves again — does the pairing last the full 80 or does Ciro shuffle one of them out of the halves during the game?",
-      "kennel": "The 'worst halves combo in 100 years' thread has 98 replies of people wanting one of them moved.",
-      "threadSlug": "/forum/index.php?threads/galvin-burton-worst-halves-combination-is-100-years-of-rugby-league.131836",
-      "options": [
-        {
-          "label": "Both finish the game in the halves (6 and 7)",
-          "emoji": "🤝"
-        },
-        {
-          "label": "Burton shifts to lock/forwards at some point",
-          "emoji": "🔄"
-        },
-        {
-          "label": "One of them gets hooked or subbed off",
-          "emoji": "🪑"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/galvin-burton-worst-halves-combination-is-100-years-of-rugby-league.131836/"
-    },
-    {
-      "id": "dogs-first-try-scorer-type-r14",
-      "icon": "🏉",
-      "question": "Who opens the scoring for the Dogs against the Eels?",
-      "kennel": "Gameday thread is full of try-scorer predictions, with most punters backing the outside backs against this Eels edge defence.",
-      "threadSlug": "/forum/index.php?threads/bulldogs-vs-eels-score-prediction-man-of-the-match-crowd-attendance.131866",
-      "options": [
-        {
-          "label": "An outside back (winger/centre/fullback)",
-          "emoji": "⚡"
-        },
-        {
-          "label": "A forward",
-          "emoji": "💪"
-        },
-        {
-          "label": "A half or hooker (Burton/Galvin/Hayward)",
-          "emoji": "🎯"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-vs-eels-score-prediction-man-of-the-match-crowd-attendance.131866/"
-    }
-  ],
+  "debates": [],
   "trivia": {
-    "question": "Which year did the Bulldogs last win the NRL premiership?",
+    "question": "Which Bulldogs legend holds the club record for most first-grade games?",
     "options": [
       {
-        "label": "2002",
+        "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "2004",
+        "label": "Steve Mortimer",
         "emoji": "🏆"
       },
       {
-        "label": "2008",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "2012",
+        "label": "Terry Lamb",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 1,
-    "explainer": "Canterbury beat the Roosters 16-13 in the 2004 grand final — Andrew Ryan's mob, with Hazem El Masri kicking the goals. Feels like a lifetime ago."
+    "correctIndex": 3,
+    "explainer": "Terry Lamb played 349 games for Canterbury between 1984 and 1996 — still the club's all-time leader."
   },
   "recap": [
     {
-      "question": "Who topped run metres for the Dogs in the Round 13 loss to the Tigers?",
+      "question": "Who scored the Dogs' first try against Parra?",
       "options": [
         {
-          "label": "Jacob Kiraz",
-          "emoji": "🏃"
-        },
-        {
-          "label": "Enari Tuala",
-          "emoji": "🏃"
-        },
-        {
-          "label": "Leo Thompson",
-          "emoji": "🏃"
+          "label": "Sitili Tupouniua",
+          "emoji": "🏉"
         },
         {
           "label": "Stephen Crichton",
-          "emoji": "🏃"
+          "emoji": "🏉"
+        },
+        {
+          "label": "Jacob Kiraz",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Connor Tracey",
+          "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Kiraz ran for 287m and also crossed for a try — basically carried the back five on his own."
+      "explainer": "Sitili crashed over in the 47th minute to open the scoring, before Critta backed it up three minutes later."
     }
   ],
   "washup": {
-    "round": 13,
-    "opponent": "Wests Tigers",
-    "dogsHome": false,
-    "dogsScore": 16,
-    "oppScore": 22,
-    "result": "LOSS",
-    "margin": -6,
+    "round": 14,
+    "opponent": "Eels",
+    "dogsHome": true,
+    "dogsScore": 14,
+    "oppScore": 12,
+    "result": "WIN",
+    "margin": 2,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202606021440",
-    "attendance": 17505,
+    "oppLogo": "https://www.nrl.com/.theme/eels/badge.svg?bust=202606021440",
+    "attendance": 37638,
     "weather": "Fine",
     "tries": [
       {
-        "name": "Jeral Skelton",
-        "team": "Wests Tigers",
-        "minute": 9
-      },
-      {
-        "name": "Faaletino Tavana",
-        "team": "Wests Tigers",
-        "minute": 16
-      },
-      {
-        "name": "Jahream Bula",
-        "team": "Wests Tigers",
-        "minute": 28
-      },
-      {
-        "name": "Jacob Kiraz",
-        "team": "Dogs",
-        "minute": 36
-      },
-      {
-        "name": "Enari Tuala",
+        "name": "Sitili Tupouniua",
         "team": "Dogs",
         "minute": 47
       },
       {
-        "name": "Jeral Skelton",
-        "team": "Wests Tigers",
-        "minute": 55
+        "name": "Stephen Crichton",
+        "team": "Dogs",
+        "minute": 50
       },
       {
-        "name": "Lachlan Galvin",
-        "team": "Dogs",
-        "minute": 68
+        "name": "Tallyn Da Silva",
+        "team": "Eels",
+        "minute": 59
+      },
+      {
+        "name": "Joash Papalii",
+        "team": "Eels",
+        "minute": 61
       }
     ],
     "topPerformers": [
       {
         "title": "Most Tackles",
         "dogs": {
-          "name": "Leo Thompson",
-          "value": 41
+          "name": "Bailey Hayward",
+          "value": 42
         },
         "opp": {
-          "name": "Alex Twal",
-          "value": 55
+          "name": "Jack Williams",
+          "value": 49
         }
       },
       {
         "title": "Most Run Metres",
         "dogs": {
-          "name": "Jacob Kiraz",
-          "value": 287
+          "name": "Connor Tracey",
+          "value": 286
         },
         "opp": {
-          "name": "Jeral Skelton",
-          "value": 227
+          "name": "Brian Kelly",
+          "value": 206
         }
       },
       {
         "title": "Most Line Breaks",
         "dogs": {
-          "name": "Enari Tuala",
+          "name": "Connor Tracey",
           "value": 2
         },
         "opp": {
-          "name": "Jahream Bula",
+          "name": "Isaiah Iongi",
           "value": 1
         }
       },
@@ -211,73 +151,58 @@
         "title": "Most Fantasy Points",
         "dogs": {
           "name": "Jacob Kiraz",
-          "value": 85
+          "value": 72
         },
         "opp": {
-          "name": "Terrell May",
-          "value": 86
+          "name": "Ronald Volkman",
+          "value": 62
         }
       }
     ],
     "keyStats": [
       {
         "title": "Completion Rate",
-        "dogs": 84,
-        "opp": 89,
+        "dogs": 76,
+        "opp": 73,
         "unit": ""
       },
       {
         "title": "Missed Tackles",
-        "dogs": 39,
-        "opp": 56,
+        "dogs": 29,
+        "opp": 54,
         "unit": ""
       },
       {
         "title": "Errors",
-        "dogs": 8,
-        "opp": 8,
+        "dogs": 12,
+        "opp": 14,
         "unit": ""
       }
     ],
-    "gamedayUrl": null,
-    "headline": "Eighth loss and the 'going to click soon' line is wearing thin.",
-    "vibe": "We got beat 22-16 by the Tigers — yeah, the Tigers. Conceded three tries in the first half hour, fought back through Kiraz and Tuala, then Galvin's late try just made the scoreboard look respectable. Sitting 15th heading into a wooden spoon decider against the Eels is not where any of us thought we'd be.",
-    "kennelMood": "Cooked and arguing about who to blame",
-    "kennelSummary": "The Kennel has gone full civil war — SARGE wants Ciraldo AND Gus gone, the Galvin v Critta thread is brutal (Critta apparently ignored Galvin's challenge call), and the 'who's to blame' thread cracked 200 replies in a day. Everyone's pointing fingers, nobody's defending the coach.",
+    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/",
+    "headline": "Ugly, scrappy, two-point win — and Critta's shoulder is gone.",
+    "vibe": "We got the points and that's the only thing that matters when you're 13th. Defence held up, Tracey put on 286 metres, Hayward made 42 tackles in the engine room. But Critta re-doing his shoulder, possibly season-ending, takes a lot of the gloss off — and now we cop Manly.",
+    "kennelMood": "Quietly relieved, loudly worried",
+    "kennelSummary": "The win barely registered before the Critta news landed and the thread pivoted to whether he'll miss the rest of the year. Crawley's article about Ciraldo not letting Galvin challenge has the conspiracy crowd lit up, and there's a real undercurrent of 'the playing group can't stand Critta' doing the rounds on FB.",
     "kennelHotTakes": [
       {
-        "quote": "We're actually a worse side WITH Critta in it at the moment. How the fuck has that happened.",
-        "author": "pillow",
-        "threadSlug": "/forum/index.php?threads/galvin-v-s-critta.131838",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/galvin-v-s-critta.131838/"
+        "quote": "Imagine if we win without Critta? It's already kicking off on the socials about the playing group not being able to stand him lol",
+        "author": "Haddaway",
+        "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/"
       }
     ]
   },
   "kennelThreadsThisWeek": [
     {
-      "prefix": "GAMEDAY",
-      "title": "Round 14 Canterbury Bankstown vs Scummy Eels - Monday 8th June 4:05pm - Accor Stadium, Sydney",
-      "replies": 713,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/",
-      "summary": "Gameday thread is split between 'easy win incoming' and SARGE-style doom predictions (Eels 26 Dogs 10). JayBee's calling Burton 'the flop of all flops' and wants Galvin sent to Flegg."
+      "prefix": null,
+      "title": "Conti time ?",
+      "replies": 181,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
+      "summary": "Whether to blood Conti at 7 and shift Galvin to 6 or even Burton to 13. Half the thread reckons Manly's the wrong week to throw him in, the other half says we've got nothing to lose."
     }
   ],
-  "kennelThreadsLastGame": [
-    {
-      "prefix": null,
-      "title": "Who exactly is to blame for this abysmal season?",
-      "replies": 223,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/who-exactly-is-to-blame-for-this-abysmal-season.131842/",
-      "summary": "223-reply blame game post-Tigers loss. SARGE wants Ciraldo and Gus both gone, diddly reckons 'the walls' are the problem, everyone agrees the buck stops with the coach."
-    },
-    {
-      "prefix": null,
-      "title": "Recruitment",
-      "replies": 321,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/",
-      "summary": "Freakzilla doing the maths on $2.5m spent on three centres while we have zero NRL-quality hookers. Marlinfeeder reckons Roosters are better than us in every single position 1-13."
-    }
-  ],
+  "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -453,48 +378,48 @@
     ],
     "14": [
       {
-        "id": "galvin-partner",
+        "id": "galvin-burton-halves-survive",
         "icon": "🎯",
-        "question": "Galvin's named at 7 — who actually runs the show next to him in the halves?",
-        "kennel": "The 'worst halves combo in 100 years' thread has 96 replies of pure venom on this exact pairing.",
+        "question": "Galvin and Burton are named as the halves again — does the pairing last the full 80 or does Ciro shuffle one of them out of the halves during the game?",
+        "kennel": "The 'worst halves combo in 100 years' thread has 98 replies of people wanting one of them moved.",
         "threadSlug": "/forum/index.php?threads/galvin-burton-worst-halves-combination-is-100-years-of-rugby-league.131836",
         "options": [
           {
-            "label": "Burton — stays at 6 the full 80",
-            "emoji": "🦶"
+            "label": "Both finish the game in the halves (6 and 7)",
+            "emoji": "🤝"
           },
           {
-            "label": "Burton starts 6 but shifts to lock/13 in the second half",
+            "label": "Burton shifts to lock/forwards at some point",
             "emoji": "🔄"
           },
           {
-            "label": "SOS gets dragged on early and takes over playmaking",
-            "emoji": "🆘"
+            "label": "One of them gets hooked or subbed off",
+            "emoji": "🪑"
           }
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/galvin-burton-worst-halves-combination-is-100-years-of-rugby-league.131836/"
       },
       {
-        "id": "first-try-scorer-type",
+        "id": "dogs-first-try-scorer-type-r14",
         "icon": "🏉",
-        "question": "Who opens the scoring for the Dogs against Parra?",
-        "kennel": "Kiraz topped run metres last week, Tuala had 2 line breaks — the outside backs are the only ones firing.",
-        "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849",
+        "question": "Who opens the scoring for the Dogs against the Eels?",
+        "kennel": "Gameday thread is full of try-scorer predictions, with most punters backing the outside backs against this Eels edge defence.",
+        "threadSlug": "/forum/index.php?threads/bulldogs-vs-eels-score-prediction-man-of-the-match-crowd-attendance.131866",
         "options": [
           {
             "label": "An outside back (winger/centre/fullback)",
-            "emoji": "🏃"
+            "emoji": "⚡"
           },
           {
             "label": "A forward",
             "emoji": "💪"
           },
           {
-            "label": "A half or hooker (Burton/Galvin/Mann)",
+            "label": "A half or hooker (Burton/Galvin/Hayward)",
             "emoji": "🎯"
           }
         ],
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-parodies-vs-scummy-eels-monday-8th-june-4-05pm-accord-stadium-sydney.131849/"
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-vs-eels-score-prediction-man-of-the-match-crowd-attendance.131866/"
       }
     ]
   },
@@ -536,6 +461,16 @@
       "dogsHome": false,
       "debateVerdicts": {
         "dogs-first-try-scorer-type": "An outside back (winger/centre/fullback)"
+      }
+    },
+    "14": {
+      "tipBand": "win_1_6",
+      "dogsScore": 14,
+      "oppScore": 12,
+      "opponent": "Eels",
+      "dogsHome": true,
+      "debateVerdicts": {
+        "dogs-first-try-scorer-type-r14": "A forward"
       }
     }
   }
