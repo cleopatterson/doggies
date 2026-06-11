@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T11:59:18.002Z",
+  "generatedAt": "2026-06-11T10:02:09.656Z",
   "match": {
     "round": 16,
     "opponent": "Sea Eagles",
@@ -20,50 +20,50 @@
   "kennelTipLean": {
     "side": "Opponent",
     "confidence": "Lean — about 35/65",
-    "note": "Most of the Kennel has us cooked without Critta — Manly at 4th feels like a bridge too far. A few hopeful posts but the doomers are louder."
+    "note": "Kennel's split between doomers expecting a Manly cricket score and the post-Eels win optimists hoping the bye reset means something. Vibe is cautious dread."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 14",
       "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849",
-      "quote": "Galvin can get stuffed. Until he learns what a TEAM is he can go play by himself in flegg or NSW cup — JayBee going nuclear before kickoff",
+      "quote": "Burton, the fucking flop of all flops that ever flopped a number 6 jersey on — has 1 good game every 25, and we all ruin our knee pads because of that 1 game. Ciraldo is a white ant.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/"
     }
   ],
   "debates": [],
   "trivia": {
-    "question": "Which Bulldogs legend holds the club record for most first-grade games?",
+    "question": "In what year did the Bulldogs win their most recent NRL premiership?",
     "options": [
       {
-        "label": "Hazem El Masri",
+        "label": "1995",
         "emoji": "🏆"
       },
       {
-        "label": "Steve Mortimer",
+        "label": "2004",
         "emoji": "🏆"
       },
       {
-        "label": "Andrew Ryan",
+        "label": "2012",
         "emoji": "🏆"
       },
       {
-        "label": "Terry Lamb",
+        "label": "2014",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 3,
-    "explainer": "Terry Lamb played 349 games for Canterbury between 1984 and 1996 — still the club's all-time leader."
+    "correctIndex": 1,
+    "explainer": "Steve Folkes' Dogs beat the Roosters 16-13 in the 2004 grand final — still our last one, still hurts when you say it out loud."
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' first try against Parra?",
+      "question": "Who scored the Dogs' first try in the Round 14 win over the Eels?",
       "options": [
         {
-          "label": "Sitili Tupouniua",
+          "label": "Stephen Crichton",
           "emoji": "🏉"
         },
         {
-          "label": "Stephen Crichton",
+          "label": "Sitili Tupouniua",
           "emoji": "🏉"
         },
         {
@@ -75,8 +75,8 @@
           "emoji": "🏉"
         }
       ],
-      "correctIndex": 0,
-      "explainer": "Sitili crashed over in the 47th minute to open the scoring, before Critta backed it up three minutes later."
+      "correctIndex": 1,
+      "explainer": "Sitili crashed over in the 47th minute to open the scoring, Critta followed three minutes later."
     }
   ],
   "washup": {
@@ -180,14 +180,14 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/",
-    "headline": "Ugly, scrappy, two-point win — and Critta's shoulder is gone.",
-    "vibe": "We got the points and that's the only thing that matters when you're 13th. Defence held up, Tracey put on 286 metres, Hayward made 42 tackles in the engine room. But Critta re-doing his shoulder, possibly season-ending, takes a lot of the gloss off — and now we cop Manly.",
-    "kennelMood": "Quietly relieved, loudly worried",
-    "kennelSummary": "The win barely registered before the Critta news landed and the thread pivoted to whether he'll miss the rest of the year. Crawley's article about Ciraldo not letting Galvin challenge has the conspiracy crowd lit up, and there's a real undercurrent of 'the playing group can't stand Critta' doing the rounds on FB.",
+    "headline": "Ugly, narrow, and we'll take it.",
+    "vibe": "14-12 over the Eels isn't going to win any beauty contests but a W is a W and the missed tackle count (54 vs our 29) tells you Parra were just as cooked as we were. Tracey ran for 286m which is genuinely mental, Sitili and Critta got the tries, then Crichton's shoulder went again which might cost him the rest of the year. Still 13th, still a mess, but at least we're not getting laughed at this week.",
+    "kennelMood": "Quietly relieved, loudly anxious",
+    "kennelSummary": "Crichton's shoulder is dominating everything — half the board reckons shut him down for the year, the other half worried he'll be back for Origin 2 and re-do it. Already a brewing storm about the playing group not liking Critta after a Crawley article, which the optimists are calling beat-up szn. Conti chants are getting louder.",
     "kennelHotTakes": [
       {
-        "quote": "Imagine if we win without Critta? It's already kicking off on the socials about the playing group not being able to stand him lol",
-        "author": "Haddaway",
+        "quote": "Just shut Crichton down for the year, he's painful to watch and we all know he'll only come back for Origin 2 anyway",
+        "author": "SARGE",
         "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/"
       }
@@ -197,9 +197,16 @@
     {
       "prefix": null,
       "title": "Conti time ?",
-      "replies": 181,
+      "replies": 261,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
-      "summary": "Whether to blood Conti at 7 and shift Galvin to 6 or even Burton to 13. Half the thread reckons Manly's the wrong week to throw him in, the other half says we've got nothing to lose."
+      "summary": "Push to blood Alex Conti at 7 with Galvin at 6 and Burton shoved to lock. Half the thread reckons Manly after the bye is the worst possible debut, the other half says we've got nothing to lose."
+    },
+    {
+      "prefix": "News",
+      "title": "Freddy Lussick signs for 2 years (2027)",
+      "replies": 358,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/freddy-lussick-signs-for-2-years-2027.131882/",
+      "summary": "Lussick signing splitting opinion — some happy we've finally got an NRL-standard 9 locked in, others spiralling about why we keep recruiting fringe hookers instead of a genuine one."
     }
   ],
   "kennelThreadsLastGame": [],
