@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T10:02:09.656Z",
+  "generatedAt": "2026-06-14T22:17:21.534Z",
   "match": {
     "round": 16,
     "opponent": "Sea Eagles",
@@ -7,8 +7,8 @@
     "kickoffISO": "2026-06-20T09:35:00Z",
     "kickoff": "Sat 20 Jun, 7:35pm",
     "dogsHome": true,
-    "dogsPos": "13th",
-    "oppPos": "4th",
+    "dogsPos": "12th",
+    "oppPos": "3rd",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
     "oppLogo": "https://www.nrl.com/.theme/sea-eagles/badge.svg?bust=202510300111"
   },
@@ -20,43 +20,43 @@
   "kennelTipLean": {
     "side": "Opponent",
     "confidence": "Lean — about 35/65",
-    "note": "Kennel's split between doomers expecting a Manly cricket score and the post-Eels win optimists hoping the bye reset means something. Vibe is cautious dread."
+    "note": "Manly sit 3rd, we're 12th and just scraped past the Eels by 2 with no Critta. Most of the Kennel is bracing for a beating but a few reckon we're due for a smash-and-grab."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 14",
+      "thread": "GAMEDAY Rd 14 vs Eels",
       "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849",
-      "quote": "Burton, the fucking flop of all flops that ever flopped a number 6 jersey on — has 1 good game every 25, and we all ruin our knee pads because of that 1 game. Ciraldo is a white ant.",
+      "quote": "If we can't beat a team with Volkman and Joash in the halves then we should disband — PerthDog laying down the bar before we then went on to win by 2",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/"
     }
   ],
   "debates": [],
   "trivia": {
-    "question": "In what year did the Bulldogs win their most recent NRL premiership?",
+    "question": "Which Bulldogs prop won the Dally M Prop of the Year in 2022?",
     "options": [
       {
-        "label": "1995",
+        "label": "Tevita Pangai Junior",
         "emoji": "🏆"
       },
       {
-        "label": "2004",
+        "label": "Max King",
         "emoji": "🏆"
       },
       {
-        "label": "2012",
+        "label": "Luke Thompson",
         "emoji": "🏆"
       },
       {
-        "label": "2014",
+        "label": "Dujon Cooper",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 1,
-    "explainer": "Steve Folkes' Dogs beat the Roosters 16-13 in the 2004 grand final — still our last one, still hurts when you say it out loud."
+    "correctIndex": 2,
+    "explainer": "Luke Thompson took out the 2022 Dally M Prop of the Year while playing for the Bulldogs — one of the few bright spots in a brutal season."
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' first try in the Round 14 win over the Eels?",
+      "question": "Who scored the Dogs' first try against the Eels?",
       "options": [
         {
           "label": "Stephen Crichton",
@@ -76,7 +76,7 @@
         }
       ],
       "correctIndex": 1,
-      "explainer": "Sitili crashed over in the 47th minute to open the scoring, Critta followed three minutes later."
+      "explainer": "Sitili crossed in the 47th to open the scoring, Critta backed it up three minutes later."
     }
   ],
   "washup": {
@@ -180,13 +180,13 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/",
-    "headline": "Ugly, narrow, and we'll take it.",
-    "vibe": "14-12 over the Eels isn't going to win any beauty contests but a W is a W and the missed tackle count (54 vs our 29) tells you Parra were just as cooked as we were. Tracey ran for 286m which is genuinely mental, Sitili and Critta got the tries, then Crichton's shoulder went again which might cost him the rest of the year. Still 13th, still a mess, but at least we're not getting laughed at this week.",
-    "kennelMood": "Quietly relieved, loudly anxious",
-    "kennelSummary": "Crichton's shoulder is dominating everything — half the board reckons shut him down for the year, the other half worried he'll be back for Origin 2 and re-do it. Already a brewing storm about the playing group not liking Critta after a Crawley article, which the optimists are calling beat-up szn. Conti chants are getting louder.",
+    "headline": "Ugly, scratchy, and we'll take it.",
+    "vibe": "14-12 over the Eels isn't the kind of win you frame, but Sitili and Critta got the job done in a six-minute window and the defence held on. 54 missed tackles from Parra tells you it was that kind of game. Still 12th, still miles off a finals spot, but at least we're not adding to the embarrassment file.",
+    "kennelMood": "Quietly relieved",
+    "kennelSummary": "The win didn't fix the mood — Critta's shoulder reinjury immediately became the story, with half the board hoping he gets shut down for the year and the other half furious about a Crawley article. Tracey's 286 metres split the room, and the Preston contract saga is getting louder by the day.",
     "kennelHotTakes": [
       {
-        "quote": "Just shut Crichton down for the year, he's painful to watch and we all know he'll only come back for Origin 2 anyway",
+        "quote": "Critta injured AGAIN — shut him down for the year, he'll just come back for Origin 2 anyway. Painful to watch.",
         "author": "SARGE",
         "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/"
@@ -197,19 +197,34 @@
     {
       "prefix": null,
       "title": "Conti time ?",
-      "replies": 261,
+      "replies": 274,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
-      "summary": "Push to blood Alex Conti at 7 with Galvin at 6 and Burton shoved to lock. Half the thread reckons Manly after the bye is the worst possible debut, the other half says we've got nothing to lose."
+      "summary": "The 'blood Conti' brigade is back at it — push Galvin to 6, give Conti the 7 jumper, shove Burton to lock. Most reckon do it against the Titans next, not Manly this week."
+    },
+    {
+      "prefix": null,
+      "title": "Can’t afford Preston?",
+      "replies": 529,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
+      "summary": "Reports Preston and the club are miles apart on a new deal. Gus is getting absolutely roasted for lowballing our best player while throwing 550k at Tracey."
     },
     {
       "prefix": "News",
       "title": "Freddy Lussick signs for 2 years (2027)",
       "replies": 358,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/freddy-lussick-signs-for-2-years-2027.131882/",
-      "summary": "Lussick signing splitting opinion — some happy we've finally got an NRL-standard 9 locked in, others spiralling about why we keep recruiting fringe hookers instead of a genuine one."
+      "summary": "Lussick locked in for 2 more years and the rumour mill spinning hard about a second hooker signing — Issa87 hinting it's someone from a top side currently in first grade."
     }
   ],
-  "kennelThreadsLastGame": [],
+  "kennelThreadsLastGame": [
+    {
+      "prefix": "GAMEDAY",
+      "title": "Round 14 Canterbury Bankstown vs Scummy Eels - Monday 8th June 4:05pm - Accor Stadium, Sydney",
+      "replies": 0,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/",
+      "summary": "Pre-game was full doom — SARGE called it Eels 26 Dogs 10, JayBee said Galvin can get stuffed and go play Flegg. Post-game it pivoted hard into 'we won without Critta, what does that mean?'"
+    }
+  ],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -477,7 +492,7 @@
       "opponent": "Eels",
       "dogsHome": true,
       "debateVerdicts": {
-        "dogs-first-try-scorer-type-r14": "A forward"
+        "dogs-first-try-scorer-type-r14": "2) A forward"
       }
     }
   }
