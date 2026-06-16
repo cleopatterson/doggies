@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T22:17:21.534Z",
+  "generatedAt": "2026-06-16T13:27:57.067Z",
   "match": {
     "round": 16,
     "opponent": "Sea Eagles",
@@ -20,43 +20,88 @@
   "kennelTipLean": {
     "side": "Opponent",
     "confidence": "Lean — about 35/65",
-    "note": "Manly sit 3rd, we're 12th and just scraped past the Eels by 2 with no Critta. Most of the Kennel is bracing for a beating but a few reckon we're due for a smash-and-grab."
+    "note": "The mood is grim. Manly are 3rd, we're 12th, and the fanbase is more worried about Koula and Saab running riot on Tuala and Kiraz than they are about actually winning."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 14 vs Eels",
-      "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849",
-      "quote": "If we can't beat a team with Volkman and Joash in the halves then we should disband — PerthDog laying down the bar before we then went on to win by 2",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/"
+      "thread": "GAMEDAY Rd 16",
+      "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
+      "quote": "Our run of not conceding 50 ends here. Koula and Saab are going to have a field day against the slowest wingers in rugby league history.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "burton-position-r16",
+      "icon": "🧠",
+      "question": "Burton's named at 6 alongside Galvin — does he finish the game in the halves?",
+      "kennel": "Conti time thread reckons Burton's spot is uncertain and Gould's already admitted Galvin isn't a long-term half.",
+      "threadSlug": "/forum/index.php?threads/conti-time.131873",
+      "options": [
+        {
+          "label": "Yes — Burton plays 6 the full 80",
+          "emoji": "🎯"
+        },
+        {
+          "label": "Burton gets interchanged off at some point",
+          "emoji": "🔁"
+        },
+        {
+          "label": "Burton stays on but moves out of the halves",
+          "emoji": "🔄"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/"
+    },
+    {
+      "id": "manly-back-three-damage",
+      "icon": "⚡",
+      "question": "Koula and Saab vs our wingers — who tops Manly's run metres?",
+      "kennel": "Whole gameday thread is convinced our slow back five is about to get carved up by Manly's speedsters.",
+      "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
+      "options": [
+        {
+          "label": "Tolutau Koula",
+          "emoji": "🏃"
+        },
+        {
+          "label": "Jason Saab",
+          "emoji": "💨"
+        },
+        {
+          "label": "A Manly forward or Turbo",
+          "emoji": "🐢"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
+    }
+  ],
   "trivia": {
-    "question": "Which Bulldogs prop won the Dally M Prop of the Year in 2022?",
+    "question": "Which Bulldogs legend holds the club record for most first-grade games?",
     "options": [
       {
-        "label": "Tevita Pangai Junior",
+        "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "Max King",
+        "label": "Steve Mortimer",
         "emoji": "🏆"
       },
       {
-        "label": "Luke Thompson",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "Dujon Cooper",
+        "label": "Terry Lamb",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 2,
-    "explainer": "Luke Thompson took out the 2022 Dally M Prop of the Year while playing for the Bulldogs — one of the few bright spots in a brutal season."
+    "correctIndex": 3,
+    "explainer": "Terry Lamb played 349 games for the Bulldogs between 1984 and 1996 — still the club record by a margin."
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' first try against the Eels?",
+      "question": "Who scored the Dogs' first try in the Round 14 win over the Eels?",
       "options": [
         {
           "label": "Stephen Crichton",
@@ -71,12 +116,12 @@
           "emoji": "🏉"
         },
         {
-          "label": "Connor Tracey",
+          "label": "Bronson Xerri",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 1,
-      "explainer": "Sitili crossed in the 47th to open the scoring, Critta backed it up three minutes later."
+      "explainer": "Sitili opened the scoring in the 47th minute before Critta backed it up three minutes later."
     }
   ],
   "washup": {
@@ -180,51 +225,43 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/",
-    "headline": "Ugly, scratchy, and we'll take it.",
-    "vibe": "14-12 over the Eels isn't the kind of win you frame, but Sitili and Critta got the job done in a six-minute window and the defence held on. 54 missed tackles from Parra tells you it was that kind of game. Still 12th, still miles off a finals spot, but at least we're not adding to the embarrassment file.",
-    "kennelMood": "Quietly relieved",
-    "kennelSummary": "The win didn't fix the mood — Critta's shoulder reinjury immediately became the story, with half the board hoping he gets shut down for the year and the other half furious about a Crawley article. Tracey's 286 metres split the room, and the Preston contract saga is getting louder by the day.",
+    "headline": "A 14-12 win that felt like a loss.",
+    "vibe": "We beat Parra by 2 and somehow the whole fanbase is more pissed off than before kickoff. Critta did his shoulder again, possibly season-ending, and the socials are already painting it as him saving himself for Origin. We're 12th, Preston might walk, and Manly are next. Buckle up.",
+    "kennelMood": "Furious and resigned",
+    "kennelSummary": "Post-match was less about the W and more about Critta's shoulder and whether Tracey gets shoved back to fullback. Half the Kennel reckons the playing group can't stand Crichton, the other half is calling Crawley a dog for writing about it. Nobody's actually happy.",
     "kennelHotTakes": [
       {
-        "quote": "Critta injured AGAIN — shut him down for the year, he'll just come back for Origin 2 anyway. Painful to watch.",
+        "quote": "Just shut Critta down for the year, he's painful to watch — he'll only come back for Origin 2 anyway.",
         "author": "SARGE",
-        "threadSlug": "/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/"
+        "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
       }
     ]
   },
   "kennelThreadsThisWeek": [
     {
+      "prefix": "GAMEDAY",
+      "title": "ROUND 16 - Bulldogs vs Manly SATURDAY 20TH JUNE 7:35 Accor stadium",
+      "replies": 249,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/",
+      "summary": "Gameday thread is already in pre-emptive meltdown over the back five. Everyone's begging Ciro not to roll out Tracey and Montoya again with Koula and Saab waiting."
+    },
+    {
       "prefix": null,
       "title": "Conti time ?",
-      "replies": 274,
+      "replies": 298,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
-      "summary": "The 'blood Conti' brigade is back at it — push Galvin to 6, give Conti the 7 jumper, shove Burton to lock. Most reckon do it against the Titans next, not Manly this week."
+      "summary": "Push to throw Alex Conti into the halves and shuffle Burton to lock. Most reckon doing it against Manly is suicide, save it for the Titans next week."
     },
     {
       "prefix": null,
       "title": "Can’t afford Preston?",
-      "replies": 529,
+      "replies": 562,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
-      "summary": "Reports Preston and the club are miles apart on a new deal. Gus is getting absolutely roasted for lowballing our best player while throwing 550k at Tracey."
-    },
-    {
-      "prefix": "News",
-      "title": "Freddy Lussick signs for 2 years (2027)",
-      "replies": 358,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/freddy-lussick-signs-for-2-years-2027.131882/",
-      "summary": "Lussick locked in for 2 more years and the rumour mill spinning hard about a second hooker signing — Issa87 hinting it's someone from a top side currently in first grade."
+      "summary": "Preston re-sign is reportedly miles apart and the Kennel is FURIOUS. Tracey's $550k contract is the lightning rod and Gus is getting absolutely cooked."
     }
   ],
-  "kennelThreadsLastGame": [
-    {
-      "prefix": "GAMEDAY",
-      "title": "Round 14 Canterbury Bankstown vs Scummy Eels - Monday 8th June 4:05pm - Accor Stadium, Sydney",
-      "replies": 0,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/",
-      "summary": "Pre-game was full doom — SARGE called it Eels 26 Dogs 10, JayBee said Galvin can get stuffed and go play Flegg. Post-game it pivoted hard into 'we won without Critta, what does that mean?'"
-    }
-  ],
+  "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -492,7 +529,7 @@
       "opponent": "Eels",
       "dogsHome": true,
       "debateVerdicts": {
-        "dogs-first-try-scorer-type-r14": "2) A forward"
+        "dogs-first-try-scorer-type-r14": "A forward"
       }
     }
   }
