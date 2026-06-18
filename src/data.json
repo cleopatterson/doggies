@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T13:27:57.067Z",
+  "generatedAt": "2026-06-18T10:03:02.891Z",
   "match": {
     "round": 16,
     "opponent": "Sea Eagles",
@@ -19,109 +19,110 @@
   },
   "kennelTipLean": {
     "side": "Opponent",
-    "confidence": "Lean — about 35/65",
-    "note": "The mood is grim. Manly are 3rd, we're 12th, and the fanbase is more worried about Koula and Saab running riot on Tuala and Kiraz than they are about actually winning."
+    "confidence": "Lean — about 30/70",
+    "note": "The mood is grim. Tracey back at fullback has the place in meltdown and everyone reckons Koula and Saab are about to put on a clinic against our wingers."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 16",
+      "thread": "GAMEDAY Rd 16 vs Manly",
       "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
       "quote": "Our run of not conceding 50 ends here. Koula and Saab are going to have a field day against the slowest wingers in rugby league history.",
+      "author": "MOVE.80",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
     }
   ],
   "debates": [
     {
-      "id": "burton-position-r16",
-      "icon": "🧠",
-      "question": "Burton's named at 6 alongside Galvin — does he finish the game in the halves?",
-      "kennel": "Conti time thread reckons Burton's spot is uncertain and Gould's already admitted Galvin isn't a long-term half.",
-      "threadSlug": "/forum/index.php?threads/conti-time.131873",
-      "options": [
-        {
-          "label": "Yes — Burton plays 6 the full 80",
-          "emoji": "🎯"
-        },
-        {
-          "label": "Burton gets interchanged off at some point",
-          "emoji": "🔁"
-        },
-        {
-          "label": "Burton stays on but moves out of the halves",
-          "emoji": "🔄"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/"
-    },
-    {
-      "id": "manly-back-three-damage",
-      "icon": "⚡",
-      "question": "Koula and Saab vs our wingers — who tops Manly's run metres?",
-      "kennel": "Whole gameday thread is convinced our slow back five is about to get carved up by Manly's speedsters.",
+      "id": "tracey-fullback-full-80",
+      "icon": "🎯",
+      "question": "Connor Tracey's named at fullback again — does he play the full 80 or does Ciro yank him at some point?",
+      "kennel": "The GAMEDAY thread is begging Ciro not to start him: 'Please, please, please... not Montoya and Tracey.'",
       "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
       "options": [
         {
-          "label": "Tolutau Koula",
-          "emoji": "🏃"
+          "label": "Plays the full 80 at fullback",
+          "emoji": "🦺"
         },
         {
-          "label": "Jason Saab",
-          "emoji": "💨"
+          "label": "Gets interchanged off at some point",
+          "emoji": "🔁"
         },
         {
-          "label": "A Manly forward or Turbo",
-          "emoji": "🐢"
+          "label": "Shifts positions mid-game (not subbed)",
+          "emoji": "↔️"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
+    },
+    {
+      "id": "first-try-scorer-type-r16",
+      "icon": "🏉",
+      "question": "Who opens the scoring on Saturday night?",
+      "kennel": "The doomers reckon Koula and Saab will be in early, the optimists want Kiraz or Xerri to strike first.",
+      "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
+      "options": [
+        {
+          "label": "A Manly outside back",
+          "emoji": "🌊"
+        },
+        {
+          "label": "A Bulldogs outside back",
+          "emoji": "🔵"
+        },
+        {
+          "label": "A forward or playmaker (either side)",
+          "emoji": "💪"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
     }
   ],
   "trivia": {
-    "question": "Which Bulldogs legend holds the club record for most first-grade games?",
+    "question": "Which year did the Bulldogs last win an NRL premiership?",
     "options": [
       {
-        "label": "Hazem El Masri",
+        "label": "1995",
         "emoji": "🏆"
       },
       {
-        "label": "Steve Mortimer",
+        "label": "2000",
         "emoji": "🏆"
       },
       {
-        "label": "Andrew Ryan",
+        "label": "2004",
         "emoji": "🏆"
       },
       {
-        "label": "Terry Lamb",
+        "label": "2012",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 3,
-    "explainer": "Terry Lamb played 349 games for the Bulldogs between 1984 and 1996 — still the club record by a margin."
+    "correctIndex": 2,
+    "explainer": "The Dogs beat the Roosters 16-13 in the 2004 Grand Final — still our most recent title and the longest drought in the club's modern era."
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' first try in the Round 14 win over the Eels?",
+      "question": "Who racked up the most run metres for the Dogs in the Round 14 win over the Eels?",
       "options": [
         {
-          "label": "Stephen Crichton",
-          "emoji": "🏉"
+          "label": "Connor Tracey",
+          "emoji": "🏃"
         },
         {
-          "label": "Sitili Tupouniua",
-          "emoji": "🏉"
+          "label": "Max King",
+          "emoji": "🏃"
         },
         {
           "label": "Jacob Kiraz",
-          "emoji": "🏉"
+          "emoji": "🏃"
         },
         {
-          "label": "Bronson Xerri",
-          "emoji": "🏉"
+          "label": "Bailey Hayward",
+          "emoji": "🏃"
         }
       ],
-      "correctIndex": 1,
-      "explainer": "Sitili opened the scoring in the 47th minute before Critta backed it up three minutes later."
+      "correctIndex": 0,
+      "explainer": "Tracey topped the Dogs with 286 run metres against Parra — the same Tracey the Kennel now wants benched."
     }
   ],
   "washup": {
@@ -133,7 +134,7 @@
     "result": "WIN",
     "margin": 2,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/eels/badge.svg?bust=202606021440",
+    "oppLogo": "https://www.nrl.com/.theme/eels/badge.svg?bust=202606170236",
     "attendance": 37638,
     "weather": "Fine",
     "tries": [
@@ -225,13 +226,13 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-14-canterbury-bankstown-vs-scummy-eels-monday-8th-june-4-05pm-accor-stadium-sydney.131849/",
-    "headline": "A 14-12 win that felt like a loss.",
-    "vibe": "We beat Parra by 2 and somehow the whole fanbase is more pissed off than before kickoff. Critta did his shoulder again, possibly season-ending, and the socials are already painting it as him saving himself for Origin. We're 12th, Preston might walk, and Manly are next. Buckle up.",
-    "kennelMood": "Furious and resigned",
-    "kennelSummary": "Post-match was less about the W and more about Critta's shoulder and whether Tracey gets shoved back to fullback. Half the Kennel reckons the playing group can't stand Crichton, the other half is calling Crawley a dog for writing about it. Nobody's actually happy.",
+    "headline": "We won, and somehow the place is angrier than ever.",
+    "vibe": "Two-point win over the Eels off Sitili and Critta tries, and instead of vibes we got a Crichton shoulder scare and Crawley writing pieces about Ciro not letting him challenge. Tracey was actually our best player on metres, which the forum cannot process. Sitting 12th, a win is a win, but nobody's pretending this team is going anywhere.",
+    "kennelMood": "Grumpy despite the W",
+    "kennelSummary": "Reaction was dominated by the Crichton injury, the captain's challenge controversy, and a deep, lingering hatred of Tracey at fullback. Half the thread is begging Ciro not to bring Critta back early for Origin reasons, the other half is workshopping team lists without him at all.",
     "kennelHotTakes": [
       {
-        "quote": "Just shut Critta down for the year, he's painful to watch — he'll only come back for Origin 2 anyway.",
+        "quote": "1. Tracey 2. Kiraz 3. Xerri 4. Tuala 5. Montoya — is what Ciralope will do.",
         "author": "SARGE",
         "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
@@ -242,23 +243,23 @@
     {
       "prefix": "GAMEDAY",
       "title": "ROUND 16 - Bulldogs vs Manly SATURDAY 20TH JUNE 7:35 Accor stadium",
-      "replies": 249,
+      "replies": 322,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/",
-      "summary": "Gameday thread is already in pre-emptive meltdown over the back five. Everyone's begging Ciro not to roll out Tracey and Montoya again with Koula and Saab waiting."
-    },
-    {
-      "prefix": null,
-      "title": "Conti time ?",
-      "replies": 298,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
-      "summary": "Push to throw Alex Conti into the halves and shuffle Burton to lock. Most reckon doing it against Manly is suicide, save it for the Titans next week."
+      "summary": "Place is in meltdown over Tracey staying at fullback and the prospect of Montoya getting recalled on the wing. Consensus is Manly's outside backs are about to embarrass us."
     },
     {
       "prefix": null,
       "title": "Can’t afford Preston?",
-      "replies": 562,
+      "replies": 580,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
-      "summary": "Preston re-sign is reportedly miles apart and the Kennel is FURIOUS. Tracey's $550k contract is the lightning rod and Gus is getting absolutely cooked."
+      "summary": "Preston re-sign is reportedly miles apart and the forum is filthy. Gus is getting roasted for not prioritising our best player while handing Tracey 550k and extending Salmon for no reason."
+    },
+    {
+      "prefix": null,
+      "title": "Conti time ?",
+      "replies": 303,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
+      "summary": "Push to blood Alex Conti at 7 and shift Galvin to 6 or Burton to lock. Most reckon Manly after the bye is too brutal a debut but the appetite for change is loud."
     }
   ],
   "kennelThreadsLastGame": [],
@@ -480,6 +481,52 @@
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-vs-eels-score-prediction-man-of-the-match-crowd-attendance.131866/"
       }
+    ],
+    "16": [
+      {
+        "id": "burton-position-r16",
+        "icon": "🧠",
+        "question": "Burton's named at 6 alongside Galvin — does he finish the game in the halves?",
+        "kennel": "Conti time thread reckons Burton's spot is uncertain and Gould's already admitted Galvin isn't a long-term half.",
+        "threadSlug": "/forum/index.php?threads/conti-time.131873",
+        "options": [
+          {
+            "label": "Yes — Burton plays 6 the full 80",
+            "emoji": "🎯"
+          },
+          {
+            "label": "Burton gets interchanged off at some point",
+            "emoji": "🔁"
+          },
+          {
+            "label": "Burton stays on but moves out of the halves",
+            "emoji": "🔄"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/"
+      },
+      {
+        "id": "manly-back-three-damage",
+        "icon": "⚡",
+        "question": "Koula and Saab vs our wingers — who tops Manly's run metres?",
+        "kennel": "Whole gameday thread is convinced our slow back five is about to get carved up by Manly's speedsters.",
+        "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
+        "options": [
+          {
+            "label": "Tolutau Koula",
+            "emoji": "🏃"
+          },
+          {
+            "label": "Jason Saab",
+            "emoji": "💨"
+          },
+          {
+            "label": "A Manly forward or Turbo",
+            "emoji": "🐢"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
+      }
     ]
   },
   "resolutions": {
@@ -529,6 +576,7 @@
       "opponent": "Eels",
       "dogsHome": true,
       "debateVerdicts": {
+        "galvin-burton-halves-survive": "Both finish the game in the halves (6 and 7)",
         "dogs-first-try-scorer-type-r14": "A forward"
       }
     }
