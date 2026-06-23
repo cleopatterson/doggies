@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T22:17:49.071Z",
+  "generatedAt": "2026-06-23T11:59:59.632Z",
   "match": {
     "round": 17,
     "opponent": "Titans",
@@ -19,64 +19,109 @@
   },
   "kennelTipLean": {
     "side": "Split",
-    "confidence": "Split — about 55/45 Dogs",
-    "note": "Coming off a 13-12 squeaker over Manly, the Kennel reckons we should beat the Titans but their attack has the doomers spooked. Scoooby reckons their attack is more exciting than ours."
+    "confidence": "Split — about 50/50",
+    "note": "Everyone reckons we SHOULD win but nobody actually believes it. The Titans' broken-play speed is the exact kryptonite for this Dogs side and the fan base knows it."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 16 vs Manly",
-      "threadSlug": "/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895",
-      "quote": "Crazy that the Titans sit lower than us yet their attack is far more exciting. Play them and they carve up… very concerning. — Scoooby",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
+      "thread": "GAMEDAY Rd 17",
+      "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
+      "quote": "We were supposed to get flogged by Manly by 50, instead we beat them by 1 — so by that logic we get flogged by the Titans by 13+ 🙃",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "first-bench-forward-on",
+      "icon": "🔁",
+      "question": "Who's the first Dogs forward off the bench?",
+      "kennel": "Gameday thread is twitchy about Ciro's rotations against the Titans' pace — who gets the early call matters.",
+      "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
+      "options": [
+        {
+          "label": "Jack Underhill",
+          "emoji": "💪"
+        },
+        {
+          "label": "Alekolasimi Jones",
+          "emoji": "🔨"
+        },
+        {
+          "label": "Kurt Mann or Lipoi Hopoi",
+          "emoji": "🔄"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
+    },
+    {
+      "id": "first-try-scorer-r17",
+      "icon": "🏉",
+      "question": "Who opens the scoring at Cbus?",
+      "kennel": "CMP reckons Titans' broken-play speed will carve us up — first try is the early tell.",
+      "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
+      "options": [
+        {
+          "label": "A Titans outside back",
+          "emoji": "⚡"
+        },
+        {
+          "label": "A Bulldogs outside back",
+          "emoji": "🔵"
+        },
+        {
+          "label": "A forward or playmaker (either side)",
+          "emoji": "🎯"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
+    }
+  ],
   "trivia": {
-    "question": "Who holds the Bulldogs' record for most first-grade games played for the club?",
+    "question": "Which Bulldog has scored the most tries in a single NRL season for the club?",
     "options": [
       {
         "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "Steve Mortimer",
+        "label": "Daryl Halligan",
         "emoji": "🏆"
       },
       {
-        "label": "Andrew Ryan",
+        "label": "Steve Renouf",
         "emoji": "🏆"
       },
       {
-        "label": "Terry Lamb",
+        "label": "Brett Dallas",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 3,
-    "explainer": "Terry Lamb played 349 first-grade games for the Bulldogs between 1984-95, still the club record."
+    "correctIndex": 0,
+    "explainer": "Hazem bagged 25 tries in the 2004 premiership-winning season — still the club's single-season record."
   },
   "recap": [
     {
-      "question": "Who topped the Dogs for run metres against Manly?",
+      "question": "Who topped run metres for the Dogs against Manly?",
       "options": [
         {
           "label": "Connor Tracey",
-          "emoji": "🏃"
+          "emoji": "🏉"
         },
         {
-          "label": "Stephen Crichton",
-          "emoji": "🏃"
+          "label": "Max King",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Jacob Kiraz",
+          "emoji": "🏉"
         },
         {
           "label": "Bailey Hayward",
-          "emoji": "🏃"
-        },
-        {
-          "label": "Viliame Kikau",
-          "emoji": "🏃"
+          "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Tracey ran for 327m at fullback — outgained Manly's entire backline including Turbo (200m)."
+      "explainer": "Tracey racked up 327 run metres from the back — also led the team with 2 line breaks."
     }
   ],
   "washup": {
@@ -185,14 +230,14 @@
       }
     ],
     "gamedayUrl": null,
-    "headline": "Won by one and somehow it still feels like we lost.",
-    "vibe": "13-12 over Manly. We scrambled, Tracey ran for a billion metres, Galvin got over for one, and we hung on. Problem is the attack thread fired up before full-time and the Preston contract drama is louder than the win. Still 12th, still in the conversation, still nobody's idea of a good time.",
-    "kennelMood": "Quietly relieved, loudly worried",
-    "kennelSummary": "Nobody's celebrating. The win bought Ciro a week but the 'Problem with attack identified' thread cracked 50 replies before Sunday lunch. Meanwhile half the forum is in the Preston thread screaming at Gus to pay the man before we lose our best player.",
+    "headline": "Ugliest one-point win you'll ever sit through, but it's two points.",
+    "vibe": "13-12 over Manly — Galvin and Crichton got the tries, Hayes was an absolute weapon in defence with 45 tackles, and Tracey was the standout with 327 metres and 2 line breaks. But 34 missed tackles and 78% completion against a sub-par Manly side tells you everything about where we actually sit. 12th on the ladder, heading to Cbus, and nobody's convinced.",
+    "kennelMood": "Quietly relieved, deeply unconvinced",
+    "kennelSummary": "The Kennel can't decide if it's a gutsy win or proof we're cooked attack-wise. Hayes got showered with praise (and a re-sign), Sitili's reputation keeps growing, and the Preston contract saga is dominating every other thread.",
     "kennelHotTakes": [
       {
-        "quote": "Lowballing our best player while we re-signed Salmon when no one was chasing him. This club is genuinely a joke.",
-        "author": "CaptainJackson / PerthDog",
+        "quote": "This re-signing would've been so much easier if we just kicked Tracey to the kerb instead of paying him 550k for Ron Massey level output.",
+        "author": "Interestingg",
         "threadSlug": "/forum/index.php?threads/can%E2%80%99t-afford-preston.131889",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/"
       }
@@ -200,18 +245,18 @@
   },
   "kennelThreadsThisWeek": [
     {
-      "prefix": null,
-      "title": "Conti time ?",
-      "replies": 310,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
-      "summary": "Mann of the hour wants Conti blooded at 7 with Galvin to 6, and chemdog reckons the Titans game post-bye is the perfect game to throw him in. Half the thread wants Burton moved to 13 to make it work."
+      "prefix": "GAMEDAY",
+      "title": "Round 17 - Bulldogs vs Titans - Friday 26th June - 6:00 pm - Cbus Super Stadium - Gold Coast",
+      "replies": 171,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/",
+      "summary": "Nobody trusts the Dogs as favourites. CMP nailed it — Titans play unstructured with pace, which is the exact recipe we can't handle, and there's a side argument going about parking at Cbus."
     },
     {
       "prefix": null,
       "title": "Can’t afford Preston?",
-      "replies": 644,
+      "replies": 648,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
-      "summary": "Reports the club is miles apart from Preston on money and the Kennel is melting down. SARGE wants Gus shot, Interestingg reckons we should've binned Tracey's 550k instead of lowballing our best player."
+      "summary": "Full meltdown over reports the club is lowballing Preston. Pile-on is split between blaming Gus, ripping the Tracey contract, and demanding Salmon get punted to free up the cash."
     }
   ],
   "kennelThreadsLastGame": [],
@@ -539,8 +584,7 @@
       "opponent": "Sea Eagles",
       "dogsHome": true,
       "debateVerdicts": {
-        "tracey-fullback-full-80": "Plays the full 80 at fullback",
-        "first-try-scorer-type-r16": "A Manly outside back"
+        "first-try-scorer-type-r16": "A forward or playmaker (either side)"
       }
     }
   }
