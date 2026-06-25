@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T11:59:59.632Z",
+  "generatedAt": "2026-06-25T08:45:26.860Z",
   "match": {
     "round": 17,
     "opponent": "Titans",
@@ -10,7 +10,7 @@
     "dogsPos": "12th",
     "oppPos": "15th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/titans/badge.svg?bust=202606190632"
+    "oppLogo": "https://www.nrl.com/.theme/titans/badge.svg?bust=202606250740"
   },
   "odds": {
     "dogs": null,
@@ -20,95 +20,91 @@
   "kennelTipLean": {
     "side": "Split",
     "confidence": "Split — about 50/50",
-    "note": "Everyone reckons we SHOULD win but nobody actually believes it. The Titans' broken-play speed is the exact kryptonite for this Dogs side and the fan base knows it."
+    "note": "Everyone reckons we SHOULD win but nobody trusts this team to handle being favourites against a fast, unstructured Titans side."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 17",
+      "thread": "GAMEDAY Rd 17 vs Titans",
       "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
-      "quote": "We were supposed to get flogged by Manly by 50, instead we beat them by 1 — so by that logic we get flogged by the Titans by 13+ 🙃",
+      "quote": "We were supposed to get flogged by Manly by 50 and won by 1, so by that logic we get flogged by the Titans by 13+ — DFLWatto with the cooked maths that feels too accurate",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
     }
   ],
   "debates": [
     {
-      "id": "first-bench-forward-on",
-      "icon": "🔁",
-      "question": "Who's the first Dogs forward off the bench?",
-      "kennel": "Gameday thread is twitchy about Ciro's rotations against the Titans' pace — who gets the early call matters.",
-      "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
+      "id": "burton-position-r17",
+      "icon": "🧠",
+      "question": "Burton's named at centre with Galvin at 7 and Crichton at 6 — where does he actually start the game?",
+      "kennel": "Conti time? thread is full of people wanting Burton shifted to 13 or back into the halves.",
+      "threadSlug": "/forum/index.php?threads/conti-time.131873",
       "options": [
         {
-          "label": "Jack Underhill",
-          "emoji": "💪"
+          "label": "Starts at centre as named",
+          "emoji": "🎯"
         },
         {
-          "label": "Alekolasimi Jones",
-          "emoji": "🔨"
-        },
-        {
-          "label": "Kurt Mann or Lipoi Hopoi",
+          "label": "Shifts into the halves (6 or 7)",
           "emoji": "🔄"
+        },
+        {
+          "label": "Starts at lock (13)",
+          "emoji": "💪"
         }
       ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/"
     },
     {
-      "id": "first-try-scorer-r17",
-      "icon": "🏉",
-      "question": "Who opens the scoring at Cbus?",
-      "kennel": "CMP reckons Titans' broken-play speed will carve us up — first try is the early tell.",
+      "id": "first-bench-forward-r17",
+      "icon": "🔁",
+      "question": "Who's the first Dogs bench forward into the game?",
+      "kennel": "Gameday thread reckons Ciro's rotations are predictable as hell — let's see if Mann gets the early call again.",
       "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
       "options": [
         {
-          "label": "A Titans outside back",
-          "emoji": "⚡"
+          "label": "Kurt Mann",
+          "emoji": "🧢"
         },
         {
-          "label": "A Bulldogs outside back",
-          "emoji": "🔵"
+          "label": "Jack Underhill or Alekolasimi Jones",
+          "emoji": "🪓"
         },
         {
-          "label": "A forward or playmaker (either side)",
-          "emoji": "🎯"
+          "label": "Lipoi Hopoi",
+          "emoji": "💥"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
     }
   ],
   "trivia": {
-    "question": "Which Bulldog has scored the most tries in a single NRL season for the club?",
+    "question": "Which Bulldogs legend holds the club record for most first-grade games?",
     "options": [
       {
         "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "Daryl Halligan",
+        "label": "Steve Price",
         "emoji": "🏆"
       },
       {
-        "label": "Steve Renouf",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "Brett Dallas",
+        "label": "Steve Mortimer",
         "emoji": "🏆"
       }
     ],
     "correctIndex": 0,
-    "explainer": "Hazem bagged 25 tries in the 2004 premiership-winning season — still the club's single-season record."
+    "explainer": "Hazem El Masri played 317 games for the Bulldogs between 1996 and 2009 — still the all-time club record."
   },
   "recap": [
     {
-      "question": "Who topped run metres for the Dogs against Manly?",
+      "question": "Who topped the run metres for the Dogs in the Round 16 win over Manly?",
       "options": [
         {
           "label": "Connor Tracey",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Max King",
           "emoji": "🏉"
         },
         {
@@ -116,12 +112,16 @@
           "emoji": "🏉"
         },
         {
-          "label": "Bailey Hayward",
+          "label": "Max King",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Matt Burton",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Tracey racked up 327 run metres from the back — also led the team with 2 line breaks."
+      "explainer": "Tracey carted it for 327m with 2 line breaks — easily the best player on the park."
     }
   ],
   "washup": {
@@ -230,13 +230,13 @@
       }
     ],
     "gamedayUrl": null,
-    "headline": "Ugliest one-point win you'll ever sit through, but it's two points.",
-    "vibe": "13-12 over Manly — Galvin and Crichton got the tries, Hayes was an absolute weapon in defence with 45 tackles, and Tracey was the standout with 327 metres and 2 line breaks. But 34 missed tackles and 78% completion against a sub-par Manly side tells you everything about where we actually sit. 12th on the ladder, heading to Cbus, and nobody's convinced.",
-    "kennelMood": "Quietly relieved, deeply unconvinced",
-    "kennelSummary": "The Kennel can't decide if it's a gutsy win or proof we're cooked attack-wise. Hayes got showered with praise (and a re-sign), Sitili's reputation keeps growing, and the Preston contract saga is dominating every other thread.",
+    "headline": "Ugliest 1-point win you'll ever see — but a win's a win.",
+    "vibe": "Dogs 13 Manly 12 at Accor. Tracey was a freak (327m, 2 line breaks), Crichton and Galvin got the tries that mattered, and somehow we held on despite 34 missed tackles and a 78% completion rate. Bumps us along but nobody's pretending the attack is fixed.",
+    "kennelMood": "Quietly relieved",
+    "kennelSummary": "Relief more than celebration — the win's nice but the Kennel is fixated on the bigger picture: Preston contract drama, the attack still looking broken, and whether Conti needs a debut. Tracey getting plenty of love, Salmon copping the usual.",
     "kennelHotTakes": [
       {
-        "quote": "This re-signing would've been so much easier if we just kicked Tracey to the kerb instead of paying him 550k for Ron Massey level output.",
+        "quote": "This Preston re-signing would've been so much easier if we'd just kicked Tracey to the kerb instead of paying him 550k for Ron Massey level output — Interestingg posting this AFTER Tracey ran for 327m is peak Kennel",
         "author": "Interestingg",
         "threadSlug": "/forum/index.php?threads/can%E2%80%99t-afford-preston.131889",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/"
@@ -247,16 +247,16 @@
     {
       "prefix": "GAMEDAY",
       "title": "Round 17 - Bulldogs vs Titans - Friday 26th June - 6:00 pm - Cbus Super Stadium - Gold Coast",
-      "replies": 171,
+      "replies": 269,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/",
-      "summary": "Nobody trusts the Dogs as favourites. CMP nailed it — Titans play unstructured with pace, which is the exact recipe we can't handle, and there's a side argument going about parking at Cbus."
+      "summary": "GAMEDAY thread — nobody trusts the Dogs as favourites and CMP reckons the Titans' free-flowing style is the exact recipe we can't handle. Bonus content: CroydonDog trying to crowdsource Cbus parking hacks."
     },
     {
       "prefix": null,
-      "title": "Can’t afford Preston?",
-      "replies": 648,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
-      "summary": "Full meltdown over reports the club is lowballing Preston. Pile-on is split between blaming Gus, ripping the Tracey contract, and demanding Salmon get punted to free up the cash."
+      "title": "Conti time ?",
+      "replies": 367,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
+      "summary": "Push to blood Alex Conti at 7 with Galvin shifting to 6 and Burton to 13 — argument being if we don't play him soon we lose him. Letstrot reckons Galvin can't defend at HB let alone lock so the spine reshuffle is a fantasy."
     }
   ],
   "kennelThreadsLastGame": [],
@@ -524,6 +524,52 @@
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-16-bulldogs-vs-manly-saturday-20th-june-7-35-accor-stadium.131895/"
       }
+    ],
+    "17": [
+      {
+        "id": "first-bench-forward-on",
+        "icon": "🔁",
+        "question": "Who's the first Dogs forward off the bench?",
+        "kennel": "Gameday thread is twitchy about Ciro's rotations against the Titans' pace — who gets the early call matters.",
+        "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
+        "options": [
+          {
+            "label": "Jack Underhill",
+            "emoji": "💪"
+          },
+          {
+            "label": "Alekolasimi Jones",
+            "emoji": "🔨"
+          },
+          {
+            "label": "Kurt Mann or Lipoi Hopoi",
+            "emoji": "🔄"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
+      },
+      {
+        "id": "first-try-scorer-r17",
+        "icon": "🏉",
+        "question": "Who opens the scoring at Cbus?",
+        "kennel": "CMP reckons Titans' broken-play speed will carve us up — first try is the early tell.",
+        "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
+        "options": [
+          {
+            "label": "A Titans outside back",
+            "emoji": "⚡"
+          },
+          {
+            "label": "A Bulldogs outside back",
+            "emoji": "🔵"
+          },
+          {
+            "label": "A forward or playmaker (either side)",
+            "emoji": "🎯"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
+      }
     ]
   },
   "resolutions": {
@@ -584,7 +630,8 @@
       "opponent": "Sea Eagles",
       "dogsHome": true,
       "debateVerdicts": {
-        "first-try-scorer-type-r16": "A forward or playmaker (either side)"
+        "tracey-fullback-full-80": "Plays the full 80 at fullback",
+        "first-try-scorer-type-r16": "A Manly outside back"
       }
     }
   }
