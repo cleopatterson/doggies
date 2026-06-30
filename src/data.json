@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T22:05:51.171Z",
+  "generatedAt": "2026-06-30T11:45:14.683Z",
   "match": {
     "round": 19,
     "opponent": "Raiders",
@@ -10,7 +10,7 @@
     "dogsPos": "10th",
     "oppPos": "14th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/raiders/badge.svg?bust=202606250740"
+    "oppLogo": "https://www.nrl.com/.theme/raiders/badge.svg?bust=202606300801"
   },
   "odds": {
     "dogs": null,
@@ -18,65 +18,65 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Split",
-    "confidence": "Split — about 50/50",
-    "note": "Forum's torn — should win on paper but no one trusts the Dogs as favourites and the Raiders aren't the same Raiders we used to roll."
+    "side": "Dogs",
+    "confidence": "Lean — about 60/40",
+    "note": "Coming off a 30-12 win over the Titans and at home against 14th-placed Raiders, the Kennel's leaning Dogs but no one's confident. Classic 'should win but watch us shit the bed' energy."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 17 vs Titans",
       "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
-      "quote": "DFLWatto: 'We were supposed to get flogged by Manly by 50 and won by 1, so by that logic we get flogged by 13+ here.' Cooked maths, undefeated vibes.",
+      "quote": "We were supposed to get flogged by Manly by 50 instead we beat them by 1, so that means we get flogged by the Titans by 13+ — DFLWatto with the pre-game galaxy brain that aged like milk.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
     }
   ],
   "debates": [],
   "trivia": {
-    "question": "Which year did the Bulldogs win their most recent NRL premiership?",
+    "question": "Which Bulldogs legend holds the club record for most first-grade games?",
     "options": [
       {
-        "label": "1995",
+        "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "2004",
+        "label": "Steve Mortimer",
         "emoji": "🏆"
       },
       {
-        "label": "2012",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "1988",
+        "label": "Terry Lamb",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 1,
-    "explainer": "The Dogs beat the Roosters 16-13 in the 2004 Grand Final — Hazem El Masri kicking the goals and Willie Mason's mob doing the damage."
+    "correctIndex": 3,
+    "explainer": "Terry Lamb played 349 first-grade games for the Bulldogs between 1984-1995 — still the club record by a mile."
   },
   "recap": [
     {
-      "question": "Who topped the Dogs for run metres in the Round 17 win over the Titans?",
+      "question": "Who topped run metres for the Dogs against the Titans?",
       "options": [
         {
           "label": "Jethro Rinakama",
-          "emoji": "💨"
+          "emoji": "🏉"
         },
         {
           "label": "Max King",
-          "emoji": "💪"
-        },
-        {
-          "label": "Bailey Hayward",
-          "emoji": "🎩"
+          "emoji": "🏉"
         },
         {
           "label": "Josh Curran",
-          "emoji": "🔥"
+          "emoji": "🏉"
+        },
+        {
+          "label": "Bailey Hayward",
+          "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Rinakama led the Dogs with 230 run metres and bagged two tries — absolute monster night on the Gold Coast."
+      "explainer": "Rinakama racked up 230 run metres plus a double — the most damaging Dog on the park."
     }
   ],
   "washup": {
@@ -88,7 +88,7 @@
     "result": "WIN",
     "margin": 18,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/titans/badge.svg?bust=202606250740",
+    "oppLogo": "https://www.nrl.com/.theme/titans/badge.svg?bust=202606300801",
     "attendance": 13820,
     "weather": "Rain",
     "tries": [
@@ -200,29 +200,29 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/",
-    "headline": "Won by 18 on the road and we're STILL arguing about the roster — peak Dogs.",
-    "vibe": "Got the job done 30-12 up at Cbus and Rinakama was the difference — two tries, 230 metres, the lot. Bench did its job, Max King quietly had a night out, and we finally won one in Queensland. But Sami's hat-trick had everyone fuming at the bunker and the Preston contract drama is overshadowing everything. Win takes us into the bye with momentum — Raiders next is a real test.",
-    "kennelMood": "Quietly stoked, loudly furious",
-    "kennelSummary": "The win went down a treat but the thread is split — half on the Rinakama hype train, the other half asking how we can win games like this and still be lowballing Preston. The Sami non-tries are still getting frame-by-frame analysis at 2am and Gus is catching strays in every second post.",
+    "headline": "30-12 in the rain on the Gold Coast — finally a road W in Queensland.",
+    "vibe": "Rinakama was a man possessed (2 tries, 230m, 2 line breaks), Hayward put up 49 tackles like it was nothing, and Curran bagged a double on debut on the right edge. Sami scored a hat-trick for the Tits but it didn't matter — we held them out when it counted. Still 10th but the heart's back, and now Canberra at Accor with Preston supposedly close to returning. The mood swings on this team are wild.",
+    "kennelMood": "Quietly relieved",
+    "kennelSummary": "The Kennel went from pre-game doom ('flogged by 13+') to post-match grudging optimism. Max King defending Izzy Folau in his media stirred up a side debate that derailed half the gameday thread, but the actual footy chat was Rinakama love, Hayward leadership-group vibes, and Curran finally looking the part on the edge.",
     "kennelHotTakes": [
       {
-        "quote": "Watching the Roosters and their 1-13 are better than our 1-13 in EVERY position. Roster's a deadset joke and we're throwing $2.5m at three centres.",
-        "author": "Marlinfeeder",
-        "threadSlug": "/forum/index.php?threads/recruitment.131679",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/"
+        "quote": "How the fuck does the gameday thread become a platform for religious ideologies — as Nate DAWG says, TK remains undefeated.",
+        "author": "maroondog72",
+        "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [],
-  "kennelThreadsLastGame": [
+  "kennelThreadsThisWeek": [
     {
       "prefix": null,
-      "title": "Can’t afford Preston?",
-      "replies": 648,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
-      "summary": "Going nuclear after the win — 'how can we win games like this and still be lowballing our best forward'. Tracey's 550k getting brought up every second post and Gus is public enemy number one."
+      "title": "Conti time ?",
+      "replies": 427,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
+      "summary": "Mann of the hour wants Conti at 7 with Galvin at 6 and Burton at 13 — Gould's already said Galvin isn't a long-term half so the spine question is wide open. Mr Shhh just wants Wang Chung at 9."
     }
   ],
+  "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -603,9 +603,7 @@
       "oppScore": 12,
       "opponent": "Titans",
       "dogsHome": false,
-      "debateVerdicts": {
-        "first-bench-forward-r17": "Kurt Mann"
-      }
+      "debateVerdicts": {}
     }
   }
 }
