@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T08:39:56.992Z",
+  "generatedAt": "2026-07-05T22:05:32.603Z",
   "match": {
     "round": 19,
     "opponent": "Raiders",
@@ -8,7 +8,7 @@
     "kickoff": "Sat 11 Jul, 5:30pm",
     "dogsHome": true,
     "dogsPos": "10th",
-    "oppPos": "14th",
+    "oppPos": "13th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
     "oppLogo": "https://www.nrl.com/.theme/raiders/badge.svg?bust=202606300801"
   },
@@ -18,48 +18,52 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Dogs",
-    "confidence": "Lean — about 60/40",
-    "note": "Coming off the Titans win the mood's cautiously up, but nobody's forgetting how quickly this side can shit the bed as favourites."
+    "side": "Split",
+    "confidence": "Split — about 55/45 Dogs",
+    "note": "Everyone reckons we SHOULD win but nobody's putting the house on it. Titans-style flowing footy from the Raiders is the exact recipe we choke on."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 17",
       "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
-      "quote": "We were supposed to get flogged by Manly by 50 and beat them by 1, so obviously that means we get flogged by the Titans by 13+",
+      "quote": "We were supposed to get flogged by Manly by 50 and beat them by 1, so by that logic we get flogged by the Titans by 13+. — DFLWatto",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
     }
   ],
   "debates": [],
   "trivia": {
-    "question": "Which year did the Bulldogs last win the NRL Premiership?",
+    "question": "Which Bulldogs legend holds the club record for most games played?",
     "options": [
       {
-        "label": "1995",
+        "label": "Steve Mortimer",
         "emoji": "🏆"
       },
       {
-        "label": "2004",
+        "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "2012",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "2014",
+        "label": "Terry Lamb",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 1,
-    "explainer": "Canterbury's most recent premiership was 2004, beating the Roosters 16-13 with Andrew Ryan lifting the trophy. Grand final appearances in 2012 and 2014 both ended in losses."
+    "correctIndex": 3,
+    "explainer": "Terry Lamb played 349 games for the Bulldogs between 1984-1996 — still the club record and one of the most-capped players in the game."
   },
   "recap": [
     {
-      "question": "Who topped run metres for the Dogs against the Titans?",
+      "question": "Who bagged a double against the Titans last week?",
       "options": [
         {
           "label": "Jethro Rinakama",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Josh Curran",
           "emoji": "🏉"
         },
         {
@@ -69,14 +73,10 @@
         {
           "label": "Bailey Hayward",
           "emoji": "🏉"
-        },
-        {
-          "label": "Josh Curran",
-          "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Rinakama racked up 230 run metres, plus 2 tries and 2 line breaks — an absolute weapon on the night."
+      "explainer": "Rinakama scored in the 14th and 61st minutes, plus topped Dogs run metres with 230m. Best player on the paddock."
     }
   ],
   "washup": {
@@ -200,35 +200,27 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/",
-    "headline": "Rinakama and Curran did the heavy lifting — 30-12 on the road, we'll take it.",
-    "vibe": "Genuinely handy win up on the Goldy, especially with the completion sitting at 75%. Rinakama was a menace, King's fantasy numbers were absurd, and Curran bookending the tries on his edge is exactly what we needed. Not everything clicked — Sami tore us up down his side — but we're heading into the Raiders week with actual belief for once.",
+    "headline": "30-12 in the wet on the Goldy — we'll take that all day.",
+    "vibe": "Rain, Cbus, favourites tag — the perfect ambush conditions and we somehow rocked up. Rinakama was a freak (2 tries, 230m, 2 line breaks), Curran got two of his own and Hayward made 49 tackles like a machine. Sami went nuts for them with a hat-trick but we were never really in trouble. Wins in Queensland don't grow on trees, bank it and move on.",
     "kennelMood": "Quietly chuffed",
-    "kennelSummary": "The Kennel's in a rare good mood — Burton thread lit up again, Rinakama's stocks through the roof, and even the Sami no-try whinge has an edge of 'we won anyway'. Sideshow of the week was the religion detour in the GAMEDAY thread that maroondog72 called out.",
+    "kennelSummary": "The 321 thread is a Rinakama coronation and the Burton camp is back to arguing his best spot after another quiet-ish outing. Everyone's suddenly a lot more comfortable with Ciro's setup than they were pre-game. Gameday thread got hijacked by religion mid-match which is peak Kennel.",
     "kennelHotTakes": [
       {
-        "quote": "How the fuck does the gameday thread become a platform for people's religious ideologies. TK remains undefeated.",
+        "quote": "How the fuck does the gameday thread become a platform for religious ideologies? TK remains undefeated.",
         "author": "maroondog72",
         "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [
-    {
-      "prefix": null,
-      "title": "Conti time ?",
-      "replies": 440,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
-      "summary": "Big push to blood Alex Conti at 7 with Galvin shifting to 6, before another club nicks him. Gould's admission that Galvin isn't a long-term half is fuelling it."
-    }
-  ],
+  "kennelThreadsThisWeek": [],
   "kennelThreadsLastGame": [
     {
-      "prefix": null,
-      "title": "Burton",
-      "replies": 286,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/",
-      "summary": "Burton's Titans game reignited the 'best player at the club' debate. Others still asking why we only see this version twice a year."
+      "prefix": "GAMEDAY",
+      "title": "Round 17 - Bulldogs vs Titans - Friday 26th June - 6:00 pm - Cbus Super Stadium - Gold Coast",
+      "replies": 0,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/",
+      "summary": "Gameday thread that somehow turned into a religious debate mid-first-half. Rinakama double got everyone back on track eventually."
     }
   ],
   "kennelMeta": {
