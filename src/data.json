@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T11:47:51.909Z",
+  "generatedAt": "2026-07-09T09:02:16.942Z",
   "match": {
     "round": 19,
     "opponent": "Raiders",
@@ -20,108 +20,108 @@
   "kennelTipLean": {
     "side": "Dogs",
     "confidence": "Lean — about 65/35",
-    "note": "Home game against a Raiders side sitting 13th, everyone reckons we should win but nobody's fully trusting this team after a soft-looking win over the Titans."
+    "note": "Kennel reckons this is the surge game — Raiders are patchy and we've got a full-strength spine at home. Nobody's blind confident though, we've been burned too many times."
   },
   "kennelTipQuotes": [
     {
-      "thread": "Rd 17 vs Titans",
-      "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
-      "quote": "We were supposed to get flogged by manly by 50 instead we beat them by 1 so that means we get flogged by titans by 13+",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
+      "thread": "Bulldogs primed for surge up the ladder",
+      "threadSlug": "/forum/index.php?threads/bulldogs-primed-for-surge-up-the-ladder.131923",
+      "quote": "if we can't beat this raiders side at accor we don't deserve to be in the 8 conversation, simple as that",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-primed-for-surge-up-the-ladder.131923/"
     }
   ],
   "debates": [
     {
       "id": "burton-position-r19",
-      "icon": "🎯",
-      "question": "Burton's named at centre with Galvin at 7 and Crichton at 6 — where does he actually start the game?",
-      "kennel": "The Burton position thread is 300+ posts of nobody agreeing where he fits.",
+      "icon": "🧠",
+      "question": "Burton's named at centre again with Galvin at 7 and Critta at 6 — does he stay there for the full 80 or shift into the halves?",
+      "kennel": "The Burton thread is 317 posts of people demanding he's back at 6 or moved to lock.",
       "threadSlug": "/forum/index.php?threads/burton.131802",
       "options": [
         {
-          "label": "Starts at centre as named",
-          "emoji": "🎽"
+          "label": "Plays 80 mins at centre as named",
+          "emoji": "🎯"
         },
         {
-          "label": "Shifts into the halves (6 or 7)",
-          "emoji": "🔟"
+          "label": "Shifts into the halves (6 or 7) at some point",
+          "emoji": "🔄"
         },
         {
-          "label": "Starts at lock (13)",
-          "emoji": "🏉"
+          "label": "Ends up at lock or middle rotation",
+          "emoji": "⚙️"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
     },
     {
-      "id": "first-dogs-try-r19",
-      "icon": "🎯",
-      "question": "Who scores the Dogs' first try?",
-      "kennel": "Rinakama bagged two last week and half the forum reckons he's our best finisher right now.",
-      "threadSlug": null,
+      "id": "first-try-scorer-r19",
+      "icon": "🏉",
+      "question": "Who opens the scoring for the Dogs?",
+      "kennel": "Rinakama bagged two last week and the wingers thread is buzzing.",
+      "threadSlug": "/forum/index.php?threads/round-19-vs-raiders-saturday-5-30pm-accor.131947",
       "options": [
         {
-          "label": "A winger or fullback",
-          "emoji": "🏃"
+          "label": "An outside back (winger, centre or fullback)",
+          "emoji": "💨"
         },
         {
           "label": "A forward",
           "emoji": "💪"
         },
         {
-          "label": "A centre or half",
-          "emoji": "🎯"
+          "label": "One of the spine (6, 7 or 9)",
+          "emoji": "🧠"
         }
       ],
-      "url": null
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-19-vs-raiders-saturday-5-30pm-accor.131947/"
     }
   ],
   "trivia": {
-    "question": "Which year did the Bulldogs last win the NRL premiership?",
+    "question": "Which Bulldogs legend holds the club record for most first-grade games?",
     "options": [
       {
-        "label": "1995",
+        "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "2004",
+        "label": "Steve Mortimer",
         "emoji": "🏆"
       },
       {
-        "label": "2012",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "2016",
+        "label": "Terry Lamb",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 1,
-    "explainer": "Canterbury beat the Roosters 16-13 in the 2004 Grand Final — the club's most recent premiership."
+    "correctIndex": 3,
+    "explainer": "Terry Lamb played 349 games for the Bulldogs between 1984-1996 — still the club record for most first-grade appearances."
   },
   "recap": [
     {
-      "question": "Who topped the run metres for the Dogs against the Titans?",
+      "question": "Who led the Dogs for run metres against the Titans?",
       "options": [
         {
           "label": "Jethro Rinakama",
-          "emoji": "🏃"
+          "emoji": "🏉"
         },
         {
           "label": "Max King",
-          "emoji": "💪"
+          "emoji": "🏉"
         },
         {
           "label": "Bailey Hayward",
-          "emoji": "🎯"
+          "emoji": "🏉"
         },
         {
           "label": "Josh Curran",
-          "emoji": "🔥"
+          "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Rinakama ran for 230m to go with his two tries and two line breaks."
+      "explainer": "Rinakama racked up 230 run metres to go with his double — the winger was everywhere."
     }
   ],
   "washup": {
@@ -245,14 +245,14 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/",
-    "headline": "First win in QLD this year and we'll take it however it came.",
-    "vibe": "30-12 on the road with Rinakama bagging a double and Curran chipping in with two of his own — not bad at all. Completion was scratchy at 75% and we missed 33 tackles, but the scoreboard says we're winners. Hayward put in 49 tackles which is filthy work from the 9. Sits us 10th and the top 8 is still on the table if we don't do anything stupid.",
+    "headline": "Rinakama's night, Curran's double, and finally a road win.",
+    "vibe": "30-12 up at Cbus in the rain — we'll take it. Rinakama was outstanding with two tries and 230 metres, Curran bagged a double from the edge and Hayward went 49 tackles like a lunatic. Completion was ugly (75%) and Sami crossed three times but the scoreboard doesn't lie. Sets us up nicely for the Raiders at Accor.",
     "kennelMood": "Quietly relieved",
-    "kennelSummary": "Most of the thread was still bracing for a loss right up to kickoff so the win felt like a bonus. Rinakama's back-to-back performances have people believing again, and there's some grudging respect for King going the extra yards. Undercurrent of 'yeah but it was the Titans' running through everything.",
+    "kennelSummary": "The Kennel came in expecting a Titans mugging and got a comfortable win instead. Rinakama and Curran getting the flowers, Max King's 78 fantasy points noted. The pre-game religion detour in the GAMEDAY thread was less popular than the result.",
     "kennelHotTakes": [
       {
-        "quote": "Would be nice if we can actually win a game in QLD this season with this being our last opportunity to make that happen — and we bloody did it.",
-        "author": "chemdog",
+        "quote": "we were supposed to get flogged by manly by 50 then won by 1, so by that logic we flog the raiders by 40",
+        "author": "DFLWatto",
         "threadSlug": "/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
       }
@@ -265,7 +265,7 @@
       "title": "Xerri to the storm?",
       "replies": 753,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/xerri-to-the-storm.131903/",
-      "summary": "Rumour Xerri's off to Melbourne. Half the forum saying good riddance, the other half working out how you replace that speed on the cheap."
+      "summary": "753 replies of Xerri exit rumours colliding with roster spend gripes — Burton to centres, Galvin to 6, Critta salary questions. Everyone's a cap manager."
     }
   ],
   "kennelMeta": {
@@ -577,6 +577,52 @@
           }
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-17-bulldogs-vs-titans-friday-26th-june-6-00-pm-cbus-super-stadium-gold-coast.131919/"
+      }
+    ],
+    "19": [
+      {
+        "id": "burton-position-r19",
+        "icon": "🎯",
+        "question": "Burton's named at centre with Galvin at 7 and Crichton at 6 — where does he actually start the game?",
+        "kennel": "The Burton position thread is 300+ posts of nobody agreeing where he fits.",
+        "threadSlug": "/forum/index.php?threads/burton.131802",
+        "options": [
+          {
+            "label": "Starts at centre as named",
+            "emoji": "🎽"
+          },
+          {
+            "label": "Shifts into the halves (6 or 7)",
+            "emoji": "🔟"
+          },
+          {
+            "label": "Starts at lock (13)",
+            "emoji": "🏉"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
+      },
+      {
+        "id": "first-dogs-try-r19",
+        "icon": "🎯",
+        "question": "Who scores the Dogs' first try?",
+        "kennel": "Rinakama bagged two last week and half the forum reckons he's our best finisher right now.",
+        "threadSlug": null,
+        "options": [
+          {
+            "label": "A winger or fullback",
+            "emoji": "🏃"
+          },
+          {
+            "label": "A forward",
+            "emoji": "💪"
+          },
+          {
+            "label": "A centre or half",
+            "emoji": "🎯"
+          }
+        ],
+        "url": null
       }
     ]
   },
