@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T21:56:41.992Z",
+  "generatedAt": "2026-07-14T10:43:45.179Z",
   "match": {
     "round": 20,
     "opponent": "Wests Tigers",
@@ -18,65 +18,110 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Dogs",
-    "confidence": "Lean — about 65/35",
-    "note": "Tigers are shithouse and we're at home, but no one's confident after that Raiders shellacking. Everyone's bracing for a scare."
+    "side": "Split",
+    "confidence": "Split — about 50/50",
+    "note": "Boys are dreading it as much as expecting a win. Tigers are shit but so are we, and no one trusts this side to actually turn up two weeks running."
   },
   "kennelTipQuotes": [
     {
-      "thread": "Recruitment",
-      "threadSlug": "/forum/index.php?threads/recruitment.131679",
-      "quote": "Gus wants to spend $2.5m a season on 3 centres in Critta, Burton and Xerri, then over 800k on a 6 to play 7. Deadset joke of a roster build.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/"
+      "thread": "GAMEDAY Rd 20 vs Tigers",
+      "threadSlug": "/forum/index.php?threads/round-20-vs-tigers-accor-7-30pm.131968",
+      "quote": "Ugh I shudder to think how it will pan out. These guys just aren't invested enough to want to win. Ciro can't even get 70% out of them.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-20-vs-tigers-accor-7-30pm.131968/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "burton-position-r20",
+      "icon": "🧠",
+      "question": "Burton's named at centre with Galvin at 7 and SOS at 6. Where does he actually spend most of the game?",
+      "kennel": "The Burton thread reckons he's our best 6 and the only option there.",
+      "threadSlug": "/forum/index.php?threads/burton.131802",
+      "options": [
+        {
+          "label": "Stays at centre the full 80",
+          "emoji": "🎯"
+        },
+        {
+          "label": "Shifts into the halves at some point",
+          "emoji": "🔄"
+        },
+        {
+          "label": "Ends up in the middle / at lock",
+          "emoji": "💪"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
+    },
+    {
+      "id": "first-try-scorer-r20",
+      "icon": "🏉",
+      "question": "Who opens the scoring for the Dogs against the Tigers?",
+      "kennel": "Rinakama scored first for us last week and topped run metres — the outside backs are the only ones creating.",
+      "threadSlug": null,
+      "options": [
+        {
+          "label": "An outside back",
+          "emoji": "⚡"
+        },
+        {
+          "label": "A forward",
+          "emoji": "💪"
+        },
+        {
+          "label": "One of the spine (6, 7 or 9)",
+          "emoji": "🧠"
+        }
+      ],
+      "url": null
+    }
+  ],
   "trivia": {
-    "question": "Which year did the Bulldogs last beat the Wests Tigers by 30+ points?",
+    "question": "Who holds the Bulldogs record for most first-grade appearances for the club?",
     "options": [
       {
-        "label": "2012",
+        "label": "Steve Mortimer",
         "emoji": "🏆"
       },
       {
-        "label": "2016",
+        "label": "Hazem El Masri",
         "emoji": "🏆"
       },
       {
-        "label": "2019",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "2023",
+        "label": "Terry Lamb",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 2,
-    "explainer": "Round 4, 2019 — Dogs smashed the Tigers 32-2 at ANZ. Been a while since we've put a proper hurting on anyone."
+    "correctIndex": 3,
+    "explainer": "Terry Lamb played 349 first-grade games for the Bulldogs between 1984 and 1996 — still the club record."
   },
   "recap": [
     {
-      "question": "Who ran for the most metres for the Dogs against the Raiders?",
+      "question": "Who topped run metres for the Dogs against the Raiders in Round 19?",
       "options": [
         {
           "label": "Jethro Rinakama",
-          "emoji": "🏉"
+          "emoji": "⚡"
         },
         {
           "label": "Jaeman Salmon",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Matt Burton",
-          "emoji": "🏉"
+          "emoji": "💪"
         },
         {
           "label": "Connor Tracey",
           "emoji": "🏉"
+        },
+        {
+          "label": "Matt Burton",
+          "emoji": "🎯"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Rinakama racked up 183m and grabbed the Dogs' first try — the lone shining light in a 40-16 rolling."
+      "explainer": "Rinakama racked up 183 run metres and also grabbed a line break — the lone bright spark in a miserable night."
     }
   ],
   "washup": {
@@ -205,32 +250,32 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-19-vs-raiders-saturday-5-30pm-accor.131947/",
-    "headline": "40-16 at home to Canberra. That's not a loss, that's a message.",
-    "vibe": "Hosking scored a hat-trick on us. A back-rower. Three times. We got the first points on the board never once, went down 18-0 before waking up, and the middle got run through like a bloody turnstile. 11th on the ladder, roster's lopsided, and the sack-Ciro thread is back on the front page.",
-    "kennelMood": "Cooked",
-    "kennelSummary": "Peak frustration — Tracey's positioning at fullback getting shredded, Mann labelled 'absolute wank', and everyone's arguing about whether Salmon belongs at lock or in the centres. Recruitment thread is a bloodbath with fans pointing at the Roosters' 1-13 and weeping.",
+    "headline": "Cooked at home by the Raiders, again.",
+    "vibe": "40-16 at Accor and the crowd was streaming out by the 60th. Salmon at 47 tackles doing everything and nothing at the same time, Tracey caught out of position twice at fullback, and Burton finally showing up in the 70th when it was already dead. This roster is lopsided and the season's basically over — now it's just about seeing if Galvin, Rinakama and maybe Conti can build something for next year.",
+    "kennelMood": "Resigned",
+    "kennelSummary": "The Kennel's given up on 2025 and moved straight to autopsy mode. Salmon at lock is the recurring rage point, Ciro's under fire again, and the recruitment thread is louder than the gameday thread. General acceptance that Woods coming back is the one bit of good news left.",
     "kennelHotTakes": [
       {
-        "quote": "Hot take but Mann has been absolute wank most of the season.",
-        "author": "LeeroyJenkins",
-        "threadSlug": "/forum/index.php?threads/round-19-vs-raiders-saturday-5-30pm-accor.131947",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-19-vs-raiders-saturday-5-30pm-accor.131947/"
+        "quote": "I've accepted defeat this season. Just play Woods at 7 no matter the results and let this year be a write-off. Get him and Galvin some FG experience together for next year.",
+        "author": "CUZRAZ",
+        "threadSlug": "/forum/index.php?threads/mitch-woods.131773",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/mitch-woods.131773/"
       }
     ]
   },
   "kennelThreadsThisWeek": [
     {
-      "prefix": null,
-      "title": "Burton",
-      "replies": 335,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/",
-      "summary": "Split down the middle — some reckon he's the best 5/8 at the club and the only option there, others want him at centre taking a paycut. Everyone wants to see back-to-back big games, not the twice-a-year cameo."
+      "prefix": "GAMEDAY",
+      "title": "Round 20 vs Tigers @ Accor 7:30pm",
+      "replies": 124,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-20-vs-tigers-accor-7-30pm.131968/",
+      "summary": "Panic mode about the team list — Doggies 04 already forecasting Tracey at 1 and Spinks getting scratched for the 50th time. Big debate about SOS vs Conti at 6 if Critta's missus goes into labour."
     }
   ],
   "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
-    "hotThreadsScraped": 4
+    "hotThreadsScraped": 5
   },
   "debateSnapshots": {
     "10": [
