@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T10:43:45.179Z",
+  "generatedAt": "2026-07-16T07:52:57.248Z",
   "match": {
     "round": 20,
     "opponent": "Wests Tigers",
@@ -18,50 +18,50 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Split",
-    "confidence": "Split — about 50/50",
-    "note": "Boys are dreading it as much as expecting a win. Tigers are shit but so are we, and no one trusts this side to actually turn up two weeks running."
+    "side": "Dogs",
+    "confidence": "Lean — about 60/40",
+    "note": "After the Raiders shellacking the mood is 'we HAVE to beat this Tigers side or the season's cooked'. Nobody's confident though — Luai and Doueihi scare them."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 20 vs Tigers",
       "threadSlug": "/forum/index.php?threads/round-20-vs-tigers-accor-7-30pm.131968",
-      "quote": "Ugh I shudder to think how it will pan out. These guys just aren't invested enough to want to win. Ciro can't even get 70% out of them.",
+      "quote": "Happy team list Tuesday. Are you ready to scroll and see Connor's name at number 1 and say fuckkkkkkkkkkkkkkkkkkk. And then probably see Logan Spinks as extra reserve for the 50th time just not to be selected.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-20-vs-tigers-accor-7-30pm.131968/"
     }
   ],
   "debates": [
     {
       "id": "burton-position-r20",
-      "icon": "🧠",
-      "question": "Burton's named at centre with Galvin at 7 and SOS at 6. Where does he actually spend most of the game?",
-      "kennel": "The Burton thread reckons he's our best 6 and the only option there.",
+      "icon": "🎯",
+      "question": "Burton's named at centre with Galvin at 7 and SOS at 6. Where does he actually finish the game?",
+      "kennel": "The Burton thread is at war over whether he's a 6 or a centre.",
       "threadSlug": "/forum/index.php?threads/burton.131802",
       "options": [
         {
-          "label": "Stays at centre the full 80",
-          "emoji": "🎯"
+          "label": "Plays 80 at centre as named",
+          "emoji": "🎽"
         },
         {
-          "label": "Shifts into the halves at some point",
+          "label": "Shifts into the halves during the game",
           "emoji": "🔄"
         },
         {
-          "label": "Ends up in the middle / at lock",
+          "label": "Ends up in the middle/lock rotation",
           "emoji": "💪"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
     },
     {
-      "id": "first-try-scorer-r20",
+      "id": "first-try-r20",
       "icon": "🏉",
-      "question": "Who opens the scoring for the Dogs against the Tigers?",
-      "kennel": "Rinakama scored first for us last week and topped run metres — the outside backs are the only ones creating.",
-      "threadSlug": null,
+      "question": "Who opens the scoring for the Dogs?",
+      "kennel": "Rinakama got the first for us last week — Kennel wants to know if the outside backs keep firing or a forward finally cracks one.",
+      "threadSlug": "/forum/index.php?threads/wingers.131957",
       "options": [
         {
-          "label": "An outside back",
+          "label": "An outside back (winger/centre/fullback)",
           "emoji": "⚡"
         },
         {
@@ -69,11 +69,11 @@
           "emoji": "💪"
         },
         {
-          "label": "One of the spine (6, 7 or 9)",
+          "label": "One of the spine (6/7/9)",
           "emoji": "🧠"
         }
       ],
-      "url": null
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/wingers.131957/"
     }
   ],
   "trivia": {
@@ -101,27 +101,27 @@
   },
   "recap": [
     {
-      "question": "Who topped run metres for the Dogs against the Raiders in Round 19?",
+      "question": "Who led the Dogs for run metres in the Raiders loss?",
       "options": [
         {
           "label": "Jethro Rinakama",
-          "emoji": "⚡"
+          "emoji": "🏃"
         },
         {
           "label": "Jaeman Salmon",
-          "emoji": "💪"
+          "emoji": "🏃"
         },
         {
-          "label": "Connor Tracey",
-          "emoji": "🏉"
+          "label": "Max King",
+          "emoji": "🏃"
         },
         {
-          "label": "Matt Burton",
-          "emoji": "🎯"
+          "label": "Jacob Preston",
+          "emoji": "🏃"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Rinakama racked up 183 run metres and also grabbed a line break — the lone bright spark in a miserable night."
+      "explainer": "Rinakama ran for 183m and was the only Dog to crack a line break — one of the very few bright spots in the 40-16 hiding."
     }
   ],
   "washup": {
@@ -250,16 +250,16 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-19-vs-raiders-saturday-5-30pm-accor.131947/",
-    "headline": "Cooked at home by the Raiders, again.",
-    "vibe": "40-16 at Accor and the crowd was streaming out by the 60th. Salmon at 47 tackles doing everything and nothing at the same time, Tracey caught out of position twice at fullback, and Burton finally showing up in the 70th when it was already dead. This roster is lopsided and the season's basically over — now it's just about seeing if Galvin, Rinakama and maybe Conti can build something for next year.",
-    "kennelMood": "Resigned",
-    "kennelSummary": "The Kennel's given up on 2025 and moved straight to autopsy mode. Salmon at lock is the recurring rage point, Ciro's under fire again, and the recruitment thread is louder than the gameday thread. General acceptance that Woods coming back is the one bit of good news left.",
+    "headline": "Home crowd walked out early and honestly, fair enough.",
+    "vibe": "Cooked. 40-16 at home with Zac Hosking bagging a hat-trick against us tells you everything — the defence is broken and the fullback situation is a disaster. Two Burton and Tracey consolation tries after we were already dead don't count. Finals are basically gone and the fight now is about pride and playing spots for 2027.",
+    "kennelMood": "Resigned and filthy",
+    "kennelSummary": "The Kennel's split between wanting Ciraldo sacked tonight and just accepting the season's a write-off — with a decent contingent begging for Conti and Woods to be blooded so at least something comes out of it. Tracey at fullback is universally roasted after getting caught out of position twice, and the Salmon-at-lock question is back on the table.",
     "kennelHotTakes": [
       {
-        "quote": "I've accepted defeat this season. Just play Woods at 7 no matter the results and let this year be a write-off. Get him and Galvin some FG experience together for next year.",
-        "author": "CUZRAZ",
-        "threadSlug": "/forum/index.php?threads/mitch-woods.131773",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/mitch-woods.131773/"
+        "quote": "How does a fullback get caught out of position TWICE in the same game. Deadset how.",
+        "author": null,
+        "threadSlug": "/forum/index.php?threads/how-does-a-fullback-get-caught-out-of-position-twice.131960",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/how-does-a-fullback-get-caught-out-of-position-twice.131960/"
       }
     ]
   },
@@ -267,9 +267,16 @@
     {
       "prefix": "GAMEDAY",
       "title": "Round 20 vs Tigers @ Accor 7:30pm",
-      "replies": 124,
+      "replies": 270,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-20-vs-tigers-accor-7-30pm.131968/",
-      "summary": "Panic mode about the team list — Doggies 04 already forecasting Tracey at 1 and Spinks getting scratched for the 50th time. Big debate about SOS vs Conti at 6 if Critta's missus goes into labour."
+      "summary": "Team list Tuesday dread — Tracey named at 1 again has half the thread groaning, and there's a full-on brawl about whether Conti should get a look before SOS. Nobody's excited."
+    },
+    {
+      "prefix": null,
+      "title": "Burton",
+      "replies": 357,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/",
+      "summary": "Split down the middle — half reckon Burton's the best 6 at the club and Ciro's mad putting him at centre, the other half want him staying at centre on a paycut. The '$1m centre' line keeps getting thrown around."
     }
   ],
   "kennelThreadsLastGame": [],
@@ -628,6 +635,52 @@
           }
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-19-vs-raiders-saturday-5-30pm-accor.131947/"
+      }
+    ],
+    "20": [
+      {
+        "id": "burton-position-r20",
+        "icon": "🧠",
+        "question": "Burton's named at centre with Galvin at 7 and SOS at 6. Where does he actually spend most of the game?",
+        "kennel": "The Burton thread reckons he's our best 6 and the only option there.",
+        "threadSlug": "/forum/index.php?threads/burton.131802",
+        "options": [
+          {
+            "label": "Stays at centre the full 80",
+            "emoji": "🎯"
+          },
+          {
+            "label": "Shifts into the halves at some point",
+            "emoji": "🔄"
+          },
+          {
+            "label": "Ends up in the middle / at lock",
+            "emoji": "💪"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
+      },
+      {
+        "id": "first-try-scorer-r20",
+        "icon": "🏉",
+        "question": "Who opens the scoring for the Dogs against the Tigers?",
+        "kennel": "Rinakama scored first for us last week and topped run metres — the outside backs are the only ones creating.",
+        "threadSlug": null,
+        "options": [
+          {
+            "label": "An outside back",
+            "emoji": "⚡"
+          },
+          {
+            "label": "A forward",
+            "emoji": "💪"
+          },
+          {
+            "label": "One of the spine (6, 7 or 9)",
+            "emoji": "🧠"
+          }
+        ],
+        "url": null
       }
     ]
   },
