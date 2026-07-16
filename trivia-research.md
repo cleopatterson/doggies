@@ -127,3 +127,4 @@ For weekly trivia generation, structure questions around these high-yield, verif
 goes into the generation prompt as a hard no-repeat rule; only delete an entry if you
 WANT that topic back in rotation. -->
 - Rd 12 (2026-05-21): "Which year did the Bulldogs win their most recent NRL premiership?" — answer: 2004
+- Rd 20 (2026-07-14): "Who holds the Bulldogs record for most first-grade appearances for the club?" — answer: Hazem El Masri
