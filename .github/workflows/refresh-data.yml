@@ -37,12 +37,12 @@ jobs:
 
       - name: Commit if changed
         run: |
-          if git diff --quiet src/data.json; then
-            echo "No changes to src/data.json — skipping commit."
+          if git diff --quiet src/data.json trivia-research.md; then
+            echo "No changes to src/data.json or trivia-research.md — skipping commit."
             exit 0
           fi
           git config user.name "Dogs HQ Bot"
           git config user.email "bot@dogshq.local"
-          git add src/data.json
+          git add src/data.json trivia-research.md
           git commit -m "Refresh Dogs HQ data (auto, $(date -u +%Y-%m-%dT%H:%MZ))"
           git push

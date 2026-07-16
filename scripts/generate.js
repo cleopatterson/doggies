@@ -16,6 +16,43 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = `${__dirname}/..`;
 const OUT = `${ROOT}/src/data.json`;
 
+// Trivia research doc — hand-curated source material for the weekly trivia question,
+// plus a self-maintaining "Asked so far" log at the bottom that this script appends
+// to after every run. The full asked-list goes into the prompt so the no-repeat
+// memory is cumulative across the whole season, not just one week deep.
+const TRIVIA_DOC = `${ROOT}/trivia-research.md`;
+const ASKED_MARKER = "## Asked so far";
+// Match only the real heading (line start) — the doc's explanatory comments may
+// mention the marker string mid-sentence.
+const ASKED_MARKER_RE = /^## Asked so far/m;
+
+async function loadTriviaDoc() {
+  let raw;
+  try { raw = await readFile(TRIVIA_DOC, "utf8"); }
+  catch { return { research: null, asked: [] }; }
+  const idx = raw.search(ASKED_MARKER_RE);
+  // Research = everything above the marker, minus HTML comments. If what's left is
+  // only headings (the placeholder stub), treat it as no research yet.
+  const body = (idx === -1 ? raw : raw.slice(0, idx)).replace(/<!--[\s\S]*?-->/g, "");
+  const research = body.replace(/^#.*$/gm, "").trim() ? body.trim() : null;
+  const askedSection = idx === -1 ? "" : raw.slice(idx);
+  const asked = askedSection.split("\n").filter(l => l.startsWith("- ")).map(l => l.slice(2).trim());
+  return { research, asked };
+}
+
+async function appendAskedTrivia(round, trivia) {
+  if (!trivia?.question) return;
+  let raw;
+  try { raw = await readFile(TRIVIA_DOC, "utf8"); }
+  catch { console.error("  trivia-research.md missing — asked-question log not updated"); return; }
+  if (raw.includes(trivia.question)) return; // already logged (within-round reuse / re-run)
+  if (!ASKED_MARKER_RE.test(raw)) raw = `${raw.trimEnd()}\n\n${ASKED_MARKER}\n`;
+  const answer = trivia.options?.[trivia.correctIndex]?.label;
+  const line = `- Rd ${round} (${new Date().toISOString().slice(0, 10)}): "${trivia.question}"${answer ? ` — answer: ${answer}` : ""}`;
+  await writeFile(TRIVIA_DOC, `${raw.trimEnd()}\n${line}\n`);
+  console.error(`  logged trivia question to trivia-research.md`);
+}
+
 const TEAM_ID = Number(process.env.NRL_TEAM_ID || 500010);
 const SEASON = Number(process.env.NRL_SEASON || 2026);
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36";
@@ -374,7 +411,7 @@ function computeTipBand(dogsScore, oppScore) {
 }
 
 // ── 3. CLAUDE SYNTHESIS ──
-async function synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia, prevDebatesForJudging }) {
+async function synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia, triviaResearch, askedTrivia, prevDebatesForJudging }) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY missing in .env");
   const client = new Anthropic({ apiKey });
@@ -428,6 +465,12 @@ Note: jersey numbers 1-13 are the run-on side, 14-17 are the bench, 18+ are rese
 
 ` : "";
 
+  // Curated trivia source material (trivia-research.md above the "Asked so far" marker).
+  const triviaResearchBlock = triviaResearch ? `# BULLDOGS TRIVIA RESEARCH DOC (curated source material for the trivia question)
+${triviaResearch}
+
+` : "";
+
   const user = `# This week's match (from nrl.com)
 Round ${fixture.round} — Bulldogs ${fixture.dogsHome ? "v" : "@"} ${fixture.opponent}
 Venue: ${fixture.venue}, ${fixture.venueCity}
@@ -441,7 +484,7 @@ ${titleList}
 # Hot thread excerpts (real posts)
 ${threadDigest}
 
-${prevBlock}---
+${prevBlock}${triviaResearchBlock}---
 
 Generate the round's content as JSON with this exact shape:
 
@@ -572,8 +615,13 @@ Rules:
   - General season threads (recruitment, contracts, "Time for fresh blood") can go in either tab — pick the one where they're most relevant given current context.
   - Each summary: 1-2 sentences capturing what's actually being argued (the angle, the main argument, who's getting roasted). NOT generic "fans discuss X" — be specific. Skip videos/pics/memes threads (already filtered upstream but as a safety net).
   - Use the EXACT slug from the digest (the "thread_slug:" line on each thread).
-- Trivia: one factual Bulldogs question with 4 options. Pick something verifiable from public club history or this season's stats — NEVER invent. Safe ground: premiership years, jersey numbers, club records, recent signings, ground capacities, opponent history. Set correctIndex (0-3) to match the right option. Keep explainer short and confident.${priorTrivia ? `
-  - DON'T REPEAT LAST WEEK'S TRIVIA. Last round's question was: "${priorTrivia}". Pick a genuinely different topic this week — different decade, different player, different stat category. If your candidate question is just a reworded version of last week's, scrap it and pick something else.` : ""}${prevMatch ? `
+- Trivia: one factual Bulldogs question with 4 options.${triviaResearch ? ` Source it from the TRIVIA RESEARCH DOC above — pick ONE fact and build the question around it. The doc is ground truth: prefer it over your own stock knowledge, and NEVER invent or embellish beyond what it says.
+  - ROTATE SECTIONS week to week — records/numbers, grand-final flashbacks, name/identity history, family-club lore, quirky "did you know" facts, recent-rebuild era. Check the asked-list below to see which sections are already burnt and pick a DIFFERENT one.
+  - RESPECT THE DOC'S CAVEATS section — never build a question (or a correct answer) on a fact the doc flags as unverified, disputed, or inconsistently reported, and skip anything the doc marks as a moving target (e.g. live ladder position).
+  - Distractors should be plausible neighbours from the SAME category (e.g. other premiership years, other club legends, other opponents) so it's a real test, not a giveaway.` : ` Pick something verifiable from public club history or this season's stats — NEVER invent. Safe ground: premiership years, jersey numbers, club records, recent signings, ground capacities, opponent history.`} Set correctIndex (0-3) to match the right option. Keep explainer short and confident.${askedTrivia?.length ? `
+  - NEVER REPEAT A PREVIOUSLY ASKED QUESTION. Every trivia question already used is listed below. Yours must cover genuinely different ground — a different fact, player, era, or stat category. If your candidate is a reworded version of ANY entry below, scrap it and pick something else:
+${askedTrivia.map(q => `      • ${q}`).join("\n")}` : (priorTrivia ? `
+  - DON'T REPEAT LAST WEEK'S TRIVIA. Last round's question was: "${priorTrivia}". Pick a genuinely different topic this week — different decade, different player, different stat category. If your candidate question is just a reworded version of last week's, scrap it and pick something else.` : "")}${prevMatch ? `
 - Recap: exactly ONE question about LAST week's match. Source ONLY from the digest above (try scorers in order, top performers, key stats). The question must have an unambiguous factual answer pulled directly from the data — DO NOT invent.
   - Option labels must be the NAME ONLY (or team name) — NEVER include the stat value (no "(183m)", no scores, no minute markers). The stat goes in the explainer, not the label, otherwise the answer is given away.
   - The 4 options should be plausible same-team / same-stat distractors (e.g. for "most run metres for the Dogs", list 4 Dogs forwards/outside-backs who actually played) so it's a real test.
@@ -638,13 +686,15 @@ async function main() {
   //   3. priorResolutions[round] — tipBand + debateVerdicts already locked in for past
   //      rounds. We preserve these and add the new prevMatch round's entry on top.
   let priorTrivia = null;
+  let priorTriviaFull = null;
   let priorMatchRound = null;
   let priorDebates = [];
   let priorSnapshots = {};
   let priorResolutions = {};
   try {
     const existing = JSON.parse(await readFile(OUT, "utf8"));
-    priorTrivia = existing?.trivia?.question || null;
+    priorTriviaFull = existing?.trivia || null;
+    priorTrivia = priorTriviaFull?.question || null;
     priorMatchRound = existing?.match?.round || null;
     priorDebates = existing?.debates || [];
     priorSnapshots = existing?.debateSnapshots || {};
@@ -671,10 +721,24 @@ async function main() {
     console.error(`  no debate snapshot for round ${prevMatch.round} — coach picks for that round can't be auto-graded`);
   }
 
-  const synth = await synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia, prevDebatesForJudging });
+  const { research: triviaResearch, asked: askedTrivia } = await loadTriviaDoc();
+  console.error(triviaResearch
+    ? `→ Trivia: research doc loaded (${askedTrivia.length} question(s) in the asked log)`
+    : `  no trivia research doc yet — falling back to Claude's own material (${askedTrivia.length} in asked log)`);
+
+  const synth = await synthesise({ fixture, kennel, prevMatch, prevKennel, teamList, priorTrivia, triviaResearch, askedTrivia, prevDebatesForJudging });
   // Gate: only ship debates when team list is available. The UI keys off this — empty
   // array → "Coach picks unlock when team lists drop Tuesday afternoon."
   if (!teamList) synth.debates = [];
+
+  // Trivia stays stable within a round. The Tue + Thu runs both target the same round,
+  // and regenerating the question mid-week would swap it out from under anyone who
+  // already locked an answer (storage is keyed trivia-r{N}, not per-question). Only a
+  // new round gets a fresh question.
+  if (priorMatchRound === fixture.round && priorTriviaFull?.question) {
+    synth.trivia = priorTriviaFull;
+    console.error(`  trivia: keeping round ${fixture.round}'s existing question (mid-week rerun)`);
+  }
 
   // Resolve thread slugs Claude returned back to full Kennel URLs.
   const slugToUrl = new Map();
@@ -770,6 +834,10 @@ async function main() {
   await mkdir(dirname(OUT), { recursive: true });
   await writeFile(OUT, JSON.stringify(data, null, 2));
   console.error(`✓ wrote ${OUT}`);
+
+  // Log the shipped question to the research doc's "Asked so far" section so future
+  // runs never repeat it. No-ops if the question is already logged or the doc is missing.
+  await appendAskedTrivia(fixture.round, data.trivia);
 }
 
 main().catch((err) => { console.error("FAILED:", err.message); process.exit(1); });
