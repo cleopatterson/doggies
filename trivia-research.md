@@ -128,3 +128,4 @@ goes into the generation prompt as a hard no-repeat rule; only delete an entry i
 WANT that topic back in rotation. -->
 - Rd 12 (2026-05-21): "Which year did the Bulldogs win their most recent NRL premiership?" — answer: 2004
 - Rd 20 (2026-07-14): "Who holds the Bulldogs record for most first-grade appearances for the club?" — answer: Hazem El Masri
+- Rd 21 (2026-07-21): "Which club did the Bulldogs beat in the 1995 grand final — the year they became the first team to win the title from 6th?" — answer: Manly
