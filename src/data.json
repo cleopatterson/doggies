@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T11:06:40.534Z",
+  "generatedAt": "2026-07-23T08:08:29.511Z",
   "match": {
     "round": 21,
     "opponent": "Warriors",
@@ -10,7 +10,7 @@
     "dogsPos": "10th",
     "oppPos": "2nd",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/warriors/badge.svg?bust=202607200455"
+    "oppLogo": "https://www.nrl.com/.theme/warriors/badge.svg?bust=202607230113"
   },
   "odds": {
     "dogs": null,
@@ -20,23 +20,23 @@
   "kennelTipLean": {
     "side": "Opponent",
     "confidence": "Lean — about 35/65",
-    "note": "Warriors sit 2nd, we're 10th and the mood is grim after weeks of Ciraldo/SOS/Burton position debates. Nobody's confident but nobody's writing us off at Accor either."
+    "note": "Warriors are 2nd, we're 10th, and everyone's still spooked by Ciraldo's selection curveballs. Some hopium after the Tigers shutout but most reckon the Wahs roll us."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 21 vs Warriors",
       "threadSlug": "/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987",
-      "quote": "Riccio reckons Critta's back at 5/8 and SOS is in the halves. Im sick of Ciraldo's shit — too proud to admit he's wrong.",
+      "quote": "Riccio reporting Critta at 5/8 with SOS in the halves and Burton back to centre. Sick of Ciraldo's shit, too proud to admit he's wrong — 2ndphase in full meltdown mode.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987/"
     }
   ],
   "debates": [
     {
       "id": "burton-position-r21",
-      "icon": "🎽",
-      "question": "Burton's named at centre with Critta at 6 and Galvin at 7. Where does he actually finish the game?",
-      "kennel": "Riccio rumour + the ongoing Burton thread has everyone convinced he shifts back into the halves at some point.",
-      "threadSlug": "/forum/index.php?threads/burton.131802",
+      "icon": "🎯",
+      "question": "Burton's named at centre with Crichton at 6 and Galvin at 7. Where does he actually finish the game?",
+      "kennel": "Riccio's report has half the forum convinced Ciraldo's mid-game shuffles never stop.",
+      "threadSlug": "/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987",
       "options": [
         {
           "label": "Plays 80 at centre as named",
@@ -48,21 +48,21 @@
         },
         {
           "label": "Ends up in the middle/lock rotation",
-          "emoji": "💪"
+          "emoji": "🐂"
         }
       ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987/"
     },
     {
-      "id": "first-try-scorer-r21",
+      "id": "first-try-r21",
       "icon": "🏉",
       "question": "Who opens the scoring for the Dogs?",
-      "kennel": "Rinakama opened it last week with 297 run metres — outside backs have been where we live.",
-      "threadSlug": null,
+      "kennel": "Rinakama and Curran both crossed early last week — the outside backs are firing.",
+      "threadSlug": "/forum/index.php?threads/credit-where-due.131981",
       "options": [
         {
           "label": "An outside back (winger/centre/fullback)",
-          "emoji": "🏃"
+          "emoji": "⚡"
         },
         {
           "label": "A forward",
@@ -73,7 +73,7 @@
           "emoji": "🧠"
         }
       ],
-      "url": null
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/credit-where-due.131981/"
     }
   ],
   "trivia": {
@@ -101,14 +101,10 @@
   },
   "recap": [
     {
-      "question": "Who topped the run metres for the Dogs in the 32-0 win over the Tigers?",
+      "question": "Who racked up the most run metres for the Dogs in the 32-0 win over the Tigers?",
       "options": [
         {
           "label": "Jethro Rinakama",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Jacob Kiraz",
           "emoji": "🏉"
         },
         {
@@ -116,12 +112,16 @@
           "emoji": "🏉"
         },
         {
-          "label": "Viliame Kikau",
+          "label": "Jacob Preston",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Josh Curran",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Rinakama racked up 297 run metres — top of the Dogs and 100 more than the Tigers' best."
+      "explainer": "Rinakama went for 297 metres — freakish output from the winger, and he opened the scoring in the 1st minute too."
     }
   ],
   "washup": {
@@ -133,7 +133,7 @@
     "result": "WIN",
     "margin": 32,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202607200455",
+    "oppLogo": "https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202607230113",
     "attendance": 20050,
     "weather": "Fine",
     "tries": [
@@ -219,16 +219,16 @@
       }
     ],
     "gamedayUrl": null,
-    "headline": "First shutout of the year and it felt like a proper release valve.",
-    "vibe": "32-0 over the Tigers, five tries, Rinakama unstoppable down the edge and Hayward tackling like a man possessed on 39. The kind of complete performance we've been begging for. Doesn't fix the season — we're still 10th and staring down a Warriors side flying — but it's the first time in weeks the Kennel wasn't at each other's throats.",
+    "headline": "Finally a proper belting — 32-nil and the shutout tastes sweet.",
+    "vibe": "First clean sheet in ages and Rinakama went absolute nuclear with 297 metres. Curran bagged a double from the bench, Burton got in on the party late, and the defence held Wests scoreless which nobody saw coming. Doesn't fix the ladder position but it buys Ciraldo another week of oxygen — and Galvin's fantasy numbers keep climbing.",
     "kennelMood": "Quietly relieved",
-    "kennelSummary": "Post-Tigers vibe was 'don't get carried away but that was nice'. Curran's double got a lot of love, Rinakama's 297m had people asking why we ever leave him out, and there was a brief ceasefire in the Ciraldo wars. Preston contract drama immediately took over the airtime anyway.",
+    "kennelSummary": "Kennel's happier than it's been in weeks but nobody's getting carried away — it was the Tigers after all. Tracey still getting hammered for two out-of-position moments despite the win, and the 'fans leaving early' thread suggests even 32-0 isn't enough to keep bums on seats. Curran and Rinakama getting the flowers they deserve.",
     "kennelHotTakes": [
       {
-        "quote": "Lowballing our best player is peak Bulldogs — Preston should've been priority signing months ago, meanwhile we extended Salmon when literally no one was chasing him.",
-        "author": "CaptainJackson",
-        "threadSlug": "/forum/index.php?threads/can%E2%80%99t-afford-preston.131889",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/"
+        "quote": "How does a fullback get caught out of position TWICE in a 32-0 win? $550k for Ron Massey level output — Interestingg said it best.",
+        "author": "Interestingg",
+        "threadSlug": "/forum/index.php?threads/how-does-a-fullback-get-caught-out-of-position-twice.131960",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/how-does-a-fullback-get-caught-out-of-position-twice.131960/"
       }
     ]
   },
@@ -236,20 +236,12 @@
     {
       "prefix": "GAMEDAY",
       "title": "round 21 vs warriors @ Accor Stadium Saturday 5.30 pm",
-      "replies": 164,
+      "replies": 280,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987/",
-      "summary": "GAMEDAY thread arguing over the spine — Tracey/Critta/Galvin/Salmon lock-it-in crew vs the ones convinced Ciraldo's going to spring another SOS-at-6 curveball."
+      "summary": "Gameday thread already 280 deep before kickoff — argument's about whether Critta shifts back to 6 with SOS at 7, or if Ciraldo holds his line. Doggies 04 reckons Critta will be hidden in the 22 till Saturday."
     }
   ],
-  "kennelThreadsLastGame": [
-    {
-      "prefix": null,
-      "title": "Can’t afford Preston?",
-      "replies": 702,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
-      "summary": "Preston contract stand-off dominating the week — PerthDog calling it 'lowballing our best player', fraydoon wants Gus gone, general fury that Salmon got extended before Presto."
-    }
-  ],
+  "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -652,6 +644,52 @@
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/wingers.131957/"
       }
+    ],
+    "21": [
+      {
+        "id": "burton-position-r21",
+        "icon": "🎽",
+        "question": "Burton's named at centre with Critta at 6 and Galvin at 7. Where does he actually finish the game?",
+        "kennel": "Riccio rumour + the ongoing Burton thread has everyone convinced he shifts back into the halves at some point.",
+        "threadSlug": "/forum/index.php?threads/burton.131802",
+        "options": [
+          {
+            "label": "Plays 80 at centre as named",
+            "emoji": "🎯"
+          },
+          {
+            "label": "Shifts into the halves during the game",
+            "emoji": "🔄"
+          },
+          {
+            "label": "Ends up in the middle/lock rotation",
+            "emoji": "💪"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/"
+      },
+      {
+        "id": "first-try-scorer-r21",
+        "icon": "🏉",
+        "question": "Who opens the scoring for the Dogs?",
+        "kennel": "Rinakama opened it last week with 297 run metres — outside backs have been where we live.",
+        "threadSlug": null,
+        "options": [
+          {
+            "label": "An outside back (winger/centre/fullback)",
+            "emoji": "🏃"
+          },
+          {
+            "label": "A forward",
+            "emoji": "💪"
+          },
+          {
+            "label": "One of the spine (6/7/9)",
+            "emoji": "🧠"
+          }
+        ],
+        "url": null
+      }
     ]
   },
   "resolutions": {
@@ -742,6 +780,7 @@
       "opponent": "Wests Tigers",
       "dogsHome": true,
       "debateVerdicts": {
+        "burton-position-r20": "Plays 80 at centre as named",
         "first-try-r20": "An outside back (winger/centre/fullback)"
       }
     }
