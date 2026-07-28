@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T22:02:32.571Z",
+  "generatedAt": "2026-07-28T11:15:39.379Z",
   "match": {
     "round": 22,
     "opponent": "Storm",
@@ -18,19 +18,64 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Split",
-    "confidence": "Split — about 55/45 Dogs",
-    "note": "Warriors scalp has the place buzzing but going to AAMI on a Friday night against Melbourne always tempers the mood. Most reckon we're a chance if the pack turns up."
+    "side": "Dogs",
+    "confidence": "Lean — about 60/40",
+    "note": "Off the back of the Warriors win the mood's cautiously optimistic, but the Storm at AAMI on a Friday night is where good vibes go to die."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 21 vs Warriors",
-      "threadSlug": "/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987",
-      "quote": "critta 6 sos 14 salmon 13 kill me now",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987/"
+      "thread": "GAMEDAY Rd 22",
+      "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
+      "quote": "Fuck them. One team I really want us to bury. Especially when they're down on troops. Who can forget Munster staying down last year to try and milk a penalty.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "kikau-role-r22",
+      "icon": "🔁",
+      "question": "Kikau's named at 11 with Curran on the bench. How does the edge/bench split actually play out?",
+      "kennel": "Moedogg reckons Kiks should come back to starting; Dogs Of War wants him in the middle rotation off the bench.",
+      "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
+      "options": [
+        {
+          "label": "Kikau starts on the edge and plays big minutes there",
+          "emoji": "💪"
+        },
+        {
+          "label": "Kikau starts but gets used in the middle rotation",
+          "emoji": "🔀"
+        },
+        {
+          "label": "Curran outplays him and gets more minutes on the day",
+          "emoji": "📈"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
+    },
+    {
+      "id": "first-try-r22",
+      "icon": "🏉",
+      "question": "Who opens the scoring for the Dogs at AAMI?",
+      "kennel": "Cook wants Xerri running straight at Meaney again after last time — the fans reckon there are points in that channel.",
+      "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
+      "options": [
+        {
+          "label": "An outside back (winger/centre/fullback)",
+          "emoji": "⚡"
+        },
+        {
+          "label": "A forward from close range",
+          "emoji": "🐂"
+        },
+        {
+          "label": "One of the spine (Crichton, Galvin, Hayward)",
+          "emoji": "🎯"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
+    }
+  ],
   "trivia": {
     "question": "In 2002 the Bulldogs were stripped of all their competition points for salary cap breaches. How many points did they lose?",
     "options": [
@@ -56,14 +101,14 @@
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' opening try against the Warriors?",
+      "question": "Who scored the Dogs' opening try in the Round 21 win over the Warriors?",
       "options": [
         {
-          "label": "Jacob Preston",
+          "label": "Stephen Crichton",
           "emoji": "🏉"
         },
         {
-          "label": "Stephen Crichton",
+          "label": "Jacob Preston",
           "emoji": "🏉"
         },
         {
@@ -71,12 +116,12 @@
           "emoji": "🏉"
         },
         {
-          "label": "Enari Tuala",
+          "label": "Matt Burton",
           "emoji": "🏉"
         }
       ],
-      "correctIndex": 1,
-      "explainer": "Critta got us moving in the 5th minute — one of his two linebreaks on the day."
+      "correctIndex": 0,
+      "explainer": "Critta opened the scoring in the 5th minute — one of his two line breaks on the night."
     }
   ],
   "washup": {
@@ -180,13 +225,13 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987/",
-    "headline": "Warriors done, Storm next — enjoy it while it lasts.",
-    "vibe": "18–6 with an 87% completion rate is the kind of win we've been begging for all year. Preston was a monster (71 fantasy points), Critta bagged a double, and Hayward put in 41 tackles like it was nothing. Doesn't fix the roster, doesn't fix Tracey, but for one week the boys actually looked like they had a plan.",
-    "kennelMood": "Quietly relieved",
-    "kennelSummary": "The forum's happy about the win but nobody's putting the pitchforks away. Tracey's positioning is still getting flogged in a 107-reply thread, and the Preston contract stand-off has 800+ replies of people wanting Gus's head. Critta at 6 got a tick, SOS at 14 did not.",
+    "headline": "Grinding one out 18–6 and finally starting to look like a footy team.",
+    "vibe": "Preston was an absolute unit — 71 fantasy points doesn't happen by accident. Completion rate 87% vs 71% told the story: we held the ball, they didn't. Sitting 9th and actually a chance for the eight if we don't cough this one up in Melbourne.",
+    "kennelMood": "Cautiously buzzing",
+    "kennelSummary": "The forum's torn between finally giving Ciraldo some credit and refusing to let him off the hook for three years of pain. Preston's price tag talk is somehow the loudest thread — even after a win everyone's terrified we're about to lose him. Kiks vs Curran on the edge is the tactical debate that won't die.",
     "kennelHotTakes": [
       {
-        "quote": "Extended Salmon when no one was chasing him but can't find the money for our best forward — cooked club.",
+        "quote": "Extended Salmon when nobody was chasing him but Preston, our best player, we lowball. Cool cool cool.",
         "author": "CaptainJackson",
         "threadSlug": "/forum/index.php?threads/can%E2%80%99t-afford-preston.131889",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/"
@@ -195,29 +240,28 @@
   },
   "kennelThreadsThisWeek": [
     {
+      "prefix": "GAMEDAY",
+      "title": "Round 22: Bulldogs vs storm - Friday 31st July 2026 8:00PM - AAMI Park, Melbourne",
+      "replies": 143,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/",
+      "summary": "Gameday hype mixed with genuine paranoia that the Warriors win was an emotional one-off for Montoya's send-off. Cook reckons run every ball at Meaney like last time."
+    },
+    {
       "prefix": null,
       "title": "Can’t afford Preston?",
       "replies": 801,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
-      "summary": "801 replies of pure rage that we're apparently lowballing our best forward while paying Tracey $550k for 'Ron Massey level output'. Gus getting flogged, Salmon extension being dragged up as exhibit A."
+      "summary": "Full-blown meltdown that Preston's re-sign is miles apart and Gus is lowballing our best player. Interestingg's line about Tracey getting 550k for 'Ron Massey level output' is doing numbers."
     },
     {
       "prefix": null,
-      "title": "Recruitment",
-      "replies": 604,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/",
-      "summary": "Roster balance meltdown — $2.5m on three centres, zero first-grade hookers, and someone reckons the Roosters' 1-13 are better than ours in every position. Sua confirmed off to the Bears."
+      "title": "Leo Thompson discussion",
+      "replies": 829,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/leo-thompson-discussion.131358/",
+      "summary": "Leo's back but the room's split on whether he came to us broken or got broken here. The 'Thompson curse' talk is back in full swing."
     }
   ],
-  "kennelThreadsLastGame": [
-    {
-      "prefix": null,
-      "title": "Burton",
-      "replies": 409,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/burton.131802/",
-      "summary": "Burton thread firing after another big one — 'best 5/8 at the club, only option for 5/8' vs 'we need this every week not twice a year'. The centre experiment still eating the forum alive."
-    }
-  ],
+  "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
