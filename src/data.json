@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-30T08:04:26.487Z",
+  "generatedAt": "2026-08-02T21:59:26.915Z",
   "match": {
-    "round": 22,
-    "opponent": "Storm",
-    "venue": "AAMI Park",
-    "kickoffISO": "2026-07-31T10:00:00Z",
-    "kickoff": "Fri 31 Jul, 8:00pm",
+    "round": 23,
+    "opponent": "Roosters",
+    "venue": "Allianz Stadium",
+    "kickoffISO": "2026-08-07T10:00:00Z",
+    "kickoff": "Fri 7 Aug, 8:00pm",
     "dogsHome": false,
-    "dogsPos": "9th",
-    "oppPos": "12th",
+    "dogsPos": "8th",
+    "oppPos": "2nd",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/storm/badge.svg?bust=202607230113"
+    "oppLogo": "https://www.nrl.com/.theme/roosters/badge.svg?bust=202607230113"
   },
   "odds": {
     "dogs": null,
@@ -18,177 +18,167 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Dogs",
-    "confidence": "Lean — about 60/40",
-    "note": "Dogs are riding the Warriors win high but there's genuine worry the emotion of Montoya's send-off was a one-off. Storm are undermanned and had a bad year, which has the Kennel scenting blood."
+    "side": "Opponent",
+    "confidence": "Lean — about 35/65",
+    "note": "Most reckon the Roosters game is the one loss in the run home, even after the Storm win. Momentum is real but nobody's game to call it."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 22",
       "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
-      "quote": "Fuck them. This is one team I really want us to bury. Especially when they're down on troops and having a bad year. Who can forget Munster staying down last year to milk a penalty.",
+      "quote": "roosters will be our only loss in the run home, panthers don't scare me — we know the blueprint",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
     }
   ],
-  "debates": [
-    {
-      "id": "kikau-role-r22",
-      "icon": "🔄",
-      "question": "Kikau's named to start at second row with Curran on the bench. Does that hold or does Ciro swap them?",
-      "kennel": "Moedogg reckons Kiks should come off the bench with Curran holding the edge starting spot after his form.",
-      "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
-      "options": [
-        {
-          "label": "Kikau starts at second row, Curran on bench",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Curran starts, Kikau to bench middle rotation",
-          "emoji": "🔁"
-        },
-        {
-          "label": "One of them dropped from 17 entirely",
-          "emoji": "❌"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
-    },
-    {
-      "id": "first-try-r22",
-      "icon": "🎯",
-      "question": "Who opens the scoring for the Dogs at AAMI Park?",
-      "kennel": "Cook wants Xerri running straight at Meaney all night like he did last time — outside backs feasting is the plan.",
-      "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
-      "options": [
-        {
-          "label": "An outside back (winger/centre/fullback)",
-          "emoji": "🏃"
-        },
-        {
-          "label": "A forward",
-          "emoji": "💪"
-        },
-        {
-          "label": "One of the spine (6/7/9)",
-          "emoji": "🧠"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
-    }
-  ],
+  "debates": [],
   "trivia": {
-    "question": "In 2002 the Bulldogs were stripped of all their competition points for salary cap breaches. How many points did they lose?",
+    "question": "Which coach led the Bulldogs to back-to-back premierships in 1984 and 1985?",
     "options": [
       {
-        "label": "27",
+        "label": "Warren Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "37",
+        "label": "Ted Glossop",
         "emoji": "🏆"
       },
       {
-        "label": "42",
+        "label": "Phil Gould",
         "emoji": "🏆"
       },
       {
-        "label": "50",
+        "label": "Chris Anderson",
         "emoji": "🏆"
       }
     ],
-    "correctIndex": 1,
-    "explainer": "The NRL stripped all 37 competition points after finding $2.13m in breaches over 2000–02, dropping the Dogs from first to the wooden spoon."
+    "correctIndex": 0,
+    "explainer": "Warren Ryan coached the 'Dogs of War' to back-to-back titles in 1984 (6-4 v Parramatta) and 1985 (7-6 v St George)."
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' second try against the Warriors?",
+      "question": "Who racked up the most tackles for the Dogs in the Storm win?",
       "options": [
         {
           "label": "Jacob Preston",
-          "emoji": "🏉"
+          "emoji": "💪"
         },
         {
-          "label": "Stephen Crichton",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Jacob Kiraz",
-          "emoji": "🏉"
+          "label": "Josh Curran",
+          "emoji": "💪"
         },
         {
           "label": "Viliame Kikau",
-          "emoji": "🏉"
+          "emoji": "💪"
+        },
+        {
+          "label": "Reed Mahoney",
+          "emoji": "💪"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Preston crossed in the 11th minute after Critta had opened the scoring in the 5th — Presto also topped fantasy with 71."
+      "explainer": "Preston put in a monster 44-tackle shift, also topping fantasy points with 74."
     }
   ],
   "washup": {
-    "round": 21,
-    "opponent": "Warriors",
-    "dogsHome": true,
-    "dogsScore": 18,
-    "oppScore": 6,
+    "round": 22,
+    "opponent": "Storm",
+    "dogsHome": false,
+    "dogsScore": 36,
+    "oppScore": 22,
     "result": "WIN",
-    "margin": 12,
+    "margin": 14,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/warriors/badge.svg?bust=202607230113",
-    "attendance": 22135,
+    "oppLogo": "https://www.nrl.com/.theme/storm/badge.svg?bust=202607230113",
+    "attendance": 19243,
     "weather": "Fine",
     "tries": [
       {
-        "name": "Stephen Crichton",
-        "team": "Dogs",
+        "name": "Moses Leo",
+        "team": "Storm",
         "minute": 5
       },
       {
-        "name": "Jacob Preston",
+        "name": "Jaeman Salmon",
         "team": "Dogs",
-        "minute": 11
+        "minute": 15
       },
       {
-        "name": "Jacob Kiraz",
-        "team": "Dogs",
-        "minute": 46
+        "name": "Sualauvi Faalogo",
+        "team": "Storm",
+        "minute": 20
       },
       {
-        "name": "Chanel Harris-Tavita",
-        "team": "Warriors",
-        "minute": 74
+        "name": "Jethro Rinakama",
+        "team": "Dogs",
+        "minute": 24
+      },
+      {
+        "name": "Jaeman Salmon",
+        "team": "Dogs",
+        "minute": 30
+      },
+      {
+        "name": "Moses Leo",
+        "team": "Storm",
+        "minute": 39
+      },
+      {
+        "name": "Angus Hinchey",
+        "team": "Storm",
+        "minute": 47
+      },
+      {
+        "name": "Matt Burton",
+        "team": "Dogs",
+        "minute": 50
+      },
+      {
+        "name": "Josh Curran",
+        "team": "Dogs",
+        "minute": 61
+      },
+      {
+        "name": "Stephen Crichton",
+        "team": "Dogs",
+        "minute": 69
+      },
+      {
+        "name": "Stephen Crichton",
+        "team": "Dogs",
+        "minute": 77
       }
     ],
     "topPerformers": [
       {
         "title": "Most Tackles",
         "dogs": {
-          "name": "Bailey Hayward",
-          "value": 41
+          "name": "Jacob Preston",
+          "value": 44
         },
         "opp": {
-          "name": "Kurt Capewell",
-          "value": 44
+          "name": "Trent Loiero",
+          "value": 38
         }
       },
       {
         "title": "Most Run Metres",
         "dogs": {
-          "name": "Enari Tuala",
-          "value": 210
+          "name": "Jethro Rinakama",
+          "value": 180
         },
         "opp": {
-          "name": "Dallin Watene-Zelezniak",
-          "value": 210
+          "name": "Sualauvi Faalogo",
+          "value": 152
         }
       },
       {
         "title": "Most Line Breaks",
         "dogs": {
-          "name": "Stephen Crichton",
+          "name": "Jethro Rinakama",
           "value": 2
         },
         "opp": {
-          "name": "Dallin Watene-Zelezniak",
+          "name": "Sualauvi Faalogo",
           "value": 1
         }
       },
@@ -196,64 +186,49 @@
         "title": "Most Fantasy Points",
         "dogs": {
           "name": "Jacob Preston",
-          "value": 71
+          "value": 74
         },
         "opp": {
-          "name": "Kurt Capewell",
-          "value": 57
+          "name": "Sualauvi Faalogo",
+          "value": 68
         }
       }
     ],
     "keyStats": [
       {
         "title": "Completion Rate",
-        "dogs": 87,
-        "opp": 71,
+        "dogs": 76,
+        "opp": 76,
         "unit": ""
       },
       {
         "title": "Missed Tackles",
-        "dogs": 43,
-        "opp": 42,
+        "dogs": 34,
+        "opp": 38,
         "unit": ""
       },
       {
         "title": "Errors",
-        "dogs": 10,
+        "dogs": 14,
         "opp": 14,
         "unit": ""
       }
     ],
-    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-21-vs-warriors-accor-stadium-saturday-5-30-pm.131987/",
-    "headline": "Grinding 18-6 win off Montoya's send-off — but can we bottle it?",
-    "vibe": "Tight, physical, and we actually looked like we cared. Completion rate 87% v 71% tells the story — we choked them out rather than played them off the park. Critta bagged one and made two line breaks, Presto was everywhere for 71 fantasy points, and Hayward put in 41 tackles from dummy half. Sits us 9th and still in the finals fight, but the Kennel already worrying it was emotion, not evolution.",
-    "kennelMood": "Quietly relieved",
-    "kennelSummary": "Cautious optimism with the usual asterisks. Curran's edge form has people wondering if Kikau comes off the bench now, and there's a growing sense Ciraldo might actually be adjusting — though the anti-Ciro crew aren't giving an inch.",
+    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/",
+    "headline": "36-22 in Melbourne and suddenly we're back in the finals conversation.",
+    "vibe": "Went to AAMI, put 36 on Melbourne, and Crichton grabbed a double from five-eighth to slam the door. Burton scored too, Rinakama was a menace with 180m and 2 line breaks, and Preston did Preston things with 44 tackles. Roosters next at Allianz is the real test — win that and finals are on.",
+    "kennelMood": "Quietly buzzing",
+    "kennelSummary": "The 'sack Ciraldo' crowd went very quiet — the halves gamble thread turned into a victory lap. Concern now is whether the Storm win was emotion-fuelled off Montoya's send-off or genuine. Rinakama and Preston getting universal flowers.",
     "kennelHotTakes": [
       {
-        "quote": "critta 6 sos 14 salmon 13 kill me now",
-        "author": "assuomdahs",
+        "quote": "MOM Sullivan was frightening — will he be tied up on the sideline before the Storm or released to actually score points?",
+        "author": "Lost Dog",
         "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [
-    {
-      "prefix": "GAMEDAY",
-      "title": "Round 22: Bulldogs vs storm - Friday 31st July 2026 8:00PM - AAMI Park, Melbourne",
-      "replies": 223,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/",
-      "summary": "Storm hate week — reckons Xerri needs to run straight at Meaney all night like last time, and a nervous minority worried last week was purely Montoya-send-off adrenaline."
-    },
-    {
-      "prefix": null,
-      "title": "Can’t afford Preston?",
-      "replies": 853,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/can%E2%80%99t-afford-preston.131889/",
-      "summary": "Preston contract talks are miles apart and the Kennel is livid — general consensus is Gus lowballed the best player and prioritised Kikau/Tracey/Salmon extensions instead."
-    }
-  ],
+  "kennelThreadsThisWeek": [],
   "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
@@ -707,44 +682,44 @@
     "22": [
       {
         "id": "kikau-role-r22",
-        "icon": "🔁",
-        "question": "Kikau's named at 11 with Curran on the bench. How does the edge/bench split actually play out?",
-        "kennel": "Moedogg reckons Kiks should come back to starting; Dogs Of War wants him in the middle rotation off the bench.",
+        "icon": "🔄",
+        "question": "Kikau's named to start at second row with Curran on the bench. Does that hold or does Ciro swap them?",
+        "kennel": "Moedogg reckons Kiks should come off the bench with Curran holding the edge starting spot after his form.",
         "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
         "options": [
           {
-            "label": "Kikau starts on the edge and plays big minutes there",
-            "emoji": "💪"
+            "label": "Kikau starts at second row, Curran on bench",
+            "emoji": "🏉"
           },
           {
-            "label": "Kikau starts but gets used in the middle rotation",
-            "emoji": "🔀"
+            "label": "Curran starts, Kikau to bench middle rotation",
+            "emoji": "🔁"
           },
           {
-            "label": "Curran outplays him and gets more minutes on the day",
-            "emoji": "📈"
+            "label": "One of them dropped from 17 entirely",
+            "emoji": "❌"
           }
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
       },
       {
         "id": "first-try-r22",
-        "icon": "🏉",
-        "question": "Who opens the scoring for the Dogs at AAMI?",
-        "kennel": "Cook wants Xerri running straight at Meaney again after last time — the fans reckon there are points in that channel.",
+        "icon": "🎯",
+        "question": "Who opens the scoring for the Dogs at AAMI Park?",
+        "kennel": "Cook wants Xerri running straight at Meaney all night like he did last time — outside backs feasting is the plan.",
         "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
         "options": [
           {
             "label": "An outside back (winger/centre/fullback)",
-            "emoji": "⚡"
+            "emoji": "🏃"
           },
           {
-            "label": "A forward from close range",
-            "emoji": "🐂"
+            "label": "A forward",
+            "emoji": "💪"
           },
           {
-            "label": "One of the spine (Crichton, Galvin, Hayward)",
-            "emoji": "🎯"
+            "label": "One of the spine (6/7/9)",
+            "emoji": "🧠"
           }
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
@@ -852,6 +827,16 @@
       "debateVerdicts": {
         "burton-position-r21": "Plays 80 at centre as named",
         "first-try-r21": "One of the spine (6/7/9)"
+      }
+    },
+    "22": {
+      "tipBand": "win_13_18",
+      "dogsScore": 36,
+      "oppScore": 22,
+      "opponent": "Storm",
+      "dogsHome": false,
+      "debateVerdicts": {
+        "first-try-r22": "A forward"
       }
     }
   }
