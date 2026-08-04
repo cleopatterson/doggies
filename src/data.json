@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T21:59:26.915Z",
+  "generatedAt": "2026-08-04T11:22:26.731Z",
   "match": {
     "round": 23,
     "opponent": "Roosters",
@@ -10,7 +10,7 @@
     "dogsPos": "8th",
     "oppPos": "2nd",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/roosters/badge.svg?bust=202607230113"
+    "oppLogo": "https://www.nrl.com/.theme/roosters/badge.svg?bust=202608030238"
   },
   "odds": {
     "dogs": null,
@@ -20,17 +20,62 @@
   "kennelTipLean": {
     "side": "Opponent",
     "confidence": "Lean — about 35/65",
-    "note": "Most reckon the Roosters game is the one loss in the run home, even after the Storm win. Momentum is real but nobody's game to call it."
+    "note": "Most reckon this is the one loss left in the run home, but there's a stubborn belief we can bully Walker and pinch it."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 22",
-      "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
-      "quote": "roosters will be our only loss in the run home, panthers don't scare me — we know the blueprint",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
+      "thread": "GAMEDAY Rd 23",
+      "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
+      "quote": "Our left edge is gonna get absolutely bum fucked. Crichton biting in on the decoy will give their outside backs all day to shit on us. Don't feel good about this game at all.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "salmon-lock-r23",
+      "icon": "🧠",
+      "question": "Salmon's named at 13 after a two-try game in Melbourne. Does he actually run out there or does Ciro make a late change?",
+      "kennel": "The Salmon injury thread had 46 replies of nervous energy before the team list dropped.",
+      "threadSlug": "/forum/index.php?threads/jaemon-salmon-injury.132022",
+      "options": [
+        {
+          "label": "Salmon starts at lock, plays 40+ minutes",
+          "emoji": "🐟"
+        },
+        {
+          "label": "Salmon named but pulled pre-game — Mann or Curran shifts to 13",
+          "emoji": "🔁"
+        },
+        {
+          "label": "Salmon starts but hooked before halftime",
+          "emoji": "⏱️"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/jaemon-salmon-injury.132022/"
+    },
+    {
+      "id": "first-try-r23",
+      "icon": "🏉",
+      "question": "Who opens the scoring at Allianz? First try of the match, either team.",
+      "kennel": "Gameday thread has everyone convinced the left edge is a bloodbath waiting to happen.",
+      "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
+      "options": [
+        {
+          "label": "A Roosters outside back (winger/centre/fullback)",
+          "emoji": "🐔"
+        },
+        {
+          "label": "A Bulldogs player — any position",
+          "emoji": "🐶"
+        },
+        {
+          "label": "A forward from either side",
+          "emoji": "💪"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
+    }
+  ],
   "trivia": {
     "question": "Which coach led the Bulldogs to back-to-back premierships in 1984 and 1985?",
     "options": [
@@ -56,27 +101,27 @@
   },
   "recap": [
     {
-      "question": "Who racked up the most tackles for the Dogs in the Storm win?",
+      "question": "Who racked up the most run metres for the Dogs in the Round 22 win over Melbourne?",
       "options": [
         {
-          "label": "Jacob Preston",
-          "emoji": "💪"
+          "label": "Jethro Rinakama",
+          "emoji": "🏉"
         },
         {
-          "label": "Josh Curran",
-          "emoji": "💪"
+          "label": "Jacob Preston",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Connor Tracey",
+          "emoji": "🏉"
         },
         {
           "label": "Viliame Kikau",
-          "emoji": "💪"
-        },
-        {
-          "label": "Reed Mahoney",
-          "emoji": "💪"
+          "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Preston put in a monster 44-tackle shift, also topping fantasy points with 74."
+      "explainer": "Rinakama busted out 180m plus 2 line breaks — the winger was a menace all night."
     }
   ],
   "washup": {
@@ -88,7 +133,7 @@
     "result": "WIN",
     "margin": 14,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/storm/badge.svg?bust=202607230113",
+    "oppLogo": "https://www.nrl.com/.theme/storm/badge.svg?bust=202608030238",
     "attendance": 19243,
     "weather": "Fine",
     "tries": [
@@ -168,7 +213,7 @@
         },
         "opp": {
           "name": "Sualauvi Faalogo",
-          "value": 152
+          "value": 159
         }
       },
       {
@@ -190,7 +235,7 @@
         },
         "opp": {
           "name": "Sualauvi Faalogo",
-          "value": 68
+          "value": 72
         }
       }
     ],
@@ -215,20 +260,28 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/",
-    "headline": "36-22 in Melbourne and suddenly we're back in the finals conversation.",
-    "vibe": "Went to AAMI, put 36 on Melbourne, and Crichton grabbed a double from five-eighth to slam the door. Burton scored too, Rinakama was a menace with 180m and 2 line breaks, and Preston did Preston things with 44 tackles. Roosters next at Allianz is the real test — win that and finals are on.",
+    "headline": "36-22 in Melbourne — the run home just got a hell of a lot more interesting.",
+    "vibe": "Four tries in the last 30 including a Critta double to seal it, Salmon crossing twice, and Rinakama running for 180 down the edge. That's a proper statement win at AAMI Park. Now we back it up against the Rorters or it means nothing — but for one night the finals maths actually looks doable.",
     "kennelMood": "Quietly buzzing",
-    "kennelSummary": "The 'sack Ciraldo' crowd went very quiet — the halves gamble thread turned into a victory lap. Concern now is whether the Storm win was emotion-fuelled off Montoya's send-off or genuine. Rinakama and Preston getting universal flowers.",
+    "kennelSummary": "The Kennel's chalking up the Storm win but every second post is already pivoting to Friday — with Berries noting the pack's been better since Hughes went down and Haddaway plotting to run straight at Xerri all night. There's a real 'don't fuck this up' energy about the Roosters trip.",
     "kennelHotTakes": [
       {
-        "quote": "MOM Sullivan was frightening — will he be tied up on the sideline before the Storm or released to actually score points?",
+        "quote": "MOM Sullivan silence of the lambs on Saturday was frightening — will he be tied up and strapped to the sideline before the Storm, or released to actually put points on?",
         "author": "Lost Dog",
-        "threadSlug": "/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
+        "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [],
+  "kennelThreadsThisWeek": [
+    {
+      "prefix": "GAMEDAY",
+      "title": "Round 23: Bulldogs vs Roosters - Friday 7th August 2026 8:00PM @ Allianz Stadium, Sydney",
+      "replies": 79,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/",
+      "summary": "Gameday thread already spicy — CQDog reckons our left edge gets torched with Crichton biting in on decoys, while J_Cooper wants us to bully Walker out of his backyard footy."
+    }
+  ],
   "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
@@ -836,6 +889,7 @@
       "opponent": "Storm",
       "dogsHome": false,
       "debateVerdicts": {
+        "kikau-role-r22": "Kikau starts at second row, Curran on bench",
         "first-try-r22": "A forward"
       }
     }
