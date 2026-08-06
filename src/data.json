@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T11:22:26.731Z",
+  "generatedAt": "2026-08-06T08:12:15.530Z",
   "match": {
     "round": 23,
     "opponent": "Roosters",
@@ -19,14 +19,14 @@
   },
   "kennelTipLean": {
     "side": "Opponent",
-    "confidence": "Lean — about 35/65",
-    "note": "Most reckon this is the one loss left in the run home, but there's a stubborn belief we can bully Walker and pinch it."
+    "confidence": "Lean — about 40/60",
+    "note": "There's genuine belief we can knick this but the left edge concerns are loud and the Roosters at Allianz is nobody's idea of a free hit."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 23",
       "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
-      "quote": "Our left edge is gonna get absolutely bum fucked. Crichton biting in on the decoy will give their outside backs all day to shit on us. Don't feel good about this game at all.",
+      "quote": "Our left edge is gonna get absolutely bum fucked. Crichton biting in on the decoy will give their outside backs all day to shit on us. Don't feel good about this game at all. — CQDog",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
     }
   ],
@@ -34,21 +34,21 @@
     {
       "id": "salmon-lock-r23",
       "icon": "🧠",
-      "question": "Salmon's named at 13 after a two-try game in Melbourne. Does he actually run out there or does Ciro make a late change?",
-      "kennel": "The Salmon injury thread had 46 replies of nervous energy before the team list dropped.",
+      "question": "Salmon's named at 13 after that injury scare last week — does he actually run out at lock?",
+      "kennel": "The Salmon injury thread had everyone spiralling after his double v Storm",
       "threadSlug": "/forum/index.php?threads/jaemon-salmon-injury.132022",
       "options": [
         {
-          "label": "Salmon starts at lock, plays 40+ minutes",
-          "emoji": "🐟"
+          "label": "Yes, Salmon starts at lock",
+          "emoji": "✅"
         },
         {
-          "label": "Salmon named but pulled pre-game — Mann or Curran shifts to 13",
-          "emoji": "🔁"
+          "label": "Late withdrawal, Curran or Mann shifts in",
+          "emoji": "🩹"
         },
         {
-          "label": "Salmon starts but hooked before halftime",
-          "emoji": "⏱️"
+          "label": "Plays but off the bench, not starting",
+          "emoji": "🔄"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/jaemon-salmon-injury.132022/"
@@ -56,24 +56,24 @@
     {
       "id": "first-try-r23",
       "icon": "🏉",
-      "question": "Who opens the scoring at Allianz? First try of the match, either team.",
-      "kennel": "Gameday thread has everyone convinced the left edge is a bloodbath waiting to happen.",
-      "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
+      "question": "Roosters have won 4 of their last 5 at Allianz — who opens the scoring on the night?",
+      "kennel": "Crawls' upset piece has fans dreaming, but the gameday thread reckons our left edge is toast",
+      "threadSlug": "/forum/index.php?threads/why-dogs-can-upset-roosters-crawls.132027",
       "options": [
         {
-          "label": "A Roosters outside back (winger/centre/fullback)",
+          "label": "A Roosters outside back",
           "emoji": "🐔"
         },
         {
-          "label": "A Bulldogs player — any position",
-          "emoji": "🐶"
+          "label": "A Dogs player (any)",
+          "emoji": "🔵"
         },
         {
-          "label": "A forward from either side",
+          "label": "A Roosters forward or spine",
           "emoji": "💪"
         }
       ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/why-dogs-can-upset-roosters-crawls.132027/"
     }
   ],
   "trivia": {
@@ -101,7 +101,7 @@
   },
   "recap": [
     {
-      "question": "Who racked up the most run metres for the Dogs in the Round 22 win over Melbourne?",
+      "question": "Who topped the Dogs for run metres in the 36-22 win over the Storm?",
       "options": [
         {
           "label": "Jethro Rinakama",
@@ -112,16 +112,16 @@
           "emoji": "🏉"
         },
         {
-          "label": "Connor Tracey",
+          "label": "Viliame Kikau",
           "emoji": "🏉"
         },
         {
-          "label": "Viliame Kikau",
+          "label": "Max King",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Rinakama busted out 180m plus 2 line breaks — the winger was a menace all night."
+      "explainer": "Jethro ran for 180m plus 2 line breaks — the young winger was a menace all night in Melbourne."
     }
   ],
   "washup": {
@@ -260,16 +260,16 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/",
-    "headline": "36-22 in Melbourne — the run home just got a hell of a lot more interesting.",
-    "vibe": "Four tries in the last 30 including a Critta double to seal it, Salmon crossing twice, and Rinakama running for 180 down the edge. That's a proper statement win at AAMI Park. Now we back it up against the Rorters or it means nothing — but for one night the finals maths actually looks doable.",
-    "kennelMood": "Quietly buzzing",
-    "kennelSummary": "The Kennel's chalking up the Storm win but every second post is already pivoting to Friday — with Berries noting the pack's been better since Hughes went down and Haddaway plotting to run straight at Xerri all night. There's a real 'don't fuck this up' energy about the Roosters trip.",
+    "headline": "Boilover in Melbourne — and we're still in this thing.",
+    "vibe": "36-22 at AAMI Park, Crichton bagging a double late, Salmon crossing twice from lock and Jethro running for 180 with 2 line breaks. Preston made 44 tackles because of course he did. Sits us 8th and firmly in the finals conversation — but now we cop the Roosters at Allianz with everything to lose.",
+    "kennelMood": "Quietly buzzing but bracing",
+    "kennelSummary": "The pack got showered with love — Preston's 44 tackles, Jethro's night out, and the belief we've turned a corner since Hughes went down. But half the Sutton thread reckons the ref actively tried to hand it to Storm anyway, and now the sober takes are all about not blowing the momentum against the Roosters.",
     "kennelHotTakes": [
       {
-        "quote": "MOM Sullivan silence of the lambs on Saturday was frightening — will he be tied up and strapped to the sideline before the Storm, or released to actually put points on?",
-        "author": "Lost Dog",
-        "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
+        "quote": "Sutton did everything possible to keep us from getting our game on. The club needs to file a formal complaint. The **** is a cheat with a clear agenda against us.",
+        "author": "trusttheprocess",
+        "threadSlug": "/forum/index.php?threads/sutton.132019",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/sutton.132019/"
       }
     ]
   },
@@ -277,12 +277,20 @@
     {
       "prefix": "GAMEDAY",
       "title": "Round 23: Bulldogs vs Roosters - Friday 7th August 2026 8:00PM @ Allianz Stadium, Sydney",
-      "replies": 79,
+      "replies": 230,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/",
-      "summary": "Gameday thread already spicy — CQDog reckons our left edge gets torched with Crichton biting in on decoys, while J_Cooper wants us to bully Walker out of his backyard footy."
+      "summary": "Gameday thread is already 230 deep — CQDog reckons our left edge is cooked because Crichton bites on decoys, J_Cooper wants us to physically bully Walker off the park."
     }
   ],
-  "kennelThreadsLastGame": [],
+  "kennelThreadsLastGame": [
+    {
+      "prefix": null,
+      "title": "Sutton",
+      "replies": 269,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/sutton.132019/",
+      "summary": "The Sutton pile-on — 269 replies calling him a cheat, demanding the club file a formal complaint, and accusing him of trying to gift the game to Melbourne."
+    }
+  ],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -776,6 +784,52 @@
           }
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-22-bulldogs-vs-storm-friday-31st-july-2026-8-00pm-aami-park-melbourne.132004/"
+      }
+    ],
+    "23": [
+      {
+        "id": "salmon-lock-r23",
+        "icon": "🧠",
+        "question": "Salmon's named at 13 after a two-try game in Melbourne. Does he actually run out there or does Ciro make a late change?",
+        "kennel": "The Salmon injury thread had 46 replies of nervous energy before the team list dropped.",
+        "threadSlug": "/forum/index.php?threads/jaemon-salmon-injury.132022",
+        "options": [
+          {
+            "label": "Salmon starts at lock, plays 40+ minutes",
+            "emoji": "🐟"
+          },
+          {
+            "label": "Salmon named but pulled pre-game — Mann or Curran shifts to 13",
+            "emoji": "🔁"
+          },
+          {
+            "label": "Salmon starts but hooked before halftime",
+            "emoji": "⏱️"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/jaemon-salmon-injury.132022/"
+      },
+      {
+        "id": "first-try-r23",
+        "icon": "🏉",
+        "question": "Who opens the scoring at Allianz? First try of the match, either team.",
+        "kennel": "Gameday thread has everyone convinced the left edge is a bloodbath waiting to happen.",
+        "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
+        "options": [
+          {
+            "label": "A Roosters outside back (winger/centre/fullback)",
+            "emoji": "🐔"
+          },
+          {
+            "label": "A Bulldogs player — any position",
+            "emoji": "🐶"
+          },
+          {
+            "label": "A forward from either side",
+            "emoji": "💪"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
       }
     ]
   },
