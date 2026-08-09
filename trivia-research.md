@@ -131,3 +131,4 @@ WANT that topic back in rotation. -->
 - Rd 21 (2026-07-21): "Which club did the Bulldogs beat in the 1995 grand final — the year they became the first team to win the title from 6th?" — answer: Manly
 - Rd 22 (2026-07-26): "In 2002 the Bulldogs were stripped of all their competition points for salary cap breaches. How many points did they lose?" — answer: 37
 - Rd 23 (2026-08-02): "Which coach led the Bulldogs to back-to-back premierships in 1984 and 1985?" — answer: Warren Ryan
+- Rd 24 (2026-08-09): "The Bulldogs adopted the 'Bulldogs' name and mascot in the late 1970s, replacing their previous nickname. What were they known as before?" — answer: The Berries
