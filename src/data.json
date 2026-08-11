@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T21:36:52.803Z",
+  "generatedAt": "2026-08-11T09:58:24.131Z",
   "match": {
     "round": 24,
     "opponent": "Rabbitohs",
@@ -20,17 +20,62 @@
   "kennelTipLean": {
     "side": "Split",
     "confidence": "Split — about 50/50",
-    "note": "Half the forum thinks we're cooked after the Roosters loss, the other half reckons this is a season-defining game we absolutely can win if we bring the right attitude."
+    "note": "Room's fried after the Roosters loss. Half the boys reckon Souths at Accor is winnable if we turn up, the other half have already written the season off."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 23",
-      "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
-      "quote": "Our left edge is gonna get absolutely bum fucked. Crichton biting in on the decoy will give their outside backs all day to shit on us. Don't feel good about this game at all.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
+      "thread": "That's us done unfortunately",
+      "threadSlug": "/forum/index.php?threads/that%E2%80%99s-us-done-unfortunately.132049",
+      "quote": "Hayward makes Lichaa look like an effective 9. Cook this side.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/that%E2%80%99s-us-done-unfortunately.132049/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "tracey-fullback-r24",
+      "icon": "🧢",
+      "question": "Tracey's named at 1 again despite the pile-on — does he actually run out at fullback?",
+      "kennel": "The 'Neglect of FB Position' thread and the Tracey drop thread are both going nuclear this week.",
+      "threadSlug": "/forum/index.php?threads/neglect-of-fb-position.132046",
+      "options": [
+        {
+          "label": "Yes, Tracey starts at fullback",
+          "emoji": "✅"
+        },
+        {
+          "label": "Late shuffle — Kiraz to 1, Tracey out or bench",
+          "emoji": "🔄"
+        },
+        {
+          "label": "Tracey out of the 17 entirely",
+          "emoji": "❌"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/neglect-of-fb-position.132046/"
+    },
+    {
+      "id": "first-try-r24",
+      "icon": "🏉",
+      "question": "First try of the night at Accor — where does it come from?",
+      "kennel": "CQDog's already flagged the left edge as a bum-fucking waiting to happen, others reckon Kiraz opens us up early.",
+      "threadSlug": "/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055",
+      "options": [
+        {
+          "label": "A Dogs outside back (winger/centre/fullback)",
+          "emoji": "🐕"
+        },
+        {
+          "label": "A Dogs forward or spine player",
+          "emoji": "🐺"
+        },
+        {
+          "label": "Any Rabbitohs player",
+          "emoji": "🐰"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055/"
+    }
+  ],
   "trivia": {
     "question": "The Bulldogs adopted the 'Bulldogs' name and mascot in the late 1970s, replacing their previous nickname. What were they known as before?",
     "options": [
@@ -56,27 +101,27 @@
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' first try against the Roosters last week?",
+      "question": "Who was the Dogs' top run-metre earner in the Round 23 loss to the Roosters?",
       "options": [
         {
           "label": "Jacob Kiraz",
-          "emoji": "🐶"
+          "emoji": "🏉"
         },
         {
-          "label": "Lachlan Galvin",
-          "emoji": "🐶"
+          "label": "Leo Thompson",
+          "emoji": "🏉"
         },
         {
-          "label": "Matt Burton",
-          "emoji": "🐶"
+          "label": "Viliame Kikau",
+          "emoji": "🏉"
         },
         {
-          "label": "Stephen Crichton",
-          "emoji": "🐶"
+          "label": "Connor Tracey",
+          "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Kiraz got us on the board in the 44th minute, then backed it up with another in the 55th — his double was the only reason we were still in it."
+      "explainer": "Kiraz led the Dogs with 148 run metres and bagged a double — one of the few genuine positives from the night."
     }
   ],
   "washup": {
@@ -195,26 +240,26 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/",
-    "headline": "Two points from being properly in the eight — instead we're staring down the barrel.",
-    "vibe": "18-20 at Allianz. Kiraz was outstanding, Galvin was Galvin, but we coughed up 17 errors and Billy Smith did whatever he wanted. It's the kind of loss where you can point at moments — Tracey out of position twice, the completion rate — and know we handed it to them. Souths on Friday is effectively knockout footy now.",
-    "kennelMood": "Bordering on cooked",
-    "kennelSummary": "The 'that's us done' thread went up before the final whistle basically stopped ringing. Tracey is the lightning rod — the fullback out-of-position thread is 171 replies deep. A few holdouts reckon we can still make it if we beat Souths and the results go our way, but the mood is dark.",
+    "headline": "Two points, two Billy Smith tries, and a fullback conversation we can't stop having.",
+    "vibe": "18–20 at Allianz and it's the same old story — got outmuscled early, clawed back through Kiraz and Galvin, then leaked a soft one to Foketi at 69'. Completion rate 66% and 31 missed tackles is finals-killing stuff. Souths on Friday is now genuinely must-win and the season's hanging by a thread.",
+    "kennelMood": "Cooked",
+    "kennelSummary": "The Kennel's split between doomers writing the season off and forensic types demanding Tracey, Salmon and Hayward get binned. Tracey getting dragged for both Billy Smith tries is the loudest thread, with the Curran's wife saga bubbling as the sideshow.",
     "kennelHotTakes": [
       {
-        "quote": "Ciraldo should be sacked tonight — this side has no organisation and we keep making the same mistakes every week.",
-        "author": null,
-        "threadSlug": "/forum/index.php?threads/ciraldo-should-be-sacked-tonight.131498",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/ciraldo-should-be-sacked-tonight.131498/"
+        "quote": "Our left edge got absolutely bum-fucked exactly like I called it — Crichton keeps biting on the decoy and their outside backs shit on us all day.",
+        "author": "CQDog",
+        "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
       }
     ]
   },
   "kennelThreadsThisWeek": [
     {
       "prefix": null,
-      "title": "Kiraz our 1",
-      "replies": 209,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/kiraz-our-1.131803/",
-      "summary": "Kiraz's two-try night has reopened the fullback debate. Camp is split — some want him at 1 permanently, others say he's too valuable on the wing and can't ball-play."
+      "title": "Tracey, Salmon and Hayward MUST be dropped",
+      "replies": 204,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey-salmon-and-hayward-must-be-dropped.131762/",
+      "summary": "Full-on pitchfork thread demanding Ciraldo bin Tracey, Salmon and Hayward before Souths. Raff going in on the slow service, Nate DAWG says Hayward makes Lichaa look elite."
     }
   ],
   "kennelThreadsLastGame": [],
@@ -881,6 +926,7 @@
       "opponent": "Roosters",
       "dogsHome": false,
       "debateVerdicts": {
+        "salmon-lock-r23": "Yes, Salmon starts at lock",
         "first-try-r23": "A Roosters outside back"
       }
     }
