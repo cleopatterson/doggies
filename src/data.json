@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-13T07:08:36.391Z",
+  "generatedAt": "2026-08-16T21:24:04.764Z",
   "match": {
-    "round": 24,
-    "opponent": "Rabbitohs",
-    "venue": "Accor Stadium",
-    "kickoffISO": "2026-08-14T10:00:00Z",
-    "kickoff": "Fri 14 Aug, 8:00pm",
-    "dogsHome": true,
+    "round": 25,
+    "opponent": "Dragons",
+    "venue": "Allianz Stadium",
+    "kickoffISO": "2026-08-22T09:35:00Z",
+    "kickoff": "Sat 22 Aug, 7:35pm",
+    "dogsHome": false,
     "dogsPos": "9th",
-    "oppPos": "7th",
+    "oppPos": "17th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/rabbitohs/badge.svg?bust=202608030238"
+    "oppLogo": "https://www.nrl.com/.theme/dragons/badge.svg?bust=202602250432"
   },
   "odds": {
     "dogs": null,
@@ -18,254 +18,196 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Dogs",
-    "confidence": "Lean — about 60/40",
-    "note": "Kennel's bruised after the Roosters loss but reckons Souths are beatable if the forwards actually turn up. Moedogg called it 'the biggest game of the year' before we've even kicked off."
+    "side": "Split",
+    "confidence": "Split — about 55/45",
+    "note": "Dragons are 17th and cooked but the Kennel doesn't trust this Dogs side to string two halves together after the Souths shellacking. Half the room wants to rest players and blood the kids."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 23",
-      "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
-      "quote": "We need to bully Walker. He thinks he can play backyard footy with whoever he wants — we need to let him know that doesn't happen with us. LETS FKN GOOO",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
+      "thread": "Season over rest and play young ones",
+      "threadSlug": "/forum/index.php?threads/season-over-rest-and-play-young-ones.132074",
+      "quote": "Season's cooked, chuck Woods at 7 next to Galvin, give Conti a run, and let this year be a write-off. Watching Tracey trot out at fullback again is actual torture.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/season-over-rest-and-play-young-ones.132074/"
     }
   ],
-  "debates": [
-    {
-      "id": "first-interchange-r24",
-      "icon": "🔄",
-      "question": "Who's the first Dog off the bench?",
-      "kennel": "LeeroyJenkins reckons Mann and Hayes as 'plodders' will get thrown on early and steamroll us in reverse.",
-      "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
-      "options": [
-        {
-          "label": "A middle forward (Hayes or Jones)",
-          "emoji": "💪"
-        },
-        {
-          "label": "A utility/spine (Mann or Turpin)",
-          "emoji": "🎩"
-        },
-        {
-          "label": "An outside back (Xerri or Curran)",
-          "emoji": "⚡"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
-    },
-    {
-      "id": "first-try-r24",
-      "icon": "🏉",
-      "question": "Who opens the scoring at Accor?",
-      "kennel": "CQDog was already spooked about Walker and Fifita carving up our left edge — Kennel's split on whether we strike first or get punished early.",
-      "threadSlug": null,
-      "options": [
-        {
-          "label": "A Dogs outside back",
-          "emoji": "🐕"
-        },
-        {
-          "label": "A Dogs forward or spine player",
-          "emoji": "🐾"
-        },
-        {
-          "label": "A Rabbitohs player (any)",
-          "emoji": "🐰"
-        }
-      ],
-      "url": null
-    }
-  ],
+  "debates": [],
   "trivia": {
-    "question": "The Bulldogs adopted the 'Bulldogs' name and mascot in the late 1970s, replacing their previous nickname. What were they known as before?",
+    "question": "Which two Bulldogs players share the club record for most tries in a single match, with 5?",
     "options": [
       {
-        "label": "The Berries",
-        "emoji": "🫐"
+        "label": "Hazem El Masri & Ben Barba",
+        "emoji": "🏆"
       },
       {
-        "label": "The Blues",
-        "emoji": "🔵"
+        "label": "Edgar Newham & Nigel Vagana",
+        "emoji": "🏆"
       },
       {
-        "label": "The Cantabs",
-        "emoji": "🏉"
+        "label": "Terry Lamb & Chris Anderson",
+        "emoji": "🏆"
       },
       {
-        "label": "The Chevrons",
-        "emoji": "📐"
+        "label": "Steve Gearin & Daryl Halligan",
+        "emoji": "🏆"
       }
     ],
-    "correctIndex": 0,
-    "explainer": "Canterbury were known as 'the Berries' from the mid-1940s until the Bulldogs mascot was officially adopted in 1978, with the club wanting an image of determination and grit versus the 'soft' Berries."
+    "correctIndex": 1,
+    "explainer": "Edgar Newham did it against Balmain in 1942, and Nigel Vagana matched him against Souths in 2002 — both bagged five in a match."
   },
   "recap": [
     {
-      "question": "Who topped run metres for the Bulldogs against the Roosters?",
+      "question": "Who scored the Bulldogs' only try against Souths in Round 24?",
       "options": [
         {
           "label": "Jacob Kiraz",
-          "emoji": "🐕"
+          "emoji": "🏉"
         },
         {
-          "label": "Leo Thompson",
-          "emoji": "💪"
+          "label": "Enari Tuala",
+          "emoji": "🏉"
         },
         {
-          "label": "Viliame Kikau",
-          "emoji": "🌋"
+          "label": "Jacob Preston",
+          "emoji": "🏉"
         },
         {
-          "label": "Connor Tracey",
-          "emoji": "⚡"
+          "label": "Bailey Hayward",
+          "emoji": "🏉"
         }
       ],
-      "correctIndex": 0,
-      "explainer": "Kiraz led the Dogs with 148 run metres — plus a double and a line break. One of the few who actually turned up."
+      "correctIndex": 1,
+      "explainer": "Tuala crossed in the 61st minute for the Dogs' lone try — also our only line break for the night."
     }
   ],
   "washup": {
-    "round": 23,
-    "opponent": "Roosters",
-    "dogsHome": false,
-    "dogsScore": 18,
-    "oppScore": 20,
+    "round": 24,
+    "opponent": "Rabbitohs",
+    "dogsHome": true,
+    "dogsScore": 6,
+    "oppScore": 22,
     "result": "LOSS",
-    "margin": -2,
+    "margin": -16,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/roosters/badge.svg?bust=202608030238",
-    "attendance": 30306,
+    "oppLogo": "https://www.nrl.com/.theme/rabbitohs/badge.svg?bust=202608140446",
+    "attendance": 26582,
     "weather": "Fine",
     "tries": [
       {
-        "name": "Billy Smith",
-        "team": "Roosters",
-        "minute": 13
+        "name": "David Fifita",
+        "team": "Rabbitohs",
+        "minute": 22
       },
       {
-        "name": "Siua Wong",
-        "team": "Roosters",
-        "minute": 25
+        "name": "Alex Johnston",
+        "team": "Rabbitohs",
+        "minute": 28
       },
       {
-        "name": "Jacob Kiraz",
+        "name": "Tallis Duncan",
+        "team": "Rabbitohs",
+        "minute": 40
+      },
+      {
+        "name": "Campbell Graham",
+        "team": "Rabbitohs",
+        "minute": 46
+      },
+      {
+        "name": "Enari Tuala",
         "team": "Dogs",
-        "minute": 44
+        "minute": 61
       },
       {
-        "name": "Lachlan Galvin",
-        "team": "Dogs",
-        "minute": 51
-      },
-      {
-        "name": "Jacob Kiraz",
-        "team": "Dogs",
-        "minute": 55
-      },
-      {
-        "name": "Billy Smith",
-        "team": "Roosters",
-        "minute": 66
-      },
-      {
-        "name": "Salesi Foketi",
-        "team": "Roosters",
-        "minute": 69
+        "name": "Matthew Dufty",
+        "team": "Rabbitohs",
+        "minute": 77
       }
     ],
     "topPerformers": [
       {
         "title": "Most Tackles",
         "dogs": {
-          "name": "Leo Thompson",
-          "value": 45
+          "name": "Bailey Hayward",
+          "value": 55
         },
         "opp": {
-          "name": "Reece Robson",
-          "value": 36
+          "name": "Cameron Murray",
+          "value": 56
         }
       },
       {
         "title": "Most Run Metres",
         "dogs": {
           "name": "Jacob Kiraz",
-          "value": 148
+          "value": 198
         },
         "opp": {
-          "name": "Billy Smith",
-          "value": 211
+          "name": "Matthew Dufty",
+          "value": 299
         }
       },
       {
         "title": "Most Line Breaks",
         "dogs": {
-          "name": "Jacob Kiraz",
+          "name": "Enari Tuala",
           "value": 1
         },
         "opp": {
-          "name": "Billy Smith",
+          "name": "Matthew Dufty",
           "value": 2
         }
       },
       {
         "title": "Most Fantasy Points",
         "dogs": {
-          "name": "Lachlan Galvin",
+          "name": "Jacob Preston",
           "value": 63
         },
         "opp": {
-          "name": "Billy Smith",
-          "value": 67
+          "name": "Cameron Murray",
+          "value": 72
         }
       }
     ],
     "keyStats": [
       {
         "title": "Completion Rate",
-        "dogs": 66,
-        "opp": 72,
+        "dogs": 77,
+        "opp": 87,
         "unit": ""
       },
       {
         "title": "Missed Tackles",
-        "dogs": 31,
-        "opp": 25,
+        "dogs": 41,
+        "opp": 27,
         "unit": ""
       },
       {
         "title": "Errors",
-        "dogs": 17,
-        "opp": 12,
+        "dogs": 11,
+        "opp": 7,
         "unit": ""
       }
     ],
-    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/",
-    "headline": "Two-point loss, one big edge that got shredded, and the season's dangling by a thread.",
-    "vibe": "Kiraz was excellent, Galvin scored and topped fantasy points, but Billy Smith went for 211 metres and two tries and we couldn't hold on. 66% completion versus 72, 17 errors to 12 — that's the game. We're 9th with a must-win against Souths and no room left to hide.",
-    "kennelMood": "Grim but not fully cooked",
-    "kennelSummary": "Fullback positioning is the main autopsy — 184 replies asking how Tracey got caught out twice by Billy Smith. Meanwhile the Sean O'Sullivan thread has hit 353 replies with a bloke making a whole new account to campaign for Seany in the halves, and everyone's ladder-watching to see what combo of results keeps us alive.",
+    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055/",
+    "headline": "22-6 at home to the Bunnies. Season on life support.",
+    "vibe": "Souths turned up without half their team and still put 22 on us. Four tries to one at halftime, 41 missed tackles, 77% completion — genuinely one of the worst nights of the year. Tuala's try in the 61st was the only moment of hope and it was immediately followed by Dufty going 90 for their fifth. Ninth on the ladder, five to play, and nobody in the Kennel actually believes we're making the eight anymore.",
+    "kennelMood": "Cooked",
+    "kennelSummary": "Tracey at fullback is now a full-blown mutiny — Brendan7, Freakzilla and half the forum reckon he's a utility miscast as a starting 1. Kiraz is copping it despite running for 198m, the Josh Jackson-as-coach thread is somehow at 205 replies, and there's a very loud push to rest the vets and blood Woods and Conti for 2027.",
     "kennelHotTakes": [
       {
-        "quote": "Stud fullback so we play him at halfback. This club is a joke.",
-        "author": "GA45",
-        "threadSlug": "/forum/index.php?threads/young-star-in-bizarre-standoff-over-wage-dispute.131772",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/young-star-in-bizarre-standoff-over-wage-dispute.131772/"
+        "quote": "Bloke is a utility that our coach somehow thinks is a starting fullback. Played in the halves all his juniors and is a shit NRL fullback. Why are we playing him there? Makes no sense.",
+        "author": "Brendan7",
+        "threadSlug": "/forum/index.php?threads/tracey.132073",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey.132073/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [
-    {
-      "prefix": null,
-      "title": "Sean O&#039; Sullivan",
-      "replies": 353,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/sean-o-sullivan.131978/",
-      "summary": "Guy literally made an account called 'SeanOSullivanUnderrated' to argue Seany should be in the halves with Galvin. Getting roasted but he's not wrong that someone needs to organise this team."
-    }
-  ],
+  "kennelThreadsThisWeek": [],
   "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
-    "hotThreadsScraped": 5
+    "hotThreadsScraped": 4
   },
   "debateSnapshots": {
     "10": [
@@ -806,48 +748,48 @@
     ],
     "24": [
       {
-        "id": "tracey-fullback-r24",
-        "icon": "🧢",
-        "question": "Tracey's named at 1 again despite the pile-on — does he actually run out at fullback?",
-        "kennel": "The 'Neglect of FB Position' thread and the Tracey drop thread are both going nuclear this week.",
-        "threadSlug": "/forum/index.php?threads/neglect-of-fb-position.132046",
+        "id": "first-interchange-r24",
+        "icon": "🔄",
+        "question": "Who's the first Dog off the bench?",
+        "kennel": "LeeroyJenkins reckons Mann and Hayes as 'plodders' will get thrown on early and steamroll us in reverse.",
+        "threadSlug": "/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033",
         "options": [
           {
-            "label": "Yes, Tracey starts at fullback",
-            "emoji": "✅"
+            "label": "A middle forward (Hayes or Jones)",
+            "emoji": "💪"
           },
           {
-            "label": "Late shuffle — Kiraz to 1, Tracey out or bench",
-            "emoji": "🔄"
+            "label": "A utility/spine (Mann or Turpin)",
+            "emoji": "🎩"
           },
           {
-            "label": "Tracey out of the 17 entirely",
-            "emoji": "❌"
+            "label": "An outside back (Xerri or Curran)",
+            "emoji": "⚡"
           }
         ],
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/neglect-of-fb-position.132046/"
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-23-bulldogs-vs-roosters-friday-7th-august-2026-8-00pm-allianz-stadium-sydney.132033/"
       },
       {
         "id": "first-try-r24",
         "icon": "🏉",
-        "question": "First try of the night at Accor — where does it come from?",
-        "kennel": "CQDog's already flagged the left edge as a bum-fucking waiting to happen, others reckon Kiraz opens us up early.",
-        "threadSlug": "/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055",
+        "question": "Who opens the scoring at Accor?",
+        "kennel": "CQDog was already spooked about Walker and Fifita carving up our left edge — Kennel's split on whether we strike first or get punished early.",
+        "threadSlug": null,
         "options": [
           {
-            "label": "A Dogs outside back (winger/centre/fullback)",
+            "label": "A Dogs outside back",
             "emoji": "🐕"
           },
           {
             "label": "A Dogs forward or spine player",
-            "emoji": "🐺"
+            "emoji": "🐾"
           },
           {
-            "label": "Any Rabbitohs player",
+            "label": "A Rabbitohs player (any)",
             "emoji": "🐰"
           }
         ],
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055/"
+        "url": null
       }
     ]
   },
@@ -973,6 +915,16 @@
       "dogsHome": false,
       "debateVerdicts": {
         "first-try-r23": "A Roosters outside back"
+      }
+    },
+    "24": {
+      "tipBand": "loss",
+      "dogsScore": 6,
+      "oppScore": 22,
+      "opponent": "Rabbitohs",
+      "dogsHome": true,
+      "debateVerdicts": {
+        "first-try-r24": "3) A Rabbitohs player (any)"
       }
     }
   }

@@ -132,3 +132,4 @@ WANT that topic back in rotation. -->
 - Rd 22 (2026-07-26): "In 2002 the Bulldogs were stripped of all their competition points for salary cap breaches. How many points did they lose?" — answer: 37
 - Rd 23 (2026-08-02): "Which coach led the Bulldogs to back-to-back premierships in 1984 and 1985?" — answer: Warren Ryan
 - Rd 24 (2026-08-09): "The Bulldogs adopted the 'Bulldogs' name and mascot in the late 1970s, replacing their previous nickname. What were they known as before?" — answer: The Berries
+- Rd 25 (2026-08-16): "Which two Bulldogs players share the club record for most tries in a single match, with 5?" — answer: Edgar Newham & Nigel Vagana
