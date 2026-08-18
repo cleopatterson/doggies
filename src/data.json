@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T21:24:04.764Z",
+  "generatedAt": "2026-08-18T09:30:15.918Z",
   "match": {
     "round": 25,
     "opponent": "Dragons",
@@ -18,19 +18,64 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Split",
-    "confidence": "Split — about 55/45",
-    "note": "Dragons are 17th and cooked but the Kennel doesn't trust this Dogs side to string two halves together after the Souths shellacking. Half the room wants to rest players and blood the kids."
+    "side": "Dogs",
+    "confidence": "Lean — about 65/35",
+    "note": "Everyone reckons we SHOULD win this but nobody trusts the Dogs to actually do it. Dragons are 17th and we still lost to Souths, so the vibe is 'please just don't embarrass us'."
   },
   "kennelTipQuotes": [
     {
-      "thread": "Season over rest and play young ones",
-      "threadSlug": "/forum/index.php?threads/season-over-rest-and-play-young-ones.132074",
-      "quote": "Season's cooked, chuck Woods at 7 next to Galvin, give Conti a run, and let this year be a write-off. Watching Tracey trot out at fullback again is actual torture.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/season-over-rest-and-play-young-ones.132074/"
+      "thread": "Bulldogs in ruins",
+      "threadSlug": "/forum/index.php?threads/bulldogs-in-ruins-ciraldo-and-gould-to-blame-for-no-finals-in-2026.132083",
+      "quote": "If we can't put 40 on the Dragons at Allianz with our season on life support then just hand the spoon over now and let's go fishing",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-in-ruins-ciraldo-and-gould-to-blame-for-no-finals-in-2026.132083/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "tracey-full-80-r25",
+      "icon": "⏱️",
+      "question": "Does Tracey play the full 80 at fullback?",
+      "kennel": "The 'move Galvin to fullback' thread is 118 replies of people wanting Tracey off the field entirely.",
+      "threadSlug": "/forum/index.php?threads/galvin-to-fullback.132081",
+      "options": [
+        {
+          "label": "Yes — Tracey plays 80",
+          "emoji": "🔒"
+        },
+        {
+          "label": "No — he gets hooked/rested at some point",
+          "emoji": "🪝"
+        },
+        {
+          "label": "No — forced off injured",
+          "emoji": "🚑"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/galvin-to-fullback.132081/"
+    },
+    {
+      "id": "first-try-r25",
+      "icon": "🏉",
+      "question": "Who opens the scoring at Allianz?",
+      "kennel": "GAMEDAY thread is split between 'we'll bury them early' and 'we'll be down 12-0 by the 20th minute'.",
+      "threadSlug": "/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086",
+      "options": [
+        {
+          "label": "A Dogs outside back",
+          "emoji": "🏃"
+        },
+        {
+          "label": "A Dogs forward or spine player",
+          "emoji": "💪"
+        },
+        {
+          "label": "A Dragons player (any)",
+          "emoji": "🔴"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086/"
+    }
+  ],
   "trivia": {
     "question": "Which two Bulldogs players share the club record for most tries in a single match, with 5?",
     "options": [
@@ -56,27 +101,27 @@
   },
   "recap": [
     {
-      "question": "Who scored the Bulldogs' only try against Souths in Round 24?",
+      "question": "Who scored the Dogs' only try in the Round 24 loss to Souths?",
       "options": [
-        {
-          "label": "Jacob Kiraz",
-          "emoji": "🏉"
-        },
         {
           "label": "Enari Tuala",
           "emoji": "🏉"
         },
         {
-          "label": "Jacob Preston",
+          "label": "Jacob Kiraz",
           "emoji": "🏉"
         },
         {
-          "label": "Bailey Hayward",
+          "label": "Bronson Xerri",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Connor Tracey",
           "emoji": "🏉"
         }
       ],
-      "correctIndex": 1,
-      "explainer": "Tuala crossed in the 61st minute for the Dogs' lone try — also our only line break for the night."
+      "correctIndex": 0,
+      "explainer": "Tuala got the Dogs on the board in the 61st minute — by then it was already 22-0 and well and truly cooked."
     }
   ],
   "washup": {
@@ -190,16 +235,16 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055/",
-    "headline": "22-6 at home to the Bunnies. Season on life support.",
-    "vibe": "Souths turned up without half their team and still put 22 on us. Four tries to one at halftime, 41 missed tackles, 77% completion — genuinely one of the worst nights of the year. Tuala's try in the 61st was the only moment of hope and it was immediately followed by Dufty going 90 for their fifth. Ninth on the ladder, five to play, and nobody in the Kennel actually believes we're making the eight anymore.",
+    "headline": "Season's over — we're just playing out the string now.",
+    "vibe": "6-22 at home to Souths and it wasn't even that close. One try, 41 missed tackles, and Kiraz was our best on 198 metres which tells you how the outside backs went. Finals maths is officially cooked and everyone knows it — now it's just about who's playing for a jersey next year.",
     "kennelMood": "Cooked",
-    "kennelSummary": "Tracey at fullback is now a full-blown mutiny — Brendan7, Freakzilla and half the forum reckon he's a utility miscast as a starting 1. Kiraz is copping it despite running for 198m, the Josh Jackson-as-coach thread is somehow at 205 replies, and there's a very loud push to rest the vets and blood Woods and Conti for 2027.",
+    "kennelSummary": "The Kennel has fully entered doomer mode. Tracey is public enemy number one at fullback, Ciraldo's getting the 'slow learner' treatment from the media AND the fans, and there are unironic Josh Jackson coaching threads now. The Woods/Conti 'blood the kids' brigade is getting louder by the hour.",
     "kennelHotTakes": [
       {
-        "quote": "Bloke is a utility that our coach somehow thinks is a starting fullback. Played in the halves all his juniors and is a shit NRL fullback. Why are we playing him there? Makes no sense.",
-        "author": "Brendan7",
-        "threadSlug": "/forum/index.php?threads/tracey.132073",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/tracey.132073/"
+        "quote": "Done with Tracey — zero threat on a sweep play, bloke's a utility our coach somehow starts at fullback. Stuck with him for two more years unfortunately.",
+        "author": "Doggies 04 / Brendan7",
+        "threadSlug": "/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055/"
       }
     ]
   },
@@ -924,7 +969,7 @@
       "opponent": "Rabbitohs",
       "dogsHome": true,
       "debateVerdicts": {
-        "first-try-r24": "3) A Rabbitohs player (any)"
+        "first-try-r24": "A Rabbitohs player (any)"
       }
     }
   }
