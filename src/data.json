@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T09:30:15.918Z",
+  "generatedAt": "2026-08-20T06:23:55.666Z",
   "match": {
     "round": 25,
     "opponent": "Dragons",
@@ -20,57 +20,57 @@
   "kennelTipLean": {
     "side": "Dogs",
     "confidence": "Lean — about 65/35",
-    "note": "Everyone reckons we SHOULD win this but nobody trusts the Dogs to actually do it. Dragons are 17th and we still lost to Souths, so the vibe is 'please just don't embarrass us'."
+    "note": "Dragons are 17th and cooked but the Kennel has zero trust in this team right now. Expect a nervy win, not a statement."
   },
   "kennelTipQuotes": [
     {
-      "thread": "Bulldogs in ruins",
-      "threadSlug": "/forum/index.php?threads/bulldogs-in-ruins-ciraldo-and-gould-to-blame-for-no-finals-in-2026.132083",
-      "quote": "If we can't put 40 on the Dragons at Allianz with our season on life support then just hand the spoon over now and let's go fishing",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-in-ruins-ciraldo-and-gould-to-blame-for-no-finals-in-2026.132083/"
+      "thread": "Ciraldo slammed for call that 'flopped'",
+      "threadSlug": "/forum/index.php?threads/%E2%80%98slow-learner%E2%80%99-drastic-change-urged-for-bulldogs-as-ciraldo-slammed-for-call-that-%E2%80%98flopped%E2%80%99.132082",
+      "quote": "Tracey is a utility that our coach somehow thinks is a starting fullback. Bloke is done.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/%E2%80%98slow-learner%E2%80%99-drastic-change-urged-for-bulldogs-as-ciraldo-slammed-for-call-that-%E2%80%98flopped%E2%80%99.132082/"
     }
   ],
   "debates": [
     {
-      "id": "tracey-full-80-r25",
-      "icon": "⏱️",
-      "question": "Does Tracey play the full 80 at fullback?",
-      "kennel": "The 'move Galvin to fullback' thread is 118 replies of people wanting Tracey off the field entirely.",
-      "threadSlug": "/forum/index.php?threads/galvin-to-fullback.132081",
+      "id": "first-interchange-r25",
+      "icon": "🔄",
+      "question": "Who's the first Dog off the bench?",
+      "kennel": "Nate DAWG reckons Ciro won't change much — bench rotation is where the real intrigue is.",
+      "threadSlug": "/forum/index.php?threads/team-vs-dragons.132085",
       "options": [
         {
-          "label": "Yes — Tracey plays 80",
-          "emoji": "🔒"
-        },
-        {
-          "label": "No — he gets hooked/rested at some point",
-          "emoji": "🪝"
-        },
-        {
-          "label": "No — forced off injured",
-          "emoji": "🚑"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/galvin-to-fullback.132081/"
-    },
-    {
-      "id": "first-try-r25",
-      "icon": "🏉",
-      "question": "Who opens the scoring at Allianz?",
-      "kennel": "GAMEDAY thread is split between 'we'll bury them early' and 'we'll be down 12-0 by the 20th minute'.",
-      "threadSlug": "/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086",
-      "options": [
-        {
-          "label": "A Dogs outside back",
-          "emoji": "🏃"
-        },
-        {
-          "label": "A Dogs forward or spine player",
+          "label": "A middle forward (Hayes or Jones)",
           "emoji": "💪"
         },
         {
-          "label": "A Dragons player (any)",
-          "emoji": "🔴"
+          "label": "Kurt Mann (utility/spine)",
+          "emoji": "🎯"
+        },
+        {
+          "label": "Josh Curran (edge/back-row cover)",
+          "emoji": "⚡"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/team-vs-dragons.132085/"
+    },
+    {
+      "id": "dogs-first-tryscorer-r25",
+      "icon": "🏉",
+      "question": "Who scores the Dogs' first try?",
+      "kennel": "Doggies 04 reckons Kiraz needs to play the roaming role — the outside backs have to fire against a shaky Dragons edge.",
+      "threadSlug": "/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086",
+      "options": [
+        {
+          "label": "An outside back (Kiraz, Tuala, Burton, Xerri)",
+          "emoji": "🏃"
+        },
+        {
+          "label": "A forward or middle (Kikau, Preston, Salmon, Hayward)",
+          "emoji": "💪"
+        },
+        {
+          "label": "Spine playmaker (Galvin, Crichton or Tracey)",
+          "emoji": "🎯"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086/"
@@ -101,27 +101,27 @@
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' only try in the Round 24 loss to Souths?",
+      "question": "Which Dogs forward topped the fantasy points against Souths?",
       "options": [
         {
-          "label": "Enari Tuala",
+          "label": "Jacob Preston",
           "emoji": "🏉"
         },
         {
-          "label": "Jacob Kiraz",
+          "label": "Bailey Hayward",
           "emoji": "🏉"
         },
         {
-          "label": "Bronson Xerri",
+          "label": "Viliame Kikau",
           "emoji": "🏉"
         },
         {
-          "label": "Connor Tracey",
+          "label": "Jaeman Salmon",
           "emoji": "🏉"
         }
       ],
       "correctIndex": 0,
-      "explainer": "Tuala got the Dogs on the board in the 61st minute — by then it was already 22-0 and well and truly cooked."
+      "explainer": "Preston led the Dogs with 63 fantasy points — one of the few bright spots in a 22-6 hiding."
     }
   ],
   "washup": {
@@ -235,21 +235,37 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055/",
-    "headline": "Season's over — we're just playing out the string now.",
-    "vibe": "6-22 at home to Souths and it wasn't even that close. One try, 41 missed tackles, and Kiraz was our best on 198 metres which tells you how the outside backs went. Finals maths is officially cooked and everyone knows it — now it's just about who's playing for a jersey next year.",
+    "headline": "Souths made us look like a reserve grade side.",
+    "vibe": "6-22 at Accor, Fifita and Johnston running through us early and it was over by half-time. Completion 77%, 41 missed tackles, and Dufty racked up 299 metres on his own. Finals are basically cactus now — this is a play-for-pride run home and the Dragons game just became a must-not-lose to avoid full meltdown week.",
     "kennelMood": "Cooked",
-    "kennelSummary": "The Kennel has fully entered doomer mode. Tracey is public enemy number one at fullback, Ciraldo's getting the 'slow learner' treatment from the media AND the fans, and there are unironic Josh Jackson coaching threads now. The Woods/Conti 'blood the kids' brigade is getting louder by the hour.",
+    "kennelSummary": "The Kennel has fully turned on Tracey at fullback — 'utility masquerading as a starting 1' is the consensus. Broader mood is doom about the roster build: no hooker, three centres on huge coin, Galvin at 7 with no support. Sua confirmed gone to the Bears didn't help the vibe either.",
     "kennelHotTakes": [
       {
-        "quote": "Done with Tracey — zero threat on a sweep play, bloke's a utility our coach somehow starts at fullback. Stuck with him for two more years unfortunately.",
-        "author": "Doggies 04 / Brendan7",
-        "threadSlug": "/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-24-bulldogs-vs-rabbitohs-friday-14th-august-2026-8-00pm-accor-stadium-sydney.132055/"
+        "quote": "The whole roster is a deadset joke — watched the Roosters and their 1-13 beats ours in every single position.",
+        "author": "Marlinfeeder",
+        "threadSlug": "/forum/index.php?threads/recruitment.131679",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [],
-  "kennelThreadsLastGame": [],
+  "kennelThreadsThisWeek": [
+    {
+      "prefix": null,
+      "title": "Conti time ?",
+      "replies": 476,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/conti-time.131873/",
+      "summary": "Should Conti debut this week with the season basically cooked? Divided — some want him blooded now, others reckon throwing a kid in against a desperate Dragons is baptism by fire."
+    }
+  ],
+  "kennelThreadsLastGame": [
+    {
+      "prefix": null,
+      "title": "Recruitment",
+      "replies": 656,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/recruitment.131679/",
+      "summary": "Recruitment rage kicked into overdrive by the Souths loss. Sua confirmed off to the Bears, roster called 'lopsided' and 'a deadset joke' — the Rooster comparison stung."
+    }
+  ],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 4
@@ -835,6 +851,52 @@
           }
         ],
         "url": null
+      }
+    ],
+    "25": [
+      {
+        "id": "tracey-full-80-r25",
+        "icon": "⏱️",
+        "question": "Does Tracey play the full 80 at fullback?",
+        "kennel": "The 'move Galvin to fullback' thread is 118 replies of people wanting Tracey off the field entirely.",
+        "threadSlug": "/forum/index.php?threads/galvin-to-fullback.132081",
+        "options": [
+          {
+            "label": "Yes — Tracey plays 80",
+            "emoji": "🔒"
+          },
+          {
+            "label": "No — he gets hooked/rested at some point",
+            "emoji": "🪝"
+          },
+          {
+            "label": "No — forced off injured",
+            "emoji": "🚑"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/galvin-to-fullback.132081/"
+      },
+      {
+        "id": "first-try-r25",
+        "icon": "🏉",
+        "question": "Who opens the scoring at Allianz?",
+        "kennel": "GAMEDAY thread is split between 'we'll bury them early' and 'we'll be down 12-0 by the 20th minute'.",
+        "threadSlug": "/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086",
+        "options": [
+          {
+            "label": "A Dogs outside back",
+            "emoji": "🏃"
+          },
+          {
+            "label": "A Dogs forward or spine player",
+            "emoji": "💪"
+          },
+          {
+            "label": "A Dragons player (any)",
+            "emoji": "🔴"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086/"
       }
     ]
   },
