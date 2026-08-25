@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T21:25:48.739Z",
+  "generatedAt": "2026-08-25T09:32:54.775Z",
   "match": {
     "round": 26,
     "opponent": "Panthers",
@@ -19,18 +19,63 @@
   },
   "kennelTipLean": {
     "side": "Opponent",
-    "confidence": "Lean — about 25/75",
-    "note": "Coming off a 44-14 belting of the Dragons but nobody's kidding themselves — it's Penrith at CommBank and half the Kennel is still filthy at Ciraldo."
+    "confidence": "Lean — about 30/70",
+    "note": "Most of the Kennel has already written this one off with the COVID outbreak and Panthers ramping up for finals, but there's a stubborn pocket smelling an upset special."
   },
   "kennelTipQuotes": [
     {
-      "thread": "Reflecting on the Ciro Era",
-      "threadSlug": "/forum/index.php?threads/reflecting-on-the-ciro-era-so-far.131876",
-      "quote": "Even Braith and Jamma have gone quiet on Ciraldo. When your staunchest defenders stop defending you, it's over.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/reflecting-on-the-ciro-era-so-far.131876/"
+      "thread": "GAMEDAY Rd 26 vs Panthers",
+      "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+      "quote": "Sadly we get exposed here. Riff not putting us to the sword this time of year with our spine and lock would be pretty hilarious.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "first-interchange-r26",
+      "icon": "🔁",
+      "question": "Who's the first Dog off the bench?",
+      "kennel": "Bench debate raging in the GAMEDAY thread — no Conti or Spinks named, Turpin gets in again.",
+      "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+      "options": [
+        {
+          "label": "Jake Turpin (hooker rotation)",
+          "emoji": "🎯"
+        },
+        {
+          "label": "A middle forward (Hayes, Jones or Curran)",
+          "emoji": "💪"
+        },
+        {
+          "label": "Sean O'Sullivan (spine cover)",
+          "emoji": "🧠"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
+    },
+    {
+      "id": "dogs-first-tryscorer-r26",
+      "icon": "🏉",
+      "question": "Who scores the Dogs' first try against the Panthers?",
+      "kennel": "Big questions about where the points come from against a Riff pack expected to dominate the middle.",
+      "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+      "options": [
+        {
+          "label": "An outside back (Kiraz, Tuala, Burton, Xerri)",
+          "emoji": "⚡"
+        },
+        {
+          "label": "A forward (Kikau, Preston, Salmon, King, Thompson)",
+          "emoji": "💪"
+        },
+        {
+          "label": "A spine player (Galvin, Crichton, Tracey, Hayward)",
+          "emoji": "🧠"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
+    }
+  ],
   "trivia": {
     "question": "The Bulldogs' 1980 grand final win featured three brothers from TWO families in the same side. The Mortimers were one — who were the other three brothers?",
     "options": [
@@ -56,12 +101,8 @@
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' first try against the Dragons?",
+      "question": "Who scored the Dogs' first try in the 44-14 win over the Dragons?",
       "options": [
-        {
-          "label": "Bronson Xerri",
-          "emoji": "🏉"
-        },
         {
           "label": "Matt Burton",
           "emoji": "🏉"
@@ -71,12 +112,16 @@
           "emoji": "🏉"
         },
         {
+          "label": "Bronson Xerri",
+          "emoji": "🏉"
+        },
+        {
           "label": "Connor Tracey",
           "emoji": "🏉"
         }
       ],
-      "correctIndex": 0,
-      "explainer": "Xerri opened the account in the 11th minute before Burton grabbed his double and Preston piled on."
+      "correctIndex": 2,
+      "explainer": "Xerri opened the scoring in the 11th minute before Burton bagged a double and the floodgates opened."
     }
   ],
   "washup": {
@@ -210,24 +255,40 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086/",
-    "headline": "44-14 and the fanbase is still filthy — welcome to being a Bulldogs fan.",
-    "vibe": "Belted the Dragons by 30, Tracey ran for 201m, Burton bagged a double, Max King put in 41 tackles AND scored — and half The Kennel spent the night calling for Ciraldo's head anyway. Finals maths says 9th with five to go is still alive. Now it's Penrith at CommBank, which is where hope traditionally goes to die.",
-    "kennelMood": "Furious in victory",
-    "kennelSummary": "Only this fanbase can win by 30 and produce a 156-post sack-the-coach thread. Xerri's selection ahead of Turpin/Conti drove people spare, the 'no changes' policy has AlzzBulldog convinced it's sabotage, and Belmore Dog declared himself 'officially done for 2026' after the team was NAMED. Bright spots: Tracey and King getting universal props in the 3-2-1 thread.",
+    "headline": "Put 44 on the Dragons and the fanbase is somehow more filthy than ever.",
+    "vibe": "A 30-point win should be a good weekend but the Kennel's fuming. No changes despite the outside noise, Underhill reportedly wants out, and Ciraldo's stubborn streak is the story instead of the four-try demolition. 2026 is technically still alive but no one's really buying it.",
+    "kennelMood": "Furious despite winning",
+    "kennelSummary": "The named side triggered a full meltdown — no Conti, no Spinks, Turpin back on the bench. Ciraldo being called a clown, a jahesh and stubborn arrogant prick in the same thread. Underhill wanting out was the cherry on top.",
     "kennelHotTakes": [
       {
-        "quote": "Not sure if this is stupidity or sabotage. No Conti or Spinks on the bench but Turpin gets a run — this bloke has genuinely lost the plot.",
-        "author": "The New Legacy / Doggies 04",
-        "threadSlug": "/forum/index.php?threads/%E2%80%98slow-learner%E2%80%99-drastic-change-urged-for-bulldogs-as-ciraldo-slammed-for-call-that-%E2%80%98flopped%E2%80%99.132082",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/%E2%80%98slow-learner%E2%80%99-drastic-change-urged-for-bulldogs-as-ciraldo-slammed-for-call-that-%E2%80%98flopped%E2%80%99.132082/"
+        "quote": "This bloke has lost the plot. Stubborn arrogant prick. I'm officially done for 2026 — was hoping to blood some reserve graders and he goes and names THAT squad.",
+        "author": "Belmore Dog",
+        "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [],
-  "kennelThreadsLastGame": [],
+  "kennelThreadsThisWeek": [
+    {
+      "prefix": "GAMEDAY",
+      "title": "Round 26 vs Panthers, Friday 8PM @ Commbank",
+      "replies": 146,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/",
+      "summary": "Split house — SARGE and Ironhide are calling upset while BulldogsNation reckons we get carved. Everyone's suss on the COVID story being a Ciraldo mind-game."
+    }
+  ],
+  "kennelThreadsLastGame": [
+    {
+      "prefix": null,
+      "title": "Underhill wants out",
+      "replies": 189,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/underhill-wants-out.132100/",
+      "summary": "Badel report Underhill wants out — and the forum's blaming Ciraldo for playing him out of position or not at all. prestonmania sarcastically re-litigating the Leo Thompson deal."
+    }
+  ],
   "kennelMeta": {
     "threadsConsidered": 20,
-    "hotThreadsScraped": 4
+    "hotThreadsScraped": 5
   },
   "debateSnapshots": {
     "10": [
@@ -1000,7 +1061,7 @@
       "opponent": "Dragons",
       "dogsHome": false,
       "debateVerdicts": {
-        "dogs-first-tryscorer-r25": "An outside back (Kiraz, Tuala, Burton, Xerri)"
+        "dogs-first-tryscorer-r25": "1) An outside back (Kiraz, Tuala, Burton, Xerri)"
       }
     }
   }
