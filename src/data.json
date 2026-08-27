@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T09:32:54.775Z",
+  "generatedAt": "2026-08-27T16:59:34.597Z",
   "match": {
     "round": 26,
     "opponent": "Panthers",
@@ -19,36 +19,36 @@
   },
   "kennelTipLean": {
     "side": "Opponent",
-    "confidence": "Lean — about 30/70",
-    "note": "Most of the Kennel has already written this one off with the COVID outbreak and Panthers ramping up for finals, but there's a stubborn pocket smelling an upset special."
+    "confidence": "Lean — about 35/65",
+    "note": "Most reckon we get exposed by a Panthers side hitting form, but there's a stubborn pocket calling upset because we've genuinely troubled them all year."
   },
   "kennelTipQuotes": [
     {
       "thread": "GAMEDAY Rd 26 vs Panthers",
       "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
-      "quote": "Sadly we get exposed here. Riff not putting us to the sword this time of year with our spine and lock would be pretty hilarious.",
+      "quote": "I smell an upset. HUGE heated game full of controversy, send-offs and a heap of excitement. Frustratingly inconsistent but one thing we're not is a team unable to go with the Riff.",
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
     }
   ],
   "debates": [
     {
-      "id": "first-interchange-r26",
-      "icon": "🔁",
-      "question": "Who's the first Dog off the bench?",
-      "kennel": "Bench debate raging in the GAMEDAY thread — no Conti or Spinks named, Turpin gets in again.",
+      "id": "sos-bench-role-r26",
+      "icon": "🎭",
+      "question": "Sean O'Sullivan's on the bench at 19 — is he a genuine matchday 17 or a smokescreen?",
+      "kennel": "Wazza's already reshuffling the whole spine and half the gameday thread reckons Ciro's playing possum with COVID.",
       "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
       "options": [
         {
-          "label": "Jake Turpin (hooker rotation)",
+          "label": "In the 17, gets minutes at half or hooker",
           "emoji": "🎯"
         },
         {
-          "label": "A middle forward (Hayes, Jones or Curran)",
-          "emoji": "💪"
+          "label": "In the 17 but doesn't take the field",
+          "emoji": "🪑"
         },
         {
-          "label": "Sean O'Sullivan (spine cover)",
-          "emoji": "🧠"
+          "label": "Named-and-shamed, drops out before kickoff",
+          "emoji": "👻"
         }
       ],
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
@@ -56,12 +56,12 @@
     {
       "id": "dogs-first-tryscorer-r26",
       "icon": "🏉",
-      "question": "Who scores the Dogs' first try against the Panthers?",
-      "kennel": "Big questions about where the points come from against a Riff pack expected to dominate the middle.",
-      "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+      "question": "Who opens the scoring for the Dogs against Cleary's mob?",
+      "kennel": "Score-prediction thread has everyone picking their mana of the match — Galvin, Burton and Kiraz getting the most love.",
+      "threadSlug": "/forum/index.php?threads/penrith-vs-bulldogs-score-prediction-mana-of-the-match-crowd.132122",
       "options": [
         {
-          "label": "An outside back (Kiraz, Tuala, Burton, Xerri)",
+          "label": "An outside back (Kiraz, Tuala, Burton, Xerri, Tracey)",
           "emoji": "⚡"
         },
         {
@@ -69,11 +69,11 @@
           "emoji": "💪"
         },
         {
-          "label": "A spine player (Galvin, Crichton, Tracey, Hayward)",
+          "label": "Spine playmaker (Galvin, Crichton or Hayward)",
           "emoji": "🧠"
         }
       ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/penrith-vs-bulldogs-score-prediction-mana-of-the-match-crowd.132122/"
     }
   ],
   "trivia": {
@@ -101,8 +101,16 @@
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' first try in the 44-14 win over the Dragons?",
+      "question": "Who racked up the most run metres for the Dogs in the 44-14 win over the Dragons?",
       "options": [
+        {
+          "label": "Max King",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Connor Tracey",
+          "emoji": "🏉"
+        },
         {
           "label": "Matt Burton",
           "emoji": "🏉"
@@ -110,18 +118,10 @@
         {
           "label": "Jacob Preston",
           "emoji": "🏉"
-        },
-        {
-          "label": "Bronson Xerri",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Connor Tracey",
-          "emoji": "🏉"
         }
       ],
-      "correctIndex": 2,
-      "explainer": "Xerri opened the scoring in the 11th minute before Burton bagged a double and the floodgates opened."
+      "correctIndex": 1,
+      "explainer": "Tracey ran for 201m and grabbed a linebreak — comfortably the busiest Dog with ball in hand."
     }
   ],
   "washup": {
@@ -255,13 +255,13 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086/",
-    "headline": "Put 44 on the Dragons and the fanbase is somehow more filthy than ever.",
-    "vibe": "A 30-point win should be a good weekend but the Kennel's fuming. No changes despite the outside noise, Underhill reportedly wants out, and Ciraldo's stubborn streak is the story instead of the four-try demolition. 2026 is technically still alive but no one's really buying it.",
-    "kennelMood": "Furious despite winning",
-    "kennelSummary": "The named side triggered a full meltdown — no Conti, no Spinks, Turpin back on the bench. Ciraldo being called a clown, a jahesh and stubborn arrogant prick in the same thread. Underhill wanting out was the cherry on top.",
+    "headline": "44-14 over the Dragons and somehow the fans are still filthy.",
+    "vibe": "Put 44 on the Dragons, Xerri and Burton doubled up, Galvin scored, Tracey ran for 201 and we still ended up talking about the team list. Finals are technically still alive but we're 9th and every result from here has to go our way. Now we get Penrith with half the squad off training with COVID — brilliant.",
+    "kennelMood": "Filthy despite the win",
+    "kennelSummary": "The 44-point win got completely buried under fury at the R26 team list — no Conti or Spinks on the bench, Turpin in, Xerri named despite the injury rumours. Ciraldo getting called stubborn, arrogant, a clown and worse. A few 'I'm done for 2026' posts already dropped before kickoff Friday.",
     "kennelHotTakes": [
       {
-        "quote": "This bloke has lost the plot. Stubborn arrogant prick. I'm officially done for 2026 — was hoping to blood some reserve graders and he goes and names THAT squad.",
+        "quote": "This bloke has lost the plot. Stubborn arrogant prick. Was hoping to blood some reserve graders and he goes and names THAT squad. Xerri WTF.",
         "author": "Belmore Dog",
         "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
@@ -272,20 +272,12 @@
     {
       "prefix": "GAMEDAY",
       "title": "Round 26 vs Panthers, Friday 8PM @ Commbank",
-      "replies": 146,
+      "replies": 231,
       "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/",
-      "summary": "Split house — SARGE and Ironhide are calling upset while BulldogsNation reckons we get carved. Everyone's suss on the COVID story being a Ciraldo mind-game."
+      "summary": "Gameday thread is split between doomers convinced Penrith puts us to the sword and a stubborn upset crew. Plenty of chat about the COVID outbreak being a Ciraldo mind-game smokescreen."
     }
   ],
-  "kennelThreadsLastGame": [
-    {
-      "prefix": null,
-      "title": "Underhill wants out",
-      "replies": 189,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/underhill-wants-out.132100/",
-      "summary": "Badel report Underhill wants out — and the forum's blaming Ciraldo for playing him out of position or not at all. prestonmania sarcastically re-litigating the Leo Thompson deal."
-    }
-  ],
+  "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -917,6 +909,52 @@
           }
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086/"
+      }
+    ],
+    "26": [
+      {
+        "id": "first-interchange-r26",
+        "icon": "🔁",
+        "question": "Who's the first Dog off the bench?",
+        "kennel": "Bench debate raging in the GAMEDAY thread — no Conti or Spinks named, Turpin gets in again.",
+        "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+        "options": [
+          {
+            "label": "Jake Turpin (hooker rotation)",
+            "emoji": "🎯"
+          },
+          {
+            "label": "A middle forward (Hayes, Jones or Curran)",
+            "emoji": "💪"
+          },
+          {
+            "label": "Sean O'Sullivan (spine cover)",
+            "emoji": "🧠"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
+      },
+      {
+        "id": "dogs-first-tryscorer-r26",
+        "icon": "🏉",
+        "question": "Who scores the Dogs' first try against the Panthers?",
+        "kennel": "Big questions about where the points come from against a Riff pack expected to dominate the middle.",
+        "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+        "options": [
+          {
+            "label": "An outside back (Kiraz, Tuala, Burton, Xerri)",
+            "emoji": "⚡"
+          },
+          {
+            "label": "A forward (Kikau, Preston, Salmon, King, Thompson)",
+            "emoji": "💪"
+          },
+          {
+            "label": "A spine player (Galvin, Crichton, Tracey, Hayward)",
+            "emoji": "🧠"
+          }
+        ],
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
       }
     ]
   },
