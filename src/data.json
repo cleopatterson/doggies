@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-27T16:59:34.597Z",
+  "generatedAt": "2026-08-30T23:19:04.080Z",
   "match": {
-    "round": 26,
-    "opponent": "Panthers",
-    "venue": "CommBank Stadium",
-    "kickoffISO": "2026-08-28T10:00:00Z",
-    "kickoff": "Fri 28 Aug, 8:00pm",
-    "dogsHome": false,
-    "dogsPos": "9th",
-    "oppPos": "2nd",
+    "round": 27,
+    "opponent": "Broncos",
+    "venue": "Accor Stadium",
+    "kickoffISO": "2026-09-03T09:50:00Z",
+    "kickoff": "Thu 3 Sep, 7:50pm",
+    "dogsHome": true,
+    "dogsPos": "10th",
+    "oppPos": "15th",
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/panthers/badge.svg?bust=202608140446"
+    "oppLogo": "https://www.nrl.com/.theme/broncos/badge.svg?bust=202607140542"
   },
   "odds": {
     "dogs": null,
@@ -18,99 +18,46 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Opponent",
-    "confidence": "Lean — about 35/65",
-    "note": "Most reckon we get exposed by a Panthers side hitting form, but there's a stubborn pocket calling upset because we've genuinely troubled them all year."
+    "side": "Split",
+    "confidence": "Split — about 55/45 Dogs",
+    "note": "Season's cooked, finals gone, so it's pride week against a Broncos side that's had a shocker of a year. Half the Kennel just wants a nice style of footy, the other half wants to burn it all down."
   },
   "kennelTipQuotes": [
     {
-      "thread": "GAMEDAY Rd 26 vs Panthers",
-      "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
-      "quote": "I smell an upset. HUGE heated game full of controversy, send-offs and a heap of excitement. Frustratingly inconsistent but one thing we're not is a team unable to go with the Riff.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
+      "thread": "Bulldogs in ruins",
+      "threadSlug": "/forum/index.php?threads/bulldogs-in-ruins-ciraldo-and-gould-to-blame-for-no-finals-in-2026.132083",
+      "quote": "Ciraldo and Gould directly to blame for no finals in 2026 — the rebuild is a mirage and we're miles off.",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-in-ruins-ciraldo-and-gould-to-blame-for-no-finals-in-2026.132083/"
     }
   ],
-  "debates": [
-    {
-      "id": "sos-bench-role-r26",
-      "icon": "🎭",
-      "question": "Sean O'Sullivan's on the bench at 19 — is he a genuine matchday 17 or a smokescreen?",
-      "kennel": "Wazza's already reshuffling the whole spine and half the gameday thread reckons Ciro's playing possum with COVID.",
-      "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
-      "options": [
-        {
-          "label": "In the 17, gets minutes at half or hooker",
-          "emoji": "🎯"
-        },
-        {
-          "label": "In the 17 but doesn't take the field",
-          "emoji": "🪑"
-        },
-        {
-          "label": "Named-and-shamed, drops out before kickoff",
-          "emoji": "👻"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
-    },
-    {
-      "id": "dogs-first-tryscorer-r26",
-      "icon": "🏉",
-      "question": "Who opens the scoring for the Dogs against Cleary's mob?",
-      "kennel": "Score-prediction thread has everyone picking their mana of the match — Galvin, Burton and Kiraz getting the most love.",
-      "threadSlug": "/forum/index.php?threads/penrith-vs-bulldogs-score-prediction-mana-of-the-match-crowd.132122",
-      "options": [
-        {
-          "label": "An outside back (Kiraz, Tuala, Burton, Xerri, Tracey)",
-          "emoji": "⚡"
-        },
-        {
-          "label": "A forward (Kikau, Preston, Salmon, King, Thompson)",
-          "emoji": "💪"
-        },
-        {
-          "label": "Spine playmaker (Galvin, Crichton or Hayward)",
-          "emoji": "🧠"
-        }
-      ],
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/penrith-vs-bulldogs-score-prediction-mana-of-the-match-crowd.132122/"
-    }
-  ],
+  "debates": [],
   "trivia": {
-    "question": "The Bulldogs' 1980 grand final win featured three brothers from TWO families in the same side. The Mortimers were one — who were the other three brothers?",
+    "question": "Who won the Clive Churchill Medal in the Bulldogs' 2004 grand final win over the Roosters?",
     "options": [
       {
-        "label": "The Hughes brothers",
+        "label": "Willie Mason",
         "emoji": "🏆"
       },
       {
-        "label": "The Anderson brothers",
+        "label": "Andrew Ryan",
         "emoji": "🏆"
       },
       {
-        "label": "The Folkes brothers",
+        "label": "Sonny Bill Williams",
         "emoji": "🏆"
       },
       {
-        "label": "The Peponis brothers",
+        "label": "Braith Anasta",
         "emoji": "🏆"
       }
     ],
     "correctIndex": 0,
-    "explainer": "Graeme, Garry and Mark Hughes lined up alongside Steve, Peter and Chris Mortimer in the 1980 premiership side — six brothers, one team, the ultimate 'family club' moment."
+    "explainer": "Willie Mason took home the Churchill Medal as the Dogs came from 13–6 down to beat the Roosters 16–13 at Telstra Stadium."
   },
   "recap": [
     {
-      "question": "Who racked up the most run metres for the Dogs in the 44-14 win over the Dragons?",
+      "question": "Who scored the Dogs' first try against the Panthers?",
       "options": [
-        {
-          "label": "Max King",
-          "emoji": "🏉"
-        },
-        {
-          "label": "Connor Tracey",
-          "emoji": "🏉"
-        },
         {
           "label": "Matt Burton",
           "emoji": "🏉"
@@ -118,166 +65,149 @@
         {
           "label": "Jacob Preston",
           "emoji": "🏉"
+        },
+        {
+          "label": "Jaeman Salmon",
+          "emoji": "🏉"
+        },
+        {
+          "label": "Connor Tracey",
+          "emoji": "🏉"
         }
       ],
-      "correctIndex": 1,
-      "explainer": "Tracey ran for 201m and grabbed a linebreak — comfortably the busiest Dog with ball in hand."
+      "correctIndex": 0,
+      "explainer": "Burton crossed in the 24th minute for the Dogs' opener; Preston got the other one in the 59th."
     }
   ],
   "washup": {
-    "round": 25,
-    "opponent": "Dragons",
+    "round": 26,
+    "opponent": "Panthers",
     "dogsHome": false,
-    "dogsScore": 44,
-    "oppScore": 14,
-    "result": "WIN",
-    "margin": 30,
+    "dogsScore": 10,
+    "oppScore": 24,
+    "result": "LOSS",
+    "margin": -14,
     "dogsLogo": "https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202510310458",
-    "oppLogo": "https://www.nrl.com/.theme/dragons/badge.svg?bust=202602250432",
-    "attendance": 14711,
+    "oppLogo": "https://www.nrl.com/.theme/panthers/badge.svg?bust=202608280521",
+    "attendance": 19979,
     "weather": "Fine",
     "tries": [
       {
-        "name": "Bronson Xerri",
-        "team": "Dogs",
-        "minute": 11
+        "name": "Liam Martin",
+        "team": "Panthers",
+        "minute": 7
       },
       {
         "name": "Matt Burton",
         "team": "Dogs",
-        "minute": 25
+        "minute": 24
+      },
+      {
+        "name": "Liam Martin",
+        "team": "Panthers",
+        "minute": 43
       },
       {
         "name": "Jacob Preston",
         "team": "Dogs",
-        "minute": 28
+        "minute": 59
       },
       {
-        "name": "Matt Burton",
-        "team": "Dogs",
-        "minute": 36
-      },
-      {
-        "name": "Valentine Holmes",
-        "team": "Dragons",
-        "minute": 47
-      },
-      {
-        "name": "Max King",
-        "team": "Dogs",
-        "minute": 52
-      },
-      {
-        "name": "Lachlan Galvin",
-        "team": "Dogs",
-        "minute": 56
-      },
-      {
-        "name": "Mathew Feagai",
-        "team": "Dragons",
-        "minute": 63
-      },
-      {
-        "name": "Mathew Feagai",
-        "team": "Dragons",
-        "minute": 68
-      },
-      {
-        "name": "Connor Tracey",
-        "team": "Dogs",
-        "minute": 74
+        "name": "Casey McLean",
+        "team": "Panthers",
+        "minute": 66
       }
     ],
     "topPerformers": [
       {
         "title": "Most Tackles",
         "dogs": {
-          "name": "Max King",
-          "value": 41
+          "name": "Bailey Hayward",
+          "value": 51
         },
         "opp": {
-          "name": "Dylan Egan",
-          "value": 45
+          "name": "Lindsay Smith",
+          "value": 38
         }
       },
       {
         "title": "Most Run Metres",
         "dogs": {
           "name": "Connor Tracey",
-          "value": 201
+          "value": 166
         },
         "opp": {
-          "name": "Mathew Feagai",
-          "value": 230
+          "name": "Dylan Edwards",
+          "value": 262
         }
       },
       {
         "title": "Most Line Breaks",
         "dogs": {
-          "name": "Connor Tracey",
+          "name": "Matt Burton",
           "value": 1
         },
         "opp": {
-          "name": "Mathew Feagai",
-          "value": 3
+          "name": "Thomas Jenkins",
+          "value": 1
         }
       },
       {
         "title": "Most Fantasy Points",
         "dogs": {
-          "name": "Max King",
-          "value": 72
+          "name": "Jacob Preston",
+          "value": 80
         },
         "opp": {
-          "name": "Mathew Feagai",
-          "value": 68
+          "name": "Nathan Cleary",
+          "value": 76
         }
       }
     ],
     "keyStats": [
       {
         "title": "Completion Rate",
-        "dogs": 85,
-        "opp": 75,
+        "dogs": 84,
+        "opp": 93,
         "unit": ""
       },
       {
         "title": "Missed Tackles",
-        "dogs": 33,
-        "opp": 22,
+        "dogs": 31,
+        "opp": 24,
         "unit": ""
       },
       {
         "title": "Errors",
-        "dogs": 10,
-        "opp": 16,
+        "dogs": 8,
+        "opp": 5,
         "unit": ""
       }
     ],
-    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-25-bulldogs-vs-dragons-saturday-22nd-august-2026-7-35pm-allianz-stadium-sydney.132086/",
-    "headline": "44-14 over the Dragons and somehow the fans are still filthy.",
-    "vibe": "Put 44 on the Dragons, Xerri and Burton doubled up, Galvin scored, Tracey ran for 201 and we still ended up talking about the team list. Finals are technically still alive but we're 9th and every result from here has to go our way. Now we get Penrith with half the squad off training with COVID — brilliant.",
-    "kennelMood": "Filthy despite the win",
-    "kennelSummary": "The 44-point win got completely buried under fury at the R26 team list — no Conti or Spinks on the bench, Turpin in, Xerri named despite the injury rumours. Ciraldo getting called stubborn, arrogant, a clown and worse. A few 'I'm done for 2026' posts already dropped before kickoff Friday.",
+    "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/",
+    "headline": "Panthers did what Panthers do — season officially cooked.",
+    "vibe": "10-24 at CommBank, and with it the mathematical exit from the eight. Burton and Preston got a try each but the Dogs couldn't stay with the reigning premiers once they went up the middle. Hayward putting 51 tackles on says everything about which way the game was flowing. Two rounds left to play for pride and next year's shirt.",
+    "kennelMood": "Resigned",
+    "kennelSummary": "Nobody's shocked — the doomers had the season buried weeks ago and the loss to Penrith just made it official. The mood's split between 'play a nice style of footy and I'm happy at 9th' and full-blown 'sack everyone' meltdown. Preston and Hayward the only ones getting a pass.",
     "kennelHotTakes": [
       {
-        "quote": "This bloke has lost the plot. Stubborn arrogant prick. Was hoping to blood some reserve graders and he goes and names THAT squad. Xerri WTF.",
-        "author": "Belmore Dog",
-        "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
+        "quote": "If we don't make the top 4 next season Gus and Ciraldo should both be gone — no more excuses, the rebuild has to actually produce something.",
+        "author": null,
+        "threadSlug": "/forum/index.php?threads/if-we-dont-make-the-top-4-next-season-gus-ciraldo-should-be-fired.132132",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/if-we-dont-make-the-top-4-next-season-gus-ciraldo-should-be-fired.132132/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [
+  "kennelThreadsThisWeek": [],
+  "kennelThreadsLastGame": [
     {
-      "prefix": "GAMEDAY",
-      "title": "Round 26 vs Panthers, Friday 8PM @ Commbank",
-      "replies": 231,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/",
-      "summary": "Gameday thread is split between doomers convinced Penrith puts us to the sword and a stubborn upset crew. Plenty of chat about the COVID outbreak being a Ciraldo mind-game smokescreen."
+      "prefix": null,
+      "title": "Lachlan Galvin",
+      "replies": 532,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/lachlan-galvin.132120/",
+      "summary": "Galvin discourse getting spicy — is he actually a 7, or does he need to shift to 6 or 13? KiwiDog7 reckons he's coaches' player of the year on games played alone."
     }
   ],
-  "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -913,23 +843,23 @@
     ],
     "26": [
       {
-        "id": "first-interchange-r26",
-        "icon": "🔁",
-        "question": "Who's the first Dog off the bench?",
-        "kennel": "Bench debate raging in the GAMEDAY thread — no Conti or Spinks named, Turpin gets in again.",
+        "id": "sos-bench-role-r26",
+        "icon": "🎭",
+        "question": "Sean O'Sullivan's on the bench at 19 — is he a genuine matchday 17 or a smokescreen?",
+        "kennel": "Wazza's already reshuffling the whole spine and half the gameday thread reckons Ciro's playing possum with COVID.",
         "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
         "options": [
           {
-            "label": "Jake Turpin (hooker rotation)",
+            "label": "In the 17, gets minutes at half or hooker",
             "emoji": "🎯"
           },
           {
-            "label": "A middle forward (Hayes, Jones or Curran)",
-            "emoji": "💪"
+            "label": "In the 17 but doesn't take the field",
+            "emoji": "🪑"
           },
           {
-            "label": "Sean O'Sullivan (spine cover)",
-            "emoji": "🧠"
+            "label": "Named-and-shamed, drops out before kickoff",
+            "emoji": "👻"
           }
         ],
         "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
@@ -937,12 +867,12 @@
       {
         "id": "dogs-first-tryscorer-r26",
         "icon": "🏉",
-        "question": "Who scores the Dogs' first try against the Panthers?",
-        "kennel": "Big questions about where the points come from against a Riff pack expected to dominate the middle.",
-        "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+        "question": "Who opens the scoring for the Dogs against Cleary's mob?",
+        "kennel": "Score-prediction thread has everyone picking their mana of the match — Galvin, Burton and Kiraz getting the most love.",
+        "threadSlug": "/forum/index.php?threads/penrith-vs-bulldogs-score-prediction-mana-of-the-match-crowd.132122",
         "options": [
           {
-            "label": "An outside back (Kiraz, Tuala, Burton, Xerri)",
+            "label": "An outside back (Kiraz, Tuala, Burton, Xerri, Tracey)",
             "emoji": "⚡"
           },
           {
@@ -950,11 +880,11 @@
             "emoji": "💪"
           },
           {
-            "label": "A spine player (Galvin, Crichton, Tracey, Hayward)",
+            "label": "Spine playmaker (Galvin, Crichton or Hayward)",
             "emoji": "🧠"
           }
         ],
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/penrith-vs-bulldogs-score-prediction-mana-of-the-match-crowd.132122/"
       }
     ]
   },
@@ -1100,6 +1030,16 @@
       "dogsHome": false,
       "debateVerdicts": {
         "dogs-first-tryscorer-r25": "1) An outside back (Kiraz, Tuala, Burton, Xerri)"
+      }
+    },
+    "26": {
+      "tipBand": "loss",
+      "dogsScore": 10,
+      "oppScore": 24,
+      "opponent": "Panthers",
+      "dogsHome": false,
+      "debateVerdicts": {
+        "dogs-first-tryscorer-r26": "An outside back (Kiraz, Tuala, Burton, Xerri, Tracey)"
       }
     }
   }

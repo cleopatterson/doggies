@@ -134,3 +134,4 @@ WANT that topic back in rotation. -->
 - Rd 24 (2026-08-09): "The Bulldogs adopted the 'Bulldogs' name and mascot in the late 1970s, replacing their previous nickname. What were they known as before?" — answer: The Berries
 - Rd 25 (2026-08-16): "Which two Bulldogs players share the club record for most tries in a single match, with 5?" — answer: Edgar Newham & Nigel Vagana
 - Rd 26 (2026-08-23): "The Bulldogs' 1980 grand final win featured three brothers from TWO families in the same side. The Mortimers were one — who were the other three brothers?" — answer: The Hughes brothers
+- Rd 27 (2026-08-30): "Who won the Clive Churchill Medal in the Bulldogs' 2004 grand final win over the Roosters?" — answer: Willie Mason
