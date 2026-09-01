@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T23:19:04.080Z",
+  "generatedAt": "2026-09-01T13:55:52.218Z",
   "match": {
     "round": 27,
     "opponent": "Broncos",
@@ -18,19 +18,64 @@
     "source": "TAB / nrl.com"
   },
   "kennelTipLean": {
-    "side": "Split",
-    "confidence": "Split — about 55/45 Dogs",
-    "note": "Season's cooked, finals gone, so it's pride week against a Broncos side that's had a shocker of a year. Half the Kennel just wants a nice style of footy, the other half wants to burn it all down."
+    "side": "Dogs",
+    "confidence": "Lean — about 70/30",
+    "note": "Season's cooked but the vibe is that we should be putting a struggling Broncos to the sword at home. A few doomers reckon we get exposed, but most expect a solid win."
   },
   "kennelTipQuotes": [
     {
-      "thread": "Bulldogs in ruins",
-      "threadSlug": "/forum/index.php?threads/bulldogs-in-ruins-ciraldo-and-gould-to-blame-for-no-finals-in-2026.132083",
-      "quote": "Ciraldo and Gould directly to blame for no finals in 2026 — the rebuild is a mirage and we're miles off.",
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/bulldogs-in-ruins-ciraldo-and-gould-to-blame-for-no-finals-in-2026.132083/"
+      "thread": "GAMEDAY Rd 27",
+      "threadSlug": "/forum/index.php?threads/round-27-bulldogs-vs-broncos-thursday-7-50pm-accor-stadium.132143",
+      "quote": "Just 20? If we want to make a statement we must win by at least 30",
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-27-bulldogs-vs-broncos-thursday-7-50pm-accor-stadium.132143/"
     }
   ],
-  "debates": [],
+  "debates": [
+    {
+      "id": "sos-matchday-17-r27",
+      "icon": "🎭",
+      "question": "Sean O'Sullivan's named 22 again — does he actually take the field on Thursday?",
+      "kennel": "The SOS thread's still going, some reckon he gets a farewell run in a dead rubber.",
+      "threadSlug": "/forum/index.php?threads/sean-o-sullivan.131978",
+      "options": [
+        {
+          "label": "Named in the 17 and gets minutes",
+          "emoji": "✅"
+        },
+        {
+          "label": "In the 17 but doesn't get on",
+          "emoji": "🪑"
+        },
+        {
+          "label": "Dropped from the 17 before kickoff",
+          "emoji": "❌"
+        }
+      ],
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/sean-o-sullivan.131978/"
+    },
+    {
+      "id": "dogs-first-try-r27",
+      "icon": "🏉",
+      "question": "Who opens the scoring for the Dogs against a leaky Broncos edge?",
+      "kennel": "Kennel expects a fast start at Accor — question is who cashes in first.",
+      "threadSlug": null,
+      "options": [
+        {
+          "label": "An outside back (Kiraz, Tuala, Burton, Xerri, Tracey)",
+          "emoji": "💨"
+        },
+        {
+          "label": "A forward (Kikau, Preston, Salmon, King, Thompson)",
+          "emoji": "💪"
+        },
+        {
+          "label": "A spine playmaker (Galvin, Crichton or Hayward)",
+          "emoji": "🧠"
+        }
+      ],
+      "url": null
+    }
+  ],
   "trivia": {
     "question": "Who won the Clive Churchill Medal in the Bulldogs' 2004 grand final win over the Roosters?",
     "options": [
@@ -56,7 +101,7 @@
   },
   "recap": [
     {
-      "question": "Who scored the Dogs' first try against the Panthers?",
+      "question": "Who scored the Dogs' first try against the Panthers in Round 26?",
       "options": [
         {
           "label": "Matt Burton",
@@ -67,7 +112,7 @@
           "emoji": "🏉"
         },
         {
-          "label": "Jaeman Salmon",
+          "label": "Jacob Kiraz",
           "emoji": "🏉"
         },
         {
@@ -76,7 +121,7 @@
         }
       ],
       "correctIndex": 0,
-      "explainer": "Burton crossed in the 24th minute for the Dogs' opener; Preston got the other one in the 59th."
+      "explainer": "Burton crossed in the 24th minute — the Dogs' first of only two tries on the night."
     }
   ],
   "washup": {
@@ -185,29 +230,29 @@
       }
     ],
     "gamedayUrl": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/",
-    "headline": "Panthers did what Panthers do — season officially cooked.",
-    "vibe": "10-24 at CommBank, and with it the mathematical exit from the eight. Burton and Preston got a try each but the Dogs couldn't stay with the reigning premiers once they went up the middle. Hayward putting 51 tackles on says everything about which way the game was flowing. Two rounds left to play for pride and next year's shirt.",
+    "headline": "Cleary's mob did what Cleary's mob always does.",
+    "vibe": "10-24, another loss to Penrith, another confirmation that the gap between us and the top sides is real. Completion 84 to 93 tells the whole story — we coughed it up, they didn't. Preston went 80 fantasy points in a losing side which sums up the year. Season's officially in the bin, now it's about pride and blooding the kids.",
     "kennelMood": "Resigned",
-    "kennelSummary": "Nobody's shocked — the doomers had the season buried weeks ago and the loss to Penrith just made it official. The mood's split between 'play a nice style of footy and I'm happy at 9th' and full-blown 'sack everyone' meltdown. Preston and Hayward the only ones getting a pass.",
+    "kennelSummary": "Most of the Kennel's already moved onto 2027 — the doomers want Ciro and Gus gone, the realists want a nice style of footy and 9th, and the optimists are already predicting a 20-point win over the Broncos. Brendan7's 'happy finishing 9th if we play a good style' post got a bunch of love.",
     "kennelHotTakes": [
       {
-        "quote": "If we don't make the top 4 next season Gus and Ciraldo should both be gone — no more excuses, the rebuild has to actually produce something.",
-        "author": null,
-        "threadSlug": "/forum/index.php?threads/if-we-dont-make-the-top-4-next-season-gus-ciraldo-should-be-fired.132132",
-        "url": "https://www.thekennel.net.au/forum/index.php?threads/if-we-dont-make-the-top-4-next-season-gus-ciraldo-should-be-fired.132132/"
+        "quote": "Happy finishing 9th if we just play a nice style of footy for the last month — easiest 8 weeks to watch this side has ever been",
+        "author": "Brendan7",
+        "threadSlug": "/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110",
+        "url": "https://www.thekennel.net.au/forum/index.php?threads/round-26-vs-panthers-friday-8pm-commbank.132110/"
       }
     ]
   },
-  "kennelThreadsThisWeek": [],
-  "kennelThreadsLastGame": [
+  "kennelThreadsThisWeek": [
     {
-      "prefix": null,
-      "title": "Lachlan Galvin",
-      "replies": 532,
-      "url": "https://www.thekennel.net.au/forum/index.php?threads/lachlan-galvin.132120/",
-      "summary": "Galvin discourse getting spicy — is he actually a 7, or does he need to shift to 6 or 13? KiwiDog7 reckons he's coaches' player of the year on games played alone."
+      "prefix": "GAMEDAY",
+      "title": "round 27 Bulldogs vs Broncos, Thursday 7.50pm accor stadium",
+      "replies": 128,
+      "url": "https://www.thekennel.net.au/forum/index.php?threads/round-27-bulldogs-vs-broncos-thursday-7-50pm-accor-stadium.132143/",
+      "summary": "GAMEDAY thread's split between 'blood the kids Conti and Spinks against the Bronks' and 'same team again, no changes'. Also everyone whinging about being the guinea pigs for the new kickoff rule."
     }
   ],
+  "kennelThreadsLastGame": [],
   "kennelMeta": {
     "threadsConsidered": 20,
     "hotThreadsScraped": 5
@@ -1039,7 +1084,7 @@
       "opponent": "Panthers",
       "dogsHome": false,
       "debateVerdicts": {
-        "dogs-first-tryscorer-r26": "An outside back (Kiraz, Tuala, Burton, Xerri, Tracey)"
+        "dogs-first-tryscorer-r26": "A forward (Kikau, Preston, Salmon, King, Thompson)"
       }
     }
   }
